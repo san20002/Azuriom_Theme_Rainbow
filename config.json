@@ -1,1 +1,55 @@
-{}
+{
+    "discord-id": "684097488164225073",
+    "footer_description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+    "sliders": [
+        {
+            "url": "background-1.png",
+            "title": "Maison",
+            "description": "La petit maison"
+        },
+        {
+            "url": "background-2.jpg",
+            "title": "Orrora",
+            "description": null,
+            "background": "on"
+        },
+        {
+            "url": "background-3.png",
+            "title": "Besoins d'aide",
+            "description": "Je suis la pour vous aider"
+        },
+        {
+            "url": "background-4.jpg",
+            "title": "Vive les vacances",
+            "description": "Hummmm, la plage",
+            "background": "on"
+        }
+    ],
+    "footer_links": {
+        "4": {
+            "icon": "<i class=\"fab fa-discord\"></i>",
+            "name": "Discord",
+            "value": "http://flyfftheme.test/"
+        },
+        "5": {
+            "icon": "<i class=\"fab fa-facebook-f\"></i>",
+            "name": "qzd",
+            "value": "https://qzd"
+        },
+        "6": {
+            "icon": "<i class=\"fab fa-facebook-f\"></i>",
+            "name": "toto toto",
+            "value": "https://qzd"
+        },
+        "7": {
+            "icon": "<i class=\"fab fa-facebook-square\"></i>",
+            "name": "toto toto",
+            "value": "http://flyfftheme.test/"
+        }
+    },
+    "headerIcons": "on",
+    "headerVisibilityText": "on",
+    "cgu_link": "CGU",
+    "cgv_link": "CGV",
+    "download_link": "T\u00e9l\u00e9charger"
+}
