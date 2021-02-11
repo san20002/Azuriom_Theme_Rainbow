@@ -22,7 +22,6 @@
             </div>
         </div>
 
-
         <div class="vote vote-now text-center position-relative mb-4 px-3 py-5">
             <div class="@auth d-none @endauth" data-vote-step="1">
                 <form id="voteNameForm">
