@@ -10639,7 +10639,7 @@ form .form-control:focus {
 .banner-promo img {
   object-position: 0 -2777px;
 }
-.banner-support img, .banner-faq img {
+.banner-vote img, .banner-support img, .banner-faq img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -11216,6 +11216,10 @@ body {
 #support a {
   max-width: max-content;
   margin: 0 auto 0 0;
+}
+
+#vote h2 {
+  border-bottom: 3px solid var(--color-primary);
 }
 
 #plugin--forum .card {

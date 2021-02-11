@@ -8,6 +8,7 @@ return [
     'articleLike' => ['nullable', 'string'],
     'articleComment' => ['nullable', 'string'],
     'headerIcons' => ['nullable', 'string'],
+    'voteIcons' => ['nullable', 'string'],
     'headerVisibilityText' => ['nullable', 'string'],
     'cgu' => ['nullable', 'string'],
     'cgu_link' => ['nullable', 'string'],

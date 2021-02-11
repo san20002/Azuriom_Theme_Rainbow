@@ -12,6 +12,9 @@ return [
             'header' => [
                 'icon' => 'Afficher les icons dans la haut de page',
                 'text' => 'Afficher le text de la navigation'
+            ],
+            'vote'=> [
+                'icon' => 'Afficher les icons des sites dans les boutons de vote',
             ]
         ],
         'slider' => [

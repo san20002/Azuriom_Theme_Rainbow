@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('title', 'Flyff Azranoct config')
+@section('title', 'Dofus default - Config')
 
 @include('admin.elements.editor')
 @section('content')

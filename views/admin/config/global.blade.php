@@ -32,7 +32,6 @@
                 </label>
             </div>
         </fieldset>
-
         <fieldset class="mt-4">
             <legend>Article(s)</legend>
             <div class="custom-control custom-switch">
@@ -49,6 +48,17 @@
                        @if(config('theme.articleLike')) checked @endif>
                 <label class="custom-control-label" for="articleLike">
                     {{ trans('theme::lang.config.global.article.like') }}
+                </label>
+            </div>
+        </fieldset>
+        <fieldset class="mt-4">
+            <legend>Plugin Vote</legend>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="voteIcons"
+                       name="voteIcons"
+                       @if(config('theme.voteIcons')) checked @endif>
+                <label class="custom-control-label" for="voteIcons">
+                    {{ trans('theme::lang.config.global.vote.icon') }}
                 </label>
             </div>
         </fieldset>

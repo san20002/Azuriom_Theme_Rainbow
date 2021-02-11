@@ -48,6 +48,7 @@
         }
     },
     "headerIcons": "on",
+    "voteIcons": "on",
     "headerVisibilityText": "on",
     "cgu_link": "CGU",
     "cgv_link": "CGV",

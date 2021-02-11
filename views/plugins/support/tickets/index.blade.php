@@ -37,12 +37,6 @@
                 </li>
             @endforeach
         </ul>
-        <table class="table">
-            <tbody>
-
-
-            </tbody>
-        </table>
 
         <a href="{{ route('support.tickets.create') }}" class="btn btn-success">
             {{ trans('support::messages.actions.open-new') }}
