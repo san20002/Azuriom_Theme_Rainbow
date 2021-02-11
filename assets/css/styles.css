@@ -10589,6 +10589,9 @@ form .form-control:-webkit-autofill, form .form-control:visited, form .form-cont
 .banner-promo img {
   object-position: 0 -2777px;
 }
+.banner-faq img {
+  object-position: 0 -8px;
+}
 
 .modal {
   border: 0;
@@ -10887,10 +10890,9 @@ body {
 }
 #faq .card {
   margin: 2rem 0;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 #faq a {
-  font-family: "Heebo", sans-serif;
   color: var(--color-white);
 }
 
