@@ -55,15 +55,13 @@
 <header class="header">
     @include('elements.navbar')
 </header>
-
 <main>
+    @include('elements.background-top')
     <div class="container">
         @include('elements.session-alerts')
     </div>
-
     @yield('content')
 </main>
-
 <footer class="footer">
     <div class="footer--top">
         <div class="container-fluid">

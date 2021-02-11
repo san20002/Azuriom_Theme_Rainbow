@@ -49,7 +49,7 @@
                 @if(config('theme.download_link'))
                     <div class="btn-wrapper-home">
                         <a class="btn btn-download" href="/{{config('theme.download_link')}}"
-                           title="{{ trans('theme::lang.config.download.name')}}" >
+                           title="{{ trans('theme::lang.config.download.name')}}">
                             <img src="{{theme_asset('image/items/sprite.png')}}"
                                  alt="{{ trans('theme::lang.config.download.name')}}">
                             {{ trans('theme::lang.config.download.name')}}
@@ -96,23 +96,22 @@
             </div>
             <div class="col-lg-4 home--info">
                 @include('auth/home-login')
-                <div class="banner">
-                    <div class="banner-icon banner-info">
-                        <img src="{{theme_asset('image/items/sprite.png')}}"
-                             alt="banner-icon">
-                    </div>
-                    <div class="banner-title">
-                        Informations
-                    </div>
-                </div>
                 @if(config('theme.discord-id'))
+                    <div class="banner">
+                        <div class="banner-icon banner-info">
+                            <img src="{{theme_asset('image/items/sprite.png')}}"
+                                 alt="banner-icon">
+                        </div>
+                        <div class="banner-title">
+                            Informations
+                        </div>
+                    </div>
                     <iframe src="https://discordapp.com/widget?id={{config('theme.discord-id')}}&theme=dark"
                             width="350"
                             height="500" allowtransparency="true" frameborder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                @endif
-
             </div>
+            @endif
         </div>
     </div>
 @endsection
