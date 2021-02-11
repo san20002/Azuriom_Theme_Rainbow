@@ -6,7 +6,7 @@
     <div class="container content">
         <div class="banner">
             <div class="banner-icon banner-faq">
-                <img src="{{theme_asset('image/items/sprite.png')}}"
+                <img src="{{theme_asset('image/items/icon__0026_Quetes.png')}}"
                      alt="banner-icon">
             </div>
             <div class="banner-title">

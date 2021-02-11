@@ -10323,15 +10323,62 @@ table td,
   border-top: 1px solid var(--color-contrast-medium);
 }
 
+.table--custom {
+  padding-left: 0;
+}
+.table--custom li {
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.table--custom .table-header {
+  background-color: var(--color-contrast-low);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.table--custom .table-row {
+  background-color: var(--color-contrast-lower);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.table--custom .table-row > div {
+  color: var(--color-contrast-medium);
+}
+.table--custom a {
+  font-size: 18px;
+  color: var(--color-contrast-higher);
+}
+.table--custom a:focus, .table--custom a:hover {
+  color: var(--color-primary);
+}
+.table--custom a i {
+  margin: 0 1rem;
+}
+@media all and (max-width: 767px) {
+  .table--custom .table-header {
+    display: none;
+  }
+  .table--custom li {
+    display: block;
+  }
+}
+
 form label {
   color: var(--color-contrast-high);
 }
+form .custom-select,
 form .form-control {
   color: var(--color-contrast-higher);
   background-color: var(--color-contrast-low);
   border-color: var(--color-contrast-medium);
 }
-form .form-control:-webkit-autofill, form .form-control:visited, form .form-control:active, form .form-control:focus {
+form .custom-select:-webkit-autofill, form .custom-select:visited, form .custom-select:active, form .custom-select:focus,
+form .form-control:-webkit-autofill,
+form .form-control:visited,
+form .form-control:active,
+form .form-control:focus {
   color: var(--color-contrast-higher);
   background-color: var(--color-contrast-low);
   border-color: var(--color-bg);
@@ -10524,6 +10571,9 @@ form .form-control:-webkit-autofill, form .form-control:visited, form .form-cont
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .banner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -10536,10 +10586,10 @@ form .form-control:-webkit-autofill, form .form-control:visited, form .form-cont
 }
 .banner-icon img {
   display: block;
-  left: 0;
-  position: absolute;
   text-align: center;
+  position: absolute;
   top: 0;
+  left: 0;
   object-position: 0px -1624px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -10589,8 +10639,12 @@ form .form-control:-webkit-autofill, form .form-control:visited, form .form-cont
 .banner-promo img {
   object-position: 0 -2777px;
 }
-.banner-faq img {
-  object-position: 0 -8px;
+.banner-support img, .banner-faq img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  object-position: 0 0;
 }
 
 .modal {
@@ -11098,68 +11152,68 @@ body {
   margin: 0 auto;
 }
 
-#supports .card {
+#support .card {
   border: 0;
   border-radius: 20px;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#supports .card:hover {
+#support .card:hover {
   transform: scale(1.02);
 }
-#supports .card .card-img-top,
-#supports .card .card-img {
+#support .card .card-img-top,
+#support .card .card-img {
   min-height: 300px;
   max-height: 300px;
   object-fit: contain;
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
 }
-#supports .card .img-fluid {
+#support .card .img-fluid {
   display: block;
 }
-#supports .card .card-header {
+#support .card .card-header {
   border-top: 4px solid var(--color-primary);
   border-bottom: 1px dashed var(--color-primary);
   background-color: var(--color-contrast-low);
 }
-#supports .card .card-header h3 {
+#support .card .card-header h3 {
   margin-bottom: 0;
 }
-#supports .card .card-header small {
+#support .card .card-header small {
   color: var(--color-contrast-high);
 }
-#supports .card .card-header small:before {
+#support .card .card-header small:before {
   content: "- ";
 }
-#supports .card ul {
+#support .card ul {
   list-style-type: square;
 }
-#supports .card ul li {
+#support .card ul li {
   color: var(--color-contrast-high);
 }
-#supports .card .card-body {
+#support .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
   border-bottom-left-radius: 17px;
   border-bottom-right-radius: 17px;
 }
-#supports .card .card-text {
+#support .card .card-text {
   color: var(--color-contrast-high);
   line-height: 1.4rem;
   letter-spacing: 1px;
 }
-#supports .card .card-footer {
+#support .card .card-footer {
   border-top: 1px solid var(--color-contrast-low);
 }
-#supports .card .text-muted {
+#support .card .text-muted {
   color: var(--color-contrast-high) !important;
 }
-#supports .card .btn {
+#support .card .btn {
   max-width: 200px;
   margin: 0 auto;
 }
-#supports a {
+#support a {
   max-width: max-content;
   margin: 0 auto 0 0;
 }
