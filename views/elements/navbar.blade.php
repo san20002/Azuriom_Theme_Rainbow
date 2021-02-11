@@ -29,7 +29,7 @@
                                          alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @break
                                     @case('faq.index')
-                                    <img src="{{theme_asset('image/items/icon__0026_Quetes.png')}}"
+                                    <img src="{{theme_asset('image/items/icon__0025_Geoposition.png')}}"
                                          alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @break
                                     @case('vote.home')
@@ -42,6 +42,10 @@
                                     @break
                                     @case('wiki.index')
                                     <img src="{{theme_asset('image/items/icon__0036_encyclopedia.png')}}"
+                                         alt="{{ $element->name }}" title="{{ $element->name }}">
+                                    @break
+                                    @case('forum.home')
+                                    <img src="{{theme_asset('image/items/icon__0026_Quetes.png')}}"
                                          alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @break
                                     @default

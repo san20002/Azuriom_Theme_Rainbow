@@ -4,39 +4,40 @@
 
 @section('content')
     <div class="container content">
-        <h1>{{ trans('shop::messages.profile.payments') }}</h1>
+        <div class="banner">
+            <div class="banner-icon banner-cart">
+                <img src="{{theme_asset('image/items/sprite-2.png')}}"
+                     alt="banner-icon">
+            </div>
+            <div class="banner-title">
+                <h1 class="mb-0">{{ trans('shop::messages.profile.payments') }}</h1>
+            </div>
+        </div>
 
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">{{ trans('shop::messages.fields.price') }}</th>
-                    <th scope="col">{{ trans('messages.fields.type') }}</th>
-                    <th scope="col">{{ trans('messages.fields.status') }}</th>
-                    <th scope="col">{{ trans('shop::messages.fields.payment-id') }}</th>
-                    <th scope="col">{{ trans('messages.fields.date') }}</th>
-                </tr>
-                </thead>
-                <tbody>
 
-                @foreach($payments as $payment)
-                    <tr>
-                        <th scope="row">{{ $payment->id }}</th>
-                        <td>{{ $payment->price }} {{ currency_display($payment->currency) }}</td>
-                        <td>{{ $payment->getTypeName() }}</td>
-                        <td>
+        <ul class="responsive-table table--custom">
+            <li class="table-header">
+                <div class="col col-0">#</div>
+                <div class="col col-2">{{ trans('shop::messages.fields.price') }}</div>
+                <div class="col col-2">{{ trans('messages.fields.type') }}</div>
+                <div class="col col-2">{{ trans('messages.fields.status') }}</div>
+                <div class="col col-3">{{ trans('shop::messages.fields.payment-id') }}</div>
+                <div class="col col-4">{{ trans('messages.fields.date') }}</div>
+            </li>
+            @foreach($payments as $payment)
+                <li class="table-row">
+                    <div class="col col-0" scope="row">{{ $payment->id }}</div>
+                    <div class="col col-2">{{ $payment->price }} {{ currency_display($payment->currency) }}</div>
+                    <div class="col col-2">{{ $payment->getTypeName() }}</div>
+                    <div class="col col-2">
                             <span class="badge badge-{{ $payment->statusColor() }}">
                                 {{ trans('shop::admin.payments.payment-status.'.$payment->status) }}
                             </span>
-                        </td>
-                        <td>{{ $payment->transaction_id ?? trans('messages.unknown') }}</td>
-                        <td>{{ format_date_compact($payment->created_at) }}</td>
-                    </tr>
-                @endforeach
-
-                </tbody>
-            </table>
-        </div>
+                    </div>
+                    <div class="col col-3">{{ $payment->transaction_id ?? trans('messages.unknown') }}</div>
+                    <div class="col col-4">{{ format_date_compact($payment->created_at) }}</div>
+                </li>
+            @endforeach
+        </ul>
     </div>
 @endsection

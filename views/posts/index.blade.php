@@ -11,9 +11,9 @@
             </div>
             <div class="banner-title justify-content-between">
                 <h1 class="mb-0">Les articles</h1>
-                <div class="mr-3">
-                    Nombre: {{count($posts)}}
-                </div>
+                <small class="mr-3 text-sm">
+                    Nombre d'article(s): {{count($posts)}}
+                </small>
 
             </div>
         </div>
