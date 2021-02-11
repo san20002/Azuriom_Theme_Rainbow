@@ -21,10 +21,17 @@
             </div>
         @endif
 
-        <div class="card shadow-sm mb-4">
+        <div class="banner">
+            <div class="banner-icon banner-post">
+                <img src="{{theme_asset('image/items/sprite.png')}}"
+                     alt="banner-icon">
+            </div>
+            <div class="banner-title justify-content-between">
+                <h1 class="mb-0">{{ $post->title }}</h1>
+            </div>
+        </div>
+        <div class="card shadow-sm my-4">
             <div class="card-body">
-                <h1 class="card-title">{{ $post->title }}</h1>
-
                 @if($post->hasImage())
                     <img class="img-fluid rounded mx-auto mb-2" src="{{ $post->imageUrl() }}" alt="{{ $post->title }}">
                 @endif
@@ -36,7 +43,7 @@
                 <hr>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <button type="button" class="btn btn-primary @if($post->isLiked()) active @endif" @guest disabled
+                    <button type="button" class="btn btn-primary ml-0 mr-auto @if($post->isLiked()) active @endif" @guest disabled
                             @endguest data-like-url="{{ route('posts.like', $post) }}">
                         @lang('messages.likes', ['count' => '<span class="likes-count">'.$post->likes->count().'</span>'])
                         <span class="d-none spinner-border spinner-border-sm load-spinner" role="status"></span>
@@ -53,8 +60,8 @@
                     @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
                 </div>
                 <div class="card-body media">
-                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}"
-                         alt="{{ $comment->author->name }}" height="55">
+{{--                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}"--}}
+{{--                         alt="{{ $comment->author->name }}" height="55">--}}
                     <div class="media-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="content-body">
@@ -62,7 +69,7 @@
                             </div>
 
                             @can('delete', $comment)
-                                <a class="btn btn-danger"
+                                <a class="btn btn-danger ml-auto mr-0"
                                    href="{{ route('posts.comments.destroy', [$post, $comment]) }}"
                                    data-confirm="delete">{{ trans('messages.actions.delete') }}</a>
                             @endif
