@@ -28,7 +28,6 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="{{ theme_asset('js/glide.min.js') }}" defer></script>
     <script src="{{ theme_asset('js/aos.js') }}"></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
@@ -165,8 +164,14 @@
         </div>
     </div>
 </footer>
-
 @stack('footer-scripts')
-
+@if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false))
+    <div id="outdated">
+        <span><span><i class="fas fa-ghost"></i></span></span>
+        <h6>Error: Your browser is out-of-date!</h6>
+        <p>Update your browser to view this website correctly.</p>
+        <a id="btnUpdateBrowser" href="https://bestvpn.org/outdatedbrowser/"> Outdated Browser </a>
+    </div>
+@endif
 </body>
 </html>
