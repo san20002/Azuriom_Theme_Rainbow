@@ -3,51 +3,119 @@
 @section('title', trans('messages.home'))
 
 @section('content')
-    <div class="home-background d-flex align-items-center justify-content-center flex-column text-white mb-4" style="background: url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') center / cover no-repeat">
-        <h1 class="mb-4">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
+    @if(!empty(config('theme.sliders')))
+        @if(!empty(config('theme.sliders')[0]['url']))
+            <div class="container-fluid px-0">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="home--glide glide" data-component="hero">
+                            <div data-glide-el="track" class="glide__track">
+                                <ul class="glide__slides">
+                                    @foreach(config('theme.sliders') ?? [] as $slider )
+                                        <li class="glide__slide"
+                                            style="background: url('@if(!isset($slider['background'])){{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}@else{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}@endif') center / cover no-repeat">
+                                            <div
+                                                class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-3">
+                                                <div class="col-lg-4 mt-5 mt-lg-0 px-lg-0 px-5">
+                                                    @if(!empty($slider['title']) || !empty($slider['description']))
+                                                        <h2 class="title">{{ !empty($slider['title']) ? $slider['title'] :''}}</h2>
+                                                        <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
+                                                    @endif
+                                                </div>
+                                                @if(!isset($slider['background']))
+                                                    <div class="col-lg-6 text-center px-lg-0 px-5">
+                                                        <img
+                                                            src="{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}"
+                                                            alt="Card image">
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </li>
+                                    @endforeach
 
-        @if($server && $server->isOnline())
-            <h2 class="mb-4">{{ trans_choice('messages.server.online', $server->getOnlinePlayers()) }}</h2>
-
-            <h3>{{ $server->fullAddress() }}</h3>
-        @else
-            <h2>{{ trans('messages.server.offline') }}</h2>
-        @endif
-    </div>
-
-    <div class="container">
-        <div class="row">
-            @foreach($posts as $post)
-                <div class="col-md-6">
-                    <div class="post-preview card mb-3 shadow-sm">
-                        @if($post->hasImage())
-                            <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="card-img-top">
-                        @endif
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></h3>
-                            <p class="card-text">{{ Str::limit(strip_tags($post->content), 250) }}</p>
-                            <a class="btn btn-primary" href="{{ route('posts.show', $post) }}">{{ trans('messages.posts.read') }}</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            {{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}
+                                </ul>
+                                <div class="glide__arrows" data-glide-el="controls">
+                                    <button class="glide__arrow glide__arrow--left"
+                                            data-glide-dir="<"><i
+                                            class="fas fa-chevron-left"></i></button>
+                                    <button class="glide__arrow glide__arrow--right"
+                                            data-glide-dir=">"><i
+                                            class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @if(config('theme.download_link'))
+                    <div class="btn-wrapper-home">
+                        <a class="btn btn-download" href="/{{config('theme.download_link')}}"
+                           title="{{ trans('theme::lang.config.download.name')}}">
+                            <img src="{{theme_asset('image/items/sprite.png')}}"
+                                 alt="{{ trans('theme::lang.config.download.name')}}">
+                            {{ trans('theme::lang.config.download.name')}}
+                        </a>
+                    </div>
+                @endif
+            </div>
+        @endif
+    @else
+        @include('elements.background-top')
+    @endif
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 home--post">
+                <div class="banner">
+                    <div class="banner-icon banner-post">
+                        <img src="{{theme_asset('image/items/sprite.png')}}"
+                             alt="banner-icon">
+                    </div>
+                    <div class="banner-title">
+                        Dernières actualitées
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($posts as $post)
+                        <div class="col-md-6">
+                            <div class="post-preview card mb-3 shadow-sm">
+                                @if($post->hasImage())
+                                    <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="card-img-top">
+                                @endif
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
+                                    </h3>
+                                    <small>{{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}</small>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ Str::limit(strip_tags($post->content), 100) }}</p>
+                                    <a class="btn btn-primary"
+                                       href="{{ route('posts.show', $post) }}">{{ trans('messages.posts.read') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-lg-4 home--info">
+                @guest
+                    @include('auth/home-login')
+                @endguest
+                @if(config('theme.discord-id'))
+                    <div class="banner">
+                        <div class="banner-icon banner-info">
+                            <img src="{{theme_asset('image/items/sprite.png')}}"
+                                 alt="banner-icon">
+                        </div>
+                        <div class="banner-title">
+                            Informations
+                        </div>
+                    </div>
+                    <iframe src="https://discordapp.com/widget?id={{config('theme.discord-id')}}&theme=dark"
+                            width="350"
+                            height="500" allowtransparency="true" frameborder="0"
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+            @endif
         </div>
     </div>
 @endsection
-
-@push('styles')
-    <style>
-        .home-background {
-            height: 500px;
-        }
-
-        .discord-widget {
-            border: none;
-            width: 100%;
-        }
-    </style>
-@endpush

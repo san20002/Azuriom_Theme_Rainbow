@@ -1,1 +1,24 @@
-{}
+{
+    "discord-id": "684097488164225073",
+    "headerIcons": "on",
+    "headerVisibilityText": "on",
+    "articleLike": "on",
+    "articleComment": "on",
+    "voteIcons": "on",
+    "cgu_link": null,
+    "cgv_link": null,
+    "download_link": null,
+    "footer_description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+    "footer_links": [
+        {
+            "icon": "<i class=\"fab fa-discord\"></i>",
+            "name": "Discord",
+            "value": "https://discord.gg/wmYrG2c"
+        },
+        {
+            "icon": "<i class=\"fab fa-facebook-f\"></i>",
+            "name": "Facebook",
+            "value": "https://discord.gg/wmYrG2c"
+        }
+    ]
+}
