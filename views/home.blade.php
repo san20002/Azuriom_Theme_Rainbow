@@ -15,15 +15,15 @@
                                         <li class="glide__slide"
                                             style="background: url('@if(!isset($slider['background'])){{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}@else{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}@endif') center / cover no-repeat">
                                             <div
-                                                class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-3 offset-1">
-                                                <div class="col-md-4 mt-5 mt-md-0">
+                                                class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-3">
+                                                <div class="col-lg-4 mt-5 mt-lg-0 px-lg-0 px-5">
                                                     @if(!empty($slider['title']) || !empty($slider['description']))
                                                         <h2 class="title">{{ !empty($slider['title']) ? $slider['title'] :''}}</h2>
                                                         <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
                                                     @endif
                                                 </div>
                                                 @if(!isset($slider['background']))
-                                                    <div class="col-md-6 text-center">
+                                                    <div class="col-lg-6 text-center px-lg-0 px-5">
                                                         <img
                                                             src="{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}"
                                                             alt="Card image">
@@ -58,6 +58,8 @@
                 @endif
             </div>
         @endif
+    @else
+        @include('elements.background-top')
     @endif
     <div class="container">
         <div class="row">

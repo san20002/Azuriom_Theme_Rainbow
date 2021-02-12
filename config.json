@@ -21,36 +21,27 @@
         {
             "url": "background-4.jpg",
             "title": "Vive les vacances",
-            "description": "Hummmm, la plage",
-            "background": "on"
+            "description": "Hummmm, la plage"
         }
     ],
-    "footer_links": {
-        "4": {
+    "footer_links": [
+        {
             "icon": "<i class=\"fab fa-discord\"></i>",
             "name": "Discord",
-            "value": "http://flyfftheme.test/"
+            "value": "https://discord.gg/wmYrG2c"
         },
-        "5": {
+        {
             "icon": "<i class=\"fab fa-facebook-f\"></i>",
-            "name": "qzd",
-            "value": "https://qzd"
-        },
-        "6": {
-            "icon": "<i class=\"fab fa-facebook-f\"></i>",
-            "name": "toto toto",
-            "value": "https://qzd"
-        },
-        "7": {
-            "icon": "<i class=\"fab fa-facebook-square\"></i>",
-            "name": "toto toto",
-            "value": "http://flyfftheme.test/"
+            "name": "Facebook",
+            "value": "https://discord.gg/wmYrG2c"
         }
-    },
+    ],
+    "articleLike": "on",
+    "articleComment": "on",
     "headerIcons": "on",
     "voteIcons": "on",
     "headerVisibilityText": "on",
-    "cgu_link": "CGU",
-    "cgv_link": "CGV",
-    "download_link": "T\u00e9l\u00e9charger"
+    "cgu_link": null,
+    "cgv_link": null,
+    "download_link": null
 }

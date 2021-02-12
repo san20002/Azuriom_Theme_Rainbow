@@ -56,7 +56,9 @@
     @include('elements.navbar')
 </header>
 <main>
-    @include('elements.background-top')
+    @if(url()->route('home') != url()->current())
+        @include('elements.background-top')
+    @endif
     <div class="container">
         @include('elements.session-alerts')
     </div>
