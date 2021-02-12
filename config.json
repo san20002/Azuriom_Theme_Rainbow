@@ -1,29 +1,14 @@
 {
     "discord-id": "684097488164225073",
+    "headerIcons": "on",
+    "headerVisibilityText": "on",
+    "articleLike": "on",
+    "articleComment": "on",
+    "voteIcons": "on",
+    "cgu_link": null,
+    "cgv_link": null,
+    "download_link": null,
     "footer_description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
-    "sliders": [
-        {
-            "url": "background-1.png",
-            "title": "Maison",
-            "description": "La petit maison"
-        },
-        {
-            "url": "background-2.jpg",
-            "title": "Orrora",
-            "description": null,
-            "background": "on"
-        },
-        {
-            "url": "background-3.png",
-            "title": "Besoins d'aide",
-            "description": "Je suis la pour vous aider"
-        },
-        {
-            "url": "background-4.jpg",
-            "title": "Vive les vacances",
-            "description": "Hummmm, la plage"
-        }
-    ],
     "footer_links": [
         {
             "icon": "<i class=\"fab fa-discord\"></i>",
@@ -35,13 +20,5 @@
             "name": "Facebook",
             "value": "https://discord.gg/wmYrG2c"
         }
-    ],
-    "articleLike": "on",
-    "articleComment": "on",
-    "headerIcons": "on",
-    "voteIcons": "on",
-    "headerVisibilityText": "on",
-    "cgu_link": null,
-    "cgv_link": null,
-    "download_link": null
+    ]
 }
