@@ -28,6 +28,7 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
+    <script src="{{ theme_asset('js/css-vars-ponyfill.min.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="{{ theme_asset('js/glide.min.js') }}" defer></script>
     <script src="{{ theme_asset('js/aos.js') }}"></script>
