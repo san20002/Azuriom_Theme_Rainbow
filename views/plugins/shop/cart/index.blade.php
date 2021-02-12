@@ -2,18 +2,6 @@
 
 @section('title', trans('shop::messages.cart.title'))
 
-@push('styles')
-    <style>
-        .cart-items thead th {
-            width: 40%;
-        }
-
-        .cart-items tbody td {
-            width: 15%;
-        }
-    </style>
-@endpush
-
 @section('content')
     <div class="container content">
         <div class="banner mt-5">
@@ -30,37 +18,37 @@
             <form action="{{ route('shop.cart.update') }}" method="POST">
                 @csrf
 
-                <table class="table cart-items">
-                    <thead>
-                    <tr>
-                        <th scope="col">{{ trans('messages.fields.name') }}</th>
-                        <th scope="col">{{ trans('shop::messages.fields.price') }}</th>
-                        <th scope="col">{{ trans('shop::messages.fields.total') }}</th>
-                        <th scope="col">{{ trans('shop::messages.fields.quantity') }}</th>
-                        <th scope="col">{{ trans('messages.fields.action') }}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    @foreach($cart->content() as $cartItem)
-                        <tr>
-                            <th scope="row">{{ $cartItem->name() }}</th>
-                            <td>{{ shop_format_amount($cartItem->price()) }}</td>
-                            <td>{{ shop_format_amount($cartItem->total()) }}</td>
-                            <td>
-                                <input type="number" min="0" max="{{ $cartItem->maxQuantity() }}" size="5" class="form-control form-control-sm d-inline-block" name="quantities[{{ $cartItem->itemId }}]" value="{{ $cartItem->quantity }}" aria-label="{{ trans('shop::messages.fields.quantity') }}" required @if(!$cartItem->hasQuantity()) readonly @endif>
-                            </td>
-                            <td>
-                                <a href="{{ route('shop.cart.remove', $cartItem->id) }}" class="btn btn-sm btn-danger" title="{{ trans('messages.actions.delete') }}">
-                                    <i class="fas fa-times fa-fw"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-                </table>
-
+                <div class="table-responsive">
+                    <ul class="table--custom cart-items">
+                        <li class="table-header">
+                            <div class="col col-5">{{ trans('messages.fields.name') }}</div>
+                            <div class="col col-2">{{ trans('shop::messages.fields.price') }}</div>
+                            <div class="col col-2">{{ trans('shop::messages.fields.total') }}</div>
+                            <div class="col col-1">{{ trans('shop::messages.fields.quantity') }}</div>
+                            <div class="col col-2 text-center">{{ trans('messages.fields.action') }}</div>
+                        </li>
+                        @foreach($cart->content() as $cartItem)
+                            <li class="table-row">
+                                <div class="col col-5" scope="row">{{ $cartItem->name() }}</div>
+                                <div class="col col-2">{{ shop_format_amount($cartItem->price()) }}</div>
+                                <div class="col col-2">{{ shop_format_amount($cartItem->total()) }}</div>
+                                <div class="col col-1">
+                                    <input type="number" min="0" max="{{ $cartItem->maxQuantity() }}" size="5"
+                                           class="form-control form-control-sm d-inline-block"
+                                           name="quantities[{{ $cartItem->itemId }}]" value="{{ $cartItem->quantity }}"
+                                           aria-label="{{ trans('shop::messages.fields.quantity') }}" required
+                                           @if(!$cartItem->hasQuantity()) readonly @endif>
+                                </div>
+                                <div class="col col-2 text-center">
+                                    <a href="{{ route('shop.cart.remove', $cartItem->id) }}"
+                                       class="text-danger px-0" title="{{ trans('messages.actions.delete') }}">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
                 <p class="text-right mb-4">
                     <button type="submit" class="btn btn-primary btn-sm">
                         {{ trans('messages.actions.update') }}
@@ -79,34 +67,33 @@
                             <h5 class="mb-0">{{ trans('shop::messages.cart.coupons') }}</h5>
                         </div>
                     </div>
-                    <table class="table coupons">
-                        <thead>
-                        <tr>
-                            <th scope="col">{{ trans('messages.fields.name') }}</th>
-                            <th scope="col">{{ trans('shop::messages.fields.discount') }}</th>
-                            <th scope="col">{{ trans('messages.fields.action') }}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
 
-                        @foreach($cart->coupons() as $coupon)
-                            <tr>
-                                <th scope="row">{{ $coupon->code }}</th>
-                                <td>{{ $coupon->discount }}%</td>
-                                <td>
-                                    <form action="{{ route('shop.cart.coupons.remove', $coupon) }}" method="POST" class="d-inline-block">
-                                        @csrf
+                    <div class="table-responsive">
+                        <ul class="table--custom coupons">
+                            <li class="table-header">
+                                <div class="col col-4">{{ trans('messages.fields.name') }}</div>
+                                <div class="col col-4">{{ trans('shop::messages.fields.discount') }}</div>
+                                <div class="col col-4">{{ trans('messages.fields.action') }}</div>
+                            </li>
+                            @foreach($cart->coupons() as $coupon)
+                                <li class="table-row">
+                                    <div class="col col-4" scope="row">{{ $coupon->code }}</div>
+                                    <div class="col col-4">{{ $coupon->discount }}%</div>
+                                    <div class="col col-4">
+                                        <form action="{{ route('shop.cart.coupons.remove', $coupon) }}" method="POST"
+                                              class="d-inline-block">
+                                            @csrf
 
-                                        <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('messages.actions.delete') }}">
-                                            <i class="fas fa-times fa-fw"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-
-                        </tbody>
-                    </table>
+                                            <button type="submit" class="text-danger bg-transparent border-0"
+                                                    title="{{ trans('messages.actions.delete') }}">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="col-md-4">
@@ -123,7 +110,8 @@
                         @csrf
 
                         <div class="form-group">
-                            <input type="text" class="form-control @error('code') is-invalid @enderror mx-2" placeholder="Code" id="code" name="code" value="{{ old('code') }}">
+                            <input type="text" class="form-control @error('code') is-invalid @enderror mx-2"
+                                   placeholder="Code" id="code" name="code" value="{{ old('code') }}">
 
                             @error('code')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -158,7 +146,8 @@
                     </form>
 
                     @if(use_site_money())
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmBuyModal">
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#confirmBuyModal">
                             {{ trans('shop::messages.buy') }}
                         </button>
                     @else
@@ -180,11 +169,13 @@
     </div>
 
     @if(use_site_money())
-        <div class="modal fade" id="confirmBuyModal" tabindex="-1" role="dialog" aria-labelledby="confirmBuyLabel" aria-hidden="true">
+        <div class="modal fade" id="confirmBuyModal" tabindex="-1" role="dialog" aria-labelledby="confirmBuyLabel"
+             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="confirmBuyLabel">{{ trans('shop::messages.cart.pay-confirm-title') }}</h2>
+                        <h2 class="modal-title"
+                            id="confirmBuyLabel">{{ trans('shop::messages.cart.pay-confirm-title') }}</h2>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -195,7 +186,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ trans('messages.actions.cancel') }}</button>
+                        <button class="btn btn-secondary" type="button"
+                                data-dismiss="modal">{{ trans('messages.actions.cancel') }}</button>
 
                         <form method="POST" action="{{ route('shop.cart.payment') }}">
                             @csrf

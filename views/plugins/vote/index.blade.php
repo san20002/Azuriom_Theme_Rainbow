@@ -43,7 +43,7 @@
                     <div class="spinner-border text-white" role="status"></div>
                 </div>
                 @forelse($sites as $site)
-                    <a class="btn btn-primary mx-2" href="{{ $site->url }}" target="_blank" rel="noopener noreferrer"
+                    <a class="btn btn-primary mx-2 my-2" href="{{ $site->url }}" target="_blank" rel="noopener noreferrer"
                        data-site-url="{{ route('vote.vote', $site) }}">
                         @if(config('theme.voteIcons'))
                             <img src="https://www.google.com/s2/favicons?sz=16&domain_url={{ $site->url }}"
@@ -61,36 +61,39 @@
         </div>
 
         <h2 class="mt-5 pb-2">{{ trans('vote::messages.sections.top') }}</h2>
-        <ul class="responsive-table table--custom">
-            <li class="table-header">
-                <div class="col col-0">#</div>
-                <div class="col col-5">{{ trans('messages.fields.name') }}</div>
-                <div class="col col-5">{{ trans('vote::messages.fields.votes') }}</div>
-            </li>
-            @foreach($votes as $id => $vote)
-                <li class="table-row">
-                    <div class="col col-0" scope="row">{{ $id }}</div>
-                    <div class="col col-5">{{ $vote['user']->name }}</div>
-                    <div class="col col-5">{{ $vote['votes'] }}</div>
-                </li>
-            @endforeach
-        </ul>
-
-        @if(display_rewards())
-            <h2 class="mt-5 pb-2">{{ trans('vote::messages.sections.rewards') }}</h2>
-
-            <ul class="responsive-table table--custom">
+        <div class="table-responsive">
+            <ul class="table--custom">
                 <li class="table-header">
-                    <div class="col col-5">{{ trans('messages.fields.name') }}</div>
-                    <div class="col col-5">{{ trans('vote::messages.fields.chances') }}</div>
+                    <div class="col col-0">#</div>
+                    <div class="col col-6">{{ trans('messages.fields.name') }}</div>
+                    <div class="col col-5">{{ trans('vote::messages.fields.votes') }}</div>
                 </li>
-                @foreach($rewards as $reward)
+                @foreach($votes as $id => $vote)
                     <li class="table-row">
-                        <div class="col col-5" scope="row">{{ $reward->name }}</div>
-                        <div class="col col-5">{{ $reward->chances }} %</div>
+                        <div class="col col-0" scope="row">{{ $id }}</div>
+                        <div class="col col-6">{{ $vote['user']->name }}</div>
+                        <div class="col col-5">{{ $vote['votes'] }}</div>
                     </li>
                 @endforeach
             </ul>
+        </div>
+
+        @if(display_rewards())
+            <h2 class="mt-5 pb-2">{{ trans('vote::messages.sections.rewards') }}</h2>
+            <div class="table-responsive">
+                <ul class="table--custom">
+                    <li class="table-header">
+                        <div class="col col-6">{{ trans('messages.fields.name') }}</div>
+                        <div class="col col-6">{{ trans('vote::messages.fields.chances') }}</div>
+                    </li>
+                    @foreach($rewards as $reward)
+                        <li class="table-row">
+                            <div class="col col-6" scope="row">{{ $reward->name }}</div>
+                            <div class="col col-6">{{ $reward->chances }} %</div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
 
     </div>

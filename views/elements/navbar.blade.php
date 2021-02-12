@@ -7,7 +7,7 @@
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
             aria-expanded="false" aria-label="{{ trans('messages.nav.toggle') }}">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-bars"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbar">

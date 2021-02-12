@@ -15,8 +15,8 @@
                                         <li class="glide__slide"
                                             style="background: url('@if(!isset($slider['background'])){{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}@else{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}@endif') center / cover no-repeat">
                                             <div
-                                                class="row h-100 align-items-center justify-content-start offset-lg-3 offset-1">
-                                                <div class="col-md-4">
+                                                class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-3 offset-1">
+                                                <div class="col-md-4 mt-5 mt-md-0">
                                                     @if(!empty($slider['title']) || !empty($slider['description']))
                                                         <h2 class="title">{{ !empty($slider['title']) ? $slider['title'] :''}}</h2>
                                                         <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
@@ -95,7 +95,9 @@
                 </div>
             </div>
             <div class="col-lg-4 home--info">
-                @include('auth/home-login')
+                @guest
+                    @include('auth/home-login')
+                @endguest
                 @if(config('theme.discord-id'))
                     <div class="banner">
                         <div class="banner-icon banner-info">

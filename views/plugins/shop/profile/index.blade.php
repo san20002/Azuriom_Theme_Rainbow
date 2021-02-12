@@ -14,30 +14,31 @@
             </div>
         </div>
 
-
-        <ul class="responsive-table table--custom">
-            <li class="table-header">
-                <div class="col col-0">#</div>
-                <div class="col col-2">{{ trans('shop::messages.fields.price') }}</div>
-                <div class="col col-2">{{ trans('messages.fields.type') }}</div>
-                <div class="col col-2">{{ trans('messages.fields.status') }}</div>
-                <div class="col col-3">{{ trans('shop::messages.fields.payment-id') }}</div>
-                <div class="col col-4">{{ trans('messages.fields.date') }}</div>
-            </li>
-            @foreach($payments as $payment)
-                <li class="table-row">
-                    <div class="col col-0" scope="row">{{ $payment->id }}</div>
-                    <div class="col col-2">{{ $payment->price }} {{ currency_display($payment->currency) }}</div>
-                    <div class="col col-2">{{ $payment->getTypeName() }}</div>
-                    <div class="col col-2">
+        <div class="table-responsive">
+            <ul class="table--custom">
+                <li class="table-header">
+                    <div class="col col-0">#</div>
+                    <div class="col col-2">{{ trans('shop::messages.fields.price') }}</div>
+                    <div class="col col-2">{{ trans('messages.fields.type') }}</div>
+                    <div class="col col-2">{{ trans('messages.fields.status') }}</div>
+                    <div class="col col-3">{{ trans('shop::messages.fields.payment-id') }}</div>
+                    <div class="col col-3">{{ trans('messages.fields.date') }}</div>
+                </li>
+                @foreach($payments as $payment)
+                    <li class="table-row">
+                        <div class="col col-0" scope="row">{{ $payment->id }}</div>
+                        <div class="col col-2">{{ $payment->price }} {{ currency_display($payment->currency) }}</div>
+                        <div class="col col-2">{{ $payment->getTypeName() }}</div>
+                        <div class="col col-2">
                             <span class="badge badge-{{ $payment->statusColor() }}">
                                 {{ trans('shop::admin.payments.payment-status.'.$payment->status) }}
                             </span>
-                    </div>
-                    <div class="col col-3">{{ $payment->transaction_id ?? trans('messages.unknown') }}</div>
-                    <div class="col col-4">{{ format_date_compact($payment->created_at) }}</div>
-                </li>
-            @endforeach
-        </ul>
+                        </div>
+                        <div class="col col-3">{{ $payment->transaction_id ?? trans('messages.unknown') }}</div>
+                        <div class="col col-3">{{ format_date_compact($payment->created_at) }}</div>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endsection
