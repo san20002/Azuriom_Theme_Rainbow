@@ -54,6 +54,12 @@
     <link href="{{ theme_asset('css/glide.core.min.css') }}" rel="stylesheet">
     <link href="{{ theme_asset('css/aos.css') }}" rel="stylesheet">
     <link href="{{ theme_asset('css/styles.css') }}" rel="stylesheet">
+    @auth()
+        @if(auth()->user()->role->name == 'Admin')
+            <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
+        @endif
+    @endauth
+
     @stack('styles')
 </head>
 
@@ -171,6 +177,11 @@
         </div>
     </div>
 </footer>
+@auth()
+    @if(auth()->user()->role->name == 'Admin')
+        @include('layouts.change-color')
+    @endif
+@endauth
 @stack('footer-scripts')
 @if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false))
     <div id="outdated">

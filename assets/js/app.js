@@ -97,6 +97,17 @@ eval("window.addEventListener(\"DOMContentLoaded\", function (event) {\n  \"use 
 
 /***/ }),
 
+/***/ "./scss/admin.scss":
+/*!*************************!*\
+  !*** ./scss/admin.scss ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zY3NzL2FkbWluLnNjc3M/NTJjNCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiIuL3Njc3MvYWRtaW4uc2Nzcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIHJlbW92ZWQgYnkgZXh0cmFjdC10ZXh0LXdlYnBhY2stcGx1Z2luIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./scss/admin.scss\n");
+
+/***/ }),
+
 /***/ "./scss/styles.scss":
 /*!**************************!*\
   !*** ./scss/styles.scss ***!
@@ -109,14 +120,15 @@ eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourc
 /***/ }),
 
 /***/ 0:
-/*!********************************************!*\
-  !*** multi ./js/app.js ./scss/styles.scss ***!
-  \********************************************/
+/*!**************************************************************!*\
+  !*** multi ./js/app.js ./scss/styles.scss ./scss/admin.scss ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Environnement-dev\laragon\www\Azuriom_minecraft\resources\themes\dofus-default\resources\js\app.js */"./js/app.js");
-module.exports = __webpack_require__(/*! C:\Environnement-dev\laragon\www\Azuriom_minecraft\resources\themes\dofus-default\resources\scss\styles.scss */"./scss/styles.scss");
+__webpack_require__(/*! C:\Environnement-dev\laragon\www\Azuriom_minecraft\resources\themes\dofus-default\resources\scss\styles.scss */"./scss/styles.scss");
+module.exports = __webpack_require__(/*! C:\Environnement-dev\laragon\www\Azuriom_minecraft\resources\themes\dofus-default\resources\scss\admin.scss */"./scss/admin.scss");
 
 
 /***/ })
