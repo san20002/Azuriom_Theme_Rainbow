@@ -77,6 +77,10 @@
     </div>
     @yield('content')
 </main>
+<div class="alert alert-danger d-block">
+    <p>
+        selfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslf</p>
+</div>
 <footer class="footer">
     <div class="footer--top">
         <div class="container-fluid">
