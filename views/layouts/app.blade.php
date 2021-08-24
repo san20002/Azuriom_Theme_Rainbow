@@ -57,6 +57,7 @@
     @auth()
         @if(auth()->user()->role->name == 'Admin')
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
+            <link rel="stylesheet" href="https://codyhouse.co/assets/css/style.css?v=112">
         @endif
     @endauth
 
