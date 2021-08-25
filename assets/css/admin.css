@@ -1,10 +1,139 @@
+.btn-picto-color {
+  position: fixed;
+  top: auto;
+  left: auto;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border-radius: 50%;
+  z-index: 999;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  transition: transform 0.321s linear;
+}
+.btn-picto-color.active {
+  transform: rotate(90deg);
+}
+.btn-picto-color img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 65px;
+  height: 65px;
+}
+
 #change--color {
   position: fixed;
   top: auto;
   left: auto;
   bottom: 3rem;
   right: 3rem;
-  padding: 1rem;
-  background-color: var(--color-contrast-low);
+  background-color: rgba(245, 245, 245, 0.92);
   z-index: 99;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+  height: 0;
+  transition: height 0.321s ease-in-out;
+}
+#change--color.active {
+  height: 685px;
+}
+#change--color svg,
+#change--color .icon {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+#change--color ul {
+  list-style: none;
+  margin: 0;
+}
+#change--color .app-sidebar {
+  flex: 1 1 100%;
+  width: 100%;
+}
+#change--color .app-color {
+  flex: 1 1 100%;
+  width: 100%;
+  min-height: 200px;
+}
+#change--color .app-editor-section {
+  padding: 1rem 1rem 0 1rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#change--color .app-editor-section__body {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+#change--color .app-color-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#change--color .app-color-picker .app-color-picker__native {
+  opacity: 0;
+  width: 30px;
+}
+#change--color .app-color-picker input {
+  background-color: white;
+  border: 0;
+  height: 30px;
+}
+#change--color .app-color-picker .app-editor__input-group {
+  margin-left: 1rem;
+}
+#change--color .app-color-picker .app-form-control {
+  max-width: 160px;
+  padding-left: 3rem;
+}
+#change--color .btn--subtle {
+  flex: 1 1 100%;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+#change--color .app-content__group {
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(245, 245, 245, 0.92);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#change--color .app-content__group > li {
+  background-color: rgba(245, 245, 245, 0.92);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+#change--color .js-app-content__feedback-colors,
+#change--color .js-app-content__main-colors {
+  padding-left: 0;
+  text-align: center;
+}
+#change--color .js-app-content__feedback-colors .app-content-item--is-selected,
+#change--color .js-app-content__main-colors .app-content-item--is-selected {
+  background-color: rgba(232, 232, 232, 0.92);
+}
+#change--color .js-app-content__feedback-colors .app-content-item__text,
+#change--color .js-app-content__main-colors .app-content-item__text {
+  padding: 0.2rem;
+  width: 100%;
+  display: inline-block;
+}
+#change--color .js-app-content__feedback-colors .app-content-item__text:focus, #change--color .js-app-content__feedback-colors .app-content-item__text:hover,
+#change--color .js-app-content__main-colors .app-content-item__text:focus,
+#change--color .js-app-content__main-colors .app-content-item__text:hover {
+  background-color: rgba(232, 232, 232, 0.92);
+  cursor: pointer;
 }

@@ -58,7 +58,6 @@
     @auth()
         @if(auth()->user()->role->name == 'Admin')
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
-            <link rel="stylesheet" href="https://codyhouse.co/assets/css/style.css?v=112">
         @endif
     @endauth
 
@@ -183,23 +182,18 @@
         </div>
     </div>
 </footer>
-        <script defer>
+@auth()
+    @if(auth()->user()->role->name == 'Admin')
+        <script>
             window.addEventListener("DOMContentLoaded", (event) => {
-                        console.log('toto')
-                if ($('.copy-globals-code').length > 0) {
-                    $(this).on('click', function () {
-                        console.log(toto())
+                if ($('.btn-picto-color').length > 0) {
+                    $('.btn-picto-color').on('click', function () {
+                        $(this).toggleClass('active')
+                        $('#change--color').toggleClass('active')
                     })
                 }
             })
-            @php
-                $script="$(document).ready(function(){alert('hai');});";
-                $fileName= theme_path("toto.js");
-                file_put_contents($fileName, $script);
-            @endphp
         </script>
-@auth()
-    @if(auth()->user()->role->name == 'Admin')
         @include('layouts.change-color')
 
     @endif
