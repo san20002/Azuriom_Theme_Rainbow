@@ -34,6 +34,7 @@
     @auth()
         @if(auth()->user()->role->name == 'Admin')
             <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
+            <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
             <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
         @endif
     @endauth
@@ -182,9 +183,25 @@
         </div>
     </div>
 </footer>
+        <script defer>
+            window.addEventListener("DOMContentLoaded", (event) => {
+                        console.log('toto')
+                if ($('.copy-globals-code').length > 0) {
+                    $(this).on('click', function () {
+                        console.log(toto())
+                    })
+                }
+            })
+            @php
+                $script="$(document).ready(function(){alert('hai');});";
+                $fileName= theme_path("toto.js");
+                file_put_contents($fileName, $script);
+            @endphp
+        </script>
 @auth()
     @if(auth()->user()->role->name == 'Admin')
         @include('layouts.change-color')
+
     @endif
 @endauth
 @stack('footer-scripts')
