@@ -16,4 +16,5 @@ return [
     'download_link' => ['nullable', 'string'],
     'footer_description' => ['nullable', 'string'],
     'footer_links' => ['nullable', 'array'],
+    'color_themes' => ['nullable', 'string'],
 ];
