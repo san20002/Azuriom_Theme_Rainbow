@@ -1,5 +1,5 @@
 <button class="btn-picto-color">
-    <img src="https://cdn.discordapp.com/attachments/325270065307975681/880212784409903114/color-spectrum-1192509_1920.png" alt="">
+    <img src="{{theme_asset('image/color-spectrum.png')}}" alt="">
 </button>
 <div id="change--color">
     <div class="app-sidebar app-sidebar-content js-app-sidebar--toggle">

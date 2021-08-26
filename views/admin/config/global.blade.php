@@ -13,6 +13,16 @@
         @enderror
     </div>
     <div class="form-group">
+        <label for="discordInput">Couleur</label>
+        <input type="file" class="form-control @error('color_themes') is-invalid @enderror"
+               id="colorThemesInput"
+               name="color_themes" value="{{ old('color_themes', config('theme.color_themes')) }}">
+
+        @error('color_themes')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
+    <div class="form-group">
         <fieldset class="mt-4">
             <legend>Haut de page</legend>
             <div class="custom-control custom-switch">

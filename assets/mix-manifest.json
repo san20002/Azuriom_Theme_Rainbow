@@ -9,5 +9,6 @@
     "/js/aos.js": "/js/aos.js",
     "/css/aos.css": "/css/aos.css",
     "/js/chroma.min.js": "/js/chroma.min.js",
-    "/js/clipboard.min.js": "/js/clipboard.min.js"
+    "/js/clipboard.min.js": "/js/clipboard.min.js",
+    "/image/color-spectrum.png": "/image/color-spectrum.png"
 }

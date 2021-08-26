@@ -1,8 +1,11 @@
-@extends('admin.layouts.admin')
+    @extends('admin.layouts.admin')
+    @section('title', 'Dofus default - Config')
 
-@section('title', 'Dofus default - Config')
+    @include('admin.elements.editor')
+@if(request()->ajax() || request()->isXmlHttpRequest())
+    @json(config('theme'))
+@else
 
-@include('admin.elements.editor')
 @section('content')
     @push('styles')
         <style>
@@ -203,3 +206,4 @@
         </div>
     </div>
 @endsection
+@endif
