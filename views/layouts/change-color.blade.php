@@ -175,8 +175,8 @@
         </div>
     </div>
 
-    <button class="btn btn--subtle btn--floating copy-globals-code" data-copy="scss" style="bottom: 7rem;">
-        <em class="btn__content-a btn btn-primary icon-text">
+    <button class="btn--subtle btn btn-primary copy-globals-code" data-copy="scss">
+        <em class="btn__content-a icon-text">
             <svg aria-hidden="true" class="icon" viewBox="0 0 16 16">
                 <g>
                     <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"
