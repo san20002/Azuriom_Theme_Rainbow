@@ -3,12 +3,12 @@
     "/js/change-color.js": "/js/change-color.js",
     "/css/styles.css": "/css/styles.css",
     "/css/admin.css": "/css/admin.css",
+    "/image/color-spectrum.png": "/image/color-spectrum.png",
     "/image/picto_prevention.png": "/image/picto_prevention.png",
     "/js/glide.min.js": "/js/glide.min.js",
     "/css/glide.core.min.css": "/css/glide.core.min.css",
     "/js/aos.js": "/js/aos.js",
     "/css/aos.css": "/css/aos.css",
     "/js/chroma.min.js": "/js/chroma.min.js",
-    "/js/clipboard.min.js": "/js/clipboard.min.js",
-    "/image/color-spectrum.png": "/image/color-spectrum.png"
+    "/js/clipboard.min.js": "/js/clipboard.min.js"
 }

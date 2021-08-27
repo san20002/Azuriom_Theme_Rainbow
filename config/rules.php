@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'discord-id' => ['nullable', 'string'],
+    'discordId' => ['nullable', 'string'],
     'headerIcons' => ['nullable', 'string'],
     'headerVisibilityText' => ['nullable', 'string'],
     'sliders' => ['nullable', 'array'],

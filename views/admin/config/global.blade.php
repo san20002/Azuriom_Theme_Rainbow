@@ -4,11 +4,11 @@
 <div class="card-body">
     <div class="form-group">
         <label for="discordInput">{{ trans('theme::lang.config.discord') }}</label>
-        <input type="text" class="form-control @error('discord-id') is-invalid @enderror"
+        <input type="text" class="form-control @error('discordId') is-invalid @enderror"
                id="discordInput"
-               name="discord-id" value="{{ old('discord-id', config('theme.discord-id')) }}">
+               name="discordId" value="{{ old('discordId', config('theme.discordId')) }}">
 
-        @error('discord-id')
+        @error('discordId')
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
     </div>

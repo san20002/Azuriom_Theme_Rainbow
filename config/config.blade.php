@@ -1,10 +1,11 @@
-    @extends('admin.layouts.admin')
-    @section('title', 'Dofus default - Config')
-
-    @include('admin.elements.editor')
 @if(request()->ajax() || request()->isXmlHttpRequest())
     @json(config('theme'))
 @else
+
+    @extends('admin.layouts.admin')
+    @section('title', 'Dofus default - Config')
+
+@include('admin.elements.editor')
 
 @section('content')
     @push('styles')

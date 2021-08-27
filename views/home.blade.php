@@ -100,7 +100,7 @@
                 @guest
                     @include('auth/home-login')
                 @endguest
-                @if(config('theme.discord-id'))
+                @if(config('theme.discordId'))
                     <div class="banner">
                         <div class="banner-icon banner-info">
                             <img src="{{theme_asset('image/items/sprite.png')}}"
@@ -110,7 +110,7 @@
                             Informations
                         </div>
                     </div>
-                    <iframe src="https://discordapp.com/widget?id={{config('theme.discord-id')}}&theme=dark"
+                    <iframe src="https://discordapp.com/widget?id={{config('theme.discordId')}}&theme=dark"
                             width="350"
                             height="500" allowtransparency="true" frameborder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
