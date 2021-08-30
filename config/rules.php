@@ -17,4 +17,5 @@ return [
     'footer_description' => ['nullable', 'string'],
     'footer_links' => ['nullable', 'array'],
     'color_themes' => ['nullable', 'string'],
+    'color_themes_data' => ['nullable', 'string'],
 ];

@@ -54,6 +54,7 @@
     <!-- Styles -->
     <link href="{{ theme_asset('css/glide.core.min.css') }}" rel="stylesheet">
     <link href="{{ theme_asset('css/aos.css') }}" rel="stylesheet">
+    @include('layouts.root')
     <link href="{{ theme_asset('css/styles.css') }}" rel="stylesheet">
     @auth()
         @if(auth()->user()->role->name == 'Admin')
