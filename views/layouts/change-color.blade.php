@@ -23,29 +23,29 @@
                             </li>
                         </ul>
                     </li>
-                    {{--                                <li>--}}
-                    {{--                                    <div--}}
-                    {{--                                        class="app-content-item app-content-item--parent app-content-item--show-children js-app-content-item--group">--}}
-                    {{--                                        <svg class="icon icon-arrow color-contrast-medium js-open-group"--}}
-                    {{--                                             viewBox="0 0 16 16"><title>Open group</title>--}}
-                    {{--                                            <path d="M8 11l4-5H4l4 5z"></path>--}}
-                    {{--                                        </svg>--}}
-                    {{--                                        <svg aria-hidden="true" class="icon color-primary margin-right-xxxs"--}}
-                    {{--                                             viewBox="0 0 16 16">--}}
-                    {{--                                            <path d="M2 11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5H2z"></path>--}}
-                    {{--                                            <path d="M8 2H2v2h7L8 2z"></path>--}}
-                    {{--                                        </svg>--}}
-                    {{--                                        <span class="app-content-item__text">Black + White</span>--}}
-                    {{--                                    </div>--}}
-                    {{--                                    <ul>--}}
-                    {{--                                        <li class="app-content-item js-app-content-item " data-section="#color-black">--}}
-                    {{--                                            <span class="app-content-item__text">--color-black</span>--}}
-                    {{--                                        </li>--}}
-                    {{--                                        <li class="app-content-item js-app-content-item " data-section="#color-white">--}}
-                    {{--                                            <span class="app-content-item__text">--color-white</span>--}}
-                    {{--                                        </li>--}}
-                    {{--                                    </ul>--}}
-                    {{--                                </li>--}}
+                    <li>
+                        <div
+                            class="app-content-item app-content-item--parent app-content-item--show-children js-app-content-item--group">
+                            <svg class="icon icon-arrow color-contrast-medium js-open-group"
+                                 viewBox="0 0 16 16"><title>Open group</title>
+                                <path d="M8 11l4-5H4l4 5z"></path>
+                            </svg>
+                            <svg aria-hidden="true" class="icon color-primary margin-right-xxxs"
+                                 viewBox="0 0 16 16">
+                                <path d="M2 11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5H2z"></path>
+                                <path d="M8 2H2v2h7L8 2z"></path>
+                            </svg>
+                            <span class="app-content-item__text">Black + White</span>
+                        </div>
+                        <ul>
+                            <li class="app-content-item js-app-content-item " data-section="#color-black">
+                                <span class="app-content-item__text">--color-black</span>
+                            </li>
+                            <li class="app-content-item js-app-content-item " data-section="#color-white">
+                                <span class="app-content-item__text">--color-white</span>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <div
                             class="app-content-item app-content-item--parent app-content-item--is-editable app-content-item--show-children js-app-content-item--is-editable js-app-content-item--group">
@@ -101,7 +101,7 @@
                 </div>
 
                 {{--                        Background Color--}}
-                <div class="app-editor-section js-app-editor-section__bg-color-picker d-none">
+                <div class="app-editor-section js-app-editor-section__bg-color-picker">
                     <div class="app-editor-section__title js-app-editor-section__title ">
                         <div class="flex items-center">
                             <span class="app-label">Background Color</span>
@@ -152,18 +152,19 @@
                      data-section="#color-primary"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-accent"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-download"></div>
-                {{--            <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--black"--}}
-                {{--                 data-section="#color-black">--}}
-                {{--                <div class="cd-demo-color__item">--}}
-                {{--                    <div class="cd-demo-color__preview" style="background-color: var(--color-black)"></div>--}}
-                {{--                </div>--}}
-                {{--            </div>--}}
-                {{--            <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--white"--}}
-                {{--                 data-section="#color-white">--}}
-                {{--                <div class="cd-demo-color__item">--}}
-                {{--                    <div class="cd-demo-color__preview" style="background-color: var(--color-white)"></div>--}}
-                {{--                </div>--}}
-                {{--            </div>--}}
+                            <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--black"
+                                 data-section="#color-black">
+                                <div class="cd-demo-color__item">
+                                    <div class="cd-demo-color__preview"
+                                         style="background-color: var(--color-black)"></div>
+                                </div>
+                            </div>
+                <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--white"
+                     data-section="#color-white">
+                    <div class="cd-demo-color__item">
+                        <div class="cd-demo-color__preview" style="background-color: var(--color-white)"></div>
+                    </div>
+                </div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-success"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-error"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-warning"></div>

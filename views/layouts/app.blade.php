@@ -180,8 +180,6 @@
     @if(auth()->user()->role->name == 'Admin')
         <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
-        <script src="{{ theme_asset('js/page.js') }}" defer></script>
-        <script src="{{ theme_asset('js/colors.js') }}" defer></script>
         <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
         <script>
             window.addEventListener("DOMContentLoaded", (event) => {
