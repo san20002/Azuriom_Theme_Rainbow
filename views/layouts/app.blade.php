@@ -31,17 +31,10 @@
     <script src="{{ theme_asset('js/glide.min.js') }}" defer></script>
     <script src="{{ theme_asset('js/aos.js') }}"></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
-    @auth()
-        @if(auth()->user()->role->name == 'Admin')
-            <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
-            <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
-            <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
-        @endif
-    @endauth
 
 
-<!-- Page level scripts -->
-    @stack('scripts')
+    <!-- Page level scripts -->
+@stack('scripts')
 
 <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -185,6 +178,11 @@
 </footer>
 @auth()
     @if(auth()->user()->role->name == 'Admin')
+        <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
+        <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
+        <script src="{{ theme_asset('js/page.js') }}" defer></script>
+        <script src="{{ theme_asset('js/colors.js') }}" defer></script>
+        <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
         <script>
             window.addEventListener("DOMContentLoaded", (event) => {
                 if ($('.btn-picto-color').length > 0) {
