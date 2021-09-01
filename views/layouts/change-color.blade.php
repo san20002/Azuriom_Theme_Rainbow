@@ -152,13 +152,13 @@
                      data-section="#color-primary"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-accent"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-download"></div>
-                            <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--black"
-                                 data-section="#color-black">
-                                <div class="cd-demo-color__item">
-                                    <div class="cd-demo-color__preview"
-                                         style="background-color: var(--color-black)"></div>
-                                </div>
-                            </div>
+                <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--black"
+                     data-section="#color-black">
+                    <div class="cd-demo-color__item">
+                        <div class="cd-demo-color__preview"
+                             style="background-color: var(--color-black)"></div>
+                    </div>
+                </div>
                 <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--white"
                      data-section="#color-white">
                     <div class="cd-demo-color__item">
@@ -177,6 +177,7 @@
     </div>
 
     <button class="btn--subtle btn btn-primary copy-globals-code" data-copy="scss">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         <em class="btn__content-a icon-text">
             <svg aria-hidden="true" class="icon" viewBox="0 0 16 16">
                 <g>
@@ -186,7 +187,22 @@
                           d="M6 2V1h9v10h-1"></path>
                 </g>
             </svg>
-            <span class="js-modal__copy-text">Save theme</span>
+            <span class="js-modal__copy-text">
+                Save theme
+            </span>
         </em>
     </button>
+</div>
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <img src="..." class="rounded mr-2" alt="...">
+        <strong class="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        Hello, world! This is a toast message.
+    </div>
 </div>
