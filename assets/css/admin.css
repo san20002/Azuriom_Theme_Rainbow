@@ -49,6 +49,9 @@
   transform: translateY(0);
   height: 685px;
 }
+#change--color .app-section--is-hidden {
+  display: none;
+}
 #change--color svg,
 #change--color .icon {
   width: 10px;

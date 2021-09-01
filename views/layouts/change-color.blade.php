@@ -23,7 +23,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="d-none">
                         <div
                             class="app-content-item app-content-item--parent app-content-item--show-children js-app-content-item--group">
                             <svg class="icon icon-arrow color-contrast-medium js-open-group"
@@ -101,7 +101,7 @@
                 </div>
 
                 {{--                        Background Color--}}
-                <div class="app-editor-section js-app-editor-section__bg-color-picker">
+                <div class="app-editor-section js-app-editor-section__bg-color-picker app-section--is-hidden">
                     <div class="app-editor-section__title js-app-editor-section__title ">
                         <div class="flex items-center">
                             <span class="app-label">Background Color</span>
@@ -123,7 +123,7 @@
                 </div>
 
                 {{--                        Higher Contrast Color--}}
-                <div class="app-editor-section js-app-editor-section__hc-color-picker d-none">
+                <div class="app-editor-section js-app-editor-section__hc-color-picker app-section--is-hidden">
                     <div class="app-editor-section__title js-app-editor-section__title ">
                         <div class="flex items-center">
                             <span class="app-label">Higher Contrast Color</span>
@@ -146,7 +146,7 @@
             </div>
         </div>
         <div data-display="editColors"
-             class="cd-demo-container cd-demo-max-width-md js-cd-demo-container js-cd-demo-container--colors d-none">
+             class="cd-demo-container cd-demo-max-width-md js-cd-demo-container js-cd-demo-container--colors app-section--is-hidden">
             <div class="cd-demo-color">
                 <div class="cd-demo-color__list cd-demo-color__list--selected js-cd-demo-color__list"
                      data-section="#color-primary"></div>
