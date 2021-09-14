@@ -177,32 +177,10 @@
     </div>
 
     <button class="btn--subtle btn btn-primary copy-globals-code" data-copy="scss">
-        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         <em class="btn__content-a icon-text">
-            <svg aria-hidden="true" class="icon" viewBox="0 0 16 16">
-                <g>
-                    <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"
-                          d="M2 5h9v10H2z"></path>
-                    <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"
-                          d="M6 2V1h9v10h-1"></path>
-                </g>
-            </svg>
             <span class="js-modal__copy-text">
                 Save theme
             </span>
         </em>
     </button>
-</div>
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-        <img src="..." class="rounded mr-2" alt="...">
-        <strong class="mr-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="toast-body">
-        Hello, world! This is a toast message.
-    </div>
 </div>

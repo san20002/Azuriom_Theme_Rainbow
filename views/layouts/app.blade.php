@@ -71,10 +71,6 @@
     </div>
     @yield('content')
 </main>
-<div class="alert alert-danger d-block">
-    <p>
-        selfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslfselfjselfjsefslf</p>
-</div>
 <footer class="footer">
     <div class="footer--top">
         <div class="container-fluid">
@@ -85,7 +81,7 @@
                 <div class="col-xl-4 col-md-6 mt-3">
                     <div class="footer--propos">
                         <h3>À propos de nous</h3>
-                        <p>{{ config('theme.footer_description') }}</p>
+                        <p>{{ config('theme.footer.description') }}</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
@@ -106,7 +102,7 @@
                                 @endif
                             @endforeach
                         </ul>
-                        @if(config('theme.download_link'))
+                        @if(config('theme.footer.download'))
                             <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
                                 <a class="btn btn-download" href="/{{config('theme.download_link')}}"
                                    title="{{ trans('theme::lang.config.download.name')}}">
@@ -123,16 +119,15 @@
                     </div>
                 </div>
             </div>
-            @if(config('theme.footer_links'))
+            @if(config('theme.footer.links'))
                 <div class="container footer--links mt-3">
                     <div class="row">
                         <div class="col-md-12 justify-content-center align-items-center d-flex">
-                            @foreach(config('theme.footer_links') ?? [] as $link )
+                            @foreach(config('theme.footer.links') ?? [] as $link )
                                 <div class="footer--links-item">
                                     <a target="_blank" href="{{$link['value']}}" title="{{ $link['name'] }}">
                                         {!! $link['icon'] !!}
                                     </a>
-
                                 </div>
                             @endforeach
                         </div>
@@ -156,15 +151,15 @@
                             </div>
                         </div>
                         <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
-                            @if(config('theme.cgv_link'))
-                                <a href="/{{config('theme.cgu_link')}}"
+                            @if(config('theme.footer.cgu'))
+                                <a href="/{{config('theme.footer.cgu')}}"
                                    title="{{ trans('theme::lang.config.cgu.name')}}" target="_blank">
                                     {{ trans('theme::lang.config.cgu.abbreviation')}}
                                 </a>
                             @endif
-                            @if(config('theme.cgv_link'))
+                            @if(config('theme.footer.cgv'))
                                 -
-                                <a href="/{{config('theme.cgv_link')}}" target="_blank"
+                                <a href="/{{config('theme.footer.cgv')}}" target="_blank"
                                    title="{{ trans('theme::lang.config.cgv.name')}}">
                                     {{ trans('theme::lang.config.cgv.abbreviation')}}
                                 </a>

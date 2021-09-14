@@ -43,72 +43,79 @@
                 <hr>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <button type="button" class="btn btn-primary ml-0 mr-auto @if($post->isLiked()) active @endif" @guest disabled
-                            @endguest data-like-url="{{ route('posts.like', $post) }}">
-                        @lang('messages.likes', ['count' => '<span class="likes-count">'.$post->likes->count().'</span>'])
-                        <span class="d-none spinner-border spinner-border-sm load-spinner" role="status"></span>
-                    </button>
+                    @if(config('articles.follow.hidden'))
+                        <button type="button" class="btn btn-primary ml-0 mr-auto @if($post->isLiked()) active @endif"
+                                @guest disabled
+                                @endguest data-like-url="{{ route('posts.like', $post) }}">
+                            @lang('messages.likes', ['count' => '<span class="likes-count">'.$post->likes->count().'</span>'])
+                            <span class="d-none spinner-border spinner-border-sm load-spinner" role="status"></span>
+                        </button>
+                    @endif
 
                     <span>{{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}</span>
                 </div>
             </div>
         </div>
+        @if(config('articles.comment.hidden'))
 
-        @foreach($post->comments as $comment)
-            <div class="card shadow-sm mb-3">
-                <div class="card-header">
-                    @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
-                </div>
-                <div class="card-body media">
-{{--                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}"--}}
-{{--                         alt="{{ $comment->author->name }}" height="55">--}}
-                    <div class="media-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="content-body">
-                                {{ $comment->parseContent() }}
+            @foreach($post->comments as $comment)
+                <div class="card shadow-sm mb-3">
+                    <div class="card-header">
+                        @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
+                    </div>
+                    <div class="card-body media">
+                        {{--                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}"--}}
+                        {{--                         alt="{{ $comment->author->name }}" height="55">--}}
+                        <div class="media-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="content-body">
+                                    {{ $comment->parseContent() }}
+                                </div>
+
+                                @can('delete', $comment)
+                                    <a class="btn btn-danger ml-auto mr-0"
+                                       href="{{ route('posts.comments.destroy', [$post, $comment]) }}"
+                                       data-confirm="delete">{{ trans('messages.actions.delete') }}</a>
+                                @endif
                             </div>
-
-                            @can('delete', $comment)
-                                <a class="btn btn-danger ml-auto mr-0"
-                                   href="{{ route('posts.comments.destroy', [$post, $comment]) }}"
-                                   data-confirm="delete">{{ trans('messages.actions.delete') }}</a>
-                            @endif
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
 
-        @can('create', \Azuriom\Models\Comment::class)
-            <div class="card mt-4 shadow-sm">
-                <div class="card-header">
-                    <span class="h5">{{ trans('messages.comments.create') }}</span>
+            @can('create', \Azuriom\Models\Comment::class)
+                <div class="card mt-4 shadow-sm">
+                    <div class="card-header">
+                        <span class="h5">{{ trans('messages.comments.create') }}</span>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('posts.comments.store', $post) }}" method="POST">
+                            @csrf
+
+                            <div class="form-group">
+                                <label for="content">{{ trans('messages.comments.your-comment') }}</label>
+                                <textarea class="form-control @error('content') is-invalid @enderror" id="content"
+                                          name="content" rows="4" required></textarea>
+
+                                @error('content')
+                                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                @enderror
+                            </div>
+
+                            <button type="submit"
+                                    class="btn btn-primary">{{ trans('messages.actions.comment') }}</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form action="{{ route('posts.comments.store', $post) }}" method="POST">
-                        @csrf
+            @endcan
 
-                        <div class="form-group">
-                            <label for="content">{{ trans('messages.comments.your-comment') }}</label>
-                            <textarea class="form-control @error('content') is-invalid @enderror" id="content"
-                                      name="content" rows="4" required></textarea>
-
-                            @error('content')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                            @enderror
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">{{ trans('messages.actions.comment') }}</button>
-                    </form>
+            @guest
+                <div class="alert alert-info" role="alert">
+                    {{ trans('messages.comments.guest') }}
                 </div>
-            </div>
-        @endcan
+            @endguest
+        @endif
 
-        @guest
-            <div class="alert alert-info" role="alert">
-                {{ trans('messages.comments.guest') }}
-            </div>
-        @endguest
     </div>
 
     <!-- Delete confirm modal -->

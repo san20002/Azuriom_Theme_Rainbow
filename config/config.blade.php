@@ -22,7 +22,6 @@
             });
 
             function imagePreviewSelect(el) {
-                console.log(el)
                 el.addEventListener('change', function () {
                     if (el.value) {
                         const reader = new FileReader();
@@ -43,133 +42,66 @@
                 });
             }
 
-            function addCommandListener(el) {
-                let i = 1;
-                el.addEventListener('click', function () {
-                    const element = el.closest('.slider');
-                    element.parentNode.removeChild(element);
-                    document.getElementById('sliders').querySelectorAll('.slider').forEach(function (el) {
-                        let count = i++
-                        el.querySelector('.card-title').innerHTML = 'Slider ' + count;
-                    })
-                });
-            }
 
-            document.querySelectorAll('.command-remove').forEach(function (el) {
-                addCommandListener(el);
-            });
-
-            document.getElementById('addCommandButton').addEventListener('click', function () {
-                let i = 1;
-                let input = `@include('admin.pattern.slider')`;
-
-                const newElement = document.createElement('div');
-                newElement.classList.add('slider', 'col-lg-4', 'col-md-6', 'my-3')
-                newElement.innerHTML = input
-                addCommandListener(newElement.querySelector('.command-remove'));
-
-                document.getElementById('sliders').appendChild(newElement);
-                document.getElementById('sliders').querySelectorAll('.slider').forEach(function (el) {
-                    let count = i++
-                    el.querySelector('.card-title').innerHTML = 'Slider ' + count;
-                    el.querySelector('select').setAttribute('data-image-preview-select', 'filePreview-' + count)
-                    el.querySelector('img').setAttribute('id', 'filePreview-' + count)
-                    imagePreviewSelect(el.querySelector('select'))
-                })
-
-            });
             document.getElementById('configForm').addEventListener('submit', function () {
                 let i = 0;
-
-                document.getElementById('sliders').querySelectorAll('.form-row').forEach(function (el) {
-                    el.querySelectorAll('input').forEach(function (input) {
-                        input.name = input.name.replace('{index}', i.toString());
-                    });
-                    el.querySelectorAll('select').forEach(function (select) {
-                        select.name = select.name.replace('{index}', i.toString());
-                    });
-
-                    i++;
-                });
-
-                document.getElementById('links').querySelectorAll('.form-row').forEach(function (el) {
-                    el.querySelectorAll('input').forEach(function (input) {
-                        input.name = input.name.replace('{index}', i.toString());
-                    });
-
-                    i++;
-                });
+                configFormLink(i)
+                configFormSlider(i)
             });
-        </script>
-
-        <script>
-            function addLinkListener(el) {
-                el.addEventListener('click', function () {
-                    const element = el.parentNode.parentNode.parentNode.parentNode;
-
-                    element.parentNode.removeChild(element);
-                });
-            }
-
-            document.querySelectorAll('.link-remove').forEach(function (el) {
-                addLinkListener(el);
-            });
-
-            document.getElementById('addLinkButton').addEventListener('click', function () {
-                let input = '<div class="form-row"><div class="form-group col-md-4">';
-                input += '<input type="text" class="form-control" name="footer_links[{index}][icon]" placeholder="{{ trans('theme::lang.config.icon') }}"></div>';
-                input += '<div class="form-group col-md-3"><div class="input-group">';
-                input += '<input type="text" class="form-control" name="footer_links[{index}][name]" placeholder="{{ trans('theme::lang.config.name') }}"></div></div>';
-                input += '<div class="form-group col-md-4"><div class="input-group">';
-                input += '<input type="url" class="form-control" name="footer_links[{index}][value]" placeholder="{{ trans('theme::lang.config.link') }}">';
-                input += '<div class="input-group-append"><button class="btn btn-outline-danger link-remove" type="button">';
-                input += '<i class="fas fa-times"></i></button></div></div></div></div></div>';
-
-                const newElement = document.createElement('div');
-                newElement.innerHTML = input;
-
-                addLinkListener(newElement.querySelector('.link-remove'));
-
-                document.getElementById('links').appendChild(newElement);
-            });
-
         </script>
     @endpush
     <div class="row">
         <div class="col-2">
             <div class="list-group sticky-top" style="top: 75px">
                 <a class="list-group-item list-group-item-action active"
-                   title="{{ trans('theme::lang.config.global.name') }}"
-                   href="#list-{{ trans('theme::lang.config.global.id') }}"
+                   title="Entête"
+                   href="#list-entete"
                    data-toggle="list"
                    role="tab"
-                   aria-controls="{{ trans('theme::lang.config.global.id') }}">
-                    {{ trans('theme::lang.config.global.name') }}
+                   aria-controls="entete">
+                    Entête
+                </a>
+                <a class="list-group-item list-group-item-action"
+                   title="Page Accueil"
+                   href="#list-home"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="home">
+                    Page Accueil
+                </a>
+
+                <a class="list-group-item list-group-item-action"
+                   title="Article"
+                   href="#list-article"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="article">
+                    Article
+                </a>
+                <a class="list-group-item list-group-item-action"
+                   title="{{ trans('theme::lang.config.footer.name') }}"
+                   href="#list-footer"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="footer">
+                    {{ trans('theme::lang.config.footer.name') }}
                 </a>
 
                 <a class="list-group-item list-group-item-action"
                    title="{{ trans('theme::lang.config.slider.name') }}"
-                   href="#list-{{ trans('theme::lang.config.slider.id') }}"
+                   href="#list-slider"
                    data-toggle="list"
                    role="tab"
-                   aria-controls="{{ trans('theme::lang.config.slider.id') }}">
+                   aria-controls="slider">
                     {{ trans('theme::lang.config.slider.name') }}
                 </a>
                 <a class="list-group-item list-group-item-action"
-                   title="{{ trans('theme::lang.config.footer.name') }}"
-                   href="#list-{{ trans('theme::lang.config.footer.id') }}"
+                   title="Vote"
+                   href="#list-vote"
                    data-toggle="list"
                    role="tab"
-                   aria-controls="{{ trans('theme::lang.config.footer.id') }}">
-                    {{ trans('theme::lang.config.footer.name') }}
-                </a>
-                <a class="list-group-item list-group-item-action"
-                   title="{{ trans('theme::lang.config.social.name') }}"
-                   href="#list-{{ trans('theme::lang.config.social.id') }}"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="{{ trans('theme::lang.config.social.id') }}">
-                    {{ trans('theme::lang.config.social.name') }}
+                   aria-controls="vote">
+                    Vote
                 </a>
             </div>
         </div>
@@ -177,28 +109,39 @@
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
 
+                <input type="hidden" name="project[color_themes]"
+                       value="{{ old('project[color_themes]', config('theme.project.color_themes')) }}">
+                <input type="hidden" name="project[color_themes_data]"
+                       value="{{ old('project[color_themes_data]', config('theme.project.color_themes_data')) }}">
+
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade active show card shadow mb-4"
-                         id="list-{{ trans('theme::lang.config.global.id') }}"
-                         role="tabpanel" aria-labelledby="list-{{ trans('theme::lang.config.global.id') }}-list">
-                        @include('admin.config.global')
+                         id="list-entete"
+                         role="tabpanel" aria-labelledby="list-entete-list">
+                        @include('admin.config.header')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4"
+                         id="list-home"
+                         role="tabpanel" aria-labelledby="list-home-list">
+                        @include('admin.config.home')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4"
+                         id="list-article"
+                         role="tabpanel" aria-labelledby="list-article-list">
+                        @include('admin.config.article')
                     </div>
 
-                    <div class="tab-pane fade card shadow mb-4" id="list-{{ trans('theme::lang.config.footer.id') }}"
-                         role="tabpanel" aria-labelledby="list-{{ trans('theme::lang.config.footer.id') }}-list">
+                    <div class="tab-pane fade card shadow mb-4" id="list-footer"
+                         role="tabpanel" aria-labelledby="list-footer-list">
                         @include('admin.config.footer')
-
                     </div>
-
-                    <div class="tab-pane fade card shadow mb-4" id="list-{{ trans('theme::lang.config.social.id') }}"
-                         role="tabpanel" aria-labelledby="list-{{ trans('theme::lang.config.social.id') }}-list">
-                        @include('admin.config.social')
-
-                    </div>
-                    <div class="tab-pane fade" id="list-{{ trans('theme::lang.config.slider.id') }}" role="tabpanel"
-                         aria-labelledby="list-{{ trans('theme::lang.config.slider.id') }}-list">
+                    <div class="tab-pane fade card shadow mb-4" id="list-slider" role="tabpanel"
+                         aria-labelledby="list-slider-list">
                         @include('admin.config.slider')
-
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
+                         aria-labelledby="list-vote-list">
+                        @include('admin.config.vote')
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary"><i

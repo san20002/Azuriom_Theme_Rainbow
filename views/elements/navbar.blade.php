@@ -18,7 +18,7 @@
                     <li class="nav-item @if($element->isCurrent()) active @endif">
                         <a class="nav-link" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank"
                            rel="noopener noreferrer" @endif>
-                            @if(config('theme.headerIcons'))
+                            @if(config('theme.header.icons'))
                                 @switch($element->value)
                                     @case('#')
                                     <img src="{{theme_asset('image/items/icon__0035_Maison.png')}}"
@@ -49,7 +49,7 @@
                                          alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @break
                                     @default
-                                    @if(!config('theme.headerVisibilityText'))
+                                    @if(!config('theme.header.text.hidden'))
                                         {{ $element->name }}
                                     @endif
                                     @break
@@ -66,7 +66,7 @@
                                     @break
                                 @endswitch
                             @endif
-                            @if(config('theme.headerVisibilityText'))
+                            @if(config('theme.header.text.hidden'))
                                 <span>
                                     {{ $element->name }}
                                 </span>
@@ -77,11 +77,11 @@
                     <li class="nav-item dropdown @if($element->isCurrent()) active @endif">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}"
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @if(config('theme.headerIcons'))
+                            @if(config('theme.header.icons'))
                                 <img src="{{theme_asset('image/items/icon__0008_Annuaire.png')}}"
                                      alt="{{ $element->name }}" title="{{ $element->name }}">
                             @endif
-                            @if(config('theme.headerVisibilityText'))
+                            @if(config('theme.header.text.hidden'))
                                 {{ $element->name }}
                             @endif
                         </a>
@@ -117,7 +117,7 @@
                 <li class="nav-item dropdown">
                     <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        @if(config('theme.headerIcons'))
+                        @if(config('theme.header.icons'))
                             <img src="{{theme_asset('image/hints/character.png')}}"
                                  alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name}}">
                         @endif

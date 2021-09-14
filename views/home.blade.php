@@ -46,9 +46,9 @@
                         </div>
                     </div>
                 </div>
-                @if(config('theme.download_link'))
+                @if(config('theme.footer.download'))
                     <div class="btn-wrapper-home">
-                        <a class="btn btn-download" href="/{{config('theme.download_link')}}"
+                        <a class="btn btn-download" href="/{{config('theme.footer.download')}}"
                            title="{{ trans('theme::lang.config.download.name')}}">
                             <img src="{{theme_asset('image/items/sprite.png')}}"
                                  alt="{{ trans('theme::lang.config.download.name')}}">
@@ -100,7 +100,7 @@
                 @guest
                     @include('auth/home-login')
                 @endguest
-                @if(config('theme.discordId'))
+                @if(config('theme.discord.id'))
                     <div class="banner">
                         <div class="banner-icon banner-info">
                             <img src="{{theme_asset('image/items/sprite.png')}}"
@@ -110,7 +110,7 @@
                             Informations
                         </div>
                     </div>
-                    <iframe src="https://discordapp.com/widget?id={{config('theme.discordId')}}&theme=dark"
+                    <iframe src="https://discordapp.com/widget?id={{config('theme.discord.id')}}&theme=dark"
                             width="350"
                             height="500" allowtransparency="true" frameborder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
