@@ -10501,8 +10501,6 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 
 .alert {
   border-radius: 20px;
-  height: 66px;
-  line-height: 66px;
   display: flex;
   align-items: center;
 }
