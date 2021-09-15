@@ -209,3 +209,18 @@
 #change--color .btn--subtle:focus, #change--color .btn--subtle:active {
   background-color: #4d4d4d;
 }
+#change--color .text--bottom {
+  position: relative;
+  top: auto;
+  bottom: 11px;
+  left: 0;
+  padding: 0 2.5rem 0 1rem;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 100%;
+  width: 100%;
+}

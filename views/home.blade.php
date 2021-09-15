@@ -8,39 +8,48 @@
             <div class="container-fluid px-0">
                 <div class="row no-gutters">
                     <div class="col-12">
-                        <div class="home--glide glide" data-component="hero">
-                            <div data-glide-el="track" class="glide__track">
-                                <ul class="glide__slides">
-                                    @foreach(config('theme.sliders') ?? [] as $slider )
-                                        <li class="glide__slide"
-                                            style="background: url('@if(!isset($slider['background'])){{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}@else{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}@endif') center / cover no-repeat">
-                                            <div
-                                                class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-3">
-                                                <div class="col-lg-4 mt-5 mt-lg-0 px-lg-0 px-5">
-                                                    @if(!empty($slider['title']) || !empty($slider['description']))
-                                                        <h2 class="title">{{ !empty($slider['title']) ? $slider['title'] :''}}</h2>
-                                                        <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
+                        <div class="home--top">
+                            @if(setting('background'))
+                                <div class="background--top-header">
+                                    <img src="{{ image_url(setting('background')) }}" alt="">
+                                    <div id="particles-js"></div>
+                                </div>
+                            @endif
+                            <div id="particles-js"></div>
+                            <div class="home--glide glide" data-component="hero">
+                                <div data-glide-el="track" class="glide__track">
+                                    <ul class="glide__slides">
+                                        @foreach(config('theme.sliders') ?? [] as $slider )
+                                            <li class="glide__slide"
+                                                style="background: {{ !empty($slider['url']) ? image_url($slider['url']) :''}}') center / cover no-repeat">
+                                                <div
+                                                    class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-3">
+                                                    <div class="col-lg-4 mt-5 mt-lg-0 px-lg-0 px-5">
+                                                        @if(!empty($slider['title']) || !empty($slider['description']))
+                                                            <h2 class="title">{{ !empty($slider['title']) ? $slider['title'] :''}}</h2>
+                                                            <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
+                                                        @endif
+                                                    </div>
+                                                    @if(!isset($slider['background']))
+                                                        <div class="col-lg-6 text-center px-lg-0 px-5">
+                                                            <img
+                                                                src="{{ !empty($slider['url']) ? image_url($slider['url']) :''}}"
+                                                                alt="Card image">
+                                                        </div>
                                                     @endif
                                                 </div>
-                                                @if(!isset($slider['background']))
-                                                    <div class="col-lg-6 text-center px-lg-0 px-5">
-                                                        <img
-                                                            src="{{ !empty($slider['url']) ? image_url($slider['url']) :'https://via.placeholder.com/2000x500'}}"
-                                                            alt="Card image">
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </li>
-                                    @endforeach
+                                            </li>
+                                        @endforeach
 
-                                </ul>
-                                <div class="glide__arrows" data-glide-el="controls">
-                                    <button class="glide__arrow glide__arrow--left"
-                                            data-glide-dir="<"><i
-                                            class="fas fa-chevron-left"></i></button>
-                                    <button class="glide__arrow glide__arrow--right"
-                                            data-glide-dir=">"><i
-                                            class="fas fa-chevron-right"></i></button>
+                                    </ul>
+                                    <div class="glide__arrows" data-glide-el="controls">
+                                        <button class="glide__arrow glide__arrow--left"
+                                                data-glide-dir="<"><i
+                                                class="fas fa-chevron-left"></i></button>
+                                        <button class="glide__arrow glide__arrow--right"
+                                                data-glide-dir=">"><i
+                                                class="fas fa-chevron-right"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -50,8 +59,6 @@
                     <div class="btn-wrapper-home">
                         <a class="btn btn-download" href="/{{config('theme.footer.download')}}"
                            title="{{ trans('theme::lang.config.download.name')}}">
-                            <img src="{{theme_asset('image/items/sprite.png')}}"
-                                 alt="{{ trans('theme::lang.config.download.name')}}">
                             {{ trans('theme::lang.config.download.name')}}
                         </a>
                     </div>
@@ -64,15 +71,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 home--post">
-                <div class="banner">
-                    <div class="banner-icon banner-post">
-                        <img src="{{theme_asset('image/items/sprite.png')}}"
-                             alt="banner-icon">
+                @if(!config('theme.home.banner.news.hidden') && (config('theme.home.banner.news.image') || config('theme.home.banner.news.title')))
+                    <div class="banner">
+                        @if(config('theme.home.banner.news.image'))
+                            <div class="banner-icon banner-post">
+                                <img src="{{image_url(config('theme.home.banner.news.image'))}}"
+                                     alt="banner-icon">
+                            </div>
+                        @endif
+                        <div class="banner-title {{!config('theme.home.banner.news.image') ? 'no-image': ''}}">
+                            {{config('theme.home.banner.news.title')}}
+                        </div>
                     </div>
-                    <div class="banner-title">
-                        Dernières actualitées
-                    </div>
-                </div>
+                @endif
                 <div class="row">
                     @foreach($posts as $post)
                         <div class="col-md-6">
@@ -101,15 +112,19 @@
                     @include('auth/home-login')
                 @endguest
                 @if(config('theme.discord.id'))
-                    <div class="banner">
-                        <div class="banner-icon banner-info">
-                            <img src="{{theme_asset('image/items/sprite.png')}}"
-                                 alt="banner-icon">
+                    @if(!config('theme.home.banner.info.hidden') && (config('theme.home.banner.info.image') || config('theme.home.banner.info.title')))
+                        <div class="banner">
+                            @if(config('theme.home.banner.info.image'))
+                                <div class="banner-icon banner-post">
+                                    <img src="{{image_url(config('theme.home.banner.info.image'))}}"
+                                         alt="banner-icon">
+                                </div>
+                            @endif
+                            <div class="banner-title {{!config('theme.home.banner.info.image') ? 'no-image': ''}}">
+                                {{config('theme.home.banner.info.title')}}
+                            </div>
                         </div>
-                        <div class="banner-title">
-                            Informations
-                        </div>
-                    </div>
+                    @endif
                     <iframe src="https://discordapp.com/widget?id={{config('theme.discord.id')}}&theme=dark"
                             width="350"
                             height="500" allowtransparency="true" frameborder="0"

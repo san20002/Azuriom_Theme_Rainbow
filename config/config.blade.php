@@ -45,6 +45,7 @@
 
             document.getElementById('configForm').addEventListener('submit', function () {
                 let i = 0;
+                configFormIconMenus(i)
                 configFormLink(i)
                 configFormSlider(i)
             });
@@ -53,7 +54,7 @@
     <div class="row">
         <div class="col-2">
             <div class="list-group sticky-top" style="top: 75px">
-                <a class="list-group-item list-group-item-action active"
+                <a class="list-group-item list-group-item-action list-group-item-light active"
                    title="Entête"
                    href="#list-entete"
                    data-toggle="list"
@@ -61,7 +62,7 @@
                    aria-controls="entete">
                     Entête
                 </a>
-                <a class="list-group-item list-group-item-action"
+                <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Page Accueil"
                    href="#list-home"
                    data-toggle="list"
@@ -70,7 +71,7 @@
                     Page Accueil
                 </a>
 
-                <a class="list-group-item list-group-item-action"
+                <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Article"
                    href="#list-article"
                    data-toggle="list"
@@ -78,7 +79,7 @@
                    aria-controls="article">
                     Article
                 </a>
-                <a class="list-group-item list-group-item-action"
+                <a class="list-group-item list-group-item-action list-group-item-light"
                    title="{{ trans('theme::lang.config.footer.name') }}"
                    href="#list-footer"
                    data-toggle="list"
@@ -87,7 +88,7 @@
                     {{ trans('theme::lang.config.footer.name') }}
                 </a>
 
-                <a class="list-group-item list-group-item-action"
+                <a class="list-group-item list-group-item-action list-group-item-light"
                    title="{{ trans('theme::lang.config.slider.name') }}"
                    href="#list-slider"
                    data-toggle="list"
@@ -95,7 +96,7 @@
                    aria-controls="slider">
                     {{ trans('theme::lang.config.slider.name') }}
                 </a>
-                <a class="list-group-item list-group-item-action"
+                <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Vote"
                    href="#list-vote"
                    data-toggle="list"

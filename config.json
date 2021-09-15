@@ -1,9 +1,15 @@
 {
     "header": {
-        "icons": "on",
-        "text": {
-            "hidden": "on"
-        }
+        "iconmenus": [
+            {
+                "url": "background-1.jpg",
+                "name": "Accueil"
+            },
+            {
+                "url": "background-4.jpg",
+                "name": "Boutique"
+            }
+        ]
     },
     "footer": {
         "links": [
@@ -38,16 +44,17 @@
             "description": null
         }
     ],
-    "articles": {
-        "comment": {
-            "hidden": "on"
-        },
-        "like": {
-            "hidden": "on"
+    "home": {
+        "banner": {
+            "news": {
+                "image": "background-1.jpg",
+                "title": "Article"
+            },
+            "info": {
+                "image": null,
+                "title": "Info"
+            }
         }
-    },
-    "vote": {
-        "icon": "on"
     },
     "project": {
         "color_themes": null,

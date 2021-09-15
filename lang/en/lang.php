@@ -6,12 +6,12 @@ return [
             'name' => 'Global',
             'id' => 'global',
             'article' => [
-                'comment' => 'Allows to display comments in articles',
-                'like' => 'Allows to display jaime in articles'
+                'comment' => 'Not allows to display comments in articles',
+                'like' => 'Not allows to display jaime in articles'
             ],
             'header' => [
-                'icon' => 'Displays the icons at the top of the page.',
-                'text' => 'Show navigation text'
+                'icon' => 'Not displays the icons at the top of the page.',
+                'text' => 'Hide navigation text'
             ],
             'vote' => [
                 'icon' => 'Afficher les icons des sites dans les boutons de vote',

@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-xl navbar-light">
     <a class="navbar-brand" href="{{ route('home') }}">
-
         <img src="{{site_logo() }}"
              alt="{{ site_name() }}" title="{{ site_name() }}">
         <h1 class="sr-only">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
@@ -18,55 +17,15 @@
                     <li class="nav-item @if($element->isCurrent()) active @endif">
                         <a class="nav-link" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank"
                            rel="noopener noreferrer" @endif>
-                            @if(config('theme.header.icons'))
-                                @switch($element->value)
-                                    @case('#')
-                                    <img src="{{theme_asset('image/items/icon__0035_Maison.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('shop.home')
-                                    <img src="{{theme_asset('image/items/icon__0030_Shop.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('faq.index')
-                                    <img src="{{theme_asset('image/items/icon__0025_Geoposition.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('vote.home')
-                                    <img src="{{theme_asset('image/items/icon-gift.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('support.tickets.index')
-                                    <img src="{{theme_asset('image/items/icon__0043_familiers.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('wiki.index')
-                                    <img src="{{theme_asset('image/items/icon__0036_encyclopedia.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('forum.home')
-                                    <img src="{{theme_asset('image/items/icon__0026_Quetes.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @default
-                                    @if(!config('theme.header.text.hidden'))
-                                        {{ $element->name }}
+                            @if(!config('theme.header.icons'))
+                                @foreach(config('theme.header.iconmenus') ?? [] as $icon )
+                                    @if($element->name === $icon['name'])
+                                        <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
+                                             alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif
-                                    @break
-                                @endswitch
-
-                                @switch($element->type)
-                                    @case('post')
-                                    <img class="icon-{{$element->type}}" src="{{theme_asset('image/items/sprite.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                    @case('page')
-                                    <img class="icon-{{$element->type}}" src="{{theme_asset('image/items/sprite.png')}}"
-                                         alt="{{ $element->name }}" title="{{ $element->name }}">
-                                    @break
-                                @endswitch
+                                @endforeach
                             @endif
-                            @if(config('theme.header.text.hidden'))
+                            @if(!config('theme.header.text.hidden'))
                                 <span>
                                     {{ $element->name }}
                                 </span>
@@ -77,11 +36,15 @@
                     <li class="nav-item dropdown @if($element->isCurrent()) active @endif">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}"
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @if(config('theme.header.icons'))
-                                <img src="{{theme_asset('image/items/icon__0008_Annuaire.png')}}"
-                                     alt="{{ $element->name }}" title="{{ $element->name }}">
+                            @if(!config('theme.header.icons'))
+                                @foreach(config('theme.header.iconmenus') ?? [] as $icon )
+                                    @if($element->name === $icon['name'])
+                                        <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
+                                             alt="{{ $element->name }}" title="{{ $element->name }}">
+                                    @endif
+                                @endforeach
                             @endif
-                            @if(config('theme.header.text.hidden'))
+                            @if(!config('theme.header.text.hidden'))
                                 {{ $element->name }}
                             @endif
                         </a>

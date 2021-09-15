@@ -11,7 +11,8 @@
                     <li>
                         <div class="app-content-item app-content-item--parent app-content-item--is-editable
                                      app-content-item--show-children js-app-content-item--is-editable js-app-content-item--group">
-                            <span class="app-content-item__text">{{ trans('theme::lang.config.setting.color.button') }}</span>
+                            <span
+                                class="app-content-item__text">{{ trans('theme::lang.config.setting.color.button') }}</span>
                         </div>
                         <ul class="js-app-content__main-colors">
                             <li class="app-content-item js-app-content-item" data-section="#color-primary">
@@ -51,7 +52,9 @@
                     <li>
                         <div
                             class="app-content-item app-content-item--parent app-content-item--is-editable app-content-item--show-children js-app-content-item--is-editable js-app-content-item--group">
-                            <span class="app-content-item__text">{{ trans('theme::lang.config.setting.color.alert') }}</span><button id="setting-alert"><i class="far fa-bell"></i></button>
+                            <span
+                                class="app-content-item__text">{{ trans('theme::lang.config.setting.color.alert') }}</span>
+                            <button id="setting-alert"><i class="far fa-bell"></i></button>
                         </div>
                         <ul class="js-app-content__feedback-colors">
                             <li class="app-content-item js-app-content-item" data-section="#color-success">
@@ -69,7 +72,8 @@
                         </ul>
                     </li>
                     <li class="app-content-item js-app-content-item" data-section="#color-contrast">
-                        <span class="app-content-item__text">{{ trans('theme::lang.config.setting.color.bgText') }}</span>
+                        <span
+                            class="app-content-item__text">{{ trans('theme::lang.config.setting.color.bgText') }}</span>
                     </li>
                 </ul>
             </div>
@@ -187,10 +191,18 @@
             </span>
         </em>
     </button>
+    <div class="text--bottom">
+        <span>Version 1.0.0</span>
+        <a href="https://discord.gg/QF2AtgHJXY" target="_blank">Latshow#4681</a>
+    </div>
 
     <div class="box--alert">
-        <div class="alert alert-success" role="alert">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</div>
-        <div class="alert alert-danger" role="alert">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</div>
+        <div class="alert alert-success" role="alert">Praesent sapien massa, convallis a pellentesque nec, egestas non
+            nisi.
+        </div>
+        <div class="alert alert-danger" role="alert">Vivamus magna justo, lacinia eget consectetur sed, convallis at
+            tellus.
+        </div>
         <div class="alert alert-warning" role="alert">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
         <div class="alert alert-info" role="alert">Proin eget tortor risus. Donec sollicitudin molestie malesuada.</div>
     </div>

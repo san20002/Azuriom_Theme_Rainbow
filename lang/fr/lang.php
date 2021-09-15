@@ -6,15 +6,15 @@ return [
             'name' => 'Général',
             'id' => 'general',
             'article' => [
-                'comment' => 'Afficher les commentaire dans les articles',
-                'like' => 'Afficher les jaime dans les articles'
+                'comment' => 'Ne pas afficher les commentaire dans les articles',
+                'like' => 'Ne pas afficher les jaime dans les articles'
             ],
             'header' => [
-                'icon' => 'Afficher les icons dans la haut de page',
-                'text' => 'Afficher le text de la navigation'
+                'icon' => 'Ne pas afficher les icons dans la haut de page',
+                'text' => 'Ne pas afficher le text de la navigation'
             ],
             'vote' => [
-                'icon' => 'Afficher les icons des sites dans les boutons de vote',
+                'icon' => 'Ne pas afficher les icons des sites dans les boutons de vote',
             ]
         ],
         'slider' => [

@@ -44,6 +44,7 @@
     <script src="{{ theme_asset('js/glide.min.js') }}" defer></script>
     <script src="{{ theme_asset('js/aos.js') }}"></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
+    <script src="{{ theme_asset('js/particles.js') }}" defer></script>
 
 
     <!-- Page level scripts -->
@@ -120,16 +121,10 @@
                             <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
                                 <a class="btn btn-download" href="/{{config('theme.download_link')}}"
                                    title="{{ trans('theme::lang.config.download.name')}}">
-                                    <img src="{{theme_asset('image/items/sprite.png')}}"
-                                         alt="{{ trans('theme::lang.config.download.name')}}">
                                     {{ trans('theme::lang.config.download.name')}}
                                 </a>
                             </div>
                         @endif
-                        <div class="d-flex align-items-center justify-content-center mt-3">
-                            <img src="{{theme_asset('image/picto_prevention.png')}}"
-                                 alt="Prevention">
-                        </div>
                     </div>
                 </div>
             </div>
