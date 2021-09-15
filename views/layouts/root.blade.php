@@ -1,6 +1,6 @@
 @if(config('theme.project.color_themes'))
     @push('styles')
-        <style>
+        <style id="style-color">
             :root, [data-theme="default"] {
             {{config('theme.project.color_themes')}}
             }

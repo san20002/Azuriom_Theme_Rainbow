@@ -55,5 +55,31 @@ return [
         'link' => 'Link',
         'fontawesome' => 'To get the icon please use the classes',
         'discord' => 'Discord server ID',
+        'setting' => [
+            'save' => 'Save theme',
+            'color' => [
+                'button' => 'Button',
+                'alert' => 'Alert',
+                'bgText' => 'Bg + Text',
+                'color' => 'Color',
+                'bgColor' => 'Background color',
+                'textColor' => 'Text color',
+            ]
+        ],
+        'alert' => [
+            'confirmButtonText' => 'Yes, reset it!',
+            'yes' => 'Yes',
+            'cancel' => 'Cancel',
+            'reset' => [
+                'title' => 'Are you sure reset color?',
+                'text' => 'You won\'t be able to revert this!',
+                'confirm' => [
+                    'title' => 'reset!',
+                    'text' => 'You have reset the colors of the theme',
+                ],
+            ],
+            'save' => 'Color save in config'
+
+        ]
     ],
 ];

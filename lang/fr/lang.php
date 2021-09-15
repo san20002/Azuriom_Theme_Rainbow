@@ -13,14 +13,14 @@ return [
                 'icon' => 'Afficher les icons dans la haut de page',
                 'text' => 'Afficher le text de la navigation'
             ],
-            'vote'=> [
+            'vote' => [
                 'icon' => 'Afficher les icons des sites dans les boutons de vote',
             ]
         ],
         'slider' => [
             'name' => 'Slider',
             'id' => 'slider',
-            'background'=> 'Afficher l\'image en fond'
+            'background' => 'Afficher l\'image en fond'
         ],
         'social' => [
             'name' => 'Réseau social',
@@ -55,5 +55,31 @@ return [
         'lien' => 'Lien',
         'fontawesome' => 'Pour obtenir les icons veuillez utiliser les classes de',
         'discord' => 'ID du serveur Discord',
+        'setting' => [
+            'save' => 'Sauvegarder',
+            'color' => [
+                'button' => 'Bouton',
+                'alert' => 'Alerte',
+                'bgText' => 'Fond + Texte',
+                'color' => 'Couleur',
+                'bgColor' => 'Couleur de fond',
+                'textColor' => 'Couleur du texte',
+            ]
+        ],
+        'alert' => [
+            'confirmButtonText' => 'Oui, je réinitialise !',
+            'yes' => 'Oui',
+            'cancel' => 'Fermer',
+            'reset' => [
+                'title' => 'Vous êtes sûr de vouloir réinitialiser les couleurs du thème ?',
+                'text' => 'Vous ne pourrez pas revenir en arrière !',
+                'confirm' => [
+                    'title' => 'Réinitialiser !',
+                    'text' => 'Vous avez réinitialisé les couleurs du thème',
+                ],
+            ],
+            'save' => 'Sauvegarde des couleurs dans la configuration'
+
+        ]
     ],
 ];

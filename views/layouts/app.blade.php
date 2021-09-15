@@ -23,8 +23,21 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ favicon() }}">
-
-    <!-- Scripts -->
+    @auth()
+        @if(auth()->user()->role->name == 'Admin')
+            @php
+                $theme = explode('/',theme_path());
+                $theme_lang = trans('theme::lang.config');
+            @endphp
+            <script>
+                window.THEMES = '{{$theme[1]}}';
+                window.THEMES_LANG = @php echo json_encode($theme_lang)  @endphp
+            </script>
+            <script src="{{ theme_asset('js/sweetalert2.all.min.js') }}" defer></script>
+        @endif
+    @endauth
+<!-- Scripts -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
@@ -34,7 +47,7 @@
 
 
     <!-- Page level scripts -->
-@stack('scripts')
+    @stack('scripts')
 
 <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -52,6 +65,7 @@
     @auth()
         @if(auth()->user()->role->name == 'Admin')
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
+            <link href="{{ theme_asset('css/sweetalert2.min.css') }}" rel="stylesheet">
         @endif
     @endauth
 
@@ -173,19 +187,28 @@
 </footer>
 @auth()
     @if(auth()->user()->role->name == 'Admin')
-        <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
-        <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
-        <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
-        <script>
+        <script defer>
             window.addEventListener("DOMContentLoaded", (event) => {
                 if ($('.btn-picto-color').length > 0) {
                     $('.btn-picto-color').on('click', function () {
                         $(this).toggleClass('active')
                         $('#change--color').toggleClass('active')
+                        $('.box--alert').removeClass('active')
+                    })
+                    $('#change--color #close').on('click', function () {
+                        $('.btn-picto-color').toggleClass('active')
+                        $('#change--color').toggleClass('active')
+                        $('.box--alert').removeClass('active')
+                    })
+                    $('#setting-alert').on('click', function () {
+                        $('.box--alert').toggleClass('active')
                     })
                 }
             })
         </script>
+        <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
+        <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
+        <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
         @include('layouts.change-color')
 
     @endif
