@@ -4,15 +4,10 @@
 
 @section('content')
     <div class="container content" id="wiki">
-        <div class="banner">
-            <div class="banner-icon banner-wiki">
-                <img src="{{theme_asset('image/items/icon__0036_encyclopedia.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ $category->name }}</h1>
-            </div>
-        </div>
+
+        @php($banner = 'wiki')
+        @include('elements.banner')
+
         <a href="{{ route('wiki.index') }}" class="btn btn-secondary mb-3  mt-5">
             <i class="fas fa-arrow-left"></i> {{ trans('wiki::messages.back') }}
         </a>

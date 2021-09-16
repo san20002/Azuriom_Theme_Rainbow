@@ -4,15 +4,10 @@
 
 @section('content')
     <div class="container content" id="support">
-        <div class="banner">
-            <div class="banner-icon banner-support">
-                <img src="{{theme_asset('image/items/icon__0043_familiers.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ $ticket->subject }}</h1>
-            </div>
-        </div>
+
+        @php($banner = 'support')
+        @include('elements.banner')
+
         <div class="card shadow-sm mb-5">
             <div class="card-body">
              <span class="badge badge-{{ $ticket->isClosed() ? 'danger' : 'success' }}">

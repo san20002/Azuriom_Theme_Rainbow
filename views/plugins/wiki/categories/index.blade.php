@@ -4,15 +4,10 @@
 
 @section('content')
     <div class="container content" id="wiki">
-        <div class="banner">
-            <div class="banner-icon banner-wiki">
-                <img src="{{theme_asset('image/items/icon__0036_encyclopedia.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('wiki::messages.title') }}</h1>
-            </div>
-        </div>
+
+        @php($banner = 'wiki')
+        @include('elements.banner')
+
         <div class="row mt-5">
             @foreach($categories as $category)
                 <div class="col-md-3">

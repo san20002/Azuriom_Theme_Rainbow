@@ -3,9 +3,9 @@
         function addCommandListener(el) {
             let i = 1;
             el.addEventListener('click', function () {
-                const element = el.closest('.slider');
+                const element = el.closest('.iconMenu');
                 element.parentNode.removeChild(element);
-                document.getElementById('iconMenus').querySelectorAll('.slider').forEach(function (el) {
+                document.getElementById('iconMenus').querySelectorAll('.iconMenu').forEach(function (el) {
                     let count = i++
                     el.querySelector('.card-title').innerHTML = 'Icon ' + count;
                 })
@@ -53,10 +53,6 @@
     <h6 type="button" class="btn btn-link m-0 font-weight-bold text-primary">
         Entête
     </h6>
-
-    <button type="button" id="addIconMenu" class="btn btn-sm btn-success">
-        <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
-    </button>
 </div>
 <div class="card-body">
     <fieldset class="mt-4">
@@ -78,11 +74,14 @@
             </label>
         </div>
     </fieldset>
-    <hr>
+    <hr class="my-3">
     <span class="d-block mb-1 font-weight-bold mb-2 mt-5"> <span class="text-danger">
          <i class="fas fa-exclamation-triangle pr-1"></i></span>Penser a mettre a jour les icons si vous modifier le Nom du lien
     </span>
 
+    <button type="button" id="addIconMenu" class="btn btn-sm btn-success">
+        <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
+    </button>
     <div id="iconMenus" class="row">
         @forelse( config('theme.header.iconmenus') ?? [] as $icon )
             <div class="iconMenu col-lg-4 col-md-6 my-3">

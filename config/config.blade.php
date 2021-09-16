@@ -104,6 +104,46 @@
                    aria-controls="vote">
                     Vote
                 </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="FAQ"
+                   href="#list-faq"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="faq">
+                    FAQ
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="FAQ"
+                   href="#list-litebans"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="litebans">
+                    Litebans
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Wiki"
+                   href="#list-wiki"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="wiki">
+                    Wiki
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Support"
+                   href="#list-support"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="support">
+                    Support
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Changelog"
+                   href="#list-changelog"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="changelog">
+                    Changelog
+                </a>
             </div>
         </div>
         <div class="col-10">
@@ -143,6 +183,26 @@
                     <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
                          aria-labelledby="list-vote-list">
                         @include('admin.config.vote')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-faq" role="tabpanel"
+                         aria-labelledby="list-faq-list">
+                        @include('admin.config.faq')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-litebans" role="tabpanel"
+                         aria-labelledby="list-litebans-list">
+                        @include('admin.config.litebans')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-wiki" role="tabpanel"
+                         aria-labelledby="list-wiki-list">
+                        @include('admin.config.wiki')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-support" role="tabpanel"
+                         aria-labelledby="list-support-list">
+                        @include('admin.config.support')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-changelog" role="tabpanel"
+                         aria-labelledby="list-changelog-list">
+                        @include('admin.config.changelog')
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary"><i

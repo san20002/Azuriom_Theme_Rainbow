@@ -1,6 +1,6 @@
 @push('footer-scripts')
     <script>
-        function configFormLink(i){
+        function configFormLink(i) {
             document.getElementById('links').querySelectorAll('.form-row').forEach(function (el) {
                 el.querySelectorAll('input').forEach(function (input) {
                     input.name = input.name.replace('{index}', i.toString());
@@ -8,6 +8,7 @@
                 i++;
             });
         }
+
         function addLinkListener(el) {
             el.addEventListener('click', function () {
                 const element = el.parentNode.parentNode.parentNode.parentNode;
@@ -44,6 +45,18 @@
     <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.config.footer.name') }}</h6>
 </div>
 <div class="card-body">
+    <fieldset class="mt-4">
+        <legend>Logo footer</legend>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="footerLogo"
+                   name="footer[logo][hidden]"
+                   @if(config('theme.footer.logo.hidden')) checked @endif>
+            <label class="custom-control-label" for="footerLogo">
+                Ne pas afficher le logo dans le footer
+            </label>
+        </div>
+    </fieldset>
+    <hr class="my-3">
     <div class="form-group">
         <div class="card-text mb-2">
             {{ trans('theme::lang.config.fontawesome') }}
@@ -85,7 +98,18 @@
             </button>
         </div>
     </div>
-    <hr>
+    <hr class="my-3">
+    <div class="form-group">
+        <label for="footer_title">{{ trans('theme::lang.config.title') }}</label>
+        <input type="text"
+               class="form-control @error('footer[title]') is-invalid @enderror"
+               id="footer_title"
+               name="footer[title]"
+               value="{{ old('footer[title]', config('theme.footer.title')) }}">
+        @error('footer[title]')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
     <div class="form-group">
         <label for="footer_description">{{ trans('theme::lang.config.description') }}</label>
         <textarea type="text"
@@ -97,8 +121,19 @@
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
     </div>
-
-
+    <hr class="my-3">
+    <div class="form-group">
+        <label for="footer_liens" class="form-label">Lien</label>
+        <input type="text"
+               class="form-control @error('footer[liens]') is-invalid @enderror"
+               id="footer_liens"
+               name="footer[liens]"
+               value="{{ old('footer[liens]', config('theme.footer.liens')) }}">
+        @error('footer[liens]')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
+    <hr class="my-3">
     <div class="card shadow mt-4 mb-4" id="accordion-cgu">
         <div class="card-header" id="headingOneCgu">
             <h6 class="m-0 font-weight-bold text-primary" style="cursor: pointer"

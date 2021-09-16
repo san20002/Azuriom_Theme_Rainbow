@@ -4,15 +4,9 @@
 
 @section('content')
     <div class="container content">
-        <div class="banner">
-            <div class="banner-icon banner-faq">
-                <img src="{{theme_asset('image/items/icon__0025_Geoposition.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('faq::messages.title') }}</h1>
-            </div>
-        </div>
+        @php($banner = 'faq')
+        @include('elements.banner')
+
         @if($questions->isEmpty())
             <div class="alert alert-info" role="alert">
                 {{ trans('faq::messages.empty') }}

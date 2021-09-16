@@ -90,15 +90,20 @@
     <div class="footer--top">
         <div class="container-fluid">
             <div class="row justify-content-around">
-                <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
-                    <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
-                </div>
-                <div class="col-xl-4 col-md-6 mt-3">
-                    <div class="footer--propos">
-                        <h3>À propos de nous</h3>
-                        <p>{{ config('theme.footer.description') }}</p>
+                @if(!config('theme.footer.logo.hidden'))
+                    <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
+                        <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
                     </div>
-                </div>
+                @endif
+
+                @if(config('theme.footer.title') || config('theme.footer.description'))
+                    <div class="col-xl-4 col-md-6 mt-3">
+                        <div class="footer--propos">
+                            <h3>{{config('theme.footer.title')}}</h3>
+                            <p>{{ config('theme.footer.description') }}</p>
+                        </div>
+                    </div>
+                @endif
                 <div class="col-xl-3 col-md-6 mt-3">
                     <div class="footer--liens">
                         <h3>Liens</h3>

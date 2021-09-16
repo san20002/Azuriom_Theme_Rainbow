@@ -12,15 +12,8 @@
     <div class="container content" id="vote">
         <div id="vote-alert"></div>
 
-        <div class="banner">
-            <div class="banner-icon banner-vote">
-                <img src="{{theme_asset('image/items/icon-gift.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('vote::messages.sections.vote') }}</h1>
-            </div>
-        </div>
+        @php($banner = 'vote')
+        @include('elements.banner')
 
         <div class="vote vote-now text-center position-relative mb-4 px-3 py-5">
             <div class="@auth d-none @endauth" data-vote-step="1">

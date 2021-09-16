@@ -1,6 +1,6 @@
 @push('footer-scripts')
     <script>
-        function addCommandListener(el) {
+        function addCommandIconMenu(el) {
             let i = 1;
             el.addEventListener('click', function () {
                 const element = el.closest('.slider');
@@ -13,7 +13,7 @@
         }
 
         document.querySelectorAll('.command-remove').forEach(function (el) {
-            addCommandListener(el);
+            addCommandIconMenu(el);
         });
 
         document.getElementById('addCommandButton').addEventListener('click', function () {
@@ -23,7 +23,7 @@
             const newElement = document.createElement('div');
             newElement.classList.add('slider', 'col-lg-4', 'col-md-6', 'my-3')
             newElement.innerHTML = input
-            addCommandListener(newElement.querySelector('.command-remove'));
+            addCommandIconMenu(newElement.querySelector('.command-remove'));
 
             document.getElementById('sliders').appendChild(newElement);
             document.getElementById('sliders').querySelectorAll('.slider').forEach(function (el) {

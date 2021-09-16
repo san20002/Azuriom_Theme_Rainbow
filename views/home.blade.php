@@ -71,19 +71,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 home--post">
-                @if(!config('theme.home.banner.news.hidden') && (config('theme.home.banner.news.image') || config('theme.home.banner.news.title')))
-                    <div class="banner">
-                        @if(config('theme.home.banner.news.image'))
-                            <div class="banner-icon banner-post">
-                                <img src="{{image_url(config('theme.home.banner.news.image'))}}"
-                                     alt="banner-icon">
-                            </div>
-                        @endif
-                        <div class="banner-title {{!config('theme.home.banner.news.image') ? 'no-image': ''}}">
-                            {{config('theme.home.banner.news.title')}}
-                        </div>
-                    </div>
-                @endif
+                @php($banner = 'news')
+                @include('elements.banner')
                 <div class="row">
                     @foreach($posts as $post)
                         <div class="col-md-6">
@@ -112,20 +101,11 @@
                     @include('auth/home-login')
                 @endguest
                 @if(config('theme.discord.id'))
-                    @if(!config('theme.home.banner.info.hidden') && (config('theme.home.banner.info.image') || config('theme.home.banner.info.title')))
-                        <div class="banner">
-                            @if(config('theme.home.banner.info.image'))
-                                <div class="banner-icon banner-post">
-                                    <img src="{{image_url(config('theme.home.banner.info.image'))}}"
-                                         alt="banner-icon">
-                                </div>
-                            @endif
-                            <div class="banner-title {{!config('theme.home.banner.info.image') ? 'no-image': ''}}">
-                                {{config('theme.home.banner.info.title')}}
-                            </div>
-                        </div>
-                    @endif
-                    <iframe src="https://discordapp.com/widget?id={{config('theme.discord.id')}}&theme=dark"
+
+                        @php($banner = 'info')
+                        @include('elements.banner')
+
+                        <iframe src="https://discordapp.com/widget?id={{config('theme.discord.id')}}&theme=dark"
                             width="350"
                             height="500" allowtransparency="true" frameborder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>

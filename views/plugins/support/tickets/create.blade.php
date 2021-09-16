@@ -4,15 +4,10 @@
 
 @section('content')
     <div class="container content" id="support">
-        <div class="banner">
-            <div class="banner-icon banner-support">
-                <img src="{{theme_asset('image/items/icon__0043_familiers.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('support::messages.tickets.title-open') }}</h1>
-            </div>
-        </div>
+
+        @php($banner = 'support')
+        @include('elements.banner')
+
         <form action="{{ route('support.tickets.store') }}" method="POST">
             @csrf
 
