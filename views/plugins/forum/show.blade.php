@@ -5,15 +5,7 @@
 @section('content')
     <div class="container content" id="forum">
 
-        <div class="banner">
-            <div class="banner-icon banner-forum">
-                <img src="{{theme_asset('image/items/icon__0026_Quetes.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ $forum->name }}</h1>
-            </div>
-        </div>
+        @include('elements.banner', ['banner' => 'forum'])
 
         @include('forum::elements.nav')
 

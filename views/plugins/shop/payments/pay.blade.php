@@ -18,7 +18,7 @@
 
 @section('content')
     <div class="container content" id="shops">
-        <h1>{{ trans('shop::messages.payment.title') }}</h1>
+        @include('elements.banner', ['banner' => 'payment'])
 
         <div class="row">
             @forelse($gateways as $gateway)

@@ -4,15 +4,8 @@
 
 @section('content')
     <div class="container content">
-        <div class="banner mt-5">
-            <div class="banner-icon banner-cart">
-                <img src="{{theme_asset('image/items/sprite-2.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('shop::messages.cart.title') }}</h1>
-            </div>
-        </div>
+        @include('elements.banner', ['banner' => 'cart'])
+
         @if(! $cart->isEmpty())
 
             <form action="{{ route('shop.cart.update') }}" method="POST">
@@ -58,15 +51,7 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <div class="banner mt-5">
-                        <div class="banner-icon banner-promo">
-                            <img src="{{theme_asset('image/items/sprite.png')}}"
-                                 alt="banner-icon">
-                        </div>
-                        <div class="banner-title">
-                            <h5 class="mb-0">{{ trans('shop::messages.cart.coupons') }}</h5>
-                        </div>
-                    </div>
+                    @include('elements.banner', ['banner' => 'coupons'])
 
                     <div class="table-responsive">
                         <ul class="table--custom coupons">
@@ -97,15 +82,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="banner mt-5">
-                        <div class="banner-icon banner-promo">
-                            <img src="{{theme_asset('image/items/sprite.png')}}"
-                                 alt="banner-icon">
-                        </div>
-                        <div class="banner-title">
-                            <h5 class="mb-0">{{ trans('shop::messages.cart.add-coupon') }}</h5>
-                        </div>
-                    </div>
+                    @include('elements.banner', ['banner' => 'addCoupons'])
+
                     <form action="{{ route('shop.cart.coupons.add') }}" method="POST" class="form-inline mb-3">
                         @csrf
 

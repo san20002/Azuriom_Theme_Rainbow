@@ -26,15 +26,9 @@
     <div class="container content" id="shops">
         <div class="row">
             <div class="col-lg-9">
-                <div class="banner">
-                    <div class="banner-icon banner-shop">
-                        <img src="{{theme_asset('image/items/sprite.png')}}"
-                             alt="banner-icon">
-                    </div>
-                    <div class="banner-title">
-                        Boutique
-                    </div>
-                </div>
+
+                @include('elements.banner', ['banner' => 'shop'])
+
                 <div class="row">
                     @forelse($category->packages as $package)
                         <div class="col-md-4 mb-4">

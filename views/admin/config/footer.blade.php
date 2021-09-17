@@ -56,7 +56,7 @@
             </label>
         </div>
     </fieldset>
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
     <div class="form-group">
         <div class="card-text mb-2">
             {{ trans('theme::lang.config.fontawesome') }}
@@ -98,7 +98,7 @@
             </button>
         </div>
     </div>
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
     <div class="form-group">
         <label for="footer_title">{{ trans('theme::lang.config.title') }}</label>
         <input type="text"
@@ -121,7 +121,7 @@
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
     </div>
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
     <div class="form-group">
         <label for="footer_liens" class="form-label">Lien</label>
         <input type="text"
@@ -133,7 +133,7 @@
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
     </div>
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
     <div class="card shadow mt-4 mb-4" id="accordion-cgu">
         <div class="card-header" id="headingOneCgu">
             <h6 class="m-0 font-weight-bold text-primary" style="cursor: pointer"

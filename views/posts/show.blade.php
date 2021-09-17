@@ -21,15 +21,8 @@
             </div>
         @endif
 
-        <div class="banner">
-            <div class="banner-icon banner-post">
-                <img src="{{theme_asset('image/items/sprite.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title justify-content-between">
-                <h1 class="mb-0">{{ $post->title }}</h1>
-            </div>
-        </div>
+        @include('elements.banner', ['banner' => 'article', 'post' => $post])
+
         <div class="card shadow-sm my-4">
             <div class="card-body">
                 @if($post->hasImage())

@@ -74,7 +74,7 @@
             </label>
         </div>
     </fieldset>
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
     <span class="d-block mb-1 font-weight-bold mb-2 mt-5"> <span class="text-danger">
          <i class="fas fa-exclamation-triangle pr-1"></i></span>Penser a mettre a jour les icons si vous modifier le Nom du lien
     </span>

@@ -5,8 +5,7 @@
 @section('content')
     <div class="container content" id="support">
 
-        @php($banner = 'support')
-        @include('elements.banner')
+        @include('elements.banner',['banner' => 'support'])
 
         <div class="table-responsive">
             <ul class="table--custom">

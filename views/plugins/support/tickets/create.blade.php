@@ -5,8 +5,7 @@
 @section('content')
     <div class="container content" id="support">
 
-        @php($banner = 'support')
-        @include('elements.banner')
+        @include('elements.banner',['banner' => 'support'])
 
         <form action="{{ route('support.tickets.store') }}" method="POST">
             @csrf

@@ -13,6 +13,9 @@
             #wrapper #content-wrapper {
                 overflow-x: inherit;
             }
+            a{
+                scroll-behavior: smooth;
+            }
         </style>
     @endpush
     @push('footer-scripts')
@@ -80,6 +83,14 @@
                     Article
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Pages"
+                   href="#list-page"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="page">
+                    Pages
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
                    title="{{ trans('theme::lang.config.footer.name') }}"
                    href="#list-footer"
                    data-toggle="list"
@@ -144,6 +155,22 @@
                    aria-controls="changelog">
                     Changelog
                 </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Shop"
+                   href="#list-shop"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="shop">
+                    Shop
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Forum"
+                   href="#list-forum"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="forum">
+                    Forum
+                </a>
             </div>
         </div>
         <div class="col-10">
@@ -203,6 +230,18 @@
                     <div class="tab-pane fade card shadow mb-4" id="list-changelog" role="tabpanel"
                          aria-labelledby="list-changelog-list">
                         @include('admin.config.changelog')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-shop" role="tabpanel"
+                         aria-labelledby="list-shop-list">
+                        @include('admin.config.shop')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-forum" role="tabpanel"
+                         aria-labelledby="list-forum-list">
+                        @include('admin.config.forum')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-page" role="tabpanel"
+                         aria-labelledby="list-page-list">
+                        @include('admin.config.page')
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary"><i

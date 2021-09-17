@@ -4,19 +4,9 @@
 
 @section('content')
     <div class="container content" id="posts-all">
-        <div class="banner">
-            <div class="banner-icon banner-vote">
-                <img src="{{theme_asset('image/items/icon-gift.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title justify-content-between">
-                <h1 class="mb-0">Les articles</h1>
-                <small class="mr-3 text-sm">
-                    Nombre d'article(s): {{count($posts)}}
-                </small>
 
-            </div>
-        </div>
+        @include('elements.banner', ['banner' => 'allArticle', 'posts' => $posts])
+
         <div class="row mt-5" >
             @foreach($posts as $post)
                 <div class="col-md-4">

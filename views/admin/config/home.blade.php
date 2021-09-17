@@ -57,7 +57,7 @@
             </div>
         </fieldset>
     </div>
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
 
     <div class="form-group">
         <fieldset>
@@ -115,7 +115,7 @@
         </fieldset>
     </div>
 
-    <hr class="my-3">
+    <hr class="my-3 sidebar-divider">
 
     <div class="form-group">
         <label for="discord">{{ trans('theme::lang.config.discord') }}</label>

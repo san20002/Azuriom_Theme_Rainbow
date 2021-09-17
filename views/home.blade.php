@@ -71,8 +71,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 home--post">
-                @php($banner = 'news')
-                @include('elements.banner')
+
+                @include('elements.banner',['banner' => 'news'])
                 <div class="row">
                     @foreach($posts as $post)
                         <div class="col-md-6">
@@ -102,8 +102,7 @@
                 @endguest
                 @if(config('theme.discord.id'))
 
-                        @php($banner = 'info')
-                        @include('elements.banner')
+                        @include('elements.banner', ['banner' => 'info'])
 
                         <iframe src="https://discordapp.com/widget?id={{config('theme.discord.id')}}&theme=dark"
                             width="350"

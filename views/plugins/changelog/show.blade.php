@@ -5,8 +5,7 @@
 @section('content')
     <div class="container content" id="changelog">
 
-        @php($banner = 'changelog')
-        @include('elements.banner')
+        @include('elements.banner', ['banner' => 'changelog'])
 
         <div class="row">
             <div class="col-md-3">

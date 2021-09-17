@@ -12,8 +12,7 @@
     <div class="container content" id="vote">
         <div id="vote-alert"></div>
 
-        @php($banner = 'vote')
-        @include('elements.banner')
+        @include('elements.banner',['banner' => 'vote'])
 
         <div class="vote vote-now text-center position-relative mb-4 px-3 py-5">
             <div class="@auth d-none @endauth" data-vote-step="1">

@@ -13,22 +13,8 @@
 @section('content')
     <div class="container content" id="forum">
 
-        <div class="banner">
-            <div class="banner-icon banner-forum">
-                <img src="{{theme_asset('image/items/icon__0026_Quetes.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title justify-content-between">
-                <h1 class="mb-0">
-                    {{ $discussion->title }}
-                </h1>
-                @foreach($discussion->tags as $tag)
-                    <small class="mr-4">
-                        <span class="badge" style="{{ $tag->getBadgeStyle() }}">{{ $tag->name }}</span>
-                    </small>
-                @endforeach
-            </div>
-        </div>
+        @include('elements.banner', ['banner' => 'forum', 'discussion' => $discussion])
+
 
         @include('forum::elements.nav')
 

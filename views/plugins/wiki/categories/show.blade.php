@@ -5,8 +5,7 @@
 @section('content')
     <div class="container content" id="wiki">
 
-        @php($banner = 'wiki')
-        @include('elements.banner')
+        @include('elements.banner',['banner' => 'wiki'])
 
         <a href="{{ route('wiki.index') }}" class="btn btn-secondary mb-3  mt-5">
             <i class="fas fa-arrow-left"></i> {{ trans('wiki::messages.back') }}

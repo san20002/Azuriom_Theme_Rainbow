@@ -5,8 +5,7 @@
 @section('content')
     <div class="container content" id="wiki">
 
-        @php($banner = 'wiki')
-        @include('elements.banner')
+        @include('elements.banner',['banner' => 'wiki'])
 
         <div class="row mt-5">
             @foreach($categories as $category)

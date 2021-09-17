@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="container content">
-        @php($banner = 'faq')
-        @include('elements.banner')
+
+        @include('elements.banner',['banner' => 'faq'])
 
         @if($questions->isEmpty())
             <div class="alert alert-info" role="alert">
@@ -16,12 +16,15 @@
                 @foreach($questions as $question)
                     <div class="card">
                         <div class="card-header px-3 py-4" id="heading{{ $question->id }}">
-                            <a class="collapsed" data-toggle="collapse" href="#collapse{{ $question->id }}" data-target="#collapse{{ $question->id }}" aria-expanded="false" aria-controls="collapse{{ $question->id }}">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse{{ $question->id }}"
+                               data-target="#collapse{{ $question->id }}" aria-expanded="false"
+                               aria-controls="collapse{{ $question->id }}">
                                 {{ $question->name }}
                             </a>
                         </div>
 
-                        <div id="collapse{{ $question->id }}" class="collapse" aria-labelledby="heading{{ $question->id }}" data-parent="#faq">
+                        <div id="collapse{{ $question->id }}" class="collapse"
+                             aria-labelledby="heading{{ $question->id }}" data-parent="#faq">
                             <div class="card-body">
                                 {{ $question->parseAnswer() }}
                             </div>

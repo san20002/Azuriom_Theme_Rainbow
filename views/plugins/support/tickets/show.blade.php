@@ -5,8 +5,7 @@
 @section('content')
     <div class="container content" id="support">
 
-        @php($banner = 'support')
-        @include('elements.banner')
+        @include('elements.banner',['banner' => 'support'])
 
         <div class="card shadow-sm mb-5">
             <div class="card-body">
