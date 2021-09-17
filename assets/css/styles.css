@@ -10412,7 +10412,7 @@ table td,
   width: 100%;
 }
 .table--custom li {
-  border-radius: 3px;
+  border-radius: 0.3rem;
   margin-bottom: 10px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   display: flex;
@@ -10501,7 +10501,7 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 }
 
 .alert {
-  border-radius: 20px;
+  border-radius: 0.3rem;
   display: flex;
   align-items: center;
 }
@@ -10543,7 +10543,7 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 
 #errors .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -10556,8 +10556,8 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #errors .card .img-fluid {
   display: block;
@@ -10585,8 +10585,8 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 #errors .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #errors .card .card-text {
   color: var(--color-contrast-high);
@@ -10606,7 +10606,7 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 
 .btn {
   padding: 0.5rem 1.5rem;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   transition: background-color 0.2s linear, border 0.2s linear, box-shadow 0.2s linear;
 }
 .btn-primary {
@@ -10688,7 +10688,7 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   margin: 0 0 1rem 0;
   padding: 9px 0;
   min-height: 66px;
-  border-radius: 17px;
+  border-radius: 0.3rem;
   overflow: hidden;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   display: flex;
@@ -10704,8 +10704,8 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   width: 66px;
   height: 100%;
   background-color: var(--color-primary);
-  border-top-left-radius: 17px;
-  border-bottom-left-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
 }
 .banner-icon:before {
   content: "";
@@ -10743,6 +10743,14 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   font-weight: 700;
   text-shadow: 3px 3px 4px var(--color-contrast-low);
 }
+.banner-title h1,
+.banner-title h2,
+.banner-title h3,
+.banner-title h4,
+.banner-title h5,
+.banner-title h6 {
+  margin: 0;
+}
 .banner-title.no-image {
   padding-left: 1.5rem;
 }
@@ -10756,14 +10764,14 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 .modal .close {
   color: var(--color-white);
 }
 .modal .modal-content {
-  border-radius: 20px;
+  border-radius: 0.3rem;
 }
 .modal .modal-header {
   border-bottom: 4px solid var(--color-primary);
@@ -10972,15 +10980,15 @@ body {
 
 .home--post .post-preview {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .home--post .post-preview img {
   max-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 .home--post .post-preview .card-header {
   border-top: 4px solid var(--color-primary);
@@ -11000,8 +11008,8 @@ body {
 .home--post .post-preview .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 
 .home--info iframe {
@@ -11011,14 +11019,14 @@ body {
 }
 .home--info .card-body {
   background-color: var(--color-contrast-low);
-  border-radius: 17px;
+  border-radius: 0.3rem;
   margin-bottom: 2rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 #faq .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11031,8 +11039,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #faq .card .img-fluid {
   display: block;
@@ -11060,8 +11068,8 @@ body {
 #faq .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #faq .card .card-text {
   color: var(--color-contrast-high);
@@ -11088,7 +11096,7 @@ body {
 
 #shops .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11101,8 +11109,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #shops .card .img-fluid {
   display: block;
@@ -11130,8 +11138,8 @@ body {
 #shops .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #shops .card .card-text {
   color: var(--color-contrast-high);
@@ -11150,7 +11158,7 @@ body {
 }
 #shops--select .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11163,8 +11171,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #shops--select .card .img-fluid {
   display: block;
@@ -11192,8 +11200,8 @@ body {
 #shops--select .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #shops--select .card .card-text {
   color: var(--color-contrast-high);
@@ -11211,7 +11219,7 @@ body {
   margin: 0 auto;
 }
 #shops--select .card-body {
-  border-radius: 17px;
+  border-radius: 0.3rem;
   transition: background-color 0.3s linear;
 }
 #shops--select .card-body:hover {
@@ -11220,7 +11228,7 @@ body {
 
 #itemModal .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11233,8 +11241,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #itemModal .card .img-fluid {
   display: block;
@@ -11262,8 +11270,8 @@ body {
 #itemModal .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #itemModal .card .card-text {
   color: var(--color-contrast-high);
@@ -11283,7 +11291,7 @@ body {
 
 #support .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11296,8 +11304,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #support .card .img-fluid {
   display: block;
@@ -11325,8 +11333,8 @@ body {
 #support .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #support .card .card-text {
   color: var(--color-contrast-high);
@@ -11356,7 +11364,7 @@ body {
 
 #forum .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11369,8 +11377,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #forum .card .img-fluid {
   display: block;
@@ -11398,8 +11406,8 @@ body {
 #forum .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #forum .card .card-text {
   color: var(--color-contrast-high);
@@ -11428,7 +11436,7 @@ body {
 
 #wiki .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11441,8 +11449,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #wiki .card .img-fluid {
   display: block;
@@ -11470,8 +11478,8 @@ body {
 #wiki .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #wiki .card .card-text {
   color: var(--color-contrast-high);
@@ -11495,7 +11503,7 @@ body {
   color: var(--color-white);
 }
 #wiki .card-body {
-  border-radius: 17px;
+  border-radius: 0.3rem;
   transition: background-color 0.3s linear;
   background-color: var(--color-contrast-low);
 }
@@ -11503,9 +11511,135 @@ body {
   background-color: var(--color-contrast-low);
 }
 
+#changelog .card {
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: var(--color-contrast-lower);
+  transition: transform 0.5s ease-in-out;
+}
+#changelog .card:hover {
+  transform: scale(1.02);
+}
+#changelog .card .card-img-top,
+#changelog .card .card-img {
+  min-height: 300px;
+  max-height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+#changelog .card .img-fluid {
+  display: block;
+}
+#changelog .card .card-header {
+  border-top: 4px solid var(--color-primary);
+  border-bottom: 1px dashed var(--color-primary);
+  background-color: var(--color-contrast-low);
+}
+#changelog .card .card-header h3 {
+  margin-bottom: 0;
+}
+#changelog .card .card-header small {
+  color: var(--color-contrast-high);
+}
+#changelog .card .card-header small:before {
+  content: "- ";
+}
+#changelog .card ul {
+  list-style-type: square;
+}
+#changelog .card ul li {
+  color: var(--color-contrast-high);
+}
+#changelog .card .card-body {
+  border: 0;
+  background-color: var(--color-contrast-lower);
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+#changelog .card .card-text {
+  color: var(--color-contrast-high);
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+}
+#changelog .card .card-footer {
+  border-top: 1px solid var(--color-contrast-low);
+}
+#changelog .card .text-muted {
+  color: var(--color-contrast-high) !important;
+}
+#changelog .card .btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+#jirai .card {
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: var(--color-contrast-lower);
+  transition: transform 0.5s ease-in-out;
+}
+#jirai .card:hover {
+  transform: scale(1.02);
+}
+#jirai .card .card-img-top,
+#jirai .card .card-img {
+  min-height: 300px;
+  max-height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+#jirai .card .img-fluid {
+  display: block;
+}
+#jirai .card .card-header {
+  border-top: 4px solid var(--color-primary);
+  border-bottom: 1px dashed var(--color-primary);
+  background-color: var(--color-contrast-low);
+}
+#jirai .card .card-header h3 {
+  margin-bottom: 0;
+}
+#jirai .card .card-header small {
+  color: var(--color-contrast-high);
+}
+#jirai .card .card-header small:before {
+  content: "- ";
+}
+#jirai .card ul {
+  list-style-type: square;
+}
+#jirai .card ul li {
+  color: var(--color-contrast-high);
+}
+#jirai .card .card-body {
+  border: 0;
+  background-color: var(--color-contrast-lower);
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+#jirai .card .card-text {
+  color: var(--color-contrast-high);
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+}
+#jirai .card .card-footer {
+  border-top: 1px solid var(--color-contrast-low);
+}
+#jirai .card .text-muted {
+  color: var(--color-contrast-high) !important;
+}
+#jirai .card .btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
 #page .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11518,8 +11652,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #page .card .img-fluid {
   display: block;
@@ -11547,8 +11681,8 @@ body {
 #page .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #page .card .card-text {
   color: var(--color-contrast-high);
@@ -11568,15 +11702,15 @@ body {
 
 #posts-all .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 #posts-all .card img {
   max-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #posts-all .card .card-header {
   border-top: 4px solid var(--color-primary);
@@ -11595,13 +11729,13 @@ body {
 #posts-all .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 
 #post .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11614,8 +11748,8 @@ body {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #post .card .img-fluid {
   display: block;
@@ -11643,8 +11777,8 @@ body {
 #post .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #post .card .card-text {
   color: var(--color-contrast-high);
@@ -11664,7 +11798,7 @@ body {
 
 div[id*=auth--] .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11677,8 +11811,8 @@ div[id*=auth--] .card .card-img {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 div[id*=auth--] .card .img-fluid {
   display: block;
@@ -11706,8 +11840,8 @@ div[id*=auth--] .card ul li {
 div[id*=auth--] .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 div[id*=auth--] .card .card-text {
   color: var(--color-contrast-high);
@@ -11728,7 +11862,7 @@ div[id*=auth--] .card .btn {
 #profiles-2fa .card,
 #profile .card {
   border: 0;
-  border-radius: 20px;
+  border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
@@ -11744,8 +11878,8 @@ div[id*=auth--] .card .btn {
   max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 #profiles-2fa .card .img-fluid,
 #profile .card .img-fluid {
@@ -11781,8 +11915,8 @@ div[id*=auth--] .card .btn {
 #profile .card .card-body {
   border: 0;
   background-color: var(--color-contrast-lower);
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 #profiles-2fa .card .card-text,
 #profile .card .card-text {
@@ -11862,7 +11996,7 @@ div[id*=auth--] .card .btn {
   body a {
     background-color: #528cce;
     color: #e7ebf2;
-    border-radius: 17px;
+    border-radius: 0.3rem;
     padding: 1rem 2rem;
   }
 }
