@@ -55,6 +55,17 @@
     </h6>
 </div>
 <div class="card-body">
+    <fieldset>
+        <legend>Preloader</legend>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="headerIcon"
+                   name="header[preloader][hidden]"
+                   @if(config('theme.header.preloader.hidden')) checked @endif>
+            <label class="custom-control-label" for="headerIcon">
+                Ne pas afficher le preloader
+            </label>
+        </div>
+    </fieldset>
     <fieldset class="mt-4">
         <legend>Entête</legend>
         <div class="custom-control custom-switch">

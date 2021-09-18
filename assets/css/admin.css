@@ -43,7 +43,7 @@
   justify-content: space-between;
   border-radius: 20px;
   color: black;
-  transform: translateY(calc(100% - -3rem));
+  transform: translateY(calc(100% + 3rem));
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   height: 0;
   transition: height 0.321s ease-in-out, transform 0.321s ease-in-out;

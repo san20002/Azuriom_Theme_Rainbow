@@ -1,3 +1,18 @@
+@if($banner === "login" && !config('theme.home.banner.login.hidden'))
+    <div class="banner">
+        @if(config('theme.home.banner.login.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(config('theme.home.banner.login.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!config('theme.home.banner.login.image') ? 'no-image': ''}}">
+            <h2>
+                {{config('theme.home.banner.login.title') ? config('theme.home.banner.login.title') : trans('auth.login') }}
+            </h2>
+        </div>
+    </div>
+@endif
 @if($banner === "news" && !config('theme.home.banner.news.hidden'))
     <div class="banner">
         @if(config('theme.home.banner.news.image'))

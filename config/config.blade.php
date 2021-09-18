@@ -55,7 +55,7 @@
         </script>
     @endpush
     <div class="row">
-        <div class="col-2">
+        <div class="col-md-2">
             <div class="list-group sticky-top" style="top: 75px">
                 <a class="list-group-item list-group-item-action list-group-item-light active"
                    title="Entête"
@@ -173,7 +173,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-10">
+        <div class="col-md-10 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
 

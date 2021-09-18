@@ -4,12 +4,14 @@
              alt="{{ site_name() }}" title="{{ site_name() }}">
         <h1 class="sr-only">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+    <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-x" aria-controls="navbar"
             aria-expanded="false" aria-label="{{ trans('messages.nav.toggle') }}">
-        <i class="fas fa-bars"></i>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbar">
+    <div class="collapse navbar-collapse" id="navbar-collapse-x">
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mx-auto">
             @foreach($navbar as $element)

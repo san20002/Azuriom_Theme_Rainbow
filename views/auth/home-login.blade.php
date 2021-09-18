@@ -1,12 +1,4 @@
-<div class="banner">
-    <div class="banner-icon banner-login">
-        <img src="{{theme_asset('image/items/sprite.png')}}"
-             alt="banner-icon">
-    </div>
-    <div class="banner-title">
-        {{ trans('auth.login') }}
-    </div>
-</div>
+@include('elements.banner',['banner' => 'login'])
 <div class="card-body">
     <form method="POST" action="{{ route('login') }}">
         @csrf

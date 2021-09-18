@@ -185,6 +185,14 @@
         </div>
     </div>
 </footer>
+@if(!config('theme.header.preloader.hidden'))
+    <div id="preloader">
+        <img src="{{ site_logo() }}" alt="{{ route('home') }}">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+@endif
 @auth()
     @if(auth()->user()->role->name == 'Admin')
         <script defer>

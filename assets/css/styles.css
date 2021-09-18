@@ -10218,19 +10218,68 @@ h3 {
   width: 100%;
   z-index: 10;
 }
+.header .navbar-collapse.collapsing {
+  left: -75%;
+  transition: height 0s ease;
+}
+.header .navbar-collapse.show {
+  left: 0;
+  transition: left 300ms ease-in-out;
+}
 .header .navbar-toggler {
   color: var(--color-contrast-higher);
+  border: none;
+  background: transparent !important;
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-image: none;
+  border-radius: 0;
+  /* ANIMATED X COLLAPSED */
 }
-.header:before {
-  content: "";
-  background-color: var(--color-bg);
-  width: 100%;
-  height: 65px;
-  position: absolute;
-  opacity: 0.8;
+.header .navbar-toggler:hover {
+  background: transparent !important;
+}
+.header .navbar-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-contrast-higher);
+  transition: all 0.2s;
+  display: block;
+  border-radius: 1px;
+}
+.header .navbar-toggler .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+.header .navbar-toggler.collapsed ~ .navbar-collapse {
+  transition: left 500ms ease-in-out;
+}
+.header .navbar-toggler.x .icon-bar:nth-of-type(1) {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.header .navbar-toggler.x .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+.header .navbar-toggler.x .icon-bar:nth-of-type(3) {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1) {
+  transform: rotate(0);
+}
+.header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
+  opacity: 1;
+}
+.header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
+  transform: rotate(0);
 }
 .header .navbar {
   padding: 0 1rem;
+  background-image: linear-gradient(180deg, hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.8) 100%, transparent 100%);
 }
 .header .navbar-brand {
   position: relative;
@@ -10248,9 +10297,6 @@ h3 {
 .header .nav-item {
   display: flex;
   align-items: center;
-}
-.header .nav-item + .nav-item {
-  border-left: 1px solid var(--color-contrast-lower);
 }
 .header .nav-item:hover .nav-link, .header .nav-item:focus .nav-link, .header .nav-item.active .nav-link {
   color: var(--color-contrast-higher);
@@ -10300,16 +10346,41 @@ h3 {
 }
 
 @media (max-width: 1199.98px) {
-  .header .navbar {
-    background-color: var(--color-contrast-lower);
-  }
-  .header .navbar .navbar-nav {
-    margin-top: 3rem;
-  }
   .header .navbar-brand {
+    margin: 0.5rem 0;
     max-width: 100%;
     flex: 1 1 auto;
     width: auto;
+  }
+  .header .navbar-brand img {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-height: 65px;
+  }
+  .header .navbar {
+    background-image: linear-gradient(180deg, hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95) 100%, transparent 100%);
+  }
+  .header .navbar-collapse {
+    background-image: linear-gradient(180deg, hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95) 100%, transparent 100%);
+    position: fixed;
+    top: 81px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 75vw;
+    height: 100%;
+  }
+  .header .navbar-collapse .navbar {
+    margin-top: 0;
+  }
+  .header .navbar-collapse a {
+    height: auto;
+    line-height: initial;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
   }
 }
 .footer {
@@ -10659,12 +10730,13 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 
 .btn-wrapper-home {
   overflow: hidden;
-  position: absolute;
+  position: relative;
+  margin-top: -170px;
   top: auto;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  padding: 3rem 0;
+  padding: 2rem 0;
   text-align: center;
 }
 .btn-wrapper-footer {
@@ -10676,10 +10748,9 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 991.98px) {
   .btn-wrapper-home {
-    bottom: 17%;
-    padding: 3rem;
+    margin-top: 0;
   }
 }
 .banner {
@@ -10909,6 +10980,9 @@ body {
   background-color: var(--color-bg);
   flex-direction: column;
 }
+#preloader img {
+  max-width: 350px;
+}
 #preloader .spinner-border {
   margin-top: 4rem;
   height: 60px;
@@ -10920,7 +10994,7 @@ body {
 .home--top {
   position: relative;
   overflow: hidden;
-  margin-bottom: 4rem;
+  min-height: 350px;
 }
 
 .background--top-header {
@@ -10931,10 +11005,9 @@ body {
   height: 100%;
   z-index: -1;
 }
-
-#particles-js:after {
+.background--top-header:after {
   content: "";
-  z-index: -1;
+  z-index: 10;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -10943,7 +11016,12 @@ body {
   right: 0;
   bottom: 0;
   opacity: 1;
-  background-image: linear-gradient(0deg, var(--color-bg) 12%, transparent 100%);
+  background-image: linear-gradient(0deg, var(--color-bg) 8%, transparent 100%);
+  pointer-events: none;
+}
+
+#particles-js {
+  pointer-events: none;
 }
 
 .home--glide {
@@ -10953,28 +11031,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  min-height: 10vh;
 }
 .home--glide .glide__slides .glide__slide {
   position: relative;
 }
 .home--glide .glide__slides .glide__slide img {
-  max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  max-width: 500px;
 }
 .home--glide .glide__slides .row {
   position: relative;
   z-index: 1;
 }
 .home--glide .glide__slides .title {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 700;
   text-shadow: 3px 3px 4px var(--color-contrast-low);
   margin-bottom: 0;
 }
 .home--glide .glide__slides .text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-shadow: 3px 3px 4px var(--color-contrast-low);
 }
 
@@ -11024,6 +11102,46 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.home--top {
+  height: 40vh;
+}
+
+.home--glide .glide__slides {
+  height: 40vh;
+}
+
+@media (min-width: 992px) {
+  .home--top {
+    height: 80vh;
+  }
+
+  .home--glide .glide__slides {
+    height: 80vh;
+  }
+  .home--glide .glide__slides .glide__slide {
+    -o-object-fit: none;
+       object-fit: none;
+  }
+  .home--glide .glide__slides .glide__slide:before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(0deg, var(--color-bg) 8%, transparent 100%);
+    pointer-events: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .home--glide .glide__slides .glide__slide {
+    background: none !important;
+  }
+}
 #faq .card {
   border: 0;
   border-radius: 0.3rem;
