@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin FAQ</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.faq.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner FAQ</legend>
+            <legend>{{trans('theme::lang.faq.banner.faq.title')}}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="faqBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="faqBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('faq[banner][faq][title]') is-invalid @enderror"
                            id="faqBannerNewTitle"
                            name="faq[banner][faq][title]"
@@ -50,7 +50,7 @@
                                name="faq[banner][faq][hidden]"
                                @if(config('theme.faq.banner.faq.hidden')) checked @endif>
                         <label class="custom-control-label" for="faqBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{trans('theme::lang.faq.banner.faq.hidden')}}
                         </label>
                     </div>
                 </div>

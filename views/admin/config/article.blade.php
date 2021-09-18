@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.config.global.name') }}</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.articles.title') }}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner Article</legend>
+            <legend>{{ trans('theme::lang.articles.banner.article.title') }}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="articlesBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="articlesBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('articles[banner][articles][title]') is-invalid @enderror"
                            id="articlesBannerNewTitle"
                            name="articles[banner][articles][title]"
@@ -50,7 +50,7 @@
                                name="articles[banner][articles][hidden]"
                                @if(config('theme.articles.banner.articles.hidden')) checked @endif>
                         <label class="custom-control-label" for="articlesBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{ trans('theme::lang.articles.banner.article.hidden') }}
                         </label>
                     </div>
                 </div>
@@ -60,10 +60,10 @@
 
     <div class="form-group">
         <fieldset>
-            <legend>Banner All articles</legend>
+            <legend>{{ trans('theme::lang.articles.banner.allArticle.title') }}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="articlesBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="articlesBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('articles[banner][allArticle][title]') is-invalid @enderror"
                            id="articlesBannerNewTitle"
                            name="articles[banner][allArticle][title]"
@@ -106,7 +106,7 @@
                                name="articles[banner][article][hidden]"
                                @if(config('theme.articles.banner.allArticle.hidden')) checked @endif>
                         <label class="custom-control-label" for="articlesBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{ trans('theme::lang.articles.banner.allArticle.hidden') }}
                         </label>
                     </div>
                 </div>
@@ -115,13 +115,13 @@
     </div>
     <div class="form-group">
         <fieldset class="mt-4">
-            <legend>Article(s)</legend>
+            <legend>{{ trans('theme::lang.articles.article.title') }}</legend>
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="articlesCommentHidden"
                        name="articles[comment][hidden]"
                        @if(config('theme.articles.comment.hidden')) checked @endif>
                 <label class="custom-control-label" for="articlesCommentHidden">
-                    {{ trans('theme::lang.config.global.article.comment') }}
+                    {{ trans('theme::lang.articles.article.comment') }}
                 </label>
             </div>
             <div class="custom-control custom-switch">
@@ -129,7 +129,7 @@
                        name="articles[follow][hidden]"
                        @if(config('theme.articles.follow.hidden')) checked @endif>
                 <label class="custom-control-label" for="articlesLikeHidden">
-                    {{ trans('theme::lang.config.global.article.like') }}
+                    {{ trans('theme::lang.articles.article.like') }}
                 </label>
             </div>
         </fieldset>

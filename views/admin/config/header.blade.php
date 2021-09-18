@@ -35,7 +35,8 @@
             })
 
         });
-        function configFormIconMenus(i){
+
+        function configFormIconMenus(i) {
             document.getElementById('iconMenus').querySelectorAll('.form-row').forEach(function (el) {
                 el.querySelectorAll('input').forEach(function (input) {
                     input.name = input.name.replace('{index}', i.toString());
@@ -51,29 +52,29 @@
 @endpush
 <div class="card-header">
     <h6 type="button" class="btn btn-link m-0 font-weight-bold text-primary">
-        Entête
+        {{trans('theme::lang.header.title')}}
     </h6>
 </div>
 <div class="card-body">
     <fieldset>
-        <legend>Preloader</legend>
+        <legend>{{trans('theme::lang.header.preloader.title')}}</legend>
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="headerIcon"
                    name="header[preloader][hidden]"
                    @if(config('theme.header.preloader.hidden')) checked @endif>
             <label class="custom-control-label" for="headerIcon">
-                Ne pas afficher le preloader
+                {{trans('theme::lang.header.preloader.hidden')}}
             </label>
         </div>
     </fieldset>
     <fieldset class="mt-4">
-        <legend>Entête</legend>
+        <legend>{{trans('theme::lang.header.navbar.title')}}</legend>
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="headerIcon"
                    name="header[icons]"
                    @if(config('theme.header.icons')) checked @endif>
             <label class="custom-control-label" for="headerIcon">
-                {{ trans('theme::lang.config.global.header.icon') }}
+                {{ trans('theme::lang.header.navbar.hiddenIcon') }}
             </label>
         </div>
         <div class="custom-control custom-switch">
@@ -81,13 +82,16 @@
                    name="header[text][hidden]"
                    @if(config('theme.header.text.hidden')) checked @endif>
             <label class="custom-control-label" for="headerTextHidden">
-                {{ trans('theme::lang.config.global.header.text') }}
+                {{ trans('theme::lang.header.navbar.hiddenText') }}
             </label>
         </div>
     </fieldset>
     <hr class="my-3 sidebar-divider">
-    <span class="d-block mb-1 font-weight-bold mb-2 mt-5"> <span class="text-danger">
-         <i class="fas fa-exclamation-triangle pr-1"></i></span>Penser a mettre a jour les icons si vous modifier le Nom du lien
+    <span class="d-block mb-1 font-weight-bold mb-2 mt-5">
+        <span class="text-danger">
+         <i class="fas fa-exclamation-triangle pr-1"></i>
+        </span>
+        {{ trans('theme::lang.header.navbar.icon.alert') }}
     </span>
 
     <button type="button" id="addIconMenu" class="btn btn-sm btn-success">

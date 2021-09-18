@@ -4,21 +4,14 @@
 
 @section('content')
     <div class="container content">
-        <div class="banner">
-            <div class="banner-icon banner-cart">
-                <img src="{{theme_asset('image/items/sprite-2.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('shop::messages.profile.payments') }}</h1>
-            </div>
-        </div>
+
+        @include('elements.banner',['banner' => 'myAchat'])
 
         <div class="table-responsive">
             <ul class="table--custom">
                 <li class="table-header">
-                    <div class="col col-0">#</div>
-                    <div class="col col-2">{{ trans('shop::messages.fields.price') }}</div>
+                    <div class="col col-1">#</div>
+                    <div class="col col-1">{{ trans('shop::messages.fields.price') }}</div>
                     <div class="col col-2">{{ trans('messages.fields.type') }}</div>
                     <div class="col col-2">{{ trans('messages.fields.status') }}</div>
                     <div class="col col-3">{{ trans('shop::messages.fields.payment-id') }}</div>
@@ -26,8 +19,8 @@
                 </li>
                 @foreach($payments as $payment)
                     <li class="table-row">
-                        <div class="col col-0" scope="row">{{ $payment->id }}</div>
-                        <div class="col col-2">{{ $payment->price }} {{ currency_display($payment->currency) }}</div>
+                        <div class="col col-1" scope="row">{{ $payment->id }}</div>
+                        <div class="col col-1">{{ $payment->price }} {{ currency_display($payment->currency) }}</div>
                         <div class="col col-2">{{ $payment->getTypeName() }}</div>
                         <div class="col col-2">
                             <span class="badge badge-{{ $payment->statusColor() }}">

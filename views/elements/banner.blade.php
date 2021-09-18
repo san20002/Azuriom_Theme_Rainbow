@@ -313,3 +313,31 @@
         </div>
     </div>
 @endif
+
+@if($banner === "myAchat" && !config('theme.profile.banner.achat.hidden'))
+    <div class="banner">
+        @if(config('theme.profile.banner.achat.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(config('theme.profile.banner.achat.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title justify-content-between {{!config('theme.profile.banner.achat.image') ? 'no-image': ''}}">
+            <h1>{{config('theme.profile.banner.achat.title') !== null ? trans('shop::messages.profile.payments') : 'Mes achat(s)'}}</h1>
+        </div>
+    </div>
+@endif
+
+@if($banner === "mySkin" && !config('theme.profile.banner.skin.hidden'))
+    <div class="banner">
+        @if(config('theme.profile.banner.skin.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(config('theme.profile.banner.skin.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title justify-content-between {{!config('theme.profile.banner.skin.image') ? 'no-image': ''}}">
+            <h1>{{config('theme.articles.banner.allArticle.title') !== null ? trans('skin-api::messages.change') : 'Mon skin'}}</h1>
+        </div>
+    </div>
+@endif

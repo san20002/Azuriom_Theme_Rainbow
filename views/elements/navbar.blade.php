@@ -11,9 +11,9 @@
         <span class="icon-bar"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbar-collapse-x">
+    <div class="collapse navbar-collapse d-xl-block d-flex flex-xl-row flex-column-reverse justify-content-end align-items-start" id="navbar-collapse-x">
         <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav mx-xl-auto ml-0">
             @foreach($navbar as $element)
                 @if(!$element->isDropdown())
                     <li class="nav-item @if($element->isCurrent()) active @endif">
@@ -63,8 +63,9 @@
         </ul>
 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-xl-auto ml-0 flex-row-reverse">
 
+            <!-- Authentication Links -->
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
@@ -79,13 +80,8 @@
             @else
                 @include('elements.notifications')
 
-                <li class="nav-item dropdown">
-                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        @if(config('theme.header.icons'))
-                            <img src="{{theme_asset('image/hints/character.png')}}"
-                                 alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name}}">
-                        @endif
+                <li class="nav-item dropdown dropdown-user">
+                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
 
@@ -106,8 +102,7 @@
                             </a>
                         @endif
 
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ trans('auth.logout') }}
                         </a>
 

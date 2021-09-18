@@ -27,7 +27,7 @@
         @if(auth()->user()->role->name == 'Admin')
             @php
                 $theme = explode('/',theme_path());
-                $theme_lang = trans('theme::lang.config');
+                $theme_lang = trans('theme::lang');
             @endphp
             <script>
                 window.THEMES = '{{$theme[1]}}';
@@ -105,32 +105,34 @@
                     </div>
                 @endif
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <div class="footer--liens">
-                        <h3>Liens</h3>
-                        <ul class="navbar-nav">
-                            @php
-                                $navbars = \Azuriom\Models\NavbarElement::all()
-                            @endphp
-                            @foreach($navbars as $element)
-                                @if($element->name != 'logo')
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ $element->value }}"
-                                           id="navbarDropdown{{ $element->id }}">
-                                            {{ $element->name }}
-                                        </a>
-                                    </li>
-                                @endif
-                            @endforeach
-                        </ul>
-                        @if(config('theme.footer.download'))
-                            <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
-                                <a class="btn btn-download" href="/{{config('theme.download_link')}}"
-                                   title="{{ trans('theme::lang.config.download.name')}}">
-                                    {{ trans('theme::lang.config.download.name')}}
-                                </a>
-                            </div>
-                        @endif
-                    </div>
+                    @if(!config('theme.footer.lien.hidden'))
+                        <div class="footer--liens">
+                            <h3>Liens</h3>
+                            <ul class="navbar-nav">
+                                @php
+                                    $navbars = \Azuriom\Models\NavbarElement::all()
+                                @endphp
+                                @foreach($navbars as $element)
+                                    @if($element->name != 'logo')
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ $element->value }}"
+                                               id="navbarDropdown{{ $element->id }}">
+                                                {{ $element->name }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if(config('theme.footer.download') && !config('theme.footer.btndownload.hidden'))
+                        <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
+                            <a class="btn btn-download" href="/{{config('theme.download_link')}}"
+                               title="{{ trans('theme::lang.download.name')}}">
+                                {{ trans('theme::lang.download.name')}}
+                            </a>
+                        </div>
+                    @endif
                 </div>
             </div>
             @if(config('theme.footer.links'))
@@ -167,15 +169,15 @@
                         <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
                             @if(config('theme.footer.cgu'))
                                 <a href="/{{config('theme.footer.cgu')}}"
-                                   title="{{ trans('theme::lang.config.cgu.name')}}" target="_blank">
-                                    {{ trans('theme::lang.config.cgu.abbreviation')}}
+                                   title="{{ trans('theme::lang.cgu.name')}}" target="_blank">
+                                    {{ trans('theme::lang.cgu.abbreviation')}}
                                 </a>
                             @endif
                             @if(config('theme.footer.cgv'))
                                 -
                                 <a href="/{{config('theme.footer.cgv')}}" target="_blank"
-                                   title="{{ trans('theme::lang.config.cgv.name')}}">
-                                    {{ trans('theme::lang.config.cgv.abbreviation')}}
+                                   title="{{ trans('theme::lang.cgv.name')}}">
+                                    {{ trans('theme::lang.cgv.abbreviation')}}
                                 </a>
                             @endif
                         </div>

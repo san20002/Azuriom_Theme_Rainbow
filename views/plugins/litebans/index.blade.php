@@ -3,54 +3,51 @@
 @section('title', trans('litebans::messages.navigation.warns'))
 
 @section('content')
-<div class="container content">
-  @include('litebans::elements.navbar')
+    <div class="container content" id="litebans">
+        @include('litebans::elements.navbar')
+        <div class="table-responsive">
+            <ul class="table--custom mt-5">
+                <li class="table-header">
+                    <div class="col col-2">{{ trans('litebans::messages.username') }}</div>
+                    <div class="col col-2">{{ trans('litebans::messages.staff_ban') }}</div>
+                    <div class="col col-4">{{ trans('litebans::messages.reason') }}</div>
+                    <div class="col col-2">{{ trans('messages.fields.date') }}</div>
+                    <div class="col col-2">{{ trans('litebans::messages.expires_at') }}</div>
+                </li>
+                @forelse ($bans as $item)
+                    <li class="table-row">
+                        <div class="col col-2">
+                            <a href="{{ route('litebans.history', $item->name) }}">
+                                <img src="https://cravatar.eu/avatar/{{ $item->name }}/25" alt="{{ $item->name }}">
+                                {{ $item->name }}
+                            </a>
+                        </div>
+                        <div class="col col-2">
 
-  <table class="table table-striped table-hover mt-4">
-    <thead>
-      <tr>
-        <th scope="col">{{ trans('litebans::messages.username') }}</th>
-        <th scope="col">{{ trans('litebans::messages.staff_ban') }}</th>
-        <th scope="col" class="d-lg-table-cell d-none">{{ trans('litebans::messages.reason') }}</th>
-        <th scope="col">{{ trans('messages.fields.date') }}</th>
-        <th scope="col" class="d-lg-table-cell d-none">{{ trans('litebans::messages.expires_at') }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      @forelse ($bans as $ban)
-      <tr class="text-nowrap">
-        <td>
-          <a href="{{ route('litebans.history', $ban->name) }}">
-            <img src="https://cravatar.eu/avatar/{{ $ban->name }}/25" alt="{{ $ban->name }}">
-            {{ $ban->name }}
-          </a>
-        </td>
-        <td>
-          <a href="{{ route('litebans.history.issued', $ban->banned_by_name) }}">
-            {{ $ban->banned_by_name }}
-          </a>
-        </td>
-        <td class="d-lg-table-cell d-none">{{ $ban->reason }}</td>
-        <td>{{ format_date($ban->time) }}</td>
+                            <a href="{{ route('litebans.history.issued', $item->banned_by_name) }}">
+                                {{ $item->banned_by_name }}
+                            </a>
+                        </div>
+                        <div class="col col-4">{{ $item->reason }}</div>
+                        <div class="col col-2">{{ format_date($item->time) }}</div>
+                        @if(isset($item->removed_by_name))
+                            <div class="col col-2">{{ trans('litebans::messages.unbanned') }}</div>
+                        @elseif($item->until === null)
+                            <div class="col col-2">{{ trans('litebans::messages.permanent') }}</div>
+                        @elseif($item->until->isPast())
+                            <div class="col col-2">{{ trans('litebans::messages.expired') }}</div>
+                        @else
+                            <div class="col col-2">{{ format_date($item->until) }}</div>
+                        @endif
+                    </li>
+                @empty
+                    <li class="table-row">
+                        <div class="col col-12">{{ trans('litebans::messages.no_punishments_found') }}</div>
+                    </li>
+                @endforelse
+            </ul>
+        </div>
 
-        @if(isset($ban->removed_by_name))
-        <td class="d-lg-table-cell d-none">{{ trans('litebans::messages.unbanned') }}</td>
-        @elseif($ban->until === null)
-        <td class="d-lg-table-cell d-none">{{ trans('litebans::messages.permanent') }}</td>
-        @elseif($ban->until->isPast())
-        <td class="d-lg-table-cell d-none">{{ trans('litebans::messages.expired') }}</td>
-        @else
-        <td class="d-lg-table-cell d-none">{{ format_date($ban->until) }}</td>
-        @endif
-      </tr>
-      @empty
-      <tr>
-        <td colspan="7" class="text-center">{{ trans('litebans::messages.no_punishments_found') }}</td>
-      </tr>
-      @endforelse
-    </tbody>
-  </table>
-
-  {{ $bans->withQueryString()->links() }}
-</div>
+        {{ $bans->withQueryString()->links() }}
+    </div>
 @endsection

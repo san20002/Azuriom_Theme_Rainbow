@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin Changelog</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.changelog.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner Changelog</legend>
+            <legend>{{trans('theme::lang.changelog.banner.changelog.title')}}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="changelogBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="changelogBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('changelog[banner][changelog][title]') is-invalid @enderror"
                            id="changelogBannerNewTitle"
                            name="changelog[banner][changelog][title]"
@@ -50,7 +50,7 @@
                                name="changelog[banner][changelog][hidden]"
                                @if(config('theme.changelog.banner.changelog.hidden')) checked @endif>
                         <label class="custom-control-label" for="changelogBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{trans('theme::lang.changelog.banner.changelog.hidden')}}
                         </label>
                     </div>
                 </div>

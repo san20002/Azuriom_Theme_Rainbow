@@ -12,7 +12,7 @@
                         <div class="app-content-item app-content-item--parent app-content-item--is-editable
                                      app-content-item--show-children js-app-content-item--is-editable js-app-content-item--group">
                             <span
-                                class="app-content-item__text">{{ trans('theme::lang.config.setting.color.button') }}</span>
+                                class="app-content-item__text">{{ trans('theme::lang.setting.color.button') }}</span>
                         </div>
                         <ul class="js-app-content__main-colors">
                             <li class="app-content-item js-app-content-item" data-section="#color-primary">
@@ -53,7 +53,7 @@
                         <div
                             class="app-content-item app-content-item--parent app-content-item--is-editable app-content-item--show-children js-app-content-item--is-editable js-app-content-item--group">
                             <span
-                                class="app-content-item__text">{{ trans('theme::lang.config.setting.color.alert') }}</span>
+                                class="app-content-item__text">{{ trans('theme::lang.setting.color.alert') }}</span>
                             <button id="setting-alert"><i class="far fa-bell"></i></button>
                         </div>
                         <ul class="js-app-content__feedback-colors">
@@ -73,7 +73,7 @@
                     </li>
                     <li class="app-content-item js-app-content-item" data-section="#color-contrast">
                         <span
-                            class="app-content-item__text">{{ trans('theme::lang.config.setting.color.bgText') }}</span>
+                            class="app-content-item__text">{{ trans('theme::lang.setting.color.bgText') }}</span>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@
                     class="app-editor-section js-app-editor-section__color-picker">
                     <div class="app-editor-section__title js-app-editor-section__title ">
                         <div class="flex items-center">
-                            <span class="app-label">{{ trans('theme::lang.config.setting.color.color') }}</span>
+                            <span class="app-label">{{ trans('theme::lang.setting.color.color') }}</span>
                         </div>
                     </div>
                     <div class="app-editor-section__body">
@@ -110,7 +110,7 @@
                 <div class="app-editor-section js-app-editor-section__bg-color-picker app-section--is-hidden">
                     <div class="app-editor-section__title js-app-editor-section__title ">
                         <div class="flex items-center">
-                            <span class="app-label">{{ trans('theme::lang.config.setting.color.bgColor') }}</span>
+                            <span class="app-label">{{ trans('theme::lang.setting.color.bgColor') }}</span>
                         </div>
                     </div>
                     <div class="app-editor-section__body">
@@ -132,7 +132,7 @@
                 <div class="app-editor-section js-app-editor-section__hc-color-picker app-section--is-hidden">
                     <div class="app-editor-section__title js-app-editor-section__title ">
                         <div class="flex items-center">
-                            <span class="app-label">{{ trans('theme::lang.config.setting.color.textColor') }}</span>
+                            <span class="app-label">{{ trans('theme::lang.setting.color.textColor') }}</span>
                         </div>
                     </div>
                     <div class="app-editor-section__body">
@@ -187,7 +187,7 @@
 
         <em class="btn__content-a icon-text">
             <span class="js-modal__copy-text">
-                {{ trans('theme::lang.config.setting.save') }}
+                {{ trans('theme::lang.setting.save') }}
             </span>
         </em>
     </button>

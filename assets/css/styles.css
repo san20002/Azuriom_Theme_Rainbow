@@ -4446,20 +4446,20 @@ input[type=button].btn-block {
   color: var(--color-contrast-high);
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-hl), 0.7);
 }
 .navbar-light .navbar-nav .nav-link.disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-hl), 0.3);
 }
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-hl), 0.9);
 }
 .navbar-light .navbar-toggler {
   color: var(--color-contrast-high);
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-hl), 0.1);
 }
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -4468,10 +4468,10 @@ input[type=button].btn-block {
   color: var(--color-contrast-high);
 }
 .navbar-light .navbar-text a {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-hl), 0.9);
 }
 .navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-hl), 0.9);
 }
 
 .navbar-dark .navbar-brand {
@@ -10316,6 +10316,8 @@ h3 {
   font-size: 16px;
   padding: 5px 0;
   overflow: hidden;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 .header .nav-link img {
   width: 35px;
@@ -10338,11 +10340,19 @@ h3 {
 .header .icon-post ~ span {
   margin-left: 43px;
 }
-.header a {
+.header .navbar-nav a {
   display: flex;
   align-items: center;
   line-height: 65px;
   height: 65px;
+}
+.header .navbar-nav .dropdown-item {
+  line-height: initial;
+  height: auto;
+}
+.header .navbar-nav .dropdown-user .dropdown-item {
+  padding: 0.5rem 1rem;
+  display: inline-block;
 }
 
 @media (max-width: 1199.98px) {
@@ -10351,6 +10361,7 @@ h3 {
     max-width: 100%;
     flex: 1 1 auto;
     width: auto;
+    text-align: right;
   }
   .header .navbar-brand img {
     position: relative;
@@ -10358,9 +10369,13 @@ h3 {
     left: auto;
     transform: none;
     max-height: 65px;
+    margin: auto 0 auto auto;
   }
   .header .navbar {
     background-image: linear-gradient(180deg, hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95) 100%, transparent 100%);
+  }
+  .header .navbar-expand-xl {
+    flex-direction: row-reverse;
   }
   .header .navbar-collapse {
     background-image: linear-gradient(180deg, hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95) 100%, transparent 100%);
@@ -10371,18 +10386,32 @@ h3 {
     padding-right: 15px;
     padding-bottom: 15px;
     width: 75vw;
-    height: 100%;
+    max-width: 300px;
+    height: calc(100% - 81px);
+    overflow: auto;
   }
   .header .navbar-collapse .navbar {
     margin-top: 0;
   }
+  .header .navbar-collapse .dropdown-menu {
+    position: absolute;
+  }
   .header .navbar-collapse a {
+    display: inline-block;
     height: auto;
     line-height: initial;
     font-weight: 700;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
+    width: 100%;
   }
 }
+.navbar {
+  color: var(--color-contrast-higher);
+  background-color: var(--color-contrast-low);
+  border-color: var(--color-contrast-low);
+  border-radius: 0.3rem;
+}
+
 .footer {
   margin-top: 8rem;
 }
@@ -10444,13 +10473,14 @@ a, p {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-contrast-higher);
+  font-weight: bolder;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s linear;
 }
 a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-contrast-high);
 }
 
 table,
@@ -10462,6 +10492,16 @@ table thead th,
 .table thead th {
   background-color: var(--color-contrast-lower);
 }
+table thead th:first-child,
+.table thead th:first-child {
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+}
+table thead th:last-child,
+.table thead th:last-child {
+  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
 table tbody tr,
 .table tbody tr {
   background-color: var(--color-contrast-low);
@@ -10469,6 +10509,16 @@ table tbody tr,
 table tbody tr:nth-child(odd),
 .table tbody tr:nth-child(odd) {
   background-color: hsla(var(--color-contrast-low-h), var(--color-contrast-low-s), var(--color-contrast-low-l), 50%);
+}
+table tbody tr:first-child,
+.table tbody tr:first-child {
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+}
+table tbody tr:last-child,
+.table tbody tr:last-child {
+  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 table th,
 table td,
@@ -10494,6 +10544,14 @@ table td,
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+.table--custom .table-header > div:first-child {
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+}
+.table--custom .table-header > div:last-child {
+  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
 .table--custom .table-header .col {
   background-color: var(--color-contrast-low);
 }
@@ -10514,6 +10572,14 @@ table td,
 .table--custom .table-row > div {
   background-color: var(--color-contrast-lower);
   color: var(--color-contrast-medium);
+}
+.table--custom .table-row > div:first-child {
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+}
+.table--custom .table-row > div:last-child {
+  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 .table--custom a {
   font-size: 18px;
@@ -10581,23 +10647,23 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 }
 .alert.alert-warning {
   border-color: var(--color-warning);
-  background-color: var(--color-warning);
-  color: var(--color-contrast-high);
+  background-color: var(--color-warning-dark);
+  color: var(--color-contrast-higher);
 }
 .alert.alert-success {
   border-color: var(--color-success);
-  background-color: var(--color-success);
-  color: var(--color-contrast-high);
+  background-color: var(--color-success-dark);
+  color: var(--color-contrast-higher);
 }
 .alert.alert-danger {
   border-color: var(--color-error);
-  background-color: var(--color-error);
-  color: var(--color-contrast-high);
+  background-color: var(--color-error-dark);
+  color: var(--color-contrast-higher);
 }
 .alert.alert-info {
   border-color: var(--color-info);
-  background-color: var(--color-info);
-  color: var(--color-contrast-high);
+  background-color: var(--color-info-dark);
+  color: var(--color-contrast-higher);
 }
 
 .pagination .page-link {
@@ -10617,9 +10683,6 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
-}
-#errors .card:hover {
-  transform: scale(1.02);
 }
 #errors .card .card-img-top,
 #errors .card .card-img {
@@ -11060,6 +11123,7 @@ body {
   border: 0;
   border-radius: 0.3rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: var(--color-contrast-lower);
 }
 .home--post .post-preview img {
   max-height: 250px;
@@ -11148,9 +11212,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#faq .card:hover {
-  transform: scale(1.02);
-}
 #faq .card .card-img-top,
 #faq .card .card-img {
   min-height: 300px;
@@ -11218,9 +11279,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#shops .card:hover {
-  transform: scale(1.02);
-}
 #shops .card .card-img-top,
 #shops .card .card-img {
   min-height: 300px;
@@ -11274,14 +11332,17 @@ body {
   max-width: 200px;
   margin: 0 auto;
 }
+#shops .card {
+  text-align: center;
+}
+#shops .card:hover {
+  transform: scale(1.02);
+}
 #shops--select .card {
   border: 0;
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
-}
-#shops--select .card:hover {
-  transform: scale(1.02);
 }
 #shops--select .card .card-img-top,
 #shops--select .card .card-img {
@@ -11350,9 +11411,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#itemModal .card:hover {
-  transform: scale(1.02);
-}
 #itemModal .card .card-img-top,
 #itemModal .card .card-img {
   min-height: 300px;
@@ -11412,9 +11470,6 @@ body {
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
-}
-#support .card:hover {
-  transform: scale(1.02);
 }
 #support .card .card-img-top,
 #support .card .card-img {
@@ -11486,9 +11541,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#forum .card:hover {
-  transform: scale(1.02);
-}
 #forum .card .card-img-top,
 #forum .card .card-img {
   min-height: 300px;
@@ -11557,9 +11609,6 @@ body {
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
-}
-#wiki .card:hover {
-  transform: scale(1.02);
 }
 #wiki .card .card-img-top,
 #wiki .card .card-img {
@@ -11635,9 +11684,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#changelog .card:hover {
-  transform: scale(1.02);
-}
 #changelog .card .card-img-top,
 #changelog .card .card-img {
   min-height: 300px;
@@ -11698,9 +11744,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#jirai .card:hover {
-  transform: scale(1.02);
-}
 #jirai .card .card-img-top,
 #jirai .card .card-img {
   min-height: 300px;
@@ -11755,14 +11798,71 @@ body {
   margin: 0 auto;
 }
 
-#page .card {
+#skin-api .card {
   border: 0;
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#page .card:hover {
-  transform: scale(1.02);
+#skin-api .card .card-img-top,
+#skin-api .card .card-img {
+  min-height: 300px;
+  max-height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+#skin-api .card .img-fluid {
+  display: block;
+}
+#skin-api .card .card-header {
+  border-top: 4px solid var(--color-primary);
+  border-bottom: 1px dashed var(--color-primary);
+  background-color: var(--color-contrast-low);
+}
+#skin-api .card .card-header h3 {
+  margin-bottom: 0;
+}
+#skin-api .card .card-header small {
+  color: var(--color-contrast-high);
+}
+#skin-api .card .card-header small:before {
+  content: "- ";
+}
+#skin-api .card ul {
+  list-style-type: square;
+}
+#skin-api .card ul li {
+  color: var(--color-contrast-high);
+}
+#skin-api .card .card-body {
+  border: 0;
+  background-color: var(--color-contrast-lower);
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+#skin-api .card .card-text {
+  color: var(--color-contrast-high);
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+}
+#skin-api .card .card-footer {
+  border-top: 1px solid var(--color-contrast-low);
+}
+#skin-api .card .text-muted {
+  color: var(--color-contrast-high) !important;
+}
+#skin-api .card .btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+#page .card {
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: var(--color-contrast-lower);
+  transition: transform 0.5s ease-in-out;
 }
 #page .card .card-img-top,
 #page .card .card-img {
@@ -11857,9 +11957,6 @@ body {
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
 }
-#post .card:hover {
-  transform: scale(1.02);
-}
 #post .card .card-img-top,
 #post .card .card-img {
   min-height: 300px;
@@ -11919,9 +12016,6 @@ div[id*=auth--] .card {
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
-}
-div[id*=auth--] .card:hover {
-  transform: scale(1.02);
 }
 div[id*=auth--] .card .card-img-top,
 div[id*=auth--] .card .card-img {
@@ -11983,10 +12077,6 @@ div[id*=auth--] .card .btn {
   border-radius: 0.3rem;
   background-color: var(--color-contrast-lower);
   transition: transform 0.5s ease-in-out;
-}
-#profiles-2fa .card:hover,
-#profile .card:hover {
-  transform: scale(1.02);
 }
 #profiles-2fa .card .card-img-top,
 #profiles-2fa .card .card-img,

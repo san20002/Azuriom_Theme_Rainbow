@@ -1,15 +1,15 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin Shop</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.shop.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Shop</legend>
+                    <legend>{{trans('theme::lang.shop.banner.shop.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerShopTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerShopTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][shop][title]') is-invalid @enderror"
                                    id="shopBannerShopTitle"
@@ -53,7 +53,7 @@
                                        name="shop[banner][shop][hidden]"
                                        @if(config('theme.shop.banner.shop.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerShopHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.shop.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -64,10 +64,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner filter</legend>
+                    <legend>{{trans('theme::lang.shop.banner.filter.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerFilterTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerFilterTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][filter][title]') is-invalid @enderror"
                                    id="shopBannerFilterTitle"
@@ -111,7 +111,7 @@
                                        name="shop[banner][filter][hidden]"
                                        @if(config('theme.shop.banner.filter.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerFilterHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.filter.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -122,10 +122,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Panier</legend>
+                    <legend>{{trans('theme::lang.shop.banner.cart.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -154,7 +154,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerCartTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerCartTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][cart][title]') is-invalid @enderror"
                                    id="shopBannerCartTitle"
@@ -169,7 +169,7 @@
                                        name="shop[banner][cart][hidden]"
                                        @if(config('theme.shop.banner.cart.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerCartHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.cart.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -183,10 +183,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Profile</legend>
+                    <legend>{{trans('theme::lang.shop.banner.profile.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -215,7 +215,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerUserTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerUserTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][user][title]') is-invalid @enderror"
                                    id="shopBannerUserTitle"
@@ -230,7 +230,7 @@
                                        name="shop[banner][user][hidden]"
                                        @if(config('theme.shop.banner.user.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerUserHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.profile.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -241,10 +241,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Coupons</legend>
+                    <legend>{{trans('theme::lang.shop.banner.coupons.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -273,7 +273,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerCouponsTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerCouponsTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][coupons][title]') is-invalid @enderror"
                                    id="shopBannerCouponsTitle"
@@ -288,7 +288,7 @@
                                        name="shop[banner][coupons][hidden]"
                                        @if(config('theme.shop.banner.coupons.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerCouponsHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.coupons.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -299,10 +299,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Ajouter Coupons</legend>
+                    <legend>{{trans('theme::lang.shop.banner.addCoupons.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -331,7 +331,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerAddCouponsTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerAddCouponsTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][addCoupons][title]') is-invalid @enderror"
                                    id="shopBannerAddCouponsTitle"
@@ -346,7 +346,7 @@
                                        name="shop[banner][addCoupons][hidden]"
                                        @if(config('theme.shop.banner.addCoupons.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerAddCouponsHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.addCoupons.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -360,10 +360,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Paiement</legend>
+                    <legend>{{trans('theme::lang.shop.banner.payment.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -392,7 +392,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="shopBannerpaiementTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="shopBannerpaiementTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('shop[banner][paiement][title]') is-invalid @enderror"
                                    id="shopBannerpaiementTitle"
@@ -407,7 +407,7 @@
                                        name="shop[banner][paiement][hidden]"
                                        @if(config('theme.shop.banner.paiement.hidden')) checked @endif>
                                 <label class="custom-control-label" for="shopBannerpaiementHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.shop.banner.payment.hidden')}}
                                 </label>
                             </div>
                         </div>

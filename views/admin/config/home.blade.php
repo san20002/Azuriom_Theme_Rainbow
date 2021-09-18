@@ -35,7 +35,8 @@
             })
 
         });
-        function configFormSlider(i){
+
+        function configFormSlider(i) {
             document.getElementById('sliders').querySelectorAll('.form-row').forEach(function (el) {
                 el.querySelectorAll('input').forEach(function (input) {
                     input.name = input.name.replace('{index}', i.toString());
@@ -50,12 +51,12 @@
     </script>
 @endpush
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Page d'accueil</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.home.title') }}</h6>
 </div>
 <div class="card-body">
-        <button type="button" id="addCommandButton" class="btn btn-sm btn-success">
-            <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
-        </button>
+    <button type="button" id="addCommandButton" class="btn btn-sm btn-success">
+        <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
+    </button>
     <div id="sliders" class="row no-gutters">
         @forelse( config('theme.sliders') ?? [] as $slider )
 
@@ -73,10 +74,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Article(s)</legend>
+                    <legend>{{trans('theme::lang.home.banner.article.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -105,7 +106,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="articleBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="articleBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('home[banner][news][title]') is-invalid @enderror"
                                    id="articleBannerNewTitle"
@@ -120,7 +121,7 @@
                                        name="home[banner][news][hidden]"
                                        @if(config('theme.home.banner.news.hidden')) checked @endif>
                                 <label class="custom-control-label" for="articleBannerNewHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.home.banner.article.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -131,10 +132,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Informations(s)</legend>
+                    <legend>{{trans('theme::lang.home.banner.info.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -163,7 +164,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="infoBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="infoBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('home[banner][info][title]') is-invalid @enderror"
                                    id="infoBannerNewTitle"
@@ -178,7 +179,7 @@
                                        name="home[banner][info][hidden]"
                                        @if(config('theme.home.banner.info.hidden')) checked @endif>
                                 <label class="custom-control-label" for="infoBannerNewHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.home.banner.info.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -189,10 +190,10 @@
         <div class="col-md-4">
             <div class="form-group">
                 <fieldset>
-                    <legend>Banner Connexion</legend>
+                    <legend>{{trans('theme::lang.home.banner.login.title')}}</legend>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <a class="btn btn-outline-success"
@@ -221,7 +222,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label for="loginBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                            <label for="loginBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                             <input type="text"
                                    class="form-control @error('home[banner][login][title]') is-invalid @enderror"
                                    id="loginBannerNewTitle"
@@ -236,7 +237,7 @@
                                        name="home[banner][login][hidden]"
                                        @if(config('theme.home.banner.login.hidden')) checked @endif>
                                 <label class="custom-control-label" for="loginBannerNewHidden">
-                                    Ne pas afficher la bannier
+                                    {{trans('theme::lang.home.banner.login.hidden')}}
                                 </label>
                             </div>
                         </div>
@@ -247,7 +248,7 @@
     </div>
     <hr class="my-3 sidebar-divider">
     <div class="form-group">
-        <label for="discord">{{ trans('theme::lang.config.discord') }}</label>
+        <label for="discord">{{ trans('theme::lang.discord.id') }}</label>
         <input type="text" class="form-control @error('discord[id]') is-invalid @enderror"
                id="discord"
                name="discord[id]" value="{{ old('discord[id]', config('theme.discord.id')) }}">
@@ -257,26 +258,26 @@
         @enderror
     </div>
     <hr class="my-3 sidebar-divider">
-        <fieldset class="mt-4">
-            <legend>Button de téléchargement</legend>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="homeDownloadHidden"
-                       name="home[download][hidden]"
-                       @if(config('theme.home.download.hidden')) checked @endif>
-                <label class="custom-control-label" for="homeDownloadHidden">
-                    Ne pas afficher le bouton de téléchagement
-                </label>
-            </div>
-        </fieldset>
-        <fieldset class="mt-4">
-            <legend>Particules</legend>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
-                       name="home[particle][hidden]"
-                       @if(config('theme.home.particle.hidden')) checked @endif>
-                <label class="custom-control-label" for="homeParticleHidden">
-                    Ne pas afficher les particules
-                </label>
-            </div>
-        </fieldset>
+    <fieldset class="mt-4">
+        <legend>{{ trans('theme::lang.home.button.download.title') }}</legend>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="homeDownloadHidden"
+                   name="home[download][hidden]"
+                   @if(config('theme.home.download.hidden')) checked @endif>
+            <label class="custom-control-label" for="homeDownloadHidden">
+                {{ trans('theme::lang.home.button.download.hidden') }}
+            </label>
+        </div>
+    </fieldset>
+    <fieldset class="mt-4">
+        <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
+                   name="home[particle][hidden]"
+                   @if(config('theme.home.particle.hidden')) checked @endif>
+            <label class="custom-control-label" for="homeParticleHidden">
+                {{ trans('theme::lang.home.particle.hidden') }}
+            </label>
+        </div>
+    </fieldset>
 </div>

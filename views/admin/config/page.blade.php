@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin Pages</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.pages.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner Pages</legend>
+            <legend>{{trans('theme::lang.pages.banner.page.title')}}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="pagesBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="pagesBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('pages[banner][pages][title]') is-invalid @enderror"
                            id="pagesBannerNewTitle"
                            name="pages[banner][pages][title]"
@@ -50,7 +50,7 @@
                                name="pages[banner][pages][hidden]"
                                @if(config('theme.pages.banner.pages.hidden')) checked @endif>
                         <label class="custom-control-label" for="pagesBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{trans('theme::lang.pages.banner.page.hidden')}}
                         </label>
                     </div>
                 </div>

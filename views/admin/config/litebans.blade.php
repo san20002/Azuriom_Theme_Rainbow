@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin Litebans</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.liteBans.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner LiteBan</legend>
+            <legend>{{trans('theme::lang.liteBans.banner.litebans.title')}}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="litebanBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="litebanBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('liteBans[banner][liteban][title]') is-invalid @enderror"
                            id="litebanBannerNewTitle"
                            name="liteBans[banner][liteban][title]"
@@ -50,7 +50,7 @@
                                name="liteBans[banner][liteban][hidden]"
                                @if(config('theme.liteBans.banner.liteban.hidden')) checked @endif>
                         <label class="custom-control-label" for="litebanBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{trans('theme::lang.liteBans.banner.litebans.hidden')}}
                         </label>
                     </div>
                 </div>

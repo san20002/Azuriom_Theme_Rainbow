@@ -63,8 +63,8 @@
             @if(config('theme.footer.download') && !config('theme.home.download.hidden'))
                 <div class="btn-wrapper-home d-sm-block d-none">
                     <a class="btn btn-download" href="/{{config('theme.footer.download')}}"
-                       title="{{ trans('theme::lang.config.download.name')}}">
-                        {{ trans('theme::lang.config.download.name')}}
+                       title="{{ trans('theme::lang.download.name')}}">
+                        {{ trans('theme::lang.download.name')}}
                     </a>
                 </div>
             @endif

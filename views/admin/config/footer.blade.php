@@ -23,11 +23,11 @@
 
         document.getElementById('addLinkButton').addEventListener('click', function () {
             let input = '<div class="form-row"><div class="form-group col-md-4">';
-            input += '<input type="text" class="form-control" name="footer[links][{index}][icon]" placeholder="{{ trans('theme::lang.config.icon') }}"></div>';
+            input += '<input type="text" class="form-control" name="footer[links][{index}][icon]" placeholder="{{ trans('theme::lang.icon') }}"></div>';
             input += '<div class="form-group col-md-3"><div class="input-group">';
-            input += '<input type="text" class="form-control" name="footer[links][{index}][name]" placeholder="{{ trans('theme::lang.config.name') }}"></div></div>';
+            input += '<input type="text" class="form-control" name="footer[links][{index}][name]" placeholder="{{ trans('theme::lang.name') }}"></div></div>';
             input += '<div class="form-group col-md-4"><div class="input-group">';
-            input += '<input type="url" class="form-control" name="footer[links][{index}][value]" placeholder="{{ trans('theme::lang.config.link') }}">';
+            input += '<input type="url" class="form-control" name="footer[links][{index}][value]" placeholder="{{ trans('theme::lang.link') }}">';
             input += '<div class="input-group-append"><button class="btn btn-outline-danger link-remove" type="button">';
             input += '<i class="fas fa-times"></i></button></div></div></div></div></div>';
 
@@ -42,24 +42,24 @@
     </script>
 @endpush
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.config.footer.name') }}</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.footer.title') }}</h6>
 </div>
 <div class="card-body">
     <fieldset class="mt-4">
-        <legend>Logo footer</legend>
+        <legend>{{trans('theme::lang.footer.logo.title')}}</legend>
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="footerLogo"
                    name="footer[logo][hidden]"
                    @if(config('theme.footer.logo.hidden')) checked @endif>
             <label class="custom-control-label" for="footerLogo">
-                Ne pas afficher le logo dans le footer
+                {{trans('theme::lang.footer.logo.hidden')}}
             </label>
         </div>
     </fieldset>
     <hr class="my-3 sidebar-divider">
     <div class="form-group">
         <div class="card-text mb-2">
-            {{ trans('theme::lang.config.fontawesome') }}
+            {{ trans('theme::lang.fontawesome') }}
             <a href="https://fontawesome.com/icons?d=gallery" title="fontawesome" target="_blank">fontawesome</a>
         </div>
         <div id="links">
@@ -67,12 +67,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <input type="text" class="form-control" name="footer[links][{index}][icon]"
-                               placeholder="{{ trans('theme::lang.config.icon') }}"
+                               placeholder="{{ trans('theme::lang.icon') }}"
                                value="{{ $link['icon'] }}">
                     </div>
                     <div class="form-group col-md-3">
                         <input type="text" class="form-control" name="footer[links][{index}][name]"
-                               placeholder="{{ trans('theme::lang.config.name') }}"
+                               placeholder="{{ trans('theme::lang.name') }}"
                                value="{{ $link['name'] }}">
                     </div>
 
@@ -80,7 +80,7 @@
                         <div class="input-group">
                             <input type="url" class="form-control"
                                    name="footer[links][{index}][value]"
-                                   placeholder="{{ trans('theme::lang.config.link') }}"
+                                   placeholder="{{ trans('theme::lang.link') }}"
                                    value="{{ $link['value'] }}">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-danger link-remove" type="button">
@@ -100,7 +100,7 @@
     </div>
     <hr class="my-3 sidebar-divider">
     <div class="form-group">
-        <label for="footer_title">{{ trans('theme::lang.config.title') }}</label>
+        <label for="footer_title">{{ trans('theme::lang.title') }}</label>
         <input type="text"
                class="form-control @error('footer[title]') is-invalid @enderror"
                id="footer_title"
@@ -111,7 +111,7 @@
         @enderror
     </div>
     <div class="form-group">
-        <label for="footer_description">{{ trans('theme::lang.config.description') }}</label>
+        <label for="footer_description">{{ trans('theme::lang.description') }}</label>
         <textarea type="text"
                   class="form-control @error('footer[description]') is-invalid @enderror"
                   id="footer_description"
@@ -123,7 +123,7 @@
     </div>
     <hr class="my-3 sidebar-divider">
     <div class="form-group">
-        <label for="footer_liens" class="form-label">Lien</label>
+        <label for="footer_liens" class="form-label">{{trans('theme::lang.footer.liens.title')}}</label>
         <input type="text"
                class="form-control @error('footer[liens]') is-invalid @enderror"
                id="footer_liens"
@@ -132,7 +132,27 @@
         @error('footer[liens]')
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="footerLienHidden"
+                   name="footer[lien][hidden]"
+                   @if(config('theme.footer.lien.hidden')) checked @endif>
+            <label class="custom-control-label" for="footerLienHidden">
+                {{trans('theme::lang.footer.liens.hidden')}}
+            </label>
+        </div>
     </div>
+    <hr class="my-3 sidebar-divider">
+    <fieldset class="mt-4">
+        <legend>{{trans('theme::lang.footer.button.download.title')}}</legend>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="footerDownloadHidden"
+                   name="footer[btndownload][hidden]"
+                   @if(config('theme.footer.btndownload.hidden')) checked @endif>
+            <label class="custom-control-label" for="footerDownloadHidden">
+                {{trans('theme::lang.footer.button.download.hidden')}}
+            </label>
+        </div>
+    </fieldset>
     <hr class="my-3 sidebar-divider">
     <div class="card shadow mt-4 mb-4" id="accordion-cgu">
         <div class="card-header" id="headingOneCgu">
@@ -140,7 +160,7 @@
                 data-toggle="collapse"
                 data-target="#collapseOneCgu" aria-expanded="true"
                 aria-controls="collapseOneCgu">
-                {{ trans('theme::lang.config.cgu.name') }}<i
+                {{ trans('theme::lang.footer.cgu.name') }}<i
                     class="fas fa-chevron-down pl-1"></i></h6>
         </div>
 
@@ -149,10 +169,10 @@
             <div class="card-body">
                 <div class="form-group">
                     <span class="d-block mb-1 font-weight-bold mb-2"> <span class="text-danger">
-                         {!! trans('theme::lang.config.cgu.warning') !!}
+                         {!! trans('theme::lang.footer.cgu.warning') !!}
                     </span>
                     <label
-                        for="footerLinksCgu">{{ trans('theme::lang.config.cgu.input_link') }}</label>
+                        for="footerLinksCgu">{{ trans('theme::lang.footer.cgu.input_link') }}</label>
                     <input type="text"
                            class="form-control @error('footer[cgu]') is-invalid @enderror"
                            id="footerLinksCgu"
@@ -174,7 +194,7 @@
                 data-toggle="collapse"
                 data-target="#collapseOneCgv" aria-expanded="true"
                 aria-controls="collapseOneCgv">
-                {{ trans('theme::lang.config.cgv.name') }}<i
+                {{ trans('theme::lang.footer.cgv.name') }}<i
                     class="fas fa-chevron-down pl-1"></i></h6>
         </div>
 
@@ -183,10 +203,10 @@
             <div class="card-body">
                 <div class="form-group">
                     <span class="d-block mb-1 font-weight-bold mb-2"> <span class="text-danger">
-                            {!! trans('theme::lang.config.cgv.warning') !!}
+                            {!! trans('theme::lang.footer.cgv.warning') !!}
                     </span>
                     <label
-                        for="footerLinksCgv">{{ trans('theme::lang.config.cgv.input_link') }}</label>
+                        for="footerLinksCgv">{{ trans('theme::lang.footer.cgv.input_link') }}</label>
                     <input type="text"
                            class="form-control @error('footer[cgv]') is-invalid @enderror"
                            id="footerLinksCgv"
@@ -208,7 +228,7 @@
                 data-toggle="collapse"
                 data-target="#collapseOneDownload" aria-expanded="true"
                 aria-controls="collapseOneDownload">
-                {{ trans('theme::lang.config.download.name') }}<i
+                {{ trans('theme::lang.footer.download.name') }}<i
                     class="fas fa-chevron-down pl-1"></i></h6>
         </div>
 
@@ -217,10 +237,10 @@
             <div class="card-body">
                 <div class="form-group">
                     <span class="d-block mb-1 font-weight-bold mb-2"> <span class="text-danger">
-                         {!! trans('theme::lang.config.download.warning') !!}
+                         {!! trans('theme::lang.footer.download.warning') !!}
                     </span>
                     <label
-                        for="downloadLink">{{ trans('theme::lang.config.download.input_link') }}</label>
+                        for="downloadLink">{{ trans('theme::lang.footer.download.input_link') }}</label>
                     <input type="text"
                            class="form-control @error('footer[download]') is-invalid @enderror"
                            id="downloadLink"

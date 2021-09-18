@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin Vote</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.vote.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner Vote</legend>
+            <legend>{{trans('theme::lang.vote.banner.vote.title')}}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="voteBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="voteBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('vote[banner][vote][title]') is-invalid @enderror"
                            id="voteBannerNewTitle"
                            name="vote[banner][vote][title]"
@@ -50,7 +50,7 @@
                                name="vote[banner][vote][hidden]"
                                @if(config('theme.vote.banner.vote.hidden')) checked @endif>
                         <label class="custom-control-label" for="voteBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{trans('theme::lang.vote.banner.vote.hidden')}}
                         </label>
                     </div>
                 </div>
@@ -59,13 +59,13 @@
     </div>
     <div class="form-group">
         <fieldset class="mt-4">
-            <legend>Add favicon site</legend>
+            <legend>{{ trans('theme::lang.vote.favicon.title') }}</legend>
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="voteIcon"
                        name="vote[icon]"
                        @if(config('theme.vote.icon')) checked @endif>
                 <label class="custom-control-label" for="voteIcon">
-                    {{ trans('theme::lang.config.global.vote.icon') }}
+                    {{ trans('theme::lang.vote.favicon.hidden') }}
                 </label>
             </div>
         </fieldset>

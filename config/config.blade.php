@@ -13,7 +13,8 @@
             #wrapper #content-wrapper {
                 overflow-x: inherit;
             }
-            a{
+
+            a {
                 scroll-behavior: smooth;
             }
         </style>
@@ -63,7 +64,7 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="entete">
-                    Entête
+                    {{trans('theme::lang.header.title')}}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Page Accueil"
@@ -71,7 +72,15 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="home">
-                    Page Accueil
+                    {{trans('theme::lang.home.title')}}
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Profil"
+                   href="#list-profil"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="profil">
+                    {{trans('theme::lang.profile.title')}}
                 </a>
 
                 <a class="list-group-item list-group-item-action list-group-item-light"
@@ -80,7 +89,7 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="article">
-                    Article
+                    {{trans('theme::lang.articles.tilte')}}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Pages"
@@ -88,7 +97,7 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="page">
-                    Pages
+                    {{trans('theme::lang.pages.title')}}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
                    title="{{ trans('theme::lang.config.footer.name') }}"
@@ -96,56 +105,7 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="footer">
-                    {{ trans('theme::lang.config.footer.name') }}
-                </a>
-
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="{{ trans('theme::lang.config.slider.name') }}"
-                   href="#list-slider"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="slider">
-                    {{ trans('theme::lang.config.slider.name') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Vote"
-                   href="#list-vote"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="vote">
-                    Vote
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="FAQ"
-                   href="#list-faq"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="faq">
-                    FAQ
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="FAQ"
-                   href="#list-litebans"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="litebans">
-                    Litebans
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Wiki"
-                   href="#list-wiki"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="wiki">
-                    Wiki
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Support"
-                   href="#list-support"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="support">
-                    Support
+                    {{ trans('theme::lang.footer.title') }}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Changelog"
@@ -153,15 +113,15 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="changelog">
-                    Changelog
+                    {{ trans('theme::lang.changelog.title') }}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Shop"
-                   href="#list-shop"
+                   title="FAQ"
+                   href="#list-faq"
                    data-toggle="list"
                    role="tab"
-                   aria-controls="shop">
-                    Shop
+                   aria-controls="faq">
+                    {{ trans('theme::lang.faq.title') }}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Forum"
@@ -169,7 +129,47 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="forum">
-                    Forum
+                    {{ trans('theme::lang.forum.title') }}
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="FAQ"
+                   href="#list-litebans"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="litebans">
+                    {{ trans('theme::lang.liteBans.title') }}
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Shop"
+                   href="#list-shop"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="shop">
+                    {{ trans('theme::lang.shop.title') }}
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Support"
+                   href="#list-support"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="support">
+                    {{ trans('theme::lang.support.title') }}
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Wiki"
+                   href="#list-wiki"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="wiki">
+                    {{ trans('theme::lang.wiki.title') }}
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light"
+                   title="Vote"
+                   href="#list-vote"
+                   data-toggle="list"
+                   role="tab"
+                   aria-controls="vote">
+                    {{ trans('theme::lang.vote.title') }}
                 </a>
             </div>
         </div>
@@ -202,10 +202,6 @@
                     <div class="tab-pane fade card shadow mb-4" id="list-footer"
                          role="tabpanel" aria-labelledby="list-footer-list">
                         @include('admin.config.footer')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-slider" role="tabpanel"
-                         aria-labelledby="list-slider-list">
-                        @include('admin.config.slider')
                     </div>
                     <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
                          aria-labelledby="list-vote-list">
@@ -242,6 +238,10 @@
                     <div class="tab-pane fade card shadow mb-4" id="list-page" role="tabpanel"
                          aria-labelledby="list-page-list">
                         @include('admin.config.page')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-profil" role="tabpanel"
+                         aria-labelledby="list-profil-list">
+                        @include('admin.config.profile')
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary"><i

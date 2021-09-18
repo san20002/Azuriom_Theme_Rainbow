@@ -1,6 +1,6 @@
 @include('elements.banner',['banner' => 'liteBans'])
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white border rounded">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
         <div class="mb-0">
-            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <a class="btn btn-outline-success"

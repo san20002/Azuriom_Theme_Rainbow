@@ -1,6 +1,6 @@
 <div class="form-row card mx-3">
     <div class="card-header d-flex justify-content-between">
-        <h2 class="card-title">{{ trans('theme::lang.config.slider.name') }} @if(isset($slider)) {{ $loop->iteration }} @else 1 @endif </h2>
+        <h2 class="card-title">{{ trans('theme::lang.slider.name') }} @if(isset($slider)) {{ $loop->iteration }} @else 1 @endif </h2>
         <div class="input-group-append">
             <button class="btn btn-outline-danger command-remove-slider" type="button"><i
                     class="fas fa-times"></i>
@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
         <div class="mb-0">
-            <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+            <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <a class="btn btn-outline-success"
@@ -37,13 +37,13 @@
             </div>
         </div>
         <div class="mb-2">
-            <label>{{ trans('theme::lang.config.title') }}</label>
+            <label>{{ trans('theme::lang.title') }}</label>
             <input type="text" class="form-control"
                    name="sliders[{index}][title]"
                    value="@if(isset($slider['title'])) {{ $slider['title'] }} @endif">
         </div>
         <div class="mb-2">
-            <label>{{ trans('theme::lang.config.description') }}</label>
+            <label>{{ trans('theme::lang.description') }}</label>
             <input type="text" class="form-control"
                    name="sliders[{index}][description]"
                    value="@if(isset($slider['description'])) {{ $slider['description'] }} @endif">
@@ -54,7 +54,7 @@
                        name="sliders[{index}][background]"
                        @if(isset($slider['background'])) checked @endif>
                 <label class="custom-control-label" for="background-@if(isset($slider)) {{ $loop->iteration }} @else 1 @endif">
-                    {{ trans('theme::lang.config.slider.background') }}
+                    {{ trans('theme::lang.slider.background') }}
                 </label>
             </div>
         </div>

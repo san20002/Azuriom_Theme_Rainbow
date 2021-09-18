@@ -1,13 +1,13 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">Plugin Support</h6>
+    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.support.title')}}</h6>
 </div>
 <div class="card-body">
     <div class="form-group">
         <fieldset>
-            <legend>Banner Support</legend>
+            <legend>{{trans('theme::lang.support.banner.support.title')}}</legend>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="imageSelect">{{ trans('theme::lang.config.image') }}</label>
+                    <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <a class="btn btn-outline-success"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="supportBannerNewTitle">{{ trans('theme::lang.config.title') }}</label>
+                    <label for="supportBannerNewTitle">{{ trans('theme::lang.title') }}</label>
                     <input type="text" class="form-control @error('support[banner][support][title]') is-invalid @enderror"
                            id="supportBannerNewTitle"
                            name="support[banner][support][title]"
@@ -50,7 +50,7 @@
                                name="support[banner][support][hidden]"
                                @if(config('theme.support.banner.support.hidden')) checked @endif>
                         <label class="custom-control-label" for="supportBannerNewHidden">
-                            Ne pas afficher la bannier
+                            {{trans('theme::lang.support.banner.support.title')}}
                         </label>
                     </div>
                 </div>
