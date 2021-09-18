@@ -1,9 +1,9 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.shop.title')}}</h6>
+    <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.shop.title')}}</h3>
 </div>
 <div class="card-body">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.shop.title')}}</legend>
@@ -61,7 +61,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.filter.title')}}</legend>
@@ -119,7 +119,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.cart.title')}}</legend>
@@ -180,7 +180,7 @@
         <div class="col-12">
             <hr class="my-3 sidebar-divider">
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.profile.title')}}</legend>
@@ -238,7 +238,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.coupons.title')}}</legend>
@@ -296,7 +296,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.addCoupons.title')}}</legend>
@@ -357,7 +357,7 @@
         <div class="col-12">
             <hr class="my-3 sidebar-divider">
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.shop.banner.payment.title')}}</legend>

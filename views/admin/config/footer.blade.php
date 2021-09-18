@@ -42,7 +42,7 @@
     </script>
 @endpush
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.footer.title') }}</h6>
+    <h3 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.footer.title') }}</h3>
 </div>
 <div class="card-body">
     <fieldset class="mt-4">

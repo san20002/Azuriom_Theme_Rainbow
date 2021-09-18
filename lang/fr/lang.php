@@ -12,7 +12,7 @@ return [
         'title' => 'Plugin AdvancedBan'
     ],
     'articles' => [
-        'tilte' => 'Article(s)',
+        'title' => 'Article(s)',
         'banner' => [
             'article' => [
                 'title' => 'Banner Mes achats',

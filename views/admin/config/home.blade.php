@@ -21,7 +21,7 @@
             let input = `@include('admin.pattern.slider')`;
 
             const newElement = document.createElement('div');
-            newElement.classList.add('slider', 'col-lg-4', 'col-md-6', 'my-3')
+            newElement.classList.add('slider', 'col-xl-4', 'col-lg-6', 'my-3')
             newElement.innerHTML = input
             addCommandIconMenu(newElement.querySelector('.command-remove-slider'));
 
@@ -51,7 +51,7 @@
     </script>
 @endpush
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.home.title') }}</h6>
+    <h3 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.home.title') }}</h3>
 </div>
 <div class="card-body">
     <button type="button" id="addCommandButton" class="btn btn-sm btn-success">
@@ -60,18 +60,18 @@
     <div id="sliders" class="row no-gutters">
         @forelse( config('theme.sliders') ?? [] as $slider )
 
-            <div class="slider col-lg-4 col-md-6 my-3">
+            <div class="slider col-xl-4 col-lg-6 my-3">
                 @include('admin.pattern.slider')
             </div>
         @empty
-            <div class="slider col-lg-4 col-md-6 my-3">
+            <div class="slider col-xl-4 col-lg-6 my-3">
                 @include('admin.pattern.slider')
             </div>
         @endforelse
     </div>
     <hr class="my-3 sidebar-divider">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.home.banner.article.title')}}</legend>
@@ -129,7 +129,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.home.banner.info.title')}}</legend>
@@ -187,7 +187,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <fieldset>
                     <legend>{{trans('theme::lang.home.banner.login.title')}}</legend>

@@ -3,7 +3,7 @@
 @else
 
     @extends('admin.layouts.admin')
-    @section('title', 'Dofus default - Config')
+    @section('title', 'Themes Rainbow')
 
 @include('admin.elements.editor')
 
@@ -56,7 +56,7 @@
         </script>
     @endpush
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-lg-2">
             <div class="list-group sticky-top" style="top: 75px">
                 <a class="list-group-item list-group-item-action list-group-item-light active"
                    title="Entête"
@@ -89,7 +89,7 @@
                    data-toggle="list"
                    role="tab"
                    aria-controls="article">
-                    {{trans('theme::lang.articles.tilte')}}
+                    {{trans('theme::lang.articles.title')}}
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light"
                    title="Pages"
@@ -173,7 +173,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-10 sidebar-dark">
+        <div class="col-lg-10  mt-lg-5 mt-5 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
 

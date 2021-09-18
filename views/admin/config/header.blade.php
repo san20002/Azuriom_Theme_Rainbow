@@ -21,7 +21,7 @@
             let input = `@include('admin.pattern.iconMenu')`;
 
             const newElement = document.createElement('div');
-            newElement.classList.add('iconMenu', 'col-lg-4', 'col-md-6', 'my-3')
+            newElement.classList.add('iconMenu', 'col-xl-4', 'col-lg-6', 'my-3')
             newElement.innerHTML = input
             addCommandListener(newElement.querySelector('.command-remove'));
 
@@ -51,18 +51,18 @@
     </script>
 @endpush
 <div class="card-header">
-    <h6 type="button" class="btn btn-link m-0 font-weight-bold text-primary">
+    <h3 type="button" class="btn btn-link m-0 font-weight-bold text-primary">
         {{trans('theme::lang.header.title')}}
-    </h6>
+    </h3>
 </div>
 <div class="card-body">
     <fieldset>
         <legend>{{trans('theme::lang.header.preloader.title')}}</legend>
         <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="headerIcon"
+            <input type="checkbox" class="custom-control-input" id="headerPreloader"
                    name="header[preloader][hidden]"
                    @if(config('theme.header.preloader.hidden')) checked @endif>
-            <label class="custom-control-label" for="headerIcon">
+            <label class="custom-control-label" for="headerPreloader">
                 {{trans('theme::lang.header.preloader.hidden')}}
             </label>
         </div>
@@ -99,11 +99,11 @@
     </button>
     <div id="iconMenus" class="row">
         @forelse( config('theme.header.iconmenus') ?? [] as $icon )
-            <div class="iconMenu col-lg-4 col-md-6 my-3">
+            <div class="iconMenu col-xl-4 col-lg-6 my-3">
                 @include('admin.pattern.iconMenu')
             </div>
         @empty
-            <div class="iconMenu col-lg-4 col-md-6 my-3">
+            <div class="iconMenu col-xl-4  col-lg-6 my-3">
                 @include('admin.pattern.iconMenu')
             </div>
         @endforelse

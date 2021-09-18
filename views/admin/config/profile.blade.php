@@ -1,10 +1,10 @@
 <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.profile.title')}}</h6>
+    <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.profile.title')}}</h3>
 </div>
 <div class="card-body">
     <div class="row">
-        <div class="col-md-4">
-            <fieldset>
+        <div class="col-xl-4 col-lg-6">
+            <fieldset class="form-group">
                 <legend>{{trans('theme::lang.profile.banner.buy.title')}}</legend>
                 <div class="row">
                     <div class="col-md-12">
@@ -59,8 +59,8 @@
                 </div>
             </fieldset>
         </div>
-        <div class="col-md-4">
-            <fieldset>
+        <div class="col-xl-4 col-lg-6">
+            <fieldset class="form-group">
                 <legend>{{trans('theme::lang.profile.banner.skin.title')}}</legend>
                 <div class="row">
                     <div class="col-md-12">
