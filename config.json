@@ -2,11 +2,11 @@
     "articles": {
         "banner": {
             "articles": {
-                "image": "background-2.jpg",
+                "image": "background.jpg",
                 "title": "Article"
             },
             "allArticle": {
-                "image": "background-2.jpg",
+                "image": "logo-azuriom.svg",
                 "title": "Article All"
             }
         }
@@ -31,19 +31,53 @@
         }
     },
     "footer": {
-        "links": [
-            {
-                "icon": "<i class=\"fab fa-500px\"></i>",
-                "name": "Test",
-                "value": "https://google.com"
-            }
-        ],
+        "social": {
+            "links": [
+                {
+                    "icon": "<i class=\"fab fa-500px\"></i>",
+                    "name": "Toto",
+                    "url": "https://google.com"
+                },
+                {
+                    "icon": null,
+                    "name": null,
+                    "url": null
+                }
+            ]
+        },
         "title": "\u00c0 propos de nous",
         "description": "Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.\r\n\r\nCurabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
-        "liens": "Liens",
-        "cgu": "cgu",
-        "cgv": "cgv",
-        "download": "download"
+        "liens": {
+            "title": "liens",
+            "links": [
+                {
+                    "name": "Accueil",
+                    "url": "https://google.com"
+                },
+                {
+                    "name": null,
+                    "url": null
+                }
+            ]
+        },
+        "download": {
+            "link": {
+                "name": null,
+                "url": null
+            }
+        },
+        "conditions": {
+            "links": [
+                {
+                    "name": "CGV",
+                    "url": "https://google.com"
+                },
+                {
+                    "name": null,
+                    "url": null
+                }
+            ]
+        }
     },
     "forum": {
         "banner": {
@@ -54,49 +88,51 @@
         }
     },
     "header": {
-        "preloader": {
-            "hidden": "on"
-        },
         "icons": "on",
         "iconmenus": [
             {
-                "url": "background-3.jpg",
-                "name": "Wiki"
+                "url": "background.jpg",
+                "name": "Home"
             }
         ]
     },
     "home": {
         "banner": {
             "news": {
-                "image": null,
-                "title": null
+                "image": "background.jpg",
+                "title": "Info TOTO"
             },
             "info": {
-                "image": null,
-                "title": null
+                "image": "background.jpg",
+                "title": "Info TOTO"
             },
             "login": {
-                "image": null,
-                "title": null
+                "image": "logo-azuriom.svg",
+                "title": "Info TOTO"
+            }
+        },
+        "download": {
+            "link": {
+                "name": "yoan latchere",
+                "url": "qzdqzddqz"
             }
         }
     },
     "pages": {
         "banner": {
             "pages": {
-                "image": null,
-                "title": null
+                "image": null
             }
         }
     },
     "sliders": [
         {
-            "url": "background-3.jpg",
-            "title": null,
-            "description": null
+            "url": "background.jpg",
+            "title": "qzdqz",
+            "description": "qzd"
         },
         {
-            "url": "background-2.jpg",
+            "url": null,
             "title": "dqzdqd",
             "description": "Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta."
         }
@@ -112,11 +148,11 @@
     "profile": {
         "banner": {
             "achat": {
-                "image": null,
+                "image": "server-2.png",
                 "title": "Mes achats"
             },
             "skin": {
-                "image": null,
+                "image": "server-1.png",
                 "title": "Mon skin"
             }
         }
@@ -168,7 +204,7 @@
     "vote": {
         "banner": {
             "vote": {
-                "image": "background-1.jpg",
+                "image": null,
                 "title": "Vote TOTO"
             }
         }

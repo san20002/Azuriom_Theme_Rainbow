@@ -1,4 +1,4 @@
-<div class="form-row card mx-3">
+<div class="form-row card">
     <div class="card-header d-flex justify-content-between">
         <h2 class="card-title">{{ trans('theme::lang.slider.name') }} @if(isset($slider)) {{ $loop->iteration }} @else 1 @endif </h2>
         <div class="input-group-append">
@@ -54,7 +54,7 @@
                        name="sliders[{index}][background]"
                        @if(isset($slider['background'])) checked @endif>
                 <label class="custom-control-label" for="background-@if(isset($slider)) {{ $loop->iteration }} @else 1 @endif">
-                    {{ trans('theme::lang.slider.background') }}
+                    {{ trans('theme::lang.sliders.background') }}
                 </label>
             </div>
         </div>

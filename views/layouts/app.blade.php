@@ -87,71 +87,67 @@
     @yield('content')
 </main>
 <footer class="footer">
-    <div class="footer--top">
-        <div class="container-fluid">
-            <div class="row justify-content-around">
-                @if(!config('theme.footer.logo.hidden'))
-                    <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
-                        <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
-                    </div>
-                @endif
-
-                @if(config('theme.footer.title') || config('theme.footer.description'))
-                    <div class="col-xl-4 col-md-6 mt-3">
-                        <div class="footer--propos">
-                            <h3>{{config('theme.footer.title')}}</h3>
-                            <p>{{ config('theme.footer.description') }}</p>
+    @if(!empty(!theme_config('footer.logo.hidden') && !theme_config('footer.lien.hidden') && !theme_config('footer.download.hidden') && !empty(theme_config('footer.social.links')[0]['name'])))
+        <div class="footer--top">
+            <div class="container-fluid">
+                <div class="row justify-content-around">
+                    @if(!theme_config('footer.logo.hidden'))
+                        <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
+                            <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
                         </div>
-                    </div>
-                @endif
-                <div class="col-xl-3 col-md-6 mt-3">
-                    @if(!config('theme.footer.lien.hidden'))
-                        <div class="footer--liens">
-                            <h3>Liens</h3>
-                            <ul class="navbar-nav">
-                                @php
-                                    $navbars = \Azuriom\Models\NavbarElement::all()
-                                @endphp
-                                @foreach($navbars as $element)
-                                    @if($element->name != 'logo')
+                    @endif
+
+                    @if(theme_config('footer.title') || theme_config('footer.description'))
+                        <div class="col-xl-4 col-md-6 mt-3">
+                            <div class="footer--propos">
+                                <h3>{{theme_config('footer.title')}}</h3>
+                                <p>{{ theme_config('footer.description') }}</p>
+                            </div>
+                        </div>
+                    @endif
+                    <div class="col-xl-3 col-md-6 mt-3">
+                        @if(!theme_config('footer.liens.hidden'))
+                            <div class="footer--liens">
+                                <h3>{{ theme_config('footer.liens.title') }}</h3>
+                                <ul class="navbar-nav">
+                                    @foreach(theme_config('footer.liens.links') ?? [] as $link )
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ $element->value }}"
-                                               id="navbarDropdown{{ $element->id }}">
-                                                {{ $element->name }}
+                                            <a class="nav-link" href="{{ $link['url'] }}" title="{{$link['name']}}">
+                                                {{ $link['name'] }}
                                             </a>
                                         </li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @if(config('theme.footer.download') && !config('theme.footer.btndownload.hidden'))
-                        <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
-                            <a class="btn btn-download" href="/{{config('theme.download_link')}}"
-                               title="{{ trans('theme::lang.download.name')}}">
-                                {{ trans('theme::lang.download.name')}}
-                            </a>
-                        </div>
-                    @endif
-                </div>
-            </div>
-            @if(config('theme.footer.links'))
-                <div class="container footer--links mt-3">
-                    <div class="row">
-                        <div class="col-md-12 justify-content-center align-items-center d-flex">
-                            @foreach(config('theme.footer.links') ?? [] as $link )
-                                <div class="footer--links-item">
-                                    <a target="_blank" href="{{$link['value']}}" title="{{ $link['name'] }}">
-                                        {!! $link['icon'] !!}
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if(!empty(theme_config('footer.download.link.url')) && !theme_config('footer.download.hidden'))
+                            <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
+                                <a class="btn btn-download" href="/{{theme_config('footer.download.link.url')}}"
+                                   title="{{theme_config('footer.download.link.name')}}">
+                                    {{theme_config('footer.download.link.name')}}
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
-            @endif
+                @if(theme_config('footer.social.links') && !empty(theme_config('footer.social.links')[0]['name']))
+                    <div class="container footer--links mt-3">
+                        <div class="row">
+                            <div class="col-md-12 justify-content-center align-items-center d-flex">
+                                @foreach(theme_config('footer.social.links') ?? [] as $link )
+                                    <div class="footer--links-item">
+                                        <a target="_blank" href="{{$link['url']}}" title="{{ $link['name'] }}">
+                                            {!! $link['icon'] !!}
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div>
-    </div>
+    @endif
     <div class="container-fluid px-0 footer--bottom">
         <div class="row no-gutters">
             <div class="col-md-12">
@@ -166,28 +162,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
-                            @if(config('theme.footer.cgu'))
-                                <a href="/{{config('theme.footer.cgu')}}"
-                                   title="{{ trans('theme::lang.cgu.name')}}" target="_blank">
-                                    {{ trans('theme::lang.cgu.abbreviation')}}
-                                </a>
-                            @endif
-                            @if(config('theme.footer.cgv'))
-                                -
-                                <a href="/{{config('theme.footer.cgv')}}" target="_blank"
-                                   title="{{ trans('theme::lang.cgv.name')}}">
-                                    {{ trans('theme::lang.cgv.abbreviation')}}
-                                </a>
-                            @endif
-                        </div>
+                        @if(theme_config('footer.conditions.links') && !empty(theme_config('footer.conditions.links')[0]['name']))
+                            <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
+                                @foreach(theme_config('footer.conditions.links') ?? [] as $link )
+                                    <a href="/{{$link['url']}}" target="_blank"
+                                       title="{{$link['name']}}">
+                                        {{$link['name']}}
+                                    </a>
+                                @endforeach
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-@if(!config('theme.header.preloader.hidden'))
+@if(!theme_config('header.preloader.hidden'))
     <div id="preloader">
         <img src="{{ site_logo() }}" alt="{{ route('home') }}">
         <div class="spinner-border" role="status">

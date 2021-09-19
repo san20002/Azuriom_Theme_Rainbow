@@ -38,7 +38,7 @@
                     <a class="btn btn-primary mx-2 my-2" href="{{ $site->url }}" target="_blank"
                        rel="noopener noreferrer"
                        data-site-url="{{ route('vote.vote', $site) }}">
-                        @if(config('theme.vote.icons'))
+                        @if(theme_config('vote.icons'))
                             <img src="https://www.google.com/s2/favicons?sz=16&domain_url={{ $site->url }}"
                                  alt="{{ $site->name }}" class="mr-1">
                         @endif

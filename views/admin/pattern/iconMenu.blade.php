@@ -1,4 +1,4 @@
-<div class="form-row card mx-3">
+<div class="form-row card">
     <div class="card-header d-flex justify-content-between">
         <h2 class="card-title">Icon @if(isset($icon)) {{ $loop->iteration }} @else 1 @endif </h2>
         <div class="input-group-append">

@@ -2,7 +2,7 @@
     <div class="background--top">
         <img src="{{ image_url(setting('background')) }}" alt="">
 
-        @if(!config('theme.home.particle.hidden'))
+        @if(!theme_config('home.particle.hidden'))
             <div id="particles-js"></div>
         @endif
     </div>

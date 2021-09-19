@@ -4,7 +4,7 @@
              alt="{{ site_name() }}" title="{{ site_name() }}">
         <h1 class="sr-only">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
     </a>
-    <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-x" aria-controls="navbar"
+    <button class="navbar-toggler x" type="button" data-toggle="collapse" data-target="#navbar-collapse-x" aria-controls="navbar"
             aria-expanded="false" aria-label="{{ trans('messages.nav.toggle') }}">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -19,15 +19,15 @@
                     <li class="nav-item @if($element->isCurrent()) active @endif">
                         <a class="nav-link" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank"
                            rel="noopener noreferrer" @endif>
-                            @if(!config('theme.header.icons'))
-                                @foreach(config('theme.header.iconmenus') ?? [] as $icon )
+                            @if(!theme_config('header.icons'))
+                                @foreach(theme_config('header.iconmenus') ?? [] as $icon )
                                     @if($element->name === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif
                                 @endforeach
                             @endif
-                            @if(!config('theme.header.text.hidden'))
+                            @if(!theme_config('header.text.hidden'))
                                 <span>
                                     {{ $element->name }}
                                 </span>
@@ -38,15 +38,15 @@
                     <li class="nav-item dropdown @if($element->isCurrent()) active @endif">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}"
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @if(!config('theme.header.icons'))
-                                @foreach(config('theme.header.iconmenus') ?? [] as $icon )
+                            @if(!theme_config('header.icons'))
+                                @foreach(theme_config('header.iconmenus') ?? [] as $icon )
                                     @if($element->name === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif
                                 @endforeach
                             @endif
-                            @if(!config('theme.header.text.hidden'))
+                            @if(!theme_config('header.text.hidden'))
                                 {{ $element->name }}
                             @endif
                         </a>

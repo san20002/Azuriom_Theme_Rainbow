@@ -6,6 +6,7 @@
         <div class="col-xl-4 col-lg-6">
             <fieldset class="form-group">
                 <legend>{{trans('theme::lang.vote.banner.vote.title')}}</legend>
+                <div class="small font-italic mb-2">{!! trans('theme::lang.vote.banner.info')!!}</div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
@@ -23,13 +24,13 @@
                                 <option value="">none</option>
                                 @foreach(\Azuriom\Models\Image::all() as $image)
                                     <option value="{{ $image->file }}"
-                                            @if(config('theme.vote.banner.vote.image') === $image->file) selected @endif>{{ $image->name }}</option>
+                                            @if(theme_config('vote.banner.vote.image') === $image->file) selected @endif>{{ $image->name }}</option>
                                 @endforeach
                             </select>
                             <div class="mt-3 w-100">
                                 <img
-                                    src="{{ config('theme.vote.banner.vote.image') ? image_url( old('vote[banner][vote][image]', config('theme.vote.banner.vote.image')) ): ''}}"
-                                    alt="{{ old('vote[banner][vote][image]', config('theme.vote.banner.vote.image')) }}"
+                                    src="{{ theme_config('vote.banner.vote.image') ? image_url( old('vote[banner][vote][image]', theme_config('vote.banner.vote.image')) ): ''}}"
+                                    alt="{{ old('vote[banner][vote][image]', theme_config('vote.banner.vote.image')) }}"
                                     class="card-img rounded img-preview-sm @if(!config('vote.banner.vote.image')))d-none @endif"
                                     id="filePreview-vote"
                                     style="object-fit: contain">
@@ -41,7 +42,7 @@
                         <input type="text" class="form-control @error('vote[banner][vote][title]') is-invalid @enderror"
                                id="voteBannerNewTitle"
                                name="vote[banner][vote][title]"
-                               value="{{ old('vote[banner][vote][title]', config('theme.vote.banner.vote.title')) }}">
+                               value="{{ old('vote[banner][vote][title]', theme_config('vote.banner.vote.title')) }}">
 
                         @error('vote[banner][vote][title]')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -49,7 +50,7 @@
                         <div class="custom-control custom-switch mt-2">
                             <input type="checkbox" class="custom-control-input" id="voteBannerNewHidden"
                                    name="vote[banner][vote][hidden]"
-                                   @if(config('theme.vote.banner.vote.hidden')) checked @endif>
+                                   @if(theme_config('vote.banner.vote.hidden')) checked @endif>
                             <label class="custom-control-label" for="voteBannerNewHidden">
                                 {{trans('theme::lang.vote.banner.vote.hidden')}}
                             </label>
@@ -62,13 +63,15 @@
     <div class="form-group">
         <fieldset class="mt-4">
             <legend>{{ trans('theme::lang.vote.favicon.title') }}</legend>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="voteIcon"
-                       name="vote[icon]"
-                       @if(config('theme.vote.icon')) checked @endif>
-                <label class="custom-control-label" for="voteIcon">
-                    {{ trans('theme::lang.vote.favicon.hidden') }}
-                </label>
+            <div class="pl-3">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="voteIcon"
+                           name="vote[icon]"
+                           @if(theme_config('vote.icon')) checked @endif>
+                    <label class="custom-control-label" for="voteIcon">
+                        {{ trans('theme::lang.vote.favicon.hidden') }}
+                    </label>
+                </div>
             </div>
         </fieldset>
     </div>

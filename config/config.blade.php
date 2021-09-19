@@ -51,6 +51,8 @@
                 let i = 0;
                 configFormIconMenus(i)
                 configFormLink(i)
+                configFormLiens(i)
+                configFormCondition(i)
                 configFormSlider(i)
             });
         </script>

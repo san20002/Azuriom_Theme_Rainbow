@@ -6,6 +6,7 @@
         <div class="col-xl-4 col-lg-6">
             <fieldset class="form-group">
                 <legend>{{trans('theme::lang.changelog.banner.changelog.title')}}</legend>
+                <div class="small font-italic mb-2">{!! trans('theme::lang.changelog.banner.info')!!}</div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
@@ -23,13 +24,13 @@
                                 <option value="">none</option>
                                 @foreach(\Azuriom\Models\Image::all() as $image)
                                     <option value="{{ $image->file }}"
-                                            @if(config('theme.changelog.banner.changelog.image') === $image->file) selected @endif>{{ $image->name }}</option>
+                                            @if(theme_config('changelog.banner.changelog.image') === $image->file) selected @endif>{{ $image->name }}</option>
                                 @endforeach
                             </select>
                             <div class="mt-3 w-100">
                                 <img
-                                    src="{{ config('theme.changelog.banner.changelog.image') ? image_url( old('changelog[banner][changelog][image]', config('theme.changelog.banner.changelog.image')) ): ''}}"
-                                    alt="{{ old('changelog[banner][changelog][image]', config('theme.changelog.banner.changelog.image')) }}"
+                                    src="{{ theme_config('changelog.banner.changelog.image') ? image_url( old('changelog[banner][changelog][image]', theme_config('changelog.banner.changelog.image')) ): ''}}"
+                                    alt="{{ old('changelog[banner][changelog][image]', theme_config('changelog.banner.changelog.image')) }}"
                                     class="card-img rounded img-preview-sm @if(!config('changelog.banner.changelog.image')))d-none @endif"
                                     id="filePreview-changelog"
                                     style="object-fit: contain">
@@ -42,7 +43,7 @@
                                class="form-control @error('changelog[banner][changelog][title]') is-invalid @enderror"
                                id="changelogBannerNewTitle"
                                name="changelog[banner][changelog][title]"
-                               value="{{ old('changelog[banner][changelog][title]', config('theme.changelog.banner.changelog.title')) }}">
+                               value="{{ old('changelog[banner][changelog][title]', theme_config('changelog.banner.changelog.title')) }}">
 
                         @error('changelog[banner][changelog][title]')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -50,7 +51,7 @@
                         <div class="custom-control custom-switch mt-2">
                             <input type="checkbox" class="custom-control-input" id="changelogBannerNewHidden"
                                    name="changelog[banner][changelog][hidden]"
-                                   @if(config('theme.changelog.banner.changelog.hidden')) checked @endif>
+                                   @if(theme_config('changelog.banner.changelog.hidden')) checked @endif>
                             <label class="custom-control-label" for="changelogBannerNewHidden">
                                 {{trans('theme::lang.changelog.banner.changelog.hidden')}}
                             </label>

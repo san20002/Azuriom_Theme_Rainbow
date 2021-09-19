@@ -3,7 +3,7 @@
 @section('title', trans('messages.home'))
 
 @section('content')
-    @if(!empty(config('theme.sliders')))
+    @if(!empty(theme_config('sliders')))
         <div class="container-fluid px-0">
             <div class="row no-gutters">
                 <div class="col-12">
@@ -13,11 +13,11 @@
                                 <img src="{{ image_url(setting('background')) }}" alt="">
                             </div>
                         @endif
-                        @if(!empty(config('theme.sliders')[0]['url']))
+                        @if(!empty(theme_config('sliders')[0]['url']))
                             <div class="home--glide glide mt-lg-0 mt-5 d-sm-block d-none" data-component="hero">
                                 <div data-glide-el="track" class="glide__track">
                                     <ul class="glide__slides">
-                                        @foreach(config('theme.sliders') ?? [] as $slider )
+                                        @foreach(theme_config('sliders') ?? [] as $slider )
                                             <li class="glide__slide"
                                                 style="background: url('{{ isset($slider['background']) ? !empty($slider['url']) ? image_url($slider['url']) :'' :''}}') center / cover no-repeat">
                                                 <div
@@ -41,7 +41,7 @@
                                         @endforeach
 
                                     </ul>
-                                    @if(count(config('theme.sliders')) >= 2)
+                                    @if(count(theme_config('sliders')) >= 2)
                                         <div class="glide__arrows" data-glide-el="controls">
                                             <button class="glide__arrow glide__arrow--left"
                                                     data-glide-dir="<"><i
@@ -54,17 +54,17 @@
                                 </div>
                             </div>
                         @endif
-                        @if(!config('theme.home.particle.hidden'))
+                        @if(!theme_config('home.particle.hidden'))
                             <div id="particles-js"></div>
                         @endif
                     </div>
                 </div>
             </div>
-            @if(config('theme.footer.download') && !config('theme.home.download.hidden'))
+            @if(!theme_config('home.download.hidden'))
                 <div class="btn-wrapper-home d-sm-block d-none">
-                    <a class="btn btn-download" href="/{{config('theme.footer.download')}}"
-                       title="{{ trans('theme::lang.download.name')}}">
-                        {{ trans('theme::lang.download.name')}}
+                    <a class="btn btn-download" href="/{{theme_config('home.download.link.name')}}"
+                       title="{{theme_config('home.download.link.name')}}">
+                        {{theme_config('home.download.link.url')}}
                     </a>
                 </div>
             @endif
@@ -104,11 +104,11 @@
                 @guest
                     @include('auth/home-login')
                 @endguest
-                @if(config('theme.discord.id'))
+                @if(theme_config('discord.id'))
 
                     @include('elements.banner', ['banner' => 'info'])
 
-                    <iframe src="https://discordapp.com/widget?id={{config('theme.discord.id')}}&theme=dark"
+                    <iframe src="https://discordapp.com/widget?id={{theme_config('discord.id')}}&theme=dark"
                             width="350"
                             height="500" allowtransparency="true" frameborder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>

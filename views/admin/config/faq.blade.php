@@ -6,6 +6,7 @@
         <div class="col-xl-4 col-lg-6">
             <fieldset class="form-group">
                 <legend>{{trans('theme::lang.faq.banner.faq.title')}}</legend>
+                <div class="small font-italic mb-2">{!! trans('theme::lang.faq.banner.info')!!}</div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="imageSelect">{{ trans('theme::lang.image') }}</label>
@@ -23,13 +24,13 @@
                                 <option value="">none</option>
                                 @foreach(\Azuriom\Models\Image::all() as $image)
                                     <option value="{{ $image->file }}"
-                                            @if(config('theme.faq.banner.faq.image') === $image->file) selected @endif>{{ $image->name }}</option>
+                                            @if(theme_config('faq.banner.faq.image') === $image->file) selected @endif>{{ $image->name }}</option>
                                 @endforeach
                             </select>
                             <div class="mt-3 w-100">
                                 <img
-                                    src="{{ config('theme.faq.banner.faq.image') ? image_url( old('faq[banner][faq][image]', config('theme.faq.banner.faq.image')) ): ''}}"
-                                    alt="{{ old('faq[banner][faq][image]', config('theme.faq.banner.faq.image')) }}"
+                                    src="{{ theme_config('faq.banner.faq.image') ? image_url( old('faq[banner][faq][image]', theme_config('faq.banner.faq.image')) ): ''}}"
+                                    alt="{{ old('faq[banner][faq][image]', theme_config('faq.banner.faq.image')) }}"
                                     class="card-img rounded img-preview-sm @if(!config('faq.banner.faq.image')))d-none @endif"
                                     id="filePreview-faq"
                                     style="object-fit: contain">
@@ -41,7 +42,7 @@
                         <input type="text" class="form-control @error('faq[banner][faq][title]') is-invalid @enderror"
                                id="faqBannerNewTitle"
                                name="faq[banner][faq][title]"
-                               value="{{ old('faq[banner][faq][title]', config('theme.faq.banner.faq.title')) }}">
+                               value="{{ old('faq[banner][faq][title]', theme_config('faq.banner.faq.title')) }}">
 
                         @error('faq[banner][faq][title]')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -49,7 +50,7 @@
                         <div class="custom-control custom-switch mt-2">
                             <input type="checkbox" class="custom-control-input" id="faqBannerNewHidden"
                                    name="faq[banner][faq][hidden]"
-                                   @if(config('theme.faq.banner.faq.hidden')) checked @endif>
+                                   @if(theme_config('faq.banner.faq.hidden')) checked @endif>
                             <label class="custom-control-label" for="faqBannerNewHidden">
                                 {{trans('theme::lang.faq.banner.faq.hidden')}}
                             </label>
