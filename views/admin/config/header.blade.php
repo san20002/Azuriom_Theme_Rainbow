@@ -52,10 +52,39 @@
 @endpush
 <div class="card-header">
     <h3 class="m-0 font-weight-bold text-primary">
-        {{trans('theme::lang.header.title')}}
+        {{trans('theme::lang.global.title')}}
     </h3>
 </div>
 <div class="card-body">
+    <fieldset class="form-group">
+        <legend><label for="ipServer">{{ trans('theme::lang.global.server.title') }}</label></legend>
+        <div class="pl-3">
+            <div class="small font-italic mb-2">{!! trans('theme::lang.global.server.info')!!}</div>
+            <input type="text" class="form-control @error('header[server][ip]') is-invalid @enderror"
+                   id="ipServer" placeholder="IP"
+                   name="header[server][ip]" value="{{ old('header[server][ip]', theme_config('header.server.ip')) }}">
+
+            @error('header[server][ip]')
+            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+    </fieldset>
+    <hr class="my-3 sidebar-divider">
+    <fieldset class="mt-4">
+        <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
+        <div class="pl-3">
+            <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
+                       name="home[particle][hidden]"
+                       @if(theme_config('home.particle.hidden')) checked @endif>
+                <label class="custom-control-label" for="homeParticleHidden">
+                    {{ trans('theme::lang.home.particle.hidden') }}
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <hr class="my-3 sidebar-divider">
     <fieldset>
         <legend>{{trans('theme::lang.header.preloader.title')}}</legend>
         <div class="pl-3">

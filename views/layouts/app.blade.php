@@ -26,11 +26,11 @@
     @auth()
         @if(auth()->user()->role->name == 'Admin')
             @php
-                $theme = explode('/',theme_path());
+                $theme = themes()->currentTheme();
                 $theme_lang = trans('theme::lang');
             @endphp
             <script>
-                window.THEMES = '{{$theme[1]}}';
+                window.THEMES = '{{$theme}}';
                 window.THEMES_LANG = @php echo json_encode($theme_lang)  @endphp
             </script>
             <script src="{{ theme_asset('js/sweetalert2.all.min.js') }}" defer></script>
@@ -41,9 +41,14 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="{{ asset('vendor/clipboard/clipboard.min.js') }}" defer></script>
     <script src="{{ theme_asset('js/glide.min.js') }}" defer></script>
     <script src="{{ theme_asset('js/aos.js') }}"></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
+    @if(!theme_config('home.particle.hidden'))
+        <script src="{{ theme_asset('js/js-particles.js') }}" defer></script>
+    @endif
     <script src="{{ theme_asset('js/particles.js') }}" defer></script>
 
 
@@ -87,7 +92,7 @@
     @yield('content')
 </main>
 <footer class="footer">
-    @if(!empty(!theme_config('footer.logo.hidden') && !theme_config('footer.lien.hidden') && !theme_config('footer.download.hidden') && !empty(theme_config('footer.social.links')[0]['name'])))
+    @if(!empty(!theme_config('footer.logo.hidden') && !theme_config('footer.liens.hidden') && !theme_config('footer.download.hidden') && isset(theme_config('footer.social.links')[0])))
         <div class="footer--top">
             <div class="container-fluid">
                 <div class="row justify-content-around">
@@ -130,7 +135,7 @@
                         @endif
                     </div>
                 </div>
-                @if(theme_config('footer.social.links') && !empty(theme_config('footer.social.links')[0]['name']))
+                @if(theme_config('footer.social.links') && isset(theme_config('footer.social.links')[0]))
                     <div class="container footer--links mt-3">
                         <div class="row">
                             <div class="col-md-12 justify-content-center align-items-center d-flex">
@@ -162,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if(theme_config('footer.conditions.links') && !empty(theme_config('footer.conditions.links')[0]['name']))
+                        @if(theme_config('footer.conditions.links') && isset(theme_config('footer.conditions.links')[0]))
                             <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
                                 @foreach(theme_config('footer.conditions.links') ?? [] as $link )
                                     <a href="/{{$link['url']}}" target="_blank"

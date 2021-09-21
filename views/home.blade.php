@@ -3,7 +3,7 @@
 @section('title', trans('messages.home'))
 
 @section('content')
-    @if(!empty(theme_config('sliders')))
+    @if(!empty(theme_config('sliders')[0]['url'])))
         <div class="container-fluid px-0">
             <div class="row no-gutters">
                 <div class="col-12">
@@ -54,20 +54,13 @@
                                 </div>
                             </div>
                         @endif
+                        @include('elements.ip')
                         @if(!theme_config('home.particle.hidden'))
                             <div id="particles-js"></div>
                         @endif
                     </div>
                 </div>
             </div>
-            @if(!theme_config('home.download.hidden'))
-                <div class="btn-wrapper-home d-sm-block d-none">
-                    <a class="btn btn-download" href="/{{theme_config('home.download.link.name')}}"
-                       title="{{theme_config('home.download.link.name')}}">
-                        {{theme_config('home.download.link.url')}}
-                    </a>
-                </div>
-            @endif
         </div>
     @else
         @include('elements.background-top')

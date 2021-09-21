@@ -295,19 +295,4 @@
             </div>
         </div>
     </fieldset>
-    <hr class="my-3 sidebar-divider">
-    <fieldset class="mt-4">
-        <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
-        <div class="pl-3">
-            <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
-                       name="home[particle][hidden]"
-                       @if(theme_config('home.particle.hidden')) checked @endif>
-                <label class="custom-control-label" for="homeParticleHidden">
-                    {{ trans('theme::lang.home.particle.hidden') }}
-                </label>
-            </div>
-        </div>
-    </fieldset>
 </div>

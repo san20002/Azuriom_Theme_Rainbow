@@ -60,119 +60,175 @@
     <div class="row">
         <div class="col-lg-2">
             <div class="list-group sticky-top" style="top: 75px">
-                <a class="list-group-item list-group-item-action list-group-item-light active"
-                   title="Entête"
-                   href="#list-entete"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="entete">
-                    {{trans('theme::lang.header.title')}}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Page Accueil"
-                   href="#list-home"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="home">
+                <button class="list-group-item list-group-item-action list-group-item-light active"
+                        title="Entête"
+                        href="#list-entete"
+                        data-toggle="list"
+                        role="tab"
+                        aria-controls="entete">
+                    {{trans('theme::lang.global.title')}}
+                </button>
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Page Accueil"
+                        href="#list-home"
+                        data-toggle="list"
+                        role="tab"
+                        aria-controls="home">
                     {{trans('theme::lang.home.title')}}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Profil"
-                   href="#list-profil"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="profil">
+                </button>
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Profil"
+                        href="#list-profil"
+                        data-toggle="list"
+                        role="tab"
+                        aria-controls="profil">
                     {{trans('theme::lang.profile.title')}}
-                </a>
-
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Article"
-                   href="#list-article"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="article">
+                </button>
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Article"
+                        href="#list-article"
+                        data-toggle="list"
+                        role="tab"
+                        aria-controls="article">
                     {{trans('theme::lang.articles.title')}}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Pages"
-                   href="#list-page"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="page">
+                </button>
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Pages"
+                        href="#list-page"
+                        data-toggle="list"
+                        role="tab"
+                        aria-controls="page">
                     {{trans('theme::lang.pages.title')}}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="{{ trans('theme::lang.config.footer.name') }}"
-                   href="#list-footer"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="footer">
+                </button>
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="{{ trans('theme::lang.config.footer.name') }}"
+                        href="#list-footer"
+                        data-toggle="list"
+                        role="tab"
+                        aria-controls="footer">
                     {{ trans('theme::lang.footer.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Changelog"
-                   href="#list-changelog"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="changelog">
+                </button>
+                @if(!isset(plugins()->plugins()['changelog']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Changelog"
+                        href="#list-changelog"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['changelog'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="changelog">
                     {{ trans('theme::lang.changelog.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="FAQ"
-                   href="#list-faq"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="faq">
+                </button>
+                @if(!isset(plugins()->plugins()['changelog']))
+                </span>
+                @endif
+                @if(!isset(plugins()->plugins()['faq']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="FAQ"
+                        href="#list-faq"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['faq'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="faq">
                     {{ trans('theme::lang.faq.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Forum"
-                   href="#list-forum"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="forum">
+                </button>
+                @if(!isset(plugins()->plugins()['faq']))
+                </span>
+                @endif
+                @if(!isset(plugins()->plugins()['forum']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Forum"
+                        href="#list-forum"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['forum'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="forum">
                     {{ trans('theme::lang.forum.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="FAQ"
-                   href="#list-litebans"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="litebans">
+                </button>
+                @if(!isset(plugins()->plugins()['forum']))
+                </span>
+                @endif
+                @if(!isset(plugins()->plugins()['litebans']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="FAQ"
+                        href="#list-litebans"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['litebans'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="litebans">
                     {{ trans('theme::lang.liteBans.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Shop"
-                   href="#list-shop"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="shop">
+                </button>
+                @if(!isset(plugins()->plugins()['litebans']))
+                </span>
+                @endif
+                @if(!isset(plugins()->plugins()['shop']))
+                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button
+                    class="list-group-item list-group-item-action list-group-item-light opacity-50%"
+                    title="Shop"
+                    href="#list-shop"
+                    data-toggle="list"
+                    role="tab"
+                    {{!isset(plugins()->plugins()['shop'])? 'aria-disabled="true" disabled': ''}}
+                    aria-controls="shop">
                     {{ trans('theme::lang.shop.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Support"
-                   href="#list-support"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="support">
+                </button>
+                @if(!isset(plugins()->plugins()['shop']))
+                </span>
+                        @endif
+                        @if(!isset(plugins()->plugins()['support']))
+                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Support"
+                        href="#list-support"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['support'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="support">
                     {{ trans('theme::lang.support.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Wiki"
-                   href="#list-wiki"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="wiki">
-                    {{ trans('theme::lang.wiki.title') }}
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light"
-                   title="Vote"
-                   href="#list-vote"
-                   data-toggle="list"
-                   role="tab"
-                   aria-controls="vote">
+                </button>
+                @if(!isset(plugins()->plugins()['support']))
+                </span>
+                        @endif
+                        @if(!isset(plugins()->plugins()['vote']))
+                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Vote"
+                        href="#list-vote"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['vote'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="vote">
                     {{ trans('theme::lang.vote.title') }}
-                </a>
+                </button>
+                @if(!isset(plugins()->plugins()['vote']))
+                </span>
+                        @endif
+                        @if(!isset(plugins()->plugins()['wiki']))
+                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Wiki"
+                        href="#list-wiki"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['wiki'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="wiki">
+                    {{ trans('theme::lang.wiki.title') }}
+                </button>
+                    @if(!isset(plugins()->plugins()['wiki']))
+                    </span>
+                @endif
             </div>
         </div>
         <div class="col-lg-10  mt-lg-5 mt-5 sidebar-dark">

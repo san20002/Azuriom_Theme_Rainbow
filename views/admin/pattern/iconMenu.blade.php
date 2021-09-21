@@ -38,12 +38,14 @@
         </div>
         <div class="mb-2">
             @php
-               $navbars = \Azuriom\Models\NavbarElement::all();
+                $navbars = \Azuriom\Models\NavbarElement::all();
             @endphp
             <label for="name">Nom</label>
             <select name="header[iconmenus][{index}][name]" id="name" class="w-100 form-control">
+                <option value="">none</option>
                 @foreach($navbars as $navbar)
-                <option value="{{$navbar->name}}" @if(isset($icon['name']) && $icon['name'] === $navbar->name) selected @endif>{{ $navbar->name }}</option>
+                    <option value="{{$navbar->name}}"
+                            @if(isset($icon['name']) && $icon['name'] === $navbar->name) selected @endif>{{ $navbar->name }}</option>
                 @endforeach
             </select>
         </div>

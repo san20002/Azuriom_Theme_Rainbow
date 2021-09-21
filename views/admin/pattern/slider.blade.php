@@ -1,6 +1,6 @@
 <div class="form-row card">
     <div class="card-header d-flex justify-content-between">
-        <h2 class="card-title">{{ trans('theme::lang.slider.name') }} @if(isset($slider)) {{ $loop->iteration }} @else 1 @endif </h2>
+        <h2 class="card-title">{{ trans('theme::lang.sliders.name') }} @if(isset($slider)) {{ $loop->iteration }} @else 1 @endif </h2>
         <div class="input-group-append">
             <button class="btn btn-outline-danger command-remove-slider" type="button"><i
                     class="fas fa-times"></i>

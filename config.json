@@ -2,20 +2,20 @@
     "articles": {
         "banner": {
             "articles": {
-                "image": "background.jpg",
-                "title": "Article"
+                "image": "background-2.jpg",
+                "title": "Article TOTO"
             },
             "allArticle": {
-                "image": "logo-azuriom.svg",
-                "title": "Article All"
+                "image": "background-2.jpg",
+                "title": "Article All TOTO"
             }
         }
     },
     "changelog": {
         "banner": {
             "changelog": {
-                "image": null,
-                "title": null
+                "image": "background-1.jpg",
+                "title": "Changelog TOTO"
             }
         }
     },
@@ -25,8 +25,8 @@
     "faq": {
         "banner": {
             "faq": {
-                "image": null,
-                "title": null
+                "image": "background-3.jpg",
+                "title": "FAQ TOTO"
             }
         }
     },
@@ -35,46 +35,33 @@
             "links": [
                 {
                     "icon": "<i class=\"fab fa-500px\"></i>",
-                    "name": "Toto",
-                    "url": "https://google.com"
-                },
-                {
-                    "icon": null,
-                    "name": null,
-                    "url": null
+                    "name": "yoan latchere",
+                    "url": "qdqd"
                 }
             ]
         },
         "title": "\u00c0 propos de nous",
         "description": "Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.\r\n\r\nCurabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
         "liens": {
-            "title": "liens",
+            "title": null,
             "links": [
                 {
-                    "name": "Accueil",
-                    "url": "https://google.com"
-                },
-                {
-                    "name": null,
-                    "url": null
+                    "name": "yoan latchere",
+                    "url": "sefsefe"
                 }
             ]
         },
         "download": {
             "link": {
-                "name": null,
-                "url": null
+                "name": "doawnload",
+                "url": "fsefsf"
             }
         },
         "conditions": {
             "links": [
                 {
-                    "name": "CGV",
-                    "url": "https://google.com"
-                },
-                {
-                    "name": null,
-                    "url": null
+                    "name": "yoan latchere",
+                    "url": "fdfsf"
                 }
             ]
         }
@@ -82,32 +69,34 @@
     "forum": {
         "banner": {
             "forum": {
-                "image": null,
-                "title": null
+                "image": "background-1.jpg",
+                "title": "Forum TOTO"
             }
         }
     },
     "header": {
-        "icons": "on",
+        "server": {
+            "ip": "play.azuriom.fr"
+        },
         "iconmenus": [
             {
-                "url": "background.jpg",
-                "name": "Home"
+                "url": "background-3.jpg",
+                "name": "Wiki"
             }
         ]
     },
     "home": {
         "banner": {
             "news": {
-                "image": "background.jpg",
-                "title": "Info TOTO"
+                "image": "background-2.jpg",
+                "title": "Articles TOTO"
             },
             "info": {
-                "image": "background.jpg",
+                "image": "background-1.jpg",
                 "title": "Info TOTO"
             },
             "login": {
-                "image": "logo-azuriom.svg",
+                "image": "background-1.jpg",
                 "title": "Info TOTO"
             }
         },
@@ -115,45 +104,34 @@
             "link": {
                 "name": "yoan latchere",
                 "url": "qzdqzddqz"
-            }
+            },
+            "hidden": "on"
         }
     },
     "pages": {
         "banner": {
             "pages": {
-                "image": null
+                "image": "logo.svg"
             }
         }
     },
-    "sliders": [
-        {
-            "url": "background.jpg",
-            "title": "qzdqz",
-            "description": "qzd"
-        },
-        {
-            "url": null,
-            "title": "dqzdqd",
-            "description": "Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta."
-        }
-    ],
     "liteBans": {
         "banner": {
             "liteban": {
-                "image": null,
-                "title": null
+                "image": "background-1.jpg",
+                "title": "LiteBan TOTO"
             }
         }
     },
     "profile": {
         "banner": {
             "achat": {
-                "image": "server-2.png",
-                "title": "Mes achats"
+                "image": "background-2.jpg",
+                "title": "Mes achats TOTO"
             },
             "skin": {
-                "image": "server-1.png",
-                "title": "Mon skin"
+                "image": "background-3.jpg",
+                "title": "Mon skin TOTO"
             }
         }
     },
@@ -196,15 +174,28 @@
     "support": {
         "banner": {
             "support": {
-                "image": null,
-                "title": null
+                "image": "background-2.jpg",
+                "title": "Support TOTO"
             }
         }
     },
+    "sliders": [
+        {
+            "url": "background-3.jpg",
+            "title": "dqzdqd",
+            "description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.",
+            "background": "on"
+        },
+        {
+            "url": "background-1.jpg",
+            "title": null,
+            "description": null
+        }
+    ],
     "vote": {
         "banner": {
             "vote": {
-                "image": null,
+                "image": "background-2.jpg",
                 "title": "Vote TOTO"
             }
         }
@@ -212,8 +203,8 @@
     "wiki": {
         "banner": {
             "wiki": {
-                "image": null,
-                "title": null
+                "image": "background-2.jpg",
+                "title": "Wiki TOTO"
             }
         }
     }
