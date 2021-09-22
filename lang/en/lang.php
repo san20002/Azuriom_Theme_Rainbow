@@ -10,6 +10,11 @@ return [
     'description' => 'Description',
     'icon' => 'Icon  exemple: <i class="fab fa-discord"></i>',
     'name' => 'Name',
+    'animation' => 'Animation',
+    'easing' => 'Easing',
+    'duration' => 'Duration (ms)',
+    'offset' => 'Offset (ms)',
+    'placement' => 'Placement',
     'link' => 'Link',
     'fontawesome' => 'To get the icons please use the',
     'plugin' => [
@@ -23,11 +28,11 @@ return [
         'banner' => [
             'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'article' => [
-                'title' => 'Banner Mes achats',
+                'title' => 'Banner Article',
                 'hidden' => 'Do not display the banner'
             ],
             'allArticle' => [
-                'title' => 'Banner Mon skin',
+                'title' => 'Banner All article',
                 'hidden' => 'Do not display the banner'
             ],
         ],

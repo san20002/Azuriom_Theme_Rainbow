@@ -1,7 +1,7 @@
 @php($counterPartial++)
-<div class="card">
+<div class="card mb-4">
     <div class="card-header">
-        <div class="card-title">{{trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.title')}}</div>
+        <h4 class="card-title">{{trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.title')}}</h4>
     </div>
     <div class="card-body">
         <label
@@ -27,7 +27,7 @@
                 <img
                     src="{{ theme_config($keyBanner.'.banner.'.$valueBanner.'.image') ? image_url( old($keyBanner.'[banner]['.$valueBanner.'][image]', theme_config($keyBanner.'.banner.'.$valueBanner.'.image')) ): ''}}"
                     alt="{{ old($keyBanner.'[banner]['.$valueBanner.'][image]', theme_config($keyBanner.'.banner.'.$valueBanner.'.image')) }}"
-                    class="card-img rounded img-preview-sm @if(!config($keyBanner.'.banner.'.$valueBanner.'.image')))d-none @endif"
+                    class="card-img rounded img-preview-sm @if(!config($keyBanner.'.banner.'.$valueBanner.'.image'))d-none @endif"
                     id="filePreview-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}"
                     style="object-fit: contain;max-height: 90px">
             </div>
@@ -43,7 +43,7 @@
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
 
-        @include('admin.pattern.aos',['keyBanner'=>$keyBanner, 'valueBanner' => $valueBanner])
+        @include('admin.pattern.banner-aos',['keyAos'=>$keyBanner, 'valueAos' => $valueBanner])
 
         <div class="custom-control custom-switch mt-2">
             <input type="checkbox" class="custom-control-input"

@@ -10,24 +10,35 @@ return [
     'description' => 'Description',
     'icon' => 'Icon  exemple: <i class="fab fa-discord"></i>',
     'name' => 'Nom',
-    'link' => 'Lien',
+    'animation' => 'Animation',
+    'easing' => 'L\'assouplissement',
+    'duration' => 'Durée (ms)',
+    'offset' => 'Décalage (ms)',
+    'placement' => 'Placement',
     'fontawesome' => 'Pour obtenir les icones veuillez utiliser les classes de',
     'plugin' => [
         'requires' => 'Nécessite ce plugin'
     ],
     'advancedBan' => [
-        'title' => 'Plugin AdvancedBan'
+        'title' => 'Plugin AdvancedBan',
+        'banner' => [
+            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+            'advancedBan' => [
+                'title' => 'Bannière advancedBan',
+                'hidden' => 'Ne pas afficher la bannière'
+            ],
+        ]
     ],
     'articles' => [
         'title' => 'Article(s)',
         'banner' => [
             'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'article' => [
-                'title' => 'Bannière Mes achats',
+                'title' => 'Bannière article',
                 'hidden' => 'Ne pas afficher la bannière'
             ],
             'allArticle' => [
-                'title' => 'Bannière Mon skin',
+                'title' => 'Bannière des articles',
                 'hidden' => 'Ne pas afficher la bannière'
             ],
         ],

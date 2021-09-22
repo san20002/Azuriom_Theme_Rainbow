@@ -54,11 +54,30 @@
                 configFormCondition(i)
                 configFormSlider(i)
             });
+
+            document.querySelectorAll('.list-group button').forEach(function (event) {
+                event.addEventListener('click', function (e) {
+                    console.log(event.getAttribute('href').split('#')[1])
+                    scrollTo(document.getElementById(event.getAttribute('href').split('#')[1]))
+                })
+            })
+            scrollTo = (element) => {
+                window.scroll({
+                    behavior: 'smooth',
+                    left: 0,
+                    top: element.offsetTop + 150
+                });
+            }
         </script>
     @endpush
-    <div class="row">
+    <div class="row mb-5">
+        <div class="col-12 mb-3">
+            <small class="d-block">Ce thème va vous proposer un maximum de configuration possible pour vous permettre de rendre votre site unique.</small>
+            <small class="d-block mb-2">Si vous avez des problèmes à comprendre n'hésitez pas à m'aider à améliorer le thème vous pouvez me contacter ici: <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a></small>
+            <small class="d-block">Pour vous aidez à comprendre les annimations: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>
+        </div>
         <div class="col-lg-2">
-            <div class="list-group sticky-top" style="top: 75px">
+            <div class="list-group sticky-top">
                 <button class="list-group-item list-group-item-action list-group-item-light active"
                         title="Entête"
                         href="#list-entete"
@@ -107,6 +126,21 @@
                         aria-controls="footer">
                     {{ trans('theme::lang.footer.title') }}
                 </button>
+                @if(!isset(plugins()->plugins()['advancedBan']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="advancedBan"
+                        href="#list-advancedBan"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['advancedBan'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="advancedBan">
+                    {{ trans('theme::lang.advancedBan.title') }}
+                </button>
+                @if(!isset(plugins()->plugins()['advancedBan']))
+                </span>
+                @endif
                 @if(!isset(plugins()->plugins()['changelog']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
@@ -168,7 +202,7 @@
                 </span>
                 @endif
                 @if(!isset(plugins()->plugins()['shop']))
-                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button
                     class="list-group-item list-group-item-action list-group-item-light opacity-50%"
@@ -182,9 +216,9 @@
                 </button>
                 @if(!isset(plugins()->plugins()['shop']))
                 </span>
-                        @endif
-                        @if(!isset(plugins()->plugins()['support']))
-                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                @if(!isset(plugins()->plugins()['support']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
                         title="Support"
@@ -197,9 +231,9 @@
                 </button>
                 @if(!isset(plugins()->plugins()['support']))
                 </span>
-                        @endif
-                        @if(!isset(plugins()->plugins()['vote']))
-                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                @if(!isset(plugins()->plugins()['vote']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
                         title="Vote"
@@ -212,9 +246,9 @@
                 </button>
                 @if(!isset(plugins()->plugins()['vote']))
                 </span>
-                        @endif
-                        @if(!isset(plugins()->plugins()['wiki']))
-                            <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                @if(!isset(plugins()->plugins()['wiki']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
                         title="Wiki"
@@ -242,10 +276,13 @@
                 'ease-out-sine', 'ease-in-out-sine', 'ease-in-quad', 'ease-out-quad', 'ease-in-out-quad', 'ease-in-cubic', 'ease-out-cubic',
                 'ease-in-out-cubic', 'ease-in-quart', 'ease-out-quart', 'ease-in-out-quart'
             ];
+            $placements = [
+                'top-bottom','center-bottom','bottom-bottom','top-center','center-center'
+            ];
 			$counterPartial = 1;
             $allImagesStokage = \Azuriom\Models\Image::all()
         @endphp
-        <div class="col-lg-10  mt-lg-5 mt-5 sidebar-dark">
+        <div class="col-lg-10  mt-lg-0 mt-5 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
 
@@ -274,6 +311,10 @@
                     <div class="tab-pane fade card shadow mb-4" id="list-footer"
                          role="tabpanel" aria-labelledby="list-footer-list">
                         @include('admin.config.footer')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-advancedBan" role="tabpanel"
+                         aria-labelledby="list-advancedBan-list">
+                        @include('admin.config.advancedBan')
                     </div>
                     <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
                          aria-labelledby="list-vote-list">
