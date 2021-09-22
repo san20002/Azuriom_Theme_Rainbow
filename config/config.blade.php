@@ -33,7 +33,6 @@
 
                         preview.src = 'https://' + window.location.hostname + '/storage/img/' + el.value;
                         preview.classList.remove('d-none');
-                        console.log(preview)
 
                         reader.onload = function (el) {
                             if (preview) {
@@ -231,6 +230,21 @@
                 @endif
             </div>
         </div>
+        @php
+            $animations = [
+	            'Fade' => ['none','fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
+                'Flip' => ['flip-up', 'flip-down', 'flip-left', 'flip-right'],
+                'Slide' => ['slide-up', 'slide-down', 'slide-left', 'slide-right'],
+                'Zoom' => ['zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-left', 'zoom-in-right', 'zoom-out', 'zoom-out-up', 'zoom-out-down', 'zoom-out-left', 'zoom-out-right']
+            ];
+            $easingAnimations = [
+                'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'ease-in-back', 'ease-out-back', 'ease-in-out-back', 'ease-in-sine',
+                'ease-out-sine', 'ease-in-out-sine', 'ease-in-quad', 'ease-out-quad', 'ease-in-out-quad', 'ease-in-cubic', 'ease-out-cubic',
+                'ease-in-out-cubic', 'ease-in-quart', 'ease-out-quart', 'ease-in-out-quart'
+            ];
+			$counterPartial = 1;
+            $allImagesStokage = \Azuriom\Models\Image::all()
+        @endphp
         <div class="col-lg-10  mt-lg-5 mt-5 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf

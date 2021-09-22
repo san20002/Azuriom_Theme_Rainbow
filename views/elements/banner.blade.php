@@ -1,5 +1,5 @@
 @if($banner === "login" && !theme_config('home.banner.login.hidden'))
-    <div class="banner">
+    <div class="banner" data-aos="fade-up">
         @if(theme_config('home.banner.login.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('home.banner.login.image'))}}"
@@ -14,7 +14,7 @@
     </div>
 @endif
 @if($banner === "news" && !theme_config('home.banner.news.hidden'))
-    <div class="banner">
+    <div class="banner" data-aos="fade-up">
         @if(theme_config('home.banner.news.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('home.banner.news.image'))}}"
@@ -30,7 +30,7 @@
 @endif
 
 @if($banner === "info" && !theme_config('home.banner.info.hidden'))
-    <div class="banner">
+    <div class="banner" data-aos="fade-down">
         @if(theme_config('home.banner.info.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('home.banner.info.image'))}}"
