@@ -1,0 +1,15 @@
+@if(theme_config($pageAos.'.aos.'.$itemAos.'.animation'))
+data-aos='{{theme_config($pageAos.'.aos.'.$itemAos.'.animation')}}'
+@endif
+@if(theme_config($pageAos.'.aos.'.$itemAos.'.easing'))
+data-aos-easing='{{theme_config($pageAos.'.aos.'.$itemAos.'.easing')}}'
+@endif
+@if(theme_config($pageAos.'.aos.'.$itemAos.'.duration'))
+data-aos-duration='{{theme_config($pageAos.'.aos.'.$itemAos.'.duration')}}'
+@endif
+@if(theme_config($pageAos.'.aos.'.$itemAos.'.placement'))
+data-aos-anchor-placement='{{theme_config($pageAos.'.aos.'.$itemAos.'.placement')}}'
+@endif
+@if(theme_config($pageAos.'.aos.'.$itemAos.'.offset'))
+data-aos-offset='{{theme_config($pageAos.'.aos.'.$itemAos.'.offset')}}'
+@endif

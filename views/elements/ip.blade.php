@@ -3,6 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 mb-3">
                 <div class="countConnectServer justify-content-center justify-content-md-end" id="server-ip-copy"
+                     @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'ip-server'])
                      data-clipboard-text="{{theme_config('header.server.ip')}}">
                     <div class="text">
                         @if($server && $server->isOnline())
@@ -24,16 +25,19 @@
             </div>
             <div class="col-lg-4 col-md-7 d-lg-block d-none">
                 @if(!theme_config('home.download.hidden') && !is_null(theme_config('home.download.link.url')))
-                    <div class="btn-wrapper-home d-sm-block d-none">
-                        <a class="btn btn-download" href="/{{theme_config('home.download.link.url')}}"
-                           title="{{theme_config('home.download.link.name')}}">
-                            {{theme_config('home.download.link.name')}}
-                        </a>
+                    <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'download'])>
+                        <div class="btn-wrapper-home d-sm-block d-none">
+                            <a class="btn btn-download" href="/{{theme_config('home.download.link.url')}}"
+                               title="{{theme_config('home.download.link.name')}}">
+                                {{theme_config('home.download.link.name')}}
+                            </a>
+                        </div>
                     </div>
                 @endif
             </div>
             <div class="col-lg-4 col-md-6 mb-3{{!theme_config('home.download.hidden') ? 'offset-lg-4' :''}}">
-                <div class="countRegister justify-content-center justify-content-md-start">
+                <div class="countRegister justify-content-center justify-content-md-start"
+                    @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'count-register'])>
                     <div class="icon">
                         <i class="fas fa-users" aria-hidden="true"></i>
                     </div>

@@ -22,7 +22,7 @@
                         name="sliders[{index}][url]"
                         data-image-preview-select="filePreview-slider-@if(isset($slider)) {{ $loop->iteration }} @else 1 @endif">
                     <option value="">none</option>
-                    @foreach(\Azuriom\Models\Image::all() as $image)
+                    @foreach($allImagesStokage as $image)
                         <option value="{{ $image->file }}"
                                 @if(isset($slider['url']) && $slider['url'] === $image->file) selected @endif>{{ $image->name }}</option>
                     @endforeach
@@ -55,6 +55,16 @@
                        @if(isset($slider['background'])) checked @endif>
                 <label class="custom-control-label" for="background-@if(isset($slider)) {{ $loop->iteration }} @else 1 @endif">
                     {{ trans('theme::lang.sliders.background') }}
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="reverse-@if(isset($slider)) {{ $loop->iteration }} @else 1 @endif"
+                       name="sliders[{index}][reverse]"
+                       @if(isset($slider['reverse'])) checked @endif>
+                <label class="custom-control-label" for="reverse-@if(isset($slider)) {{ $loop->iteration }} @else 1 @endif">
+                    {{ trans('theme::lang.sliders.reverse') }}
                 </label>
             </div>
         </div>

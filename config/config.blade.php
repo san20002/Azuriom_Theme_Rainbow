@@ -3,7 +3,7 @@
 @else
 
     @extends('admin.layouts.admin')
-    @section('title', 'Themes Rainbow')
+    @section('title', 'Thème Rainbow')
 
 @include('admin.elements.editor')
 
@@ -57,7 +57,6 @@
 
             document.querySelectorAll('.list-group button').forEach(function (event) {
                 event.addEventListener('click', function (e) {
-                    console.log(event.getAttribute('href').split('#')[1])
                     scrollTo(document.getElementById(event.getAttribute('href').split('#')[1]))
                 })
             })
@@ -68,13 +67,41 @@
                     top: element.offsetTop + 150
                 });
             }
+            window.addEventListener('DOMContentLoaded', function (event) {
+                document.querySelectorAll('.js-select-aos').forEach(function (event) {
+                    if (event.value !== 'none') {
+                        event.closest('.js-aos').querySelector('.js-aos-active').classList.remove('d-none')
+                    } else {
+                        event.closest('.js-aos').querySelector('.js-aos-active').classList.add('d-none')
+                    }
+                })
+            })
+            document.querySelectorAll('.js-select-aos').forEach(function (event) {
+                event.addEventListener('change', function (select) {
+                    if (select.target.value !== 'none') {
+                        event.closest('.js-aos').querySelector('.js-aos-active').classList.remove('d-none')
+                    } else {
+                        event.closest('.js-aos').querySelector('.js-aos-active').classList.add('d-none')
+                    }
+                })
+            })
+            document.querySelectorAll('.js-select-col').forEach(function (event) {
+                event.addEventListener('change', function (select) {
+                        event.closest('.js-detect-col').className = select.target.value+ ' js-detect-col'
+                })
+            })
         </script>
     @endpush
     <div class="row mb-5">
         <div class="col-12 mb-3">
-            <small class="d-block">Ce thème va vous proposer un maximum de configuration possible pour vous permettre de rendre votre site unique.</small>
-            <small class="d-block mb-2">Si vous avez des problèmes à comprendre n'hésitez pas à m'aider à améliorer le thème vous pouvez me contacter ici: <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a></small>
-            <small class="d-block">Pour vous aidez à comprendre les annimations: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>
+            <small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre
+                de
+                rendre votre site unique.</small>
+            <small class="d-block mb-2">Si vous ne comprenez pas, n'hésitez pas à me contacter <a
+                    href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m'aider à améliorer le
+                thème.</small>
+            <small class="d-block font-weight-bold">Détail de chaque animation: <a
+                    href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>
         </div>
         <div class="col-lg-2">
             <div class="list-group sticky-top">
@@ -126,7 +153,7 @@
                         aria-controls="footer">
                     {{ trans('theme::lang.footer.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['advancedBan']))
+                @if(!isset(plugins()->plugins()['advancedban']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -134,11 +161,11 @@
                         href="#list-advancedBan"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['advancedBan'])? 'aria-disabled="true" disabled': ''}}
+                        {{!isset(plugins()->plugins()['advancedban'])? 'aria-disabled="true" disabled': ''}}
                         aria-controls="advancedBan">
                     {{ trans('theme::lang.advancedBan.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['advancedBan']))
+                @if(!isset(plugins()->plugins()['advancedban']))
                 </span>
                 @endif
                 @if(!isset(plugins()->plugins()['changelog']))
@@ -266,7 +293,8 @@
         </div>
         @php
             $animations = [
-	            'Fade' => ['none','fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
+	            'No effect'=>['none'],
+	            'Fade' => ['fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
                 'Flip' => ['flip-up', 'flip-down', 'flip-left', 'flip-right'],
                 'Slide' => ['slide-up', 'slide-down', 'slide-left', 'slide-right'],
                 'Zoom' => ['zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-left', 'zoom-in-right', 'zoom-out', 'zoom-out-up', 'zoom-out-down', 'zoom-out-left', 'zoom-out-right']
@@ -279,8 +307,12 @@
             $placements = [
                 'top-bottom','center-bottom','bottom-bottom','top-center','center-center'
             ];
+			$colLgs = [
+				'col-lg-2','col-lg-3','col-lg-4','col-lg-5','col-lg-6','col-lg-7','col-lg-8','col-lg-9','col-lg-10','col-lg-11','col-lg-12',
+            ];
 			$counterPartial = 1;
-            $allImagesStokage = \Azuriom\Models\Image::all()
+            $allImagesStokage = \Azuriom\Models\Image::all();
+            $navbars = \Azuriom\Models\NavbarElement::all();
         @endphp
         <div class="col-lg-10  mt-lg-0 mt-5 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">

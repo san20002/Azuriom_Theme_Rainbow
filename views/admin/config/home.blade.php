@@ -74,6 +74,18 @@
         </div>
     </fieldset>
     <hr class="my-3 sidebar-divider">
+    <div class="row">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'ip-server'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'download'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'count-register'])
+        </div>
+    </div>
+    <hr class="my-3 sidebar-divider">
     <div class="small font-italic mb-2">{!! trans('theme::lang.home.banner.info')!!}</div>
     <div class="row">
         <div class="col-xl-4 col-lg-6">
@@ -100,6 +112,12 @@
             @enderror
         </div>
     </fieldset>
+    <hr class="my-3 sidebar-divider">
+    <div class="row">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'discord'])
+        </div>
+    </div>
     <hr class="my-3 sidebar-divider">
     <fieldset class="mt-4">
         <legend>{{ trans('theme::lang.home.download.title') }}</legend>

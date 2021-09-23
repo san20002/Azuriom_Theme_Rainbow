@@ -3,7 +3,7 @@
 @section('title', trans('messages.home'))
 
 @section('content')
-    @if(!empty(theme_config('sliders')[0]['url'])))
+    @if(!empty(theme_config('sliders')[0]['url']))
         <div class="container-fluid px-0">
             <div class="row no-gutters">
                 <div class="col-12">
@@ -21,8 +21,8 @@
                                             <li class="glide__slide"
                                                 style="background: url('{{ isset($slider['background']) ? !empty($slider['url']) ? image_url($slider['url']) :'' :''}}') center / cover no-repeat">
                                                 <div
-                                                    class="row h-100 align-items-center justify-content-md-start justify-content-center offset-lg-1">
-                                                    <div class="col-lg-5 mt-5 mt-lg-0  px-5">
+                                                    class="row h-100 align-items-center {{isset($slider['reverse']) && $slider['reverse']? 'flex-row-reverse':''}} justify-content-center offset-1">
+                                                    <div class="col-lg-5 mt-5 mt-lg-0 px-5">
                                                         @if(!empty($slider['title']) || !empty($slider['description']))
                                                             <h2 class="title">{{ !empty($slider['title']) ? $slider['title'] :''}}</h2>
                                                             <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
@@ -30,7 +30,7 @@
                                                     </div>
                                                     @if(!isset($slider['background']))
                                                         <div
-                                                            class="col-lg-6 text-center px-lg-0 px-5 d-lg-block d-none">
+                                                            class="col-lg-5 text-center px-lg-0 px-5 d-lg-block d-none">
                                                             <img
                                                                 src="{{ !empty($slider['url']) ? image_url($slider['url']) :''}}"
                                                                 alt="Card image">
@@ -68,11 +68,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 home--post">
-
                 @include('elements.banner',['banner' => 'news'])
                 <div class="row">
                     @foreach($posts as $post)
-                        <div class="col-md-6">
+                        <div
+                            class="col-md-6" @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article'])>
                             <div class="post-preview card mb-3 shadow-sm">
                                 @if($post->hasImage())
                                     <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="card-img-top">
@@ -93,20 +93,22 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-lg-4 home--info">
-                @guest
+            @guest
+                <div class="col-lg-4 home--info">
                     @include('auth/home-login')
-                @endguest
+                </div>
+            @endguest
+            <div class="col-lg-4 home--info">
                 @if(theme_config('discord.id'))
-
                     @include('elements.banner', ['banner' => 'info'])
-
-                    <iframe src="https://discordapp.com/widget?id={{theme_config('discord.id')}}&theme=dark"
-                            width="350"
-                            height="500" allowtransparency="true" frameborder="0"
-                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
+                        <iframe src="https://discordapp.com/widget?id={{theme_config('discord.id')}}&theme=dark"
+                                width="350"
+                                height="500" allowtransparency="true" frameborder="0"
+                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    </div>
+                @endif
             </div>
-            @endif
         </div>
     </div>
 @endsection

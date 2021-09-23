@@ -13,7 +13,7 @@ return [
     'animation' => 'Animation',
     'easing' => 'Easing',
     'duration' => 'Duration (ms)',
-    'offset' => 'Offset (ms)',
+    'offset' => 'Offset',
     'placement' => 'Placement',
     'link' => 'Link',
     'fontawesome' => 'To get the icons please use the',

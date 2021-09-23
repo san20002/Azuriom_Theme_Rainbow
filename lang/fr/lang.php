@@ -13,7 +13,7 @@ return [
     'animation' => 'Animation',
     'easing' => 'L\'assouplissement',
     'duration' => 'Durée (ms)',
-    'offset' => 'Décalage (ms)',
+    'offset' => 'Décalage',
     'placement' => 'Placement',
     'fontawesome' => 'Pour obtenir les icones veuillez utiliser les classes de',
     'plugin' => [

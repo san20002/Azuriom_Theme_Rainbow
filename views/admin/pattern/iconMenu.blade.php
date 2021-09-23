@@ -22,7 +22,7 @@
                         name="header[iconmenus][{index}][url]"
                         data-image-preview-select="filePreview-@if(isset($icon)) {{ $loop->iteration }} @else 1 @endif">
                     <option value="">none</option>
-                    @foreach(\Azuriom\Models\Image::all() as $image)
+                    @foreach($allImagesStokage as $image)
                         <option value="{{ $image->file }}"
                                 @if(isset($icon['url']) && $icon['url'] === $image->file) selected @endif>{{ $image->name }}</option>
                     @endforeach
@@ -37,9 +37,6 @@
             </div>
         </div>
         <div class="mb-2">
-            @php
-                $navbars = \Azuriom\Models\NavbarElement::all();
-            @endphp
             <label for="name">Nom</label>
             <select name="header[iconmenus][{index}][name]" id="name" class="w-100 form-control">
                 <option value="">none</option>
