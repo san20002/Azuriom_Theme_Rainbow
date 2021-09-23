@@ -7,8 +7,16 @@
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'articles', 'valueBanner' => 'article'])
         </div>
-        <div class="col-xl-4 col-lg-6">           
+        <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'articles', 'valueBanner' => 'allArticle'])
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'articles', 'valueAos' => 'article'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'articles', 'valueAos' => 'allArticle'])
         </div>
     </div>
     <fieldset class="mt-4 form-group">

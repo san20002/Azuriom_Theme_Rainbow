@@ -7,7 +7,7 @@
 
         @include('elements.banner',['banner' => 'support'])
 
-        <form action="{{ route('support.tickets.store') }}" method="POST">
+        <form action="{{ route('support.tickets.store') }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
             @csrf
 
             <div class="form-group">

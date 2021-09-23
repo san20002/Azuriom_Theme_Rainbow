@@ -3,7 +3,7 @@
 @section('title', $user->name)
 
 @section('content')
-    <div class="container content" id="forum">
+    <div class="container content" id="forum"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
         <div class="card mb-3">
             <div class="card-body">
                 <div class="row">

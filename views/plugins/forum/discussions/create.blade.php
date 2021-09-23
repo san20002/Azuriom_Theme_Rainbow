@@ -9,7 +9,7 @@
 
         @include('forum::elements.nav')
 
-        <form action="{{ route('forum.forum.discussions.store', $forum->slug) }}" method="POST">
+        <form action="{{ route('forum.forum.discussions.store', $forum->slug) }}" method="POST" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
             @include('forum::discussions._form')
 
             <button type="submit" class="btn btn-primary">

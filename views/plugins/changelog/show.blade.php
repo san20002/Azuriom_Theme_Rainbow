@@ -7,7 +7,7 @@
 
         @include('elements.banner', ['banner' => 'changelog'])
 
-        <div class="row">
+        <div class="row"  @include('elements.string-aos', ['pageAos' => 'changelog', 'itemAos'=>'changelog'])>
             <div class="col-md-3">
                 @include('changelog::sidebar')
             </div>

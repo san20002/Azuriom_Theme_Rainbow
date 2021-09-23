@@ -79,9 +79,6 @@
             @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'ip-server'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'download'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'count-register'])
         </div>
     </div>
@@ -112,7 +109,6 @@
             @enderror
         </div>
     </fieldset>
-    <hr class="my-3 sidebar-divider">
     <div class="row">
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'discord'])
@@ -154,4 +150,10 @@
             </div>
         </div>
     </fieldset>
+    <div class="row mt-3">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'download'])
+        </div>
+    </div>
+
 </div>

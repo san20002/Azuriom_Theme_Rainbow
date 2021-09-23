@@ -26,4 +26,27 @@
             @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'payment'])
         </div>
     </div>
+    <div class="row mt-4">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'shop'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'filter'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'cart'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'profile'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'coupons'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'addCoupons'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'payment'])
+        </div>
+    </div>
 </div>

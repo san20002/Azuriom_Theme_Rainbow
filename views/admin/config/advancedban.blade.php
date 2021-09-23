@@ -7,4 +7,9 @@
             @include('admin.pattern.banner',['keyBanner'=>'advancedBan', 'valueBanner' => 'advancedBan'])
         </div>
     </div>
+    <div class="row mt-4">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'advancedBan', 'valueAos' => 'advancedBan'])
+        </div>
+    </div>
 </div>

@@ -12,7 +12,7 @@
                 {{ trans('faq::messages.empty') }}
             </div>
         @else
-            <div class="accordion" id="faq">
+            <div class="accordion" id="faq"  @include('elements.string-aos', ['pageAos' => 'faq', 'itemAos'=>'faq'])>
                 @foreach($questions as $question)
                     <div class="card">
                         <div class="card-header px-3 py-4" id="heading{{ $question->id }}">

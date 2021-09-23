@@ -20,7 +20,7 @@
     <div class="container content" id="shops">
         @include('elements.banner', ['banner' => 'payment'])
 
-        <div class="row">
+        <div class="row" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'payment'])>
             @forelse($gateways as $gateway)
                 <div class="col-md-3">
                     <div class="card shadow-sm mb-3">

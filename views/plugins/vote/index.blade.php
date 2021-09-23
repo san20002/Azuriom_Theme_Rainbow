@@ -15,8 +15,7 @@
         @include('elements.banner',['banner' => 'vote'])
 
         <div class="row">
-            <div class="col-12">
-
+            <div class="col-12" @include('elements.string-aos', ['pageAos' => 'vote', 'itemAos'=>'vote'])>
                 <div class="vote vote-now text-center position-relative mb-4 px-3 py-5">
                     <div class="@auth d-none @endauth" data-vote-step="1">
                         <form id="voteNameForm">
@@ -56,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" @include('elements.string-aos', ['pageAos' => 'vote', 'itemAos'=>'classement'])>
                 <h2 class="mt-5 pb-2">{{ trans('vote::messages.sections.top') }}</h2>
                 <div class="table-responsive">
                     <ul class="table--custom">
@@ -75,7 +74,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" @include('elements.string-aos', ['pageAos' => 'vote', 'itemAos'=>'recompenses'])>
                 @if(display_rewards())
                     <h2 class="mt-5 pb-2">{{ trans('vote::messages.sections.rewards') }}</h2>
                     <div class="table-responsive">

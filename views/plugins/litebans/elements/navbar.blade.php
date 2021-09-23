@@ -1,6 +1,6 @@
 @include('elements.banner',['banner' => 'liteBans'])
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg"  @include('elements.string-aos', ['pageAos' => 'liteBans', 'itemAos'=>'navbar'])>
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

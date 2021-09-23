@@ -7,6 +7,17 @@
             @include('admin.pattern.banner',['keyBanner'=>'vote', 'valueBanner' => 'vote'])
         </div>
     </div>
+    <div class="row mt-4">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'vote', 'valueAos' => 'vote'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'vote', 'valueAos' => 'classement'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'vote', 'valueAos' => 'recompenses'])
+        </div>
+    </div>
     <div class="form-group">
         <fieldset class="mt-4">
             <legend>{{ trans('theme::lang.vote.favicon.title') }}</legend>

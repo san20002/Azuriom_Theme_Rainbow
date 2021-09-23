@@ -11,7 +11,7 @@
 
         @include('forum::elements.nav')
 
-        <form action="{{ route('forum.discussions.posts.update', [$post->discussion, $post]) }}" method="POST">
+        <form action="{{ route('forum.discussions.posts.update', [$post->discussion, $post]) }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
             @csrf
             @method('PUT')
 

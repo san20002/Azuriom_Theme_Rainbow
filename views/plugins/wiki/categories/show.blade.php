@@ -7,11 +7,11 @@
 
         @include('elements.banner',['banner' => 'wiki'])
 
-        <a href="{{ route('wiki.index') }}" class="btn btn-secondary mb-3  mt-5">
+        <a href="{{ route('wiki.index') }}" class="btn btn-secondary mb-3 mt-5"  @include('elements.string-aos', ['pageAos' => 'wiki', 'itemAos'=>'wiki'])>
             <i class="fas fa-arrow-left"></i> {{ trans('wiki::messages.back') }}
         </a>
 
-        <div class="row">
+        <div class="row" @include('elements.string-aos', ['pageAos' => 'wiki', 'itemAos'=>'wiki'])>
             <div class="col-md-3">
                 <div class="list-group" role="tablist">
                     @foreach($category->pages as $count => $page)

@@ -10,7 +10,7 @@
         @include('forum::elements.nav')
 
         @if(! $forum->forums->isEmpty())
-            <div class="card mb-4">
+            <div class="card mb-4"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
                 <div class="list-group list-group-flush">
                     @foreach($forum->forums as $subForum)
                         <div class="list-group-item">
@@ -39,7 +39,7 @@
             </div>
         @endif
 
-        <div class="card mb-3">
+        <div class="card mb-3" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
             <div class="card-header">{{ trans('forum::messages.discussions.title') }}</div>
             <div class="list-group list-group-flush">
                 @foreach($forum->discussions as $discussion)
@@ -107,7 +107,7 @@
 
         @if(! $forum->is_locked || optional(auth()->user())->isAdmin())
             @can('create', \Azuriom\Plugin\Forum\Models\Discussion::class)
-                <a href="{{ route('forum.forum.discussions.create', $forum->slug) }}" class="btn btn-primary">
+                <a href="{{ route('forum.forum.discussions.create', $forum->slug) }}" class="btn btn-primary"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
                     <i class="fas fa-plus"></i>
                     {{ trans('messages.actions.create') }}
                 </a>

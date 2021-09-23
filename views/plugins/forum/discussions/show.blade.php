@@ -18,7 +18,7 @@
 
         @include('forum::elements.nav')
 
-        <div class="row mb-2">
+        <div class="row mb-2"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
             <div class="col-md-12 d-flex align-items-center justify-content-center">
                 <div>
                     @can('forum.discussions')
@@ -74,7 +74,7 @@
         </div>
 
         @foreach($discussion->posts as $post)
-            <div class="card mb-3">
+            <div class="card mb-3"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-xl-2 col-md-3 text-center">
@@ -178,7 +178,7 @@
 
         @if(! $discussion->is_locked || optional(auth()->user())->isAdmin())
             @can('create', \Azuriom\Plugin\Forum\Models\Post::class)
-                <div class="card shadow-sm mb-3">
+                <div class="card shadow-sm mb-3"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
                     <div class="card-header">
                         <span class="h5">{{ trans('forum::messages.discussions.respond') }}</span>
                     </div>

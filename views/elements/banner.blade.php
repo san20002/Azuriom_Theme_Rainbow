@@ -85,23 +85,23 @@
     </div>
 @endif
 
-@if($banner === "liteBans" && !theme_config('liteBans.banner.liteban.hidden'))
+@if($banner === "liteBans" && !theme_config('liteBans.banner.litebans.hidden'))
     <div class="banner"
-        {{theme_config('liteBans.banner.liteban.animation')? 'data-aos='.theme_config('liteBans.banner.liteban.animation'):'' }}
-        {{theme_config('liteBans.banner.liteban.easing')? 'data-aos-easing='.theme_config('liteBans.banner.liteban.easing'):'' }}
-        {{theme_config('liteBans.banner.liteban.duration')? 'data-aos-duration='.theme_config('liteBans.banner.liteban.duration'):'' }}
-        {{theme_config('liteBans.banner.liteban.duration')? 'data-aos-offset='.theme_config('liteBans.banner.liteban.offset'):'' }}
-        {{theme_config('liteBans.banner.liteban.placement')? 'data-aos-anchor-placement='.theme_config('liteBans.banner.liteban.placement'):'' }}
+        {{theme_config('liteBans.banner.litebans.animation')? 'data-aos='.theme_config('liteBans.banner.litebans.animation'):'' }}
+        {{theme_config('liteBans.banner.litebans.easing')? 'data-aos-easing='.theme_config('liteBans.banner.litebans.easing'):'' }}
+        {{theme_config('liteBans.banner.litebans.duration')? 'data-aos-duration='.theme_config('liteBans.banner.litebans.duration'):'' }}
+        {{theme_config('liteBans.banner.litebans.duration')? 'data-aos-offset='.theme_config('liteBans.banner.litebans.offset'):'' }}
+        {{theme_config('liteBans.banner.litebans.placement')? 'data-aos-anchor-placement='.theme_config('liteBans.banner.litebans.placement'):'' }}
     >
-        @if(theme_config('liteBans.banner.liteban.image'))
+        @if(theme_config('liteBans.banner.litebans.image'))
             <div class="banner-icon">
-                <img src="{{image_url(theme_config('liteBans.banner.liteban.image'))}}"
+                <img src="{{image_url(theme_config('liteBans.banner.litebans.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!theme_config('liteBans.banner.liteban.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('liteBans.banner.litebans.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('liteBans.banner.liteban.title') !== null ? theme_config('liteBans.banner.liteban.title') : trans('litebans::messages.title')}}
+                {{theme_config('liteBans.banner.litebans.title') !== null ? theme_config('liteBans.banner.litebans.title') : trans('litebans::messages.title')}}
             </h1>
         </div>
     </div>
@@ -290,23 +290,23 @@
         </div>
     </div>
 @endif
-@if($banner === "shop_account" && !theme_config('shop.banner.user.hidden'))
+@if($banner === "shop_account" && !theme_config('shop.banner.profile.hidden'))
     <div class="banner"
-        {{theme_config('shop.banner.user.animation')? 'data-aos='.theme_config('shop.banner.user.animation'):'' }}
-        {{theme_config('shop.banner.user.easing')? 'data-aos-easing='.theme_config('shop.banner.user.easing'):'' }}
-        {{theme_config('shop.banner.user.duration')? 'data-aos-duration='.theme_config('shop.banner.user.duration'):'' }}
-        {{theme_config('shop.banner.user.duration')? 'data-aos-offset='.theme_config('shop.banner.user.offset'):'' }}
-        {{theme_config('shop.banner.user.placement')? 'data-aos-anchor-placement='.theme_config('shop.banner.user.placement'):'' }}
+        {{theme_config('shop.banner.profile.animation')? 'data-aos='.theme_config('shop.banner.profile.animation'):'' }}
+        {{theme_config('shop.banner.profile.easing')? 'data-aos-easing='.theme_config('shop.banner.profile.easing'):'' }}
+        {{theme_config('shop.banner.profile.duration')? 'data-aos-duration='.theme_config('shop.banner.profile.duration'):'' }}
+        {{theme_config('shop.banner.profile.duration')? 'data-aos-offset='.theme_config('shop.banner.profile.offset'):'' }}
+        {{theme_config('shop.banner.profile.placement')? 'data-aos-anchor-placement='.theme_config('shop.banner.profile.placement'):'' }}
     >
-        @if(theme_config('shop.banner.user.image'))
+        @if(theme_config('shop.banner.profile.image'))
             <div class="banner-icon">
-                <img src="{{image_url(theme_config('shop.banner.user.image'))}}"
+                <img src="{{image_url(theme_config('shop.banner.profile.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!theme_config('shop.banner.user.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('shop.banner.profile.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('shop.banner.user.title') !== null ? theme_config('shop.banner.user.title') : 'Compte'}}
+                {{theme_config('shop.banner.profile.title') !== null ? theme_config('shop.banner.profile.title') : 'Compte'}}
             </h2>
         </div>
     </div>
@@ -372,41 +372,41 @@
     </div>
 @endif
 
-@if($banner === "page" && !config('theme.pages.banner.pages.hidden'))
+@if($banner === "pages" && !config('theme.pages.banner.page.hidden'))
     <div class="banner"
-        {{theme_config('pages.banner.pages.animation')? 'data-aos='.theme_config('pages.banner.pages.animation'):'' }}
-        {{theme_config('pages.banner.pages.easing')? 'data-aos-easing='.theme_config('pages.banner.pages.easing'):'' }}
-        {{theme_config('pages.banner.pages.duration')? 'data-aos-duration='.theme_config('pages.banner.pages.duration'):'' }}
-        {{theme_config('pages.banner.pages.duration')? 'data-aos-offset='.theme_config('pages.banner.pages.offset'):'' }}
-        {{theme_config('pages.banner.pages.placement')? 'data-aos-anchor-placement='.theme_config('pages.banner.pages.placement'):'' }}
+        {{theme_config('pages.banner.page.animation')? 'data-aos='.theme_config('pages.banner.page.animation'):'' }}
+        {{theme_config('pages.banner.page.easing')? 'data-aos-easing='.theme_config('pages.banner.page.easing'):'' }}
+        {{theme_config('pages.banner.page.duration')? 'data-aos-duration='.theme_config('pages.banner.page.duration'):'' }}
+        {{theme_config('pages.banner.page.duration')? 'data-aos-offset='.theme_config('pages.banner.page.offset'):'' }}
+        {{theme_config('pages.banner.page.placement')? 'data-aos-anchor-placement='.theme_config('pages.banner.page.placement'):'' }}
     >
-        @if(config('theme.pages.banner.pages.image'))
+        @if(config('theme.pages.banner.page.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.pages.banner.pages.image'))}}"
+                <img src="{{image_url(config('theme.pages.banner.page.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.pages.banner.pages.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!config('theme.pages.banner.page.image') ? 'no-image': ''}}">
             <h1>{{$page->title}}</h1>
         </div>
     </div>
 @endif
 
-@if($banner === "article" && !config('theme.articles.banner.page.hidden'))
+@if($banner === "article" && !config('theme.articles.banner.article.hidden'))
     <div class="banner"
-        {{theme_config('articles.banner.page.animation')? 'data-aos='.theme_config('articles.banner.page.animation'):'' }}
-        {{theme_config('articles.banner.page.easing')? 'data-aos-easing='.theme_config('articles.banner.page.easing'):'' }}
-        {{theme_config('articles.banner.page.duration')? 'data-aos-duration='.theme_config('articles.banner.page.duration'):'' }}
-        {{theme_config('articles.banner.page.duration')? 'data-aos-offset='.theme_config('articles.banner.page.offset'):'' }}
-        {{theme_config('articles.banner.page.placement')? 'data-aos-anchor-placement='.theme_config('articles.banner.page.placement'):'' }}
+        {{theme_config('articles.banner.article.animation')? 'data-aos='.theme_config('articles.banner.article.animation'):'' }}
+        {{theme_config('articles.banner.article.easing')? 'data-aos-easing='.theme_config('articles.banner.article.easing'):'' }}
+        {{theme_config('articles.banner.article.duration')? 'data-aos-duration='.theme_config('articles.banner.article.duration'):'' }}
+        {{theme_config('articles.banner.article.duration')? 'data-aos-offset='.theme_config('articles.banner.article.offset'):'' }}
+        {{theme_config('articles.banner.article.placement')? 'data-aos-anchor-placement='.theme_config('articles.banner.article.placement'):'' }}
     >
-        @if(config('theme.articles.banner.articles.image'))
+        @if(config('theme.articles.banner.article.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.articles.banner.articles.image'))}}"
+                <img src="{{image_url(config('theme.articles.banner.article.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.articles.banner.articles.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!config('theme.articles.banner.article.image') ? 'no-image': ''}}">
             <h1>{{$post->title}}</h1>
         </div>
     </div>

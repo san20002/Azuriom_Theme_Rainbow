@@ -9,7 +9,7 @@
 
         @include('forum::elements.nav')
 
-        <form action="{{ route('forum.profile.update', $user) }}" method="POST">
+        <form action="{{ route('forum.profile.update', $user) }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
             @csrf
 
             @include('forum::elements.markdown-editor')

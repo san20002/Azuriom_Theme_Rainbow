@@ -1,5 +1,5 @@
 @include('elements.banner',['banner' => 'login'])
-<div class="card-body">
+<div class="card-body" @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'login'])>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 

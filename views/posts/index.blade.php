@@ -7,7 +7,7 @@
 
         @include('elements.banner', ['banner' => 'allArticle', 'posts' => $posts])
 
-        <div class="row mt-5" >
+        <div class="row mt-5" @include('elements.string-aos', ['pageAos' => 'articles', 'itemAos'=>'allArticle'])>
             @foreach($posts as $post)
                 <div class="col-md-4">
                     <div class="post-preview card mb-3 shadow-sm">

@@ -6,7 +6,7 @@
     <div class="container content">
         @include('elements.banner',['banner' => 'advancedban'])
 
-        <div class="table-responsive">
+        <div class="table-responsive"  @include('elements.string-aos', ['pageAos' => 'advancedBan', 'itemAos'=>'advancedBan'])>
             <ul class="table--custom">
                 <li class="table-header">
                     <div class="col col-1">{{ trans('messages.fields.type') }}</div>

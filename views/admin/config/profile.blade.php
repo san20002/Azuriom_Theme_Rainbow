@@ -11,4 +11,12 @@
             @include('admin.pattern.banner',['keyBanner'=>'profile', 'valueBanner' => 'skin'])
         </div>
     </div>
+    <div class="row mt-4">
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'profile', 'valueAos' => 'buy'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items-aos',['keyAos'=>'profile', 'valueAos' => 'skin'])
+        </div>
+    </div>
 </div>

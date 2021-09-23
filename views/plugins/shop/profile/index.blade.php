@@ -7,7 +7,7 @@
 
         @include('elements.banner',['banner' => 'myAchat'])
 
-        <div class="table-responsive">
+        <div class="table-responsive" @include('elements.string-aos', ['pageAos' => 'profile', 'itemAos'=>'buy'])>
             <ul class="table--custom">
                 <li class="table-header">
                     <div class="col col-1">#</div>

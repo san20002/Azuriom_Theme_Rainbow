@@ -7,7 +7,8 @@
 
         @include('elements.banner',['banner' => 'support'])
 
-        <div class="card shadow-sm mb-5">
+        <div
+            class="card shadow-sm mb-5" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
             <div class="card-body">
              <span class="badge badge-{{ $ticket->isClosed() ? 'danger' : 'success' }}">
                  {{ $ticket->statusMessage() }}
@@ -17,12 +18,13 @@
         </div>
 
         @foreach($ticket->comments as $comment)
-            <div class="card shadow-sm mb-3">
+            <div
+                class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
                 <div class="card-header @if($ticket->author->is($comment->author)) text-info @else text-primary @endif">
                     @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
                 </div>
                 <div class="card-body media">
-{{--                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}" alt="{{ $comment->author->name }}" height="55">--}}
+                    {{--                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}" alt="{{ $comment->author->name }}" height="55">--}}
                     <div class="media-body">
                         <div class="content-body">
                             {{ $comment->parseContent() }}
@@ -32,7 +34,8 @@
             </div>
         @endforeach
 
-        <div class="card shadow-sm mb-3">
+        <div
+            class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
             <div class="card-body">
                 @if($ticket->isClosed())
                     <p class="text-danger">{{ trans('support::messages.tickets.closed') }}</p>
@@ -42,7 +45,8 @@
 
                         <div class="form-group">
                             <label for="content">{{ trans('messages.comments.your-comment') }}</label>
-                            <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="4" required>{{ old('content') }}</textarea>
+                            <textarea class="form-control @error('content') is-invalid @enderror" id="content"
+                                      name="content" rows="4" required>{{ old('content') }}</textarea>
                         </div>
 
                         @error('content')

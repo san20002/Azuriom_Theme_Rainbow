@@ -8,7 +8,7 @@
 
         @if(! $cart->isEmpty())
 
-            <form action="{{ route('shop.cart.update') }}" method="POST">
+            <form action="{{ route('shop.cart.update') }}" method="POST" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'cart'])>
                 @csrf
 
                 <div class="table-responsive">

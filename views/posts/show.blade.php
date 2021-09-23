@@ -23,7 +23,7 @@
 
         @include('elements.banner', ['banner' => 'article', 'post' => $post])
 
-        <div class="card shadow-sm my-4">
+        <div class="card shadow-sm my-4" @include('elements.string-aos', ['pageAos' => 'articles', 'itemAos'=>'article'])>
             <div class="card-body">
                 @if($post->hasImage())
                     <img class="img-fluid rounded mx-auto mb-2" src="{{ $post->imageUrl() }}" alt="{{ $post->title }}">

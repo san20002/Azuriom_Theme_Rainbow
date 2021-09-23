@@ -7,7 +7,7 @@
 
         @include('elements.banner',['banner' => 'wiki'])
 
-        <div class="row mt-5">
+        <div class="row mt-5" @include('elements.string-aos', ['pageAos' => 'wiki', 'itemAos'=>'wiki'])>
             @foreach($categories as $category)
                 <div class="col-md-3">
                     <a href="{{ route('wiki.show', $category) }}">

@@ -12,7 +12,7 @@
 
         @include('litebans::elements.navbar')
 
-        <div class="row">
+        <div class="row" @include('elements.string-aos', ['pageAos' => 'liteBans', 'itemAos'=>'liteBans'])>
             <div class="col-md-3">
                 <div class="user-info border rounded mt-4 d-flex flex-column align-items-center p-3">
                     <h4 class="text-center mb-3">

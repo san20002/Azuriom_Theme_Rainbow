@@ -1,6 +1,6 @@
 @include('elements.banner', ['banner' => 'filter'])
 
-<div class="list-group mb-3">
+<div class="list-group mb-3" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'filter'])>
     @foreach($categories as $subCategory)
         <a href="{{ route('shop.categories.show', $subCategory) }}"
            class="list-group-item @if($category->is($subCategory)) active @endif">
@@ -19,7 +19,7 @@
 @auth
     @include('elements.banner', ['banner' => 'shop_account'])
 
-    <div class="mb-4">
+    <div class="mb-4" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'profile'])>
         @if(use_site_money())
             <p class="text-center font-weight-bold text-lg">
                 {{ auth()->user()->money }}

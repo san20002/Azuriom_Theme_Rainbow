@@ -8,7 +8,7 @@
 
         @include('forum::elements.nav')
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
                 @foreach($categories as $category)
                     <div class="card mb-3">
                         <div class="card-header">
@@ -47,7 +47,7 @@
                 @endforeach
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'message'])>
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-comments fa-fw"></i> {{ trans('forum::messages.latest.title') }}
@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'stati'])>
                     <div class="card-header">
                         <i class="fas fa-chart-bar fa-fw"></i> {{ trans('forum::messages.stats.title') }}
                     </div>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'user'])>
                     <div class="card-header">
                         <i class="fas fa-users fa-fw"></i> {{ trans('forum::messages.online.title') }}
                     </div>

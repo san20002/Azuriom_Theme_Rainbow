@@ -1,17 +1,20 @@
 @php($counterPartial++)
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center justify-content-between">
-        <h4 class="card-title">{{trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.title')}}</h4>
-        <input class="btn btn-link d-none {{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"collapsed":""}}"
-               {{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"checked":""}}
-               type="checkbox"
-               name="{{$keyBanner}}[banner][{{$valueBanner}}][chevron]"
-               data-toggle="collapse"
-               data-target="#collapse-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}"
-               aria-expanded="{{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"true":"false"}}"
-               aria-controls="collapse-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}"
-               id="checkbox-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}">
-        <label for="checkbox-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}">
+        <h4 class="card-title" style="flex: 0 1 90%; max-width: 90%;">
+            {{trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.title')}}</h4>
+        <input
+            class="btn btn-link d-none {{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"collapsed":""}}"
+            {{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"checked":""}}
+            type="checkbox"
+            name="{{$keyBanner}}[banner][{{$valueBanner}}][chevron]"
+            data-toggle="collapse"
+            data-target="#collapse-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}"
+            aria-expanded="{{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"true":"false"}}"
+            aria-controls="collapse-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}"
+            id="checkbox-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}">
+        <label for="checkbox-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}"
+               class="px-2 text-center" style="flex: 0 1 10%; max-width: 10%; cursor: pointer">
             <i class="fas fa-chevron-down"></i>
         </label>
     </div>
