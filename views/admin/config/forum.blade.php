@@ -10,19 +10,19 @@
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'forum', 'valueAos' => 'forum'])
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'forum', 'valueAos' => 'breadcrumb'])
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'breadcrumb'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'forum', 'valueAos' => 'message'])
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'message'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'forum', 'valueAos' => 'stati'])
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'stati'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'forum', 'valueAos' => 'user'])
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'user'])
         </div>
     </div>
 </div>

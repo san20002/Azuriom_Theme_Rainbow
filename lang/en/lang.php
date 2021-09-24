@@ -1,314 +1,476 @@
 <?php
 
 return [
-    'site' => [
-        'register' => 'registered on our site',
+    'site'        => [
+        'register'       => 'registered on our site',
         'memberRegister' => 'Registered Members',
     ],
-    'image' => 'Image',
-    'title' => 'Title',
+    'image'       => 'Image',
+    'title'       => 'Title',
     'description' => 'Description',
-    'icon' => 'Icon  exemple: <i class="fab fa-discord"></i>',
-    'name' => 'Name',
-    'animation' => 'Animation',
-    'easing' => 'Easing',
-    'duration' => 'Duration (ms)',
-    'offset' => 'Offset',
-    'placement' => 'Placement',
-    'link' => 'Link',
+    'icon'        => 'Icon  exemple: <i class="fab fa-discord"></i>',
+    'name'        => 'Name',
+    'animation'   => 'Animation',
+    'easing'      => 'Easing',
+    'duration'    => 'Duration (ms)',
+    'offset'      => 'Offset',
+    'placement'   => 'Placement',
+    'link'        => 'Link',
     'fontawesome' => 'To get the icons please use the',
-    'plugin' => [
+    'plugin'      => [
         'requires' => 'Requires this plugin'
     ],
     'advancedBan' => [
-        'title' => 'Plugin AdvancedBan'
-    ],
-    'articles' => [
-        'title' => 'Article(s)',
+        'title'  => 'Plugin AdvancedBan',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-            'article' => [
-                'title' => 'Banner Article',
-                'hidden' => 'Do not display the banner'
+            'advancedBan' => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Bannière AdvancedBan',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items'  => [
+            'advancedBan' => [
+                'title' => 'Interface AdvancedBan',
+            ],
+        ]
+    ],
+    'articles'    => [
+        'title'  => 'Article(s)',
+        'banner' => [
+            'article'    => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner Article',
+                'hidden' => 'Do not display'
             ],
             'allArticle' => [
-                'title' => 'Banner All article',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner All article',
+                'hidden' => 'Do not display'
             ],
         ],
-        'article' => [
-            'title' => 'Article(s)',
-            'commentHidden' => 'Do not display comments in articles',
-            'followHiiden' => 'Don\'t display the likes in the articles',
-        ],
+        'items'  => [
+            'article'    => [
+                'title' => 'Interface article',
+                'label' => [
+                    'comment-hidden' => 'Do not display comments in articles',
+                    'follow-hidden'  => 'Don\'t display the likes in the articles',
+                ],
+            ],
+            'allArticle' => [
+                'title' => 'Interface All article',
+            ],
+        ]
     ],
-    'changelog' => [
-        'title' => 'Plugin Changelog',
+    'changelog'   => [
+        'title'  => 'Plugin Changelog',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'changelog' => [
-                'title' => 'Banner changelog',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner changelog',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'changelog' => [
+                'title' => 'Interface changelog',
+            ],
+        ]
     ],
-    'faq' => [
-        'title' => 'Plugin FAQ',
+    'faq'         => [
+        'title'  => 'Plugin FAQ',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'faq' => [
-                'title' => 'Banner FAQ',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner FAQ',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'faq' => [
+                'title' => 'Interface FAQ',
+            ],
+        ]
     ],
-    'footer' => [
-        'title' => 'Pied de page',
-        'social' => [
+    'footer'      => [
+        'title'     => 'Pied de page',
+        'social'    => [
             'title' => 'Social network',
-            'info' => '<span>Allows you to add your social networks.</span>'
+            'info'  => '<span>Allows you to add your social networks.</span>'
         ],
         'condition' => [
             'title' => 'CGU,CGV,etc...',
-            'info' => '<span>Allows you to add your CGV, CGU, Legal Notice links.</span>
+            'info'  => '<span>Allows you to add your CGV, CGU, Legal Notice links.</span>
                         <span>Just remember to add a page link that you can create here  <a href="/admin/pages" target="_blank" title="Page">page</a></span>
                         '
         ],
-        'download' => [
-            'title' => 'Button download',
+        'download'  => [
+            'title'  => 'Button download',
             'hidden' => 'Do not display the button',
-            'info' => '<span>Allows to add a download button if you have a launcher.</span>'
+            'info'   => '<span>Allows to add a download button if you have a launcher.</span>'
         ],
-        'logo' => [
-            'title' => 'Logo in footer',
+        'logo'      => [
+            'title'  => 'Logo in footer',
             'hidden' => 'Do not display the logo',
         ],
-        'liens' => [
-            'title' => 'Links',
+        'liens'     => [
+            'title'  => 'Links',
             'hidden' => 'Do not display the links',
-            'info' => '<span>Allows to add your links (Home, store, contact, discord).</span>'
+            'info'   => '<span>Allows to add your links (Home, store, contact, discord).</span>'
         ],
     ],
-    'forum' => [
-        'title' => 'Plugin Forum',
+    'forum'       => [
+        'title'  => 'Plugin Forum',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'forum' => [
-                'title' => 'Banner forum',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner forum',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items'  => [
+            'forum'      => [
+                'title' => 'Interface forum',
+            ],
+            'breadcrumb' => [
+                'title' => 'Interface breadcrumb',
+            ],
+            'message'    => [
+                'title' => 'Interface Derniers messages',
+            ],
+            'stati'      => [
+                'title' => 'Interface Stats',
+            ],
+            'user'       => [
+                'title' => 'Interface User online',
             ],
         ],
     ],
-    'global' => [
+    'global'      => [
         'title' => 'Global',
-        'server' => [
-            'title' => 'The ip of your server',
-            'info' => 'This will display the IP of your server on the site.'
-        ]
     ],
-    'header' => [
-        'title' => 'Header',
+    'header'      => [
+        'title'     => 'Header',
         'preloader' => [
-            'title' => 'Preloader',
+            'title'  => 'Preloader',
             'hidden' => 'Do not display the preloader',
-            'info' => '<span>Allows to display a loading page the time that the page constitutes the elements.</span>'
+            'info'   => '<span>Allows to display a loading page the time that the page constitutes the elements.</span>'
         ],
-        'navbar' => [
-            'title' => 'Navigation bar',
+        'navbar'    => [
+            'title'      => 'Navigation bar',
             'hiddenIcon' => 'Do not display the icons in the top of the page',
             'hiddenText' => 'Do not display the text of the navigation',
-            'info' => '<span>Allows to display text & image or just image or text.</span>'
+            'info'       => '<span>Allows to display text & image or just image or text.</span>'
         ],
-        'icon' => [
+        'icon'      => [
             'title' => 'Navigation icon',
             "alert" => 'Remember to update the icons if you change the Name of the link',
-            'info' => '<span>Allows to display text & image or just image or text.</span>',
+            'info'  => '<span>Allows to display text & image or just image or text.</span>',
         ]
     ],
-    'home' => [
-        'title' => 'Home page',
-        'download' => [
-            'title' => 'Button download',
-            'hidden' => 'Do not display the button',
-            'info' => '<span>Allows to add a download button if you have a launcher.</span>'
-        ],
-        'discord' => [
-            'title' => 'Discord server ID',
-            'info' => '<span>Allows to display your discord.</span>
-                        <span>How to find your <a href="https://support.discord.com/hc/fr/articles/206346498-O%C3%B9-trouver-l-ID-de-mon-compte-utilisateur-serveur-message-" target="_blank" title="ID discord">ID SERVEUR DISCORD</a></span>'
+    'home'        => [
+        'title'    => 'Home page',
+        'items'    => [
+            'article'        => [
+                'title' => 'Interface all articles',
+            ],
+            'ip-server'      => [
+                'title'       => 'Interface ip-server',
+                'info'        => '<span>Allows to display your ip on the site.</span>',
+                'label'       => [
+                    'ip'     => 'Your server IP',
+                    'hidden' => 'Do not display',
+                ],
+                'placeholder' => [
+                    'ip' => '127.0.0.1',
+                ],
+            ],
+            'count-register' => [
+                'title' => 'Interface member register',
+                'info'  => '<span>Allows to display the number of people registered on the site.</span>',
+                'label' => [
+                    'hidden' => 'Do not display',
+                ],
+            ],
+            'download'       => [
+                'title'       => 'Interface download',
+                'info'        => '<span>Allows to add a download button if you have a launcher.</span>',
+                'hidden'      => 'Do not display the button',
+                'label'       => [
+                    'name'   => 'Name',
+                    'url'    => 'Link',
+                    'hidden' => 'Do not display',
+                ],
+                'placeholder' => [
+                    'name' => 'Name',
+                    'url'  => 'Link',
+                ],
+            ],
+            'discord'        => [
+                'title'       => 'Interface discord',
+                'info'        => '<span>Allows to display your discord.</span>
+                        <span>How to find your <a href="https://support.discord.com/hc/fr/articles/206346498-O%C3%B9-trouver-l-ID-de-mon-compte-utilisateur-serveur-message-" target="_blank" title="ID discord">ID SERVEUR DISCORD</a></span>',
+                'label'       => [
+                    'id'     => 'Discord server ID',
+                    'hidden' => 'Do not display',
+                ],
+                'placeholder' => [
+                    'id' => '684097488164225073',
+                ],
 
+            ]
         ],
-        'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-            'article' => [
-                'title' => 'Banner Article(s)',
-                'hidden' => 'Do not display the banner'
+        'banner'   => [
+            'article'     => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner Article(s)',
+                'hidden' => 'Do not display'
             ],
             'information' => [
-                'title' => 'Banner Information(s)',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner Information(s)',
+                'hidden' => 'Do not display'
             ],
-            'login' => [
-                'title' => 'Banner Connexion',
-                'hidden' => 'Do not display the banner'
+            'login'       => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner Connexion',
+                'hidden' => 'Do not display'
             ],
         ],
         'particle' => [
-            'title' => 'Particles',
+            'title'  => 'Particles',
             'hidden' => 'Do not display the particles',
-            'info' => '<span>Allows to display particles.</span>',
+            'info'   => '<span>Allows to display particles.</span>',
         ],
-        'slider' => [
+        'slider'   => [
             'title' => 'Slider',
-            'info' => '<span>Allows to display a slider (scrolling a list of text + image).</span>',
+            'info'  => '<span>Allows to display a slider (scrolling a list of text + image).</span>',
         ]
     ],
-    'pages' => [
-        'title' => 'Page(s)',
+    'pages'       => [
+        'title'  => 'Page(s)',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'page' => [
-                'title' => 'Banner Pages',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner Pages',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'page' => [
+                'title' => 'Interface Pages',
+            ],
+        ]
     ],
-    'sliders' => [
-        'title' => 'Plugin Sliders',
-        'name' => 'Slider',
-        'id' => 'slider',
-        'background' => 'Display the image in the background'
+    'sliders'     => [
+        'title'      => 'Plugin Sliders',
+        'name'       => 'Slider',
+        'id'         => 'slider',
+        'background' => 'Display the image in the background',
+        'reverse'    => 'Invert image - text'
     ],
-    'liteBans' => [
-        'title' => 'Plugin LiteBans',
+    'liteBans'    => [
+        'title'  => 'Plugin LiteBans',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'litebans' => [
-                'title' => 'Banner litebans',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner litebans',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'liteBans' => [
+                'title' => 'Interface liteBans',
+            ],
+            'navbar'   => [
+                'title' => 'Interface NavBar',
+            ],
+        ]
     ],
-    'profile' => [
-        'title' => 'Profil',
+    'profile'     => [
+        'title'  => 'Profil',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-            'buy' => [
-                'title' => 'Banner Mes achats',
-                'hidden' => 'Do not display the banner'
+            'buy'  => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner My achats',
+                'hidden' => 'Do not display'
             ],
             'skin' => [
-                'title' => 'Banner Mon skin',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner My skin',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'buy'  => [
+                'title' => 'Interface My achats',
+            ],
+            'skin' => [
+                'title' => 'Interface My skin',
+            ],
+        ]
     ],
-    'project' => [
+    'project'     => [
         'title' => 'Plugin Project',
     ],
-    'shop' => [
-        'title' => 'Plugin Shop',
+    'shop'        => [
+        'title'  => 'Plugin Shop',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-            'shop' => [
-                'title' => 'Banner boutique',
-                'hidden' => 'Do not display the banner'
+            'shop'       => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner boutique',
+                'hidden' => 'Do not display'
             ],
-            'filter' => [
-                'title' => 'Banner filtre',
-                'hidden' => 'Do not display the banner'
+            'filter'     => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner filtre',
+                'hidden' => 'Do not display'
             ],
-            'cart' => [
-                'title' => 'Banner panier',
-                'hidden' => 'Do not display the banner'
+            'cart'       => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner panier',
+                'hidden' => 'Do not display'
             ],
-            'profile' => [
-                'title' => 'Banner profil',
-                'hidden' => 'Do not display the banner'
+            'profile'    => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner profil',
+                'hidden' => 'Do not display'
             ],
-            'coupons' => [
-                'title' => 'Banner coupons',
-                'hidden' => 'Do not display the banner'
+            'coupons'    => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner coupons',
+                'hidden' => 'Do not display'
             ],
             'addCoupons' => [
-                'title' => 'Banner ajouter un coupon',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner ajouter un coupon',
+                'hidden' => 'Do not display'
             ],
-            'payment' => [
-                'title' => 'Banner Paiement',
-                'hidden' => 'Do not display the banner'
+            'payment'    => [
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner Paiement',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'shop'       => [
+                'title' => 'Interface boutique',
+            ],
+            'filter'     => [
+                'title' => 'Interface filtre',
+            ],
+            'cart'       => [
+                'title' => 'Interface panier',
+            ],
+            'profile'    => [
+                'title' => 'Interface profil',
+            ],
+            'coupons'    => [
+                'title' => 'Interface coupons',
+            ],
+            'addCoupons' => [
+                'title' => 'Interface ajouter un coupon',
+            ],
+            'payment'    => [
+                'title' => 'Interface Paiement',
+            ],
+        ]
     ],
-    'skinApi' => [
-        'title' => 'Plugin SkinApi',
+    'skinApi'     => [
+        'title'  => 'Plugin SkinApi',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'skin' => [
-                'title' => 'Banner skin',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner skin',
+                'hidden' => 'Do not display'
             ],
         ],
     ],
-    'support' => [
-        'title' => 'Plugin Support',
+    'support'     => [
+        'title'  => 'Plugin Support',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'support' => [
-                'title' => 'Banner support',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner support',
+                'hidden' => 'Do not display'
             ],
         ],
+        'items'  => [
+            'support' => [
+                'title' => 'Interface support',
+            ],
+        ]
     ],
-    'vote' => [
-        'title' => 'Plugin Vote',
-        'favicon' => [
-            'title' => 'Add the Favicon of the voting site',
-            'hidden' => 'Do not display site icons in the voting buttons',
-        ],
+    'vote'        => [
+        'title'  => 'Plugin Vote',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'vote' => [
-                'title' => 'Banner vote',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner vote',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items'  => [
+            'vote'        => [
+                'title' => 'Interface vote',
+                'label' => [
+                    'hidden' => 'Do not display site icons in the voting buttons',
+                ],
+            ],
+            'podium'      => [
+                'title' => 'Interface podium',
+                'label' => [
+                    'hidden' => 'Do not display podium',
+                ],
+            ],
+            'classement'  => [
+                'title' => 'Interface classement',
+            ],
+            'recompenses' => [
+                'title' => 'Interface recompenses',
             ],
         ],
     ],
-    'wiki' => [
-        'title' => 'Plugin Wiki',
+    'wiki'        => [
+        'title'  => 'Plugin Wiki',
         'banner' => [
-            'info' => '<span>Allows you to adjust the banner to your liking.</span>',
             'wiki' => [
-                'title' => 'Banner wiki',
-                'hidden' => 'Do not display the banner'
+                'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title'  => 'Banner wiki',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items'  => [
+            'wiki' => [
+                'title' => 'Interface wiki',
             ],
         ],
     ],
 
     'setting' => [
-        'save' => 'Save theme',
+        'save'  => 'Save theme',
         'color' => [
-            'button' => 'Button',
-            'alert' => 'Alert',
-            'bgText' => 'Bg + Text',
-            'color' => 'Color',
-            'bgColor' => 'Background color',
+            'button'    => 'Button',
+            'alert'     => 'Alert',
+            'bgText'    => 'Bg + Text',
+            'color'     => 'Color',
+            'bgColor'   => 'Background color',
             'textColor' => 'Text color',
         ]
     ],
-    'alert' => [
+    'alert'   => [
         'confirmButtonText' => 'Yes, reset it!',
-        'yes' => 'Yes',
-        'cancel' => 'Cancel',
-        'reset' => [
-            'title' => 'Are you sure reset color?',
-            'text' => 'You won\'t be able to revert this!',
+        'yes'               => 'Yes',
+        'cancel'            => 'Cancel',
+        'reset'             => [
+            'title'   => 'Are you sure reset color?',
+            'text'    => 'You won\'t be able to revert this!',
             'confirm' => [
                 'title' => 'reset!',
-                'text' => 'You have reset the colors of the theme',
+                'text'  => 'You have reset the colors of the theme',
             ],
         ],
-        'save' => 'Color save in config'
+        'save'              => 'Color save in config'
 
     ]
 ];

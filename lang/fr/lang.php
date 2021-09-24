@@ -1,322 +1,478 @@
 <?php
 
 return [
-    'site' => [
-        'register' => 'inscrits sur notre site',
+    'site'        => [
+        'register'       => 'inscrits sur notre site',
         'memberRegister' => 'Membres Inscrits',
     ],
-    'image' => 'Image',
-    'title' => 'Titre',
+    'image'       => 'Image',
+    'title'       => 'Titre',
     'description' => 'Description',
-    'icon' => 'Icon  exemple: <i class="fab fa-discord"></i>',
-    'name' => 'Nom',
-    'animation' => 'Animation',
-    'easing' => 'L\'assouplissement',
-    'duration' => 'Durée (ms)',
-    'offset' => 'Décalage',
-    'placement' => 'Placement',
+    'icon'        => 'Icon  exemple: <i class="fab fa-discord"></i>',
+    'name'        => 'Nom',
+    'animation'   => 'Animation',
+    'easing'      => 'L\'assouplissement',
+    'duration'    => 'Durée (ms)',
+    'offset'      => 'Décalage',
+    'placement'   => 'Placement',
     'fontawesome' => 'Pour obtenir les icones veuillez utiliser les classes de',
-    'plugin' => [
+    'plugin'      => [
         'requires' => 'Nécessite ce plugin'
     ],
     'advancedBan' => [
-        'title' => 'Plugin AdvancedBan',
+        'title'  => 'Plugin AdvancedBan',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'advancedBan' => [
-                'title' => 'Bannière advancedBan',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière advancedBan',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items'  => [
+            'advancedBan' => [
+                'title' => 'Interface advancedBan',
             ],
         ]
     ],
-    'articles' => [
-        'title' => 'Article(s)',
+    'articles'    => [
+        'title'  => 'Article(s)',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
-            'article' => [
-                'title' => 'Bannière article',
-                'hidden' => 'Ne pas afficher la bannière'
+            'article'    => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière article',
+                'hidden' => 'Ne pas afficher'
             ],
             'allArticle' => [
-                'title' => 'Bannière des articles',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière des articles',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
-        'article' => [
-            'title' => 'Article(s)',
-            'commentHidden' => 'Ne pas afficher les commentaires dans les articles',
-            'followHiiden' => 'Ne pas afficher les j\'aime dans les articles',
-        ],
+        'items'  => [
+            'article'    => [
+                'title' => 'Interface article',
+                'label' => [
+                    'comment-hidden' => 'Ne pas afficher les commentaires dans les articles',
+                    'follow-hidden'  => 'Ne pas afficher les j\'aime dans les articles',
+                ],
+            ],
+            'allArticle' => [
+                'title' => 'Interface des articles',
+            ],
+        ]
     ],
-    'changelog' => [
-        'title' => 'Plugin Changelog',
+    'changelog'   => [
+        'title'  => 'Plugin Changelog',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'changelog' => [
-                'title' => 'Bannière changelog',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière changelog',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'changelog' => [
+                'title' => 'Interface changelog',
+            ],
+        ]
     ],
-    'faq' => [
-        'title' => 'Plugin FAQ',
+    'faq'         => [
+        'title'  => 'Plugin FAQ',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'faq' => [
-                'title' => 'Bannière FAQ',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière FAQ',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'faq' => [
+                'title' => 'Interface FAQ',
+            ],
+        ]
     ],
-    'footer' => [
-        'title' => 'Pied de page',
-        'social' => [
+    'footer'      => [
+        'title'     => 'Pied de page',
+        'social'    => [
             'title' => 'Réseau social',
-            'info' => '<span>Permet d\'ajouter vos réseaux sociaux.</span>'
+            'info'  => '<span>Permet d\'ajouter vos réseaux sociaux.</span>'
         ],
         'condition' => [
             'title' => 'CGU,CGV,etc...',
-            'info' => '<span>Permet d\'ajouter vos liens de CGV, CGU, Mention légale.</span>
+            'info'  => '<span>Permet d\'ajouter vos liens de CGV, CGU, Mention légale.</span>
                         <span>Pensez juste à ajouter un lien de page que vous pouvez créer ici  <a href="/admin/pages" target="_blank" title="Page">page</a></span>
                         '
         ],
-        'download' => [
-            'title' => 'Bouton téléchargement',
+        'download'  => [
+            'title'  => 'Bouton téléchargement',
             'hidden' => 'Ne pas afficher le bouton',
-            'info' => '<span>Permet d\'ajouter un bouton de téléchargement si vous avez un launcher.</span>'
+            'info'   => '<span>Permet d\'ajouter un bouton de téléchargement si vous avez un launcher.</span>'
         ],
-        'logo' => [
-            'title' => 'Logo en pied de page',
+        'logo'      => [
+            'title'  => 'Logo en pied de page',
             'hidden' => 'Ne pas afficher le logo',
         ],
-        'liens' => [
-            'title' => 'Liens',
+        'liens'     => [
+            'title'  => 'Liens',
             'hidden' => 'Ne pas afficher les liens',
-            'info' => '<span>Permet d\'ajouter vos liens (Accueil, boutique, contact, discord) sans difficulté.</span>'
+            'info'   => '<span>Permet d\'ajouter vos liens (Accueil, boutique, contact, discord) sans difficulté.</span>'
         ],
     ],
-    'forum' => [
-        'title' => 'Plugin Forum',
+    'forum'       => [
+        'title'  => 'Plugin Forum',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'forum' => [
-                'title' => 'Bannière forum',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière forum',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items'  => [
+            'forum'      => [
+                'title' => 'Interface forum',
+            ],
+            'breadcrumb' => [
+                'title' => 'Interface fil d\'Ariane',
+            ],
+            'message'    => [
+                'title' => 'Interface Derniers messages',
+            ],
+            'stati'      => [
+                'title' => 'Interface Stats',
+            ],
+            'user'       => [
+                'title' => 'Interface Utilisateurs en ligne',
             ],
         ],
     ],
-    'global' => [
+    'global'      => [
         'title' => 'Général',
-        'server' => [
-            'title' => 'L\'ip de votre serveur',
-            'info' => 'Cela va permettre d\'afficher l\'IP de votre serveur sur le site.'
-        ]
     ],
-    'header' => [
-        'title' => 'Entête',
+    'header'      => [
+        'title'     => 'Entête',
         'preloader' => [
-            'title' => 'Preloader',
+            'title'  => 'Preloader',
             'hidden' => 'Ne pas afficher le preloader',
-            'info' => '<span>Permet d\'afficher une page de chargement le temps que la page constitue les éléments.</span>'
+            'info'   => '<span>Permet d\'afficher une page de chargement le temps que la page constitue les éléments.</span>'
         ],
-        'navbar' => [
-            'title' => 'Barre de navigation',
+        'navbar'    => [
+            'title'      => 'Barre de navigation',
             'hiddenIcon' => 'Ne pas afficher les icones dans la haut de page',
             'hiddenText' => 'Ne pas afficher le texte de la navigation',
-            'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>'
+            'info'       => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>'
         ],
-        'icon' => [
+        'icon'      => [
             'title' => 'Icone de navigation',
             "alert" => 'Pensez à mettre à jour les icones si vous modifier le Nom du lien',
-            'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>',
+            'info'  => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>',
         ]
     ],
-    'home' => [
+    'home'        => [
         'title' => 'Page d\'accueil',
-        'download' => [
-            'title' => 'Bouton de téléchargement',
-            'hidden' => 'Ne pas afficher le bouton de téléchagement',
-            'info' => '<span>Permet d\'ajouter un bouton de téléchargement si vous avez un launcher.</span>'
-        ],
-        'discord' => [
-            'title' => 'ID du serveur Discord',
-            'info' => '<span>Permet d\'afficher votre discord.</span>
-                        <span>Comment trouver votre <a href="https://support.discord.com/hc/fr/articles/206346498-O%C3%B9-trouver-l-ID-de-mon-compte-utilisateur-serveur-message- target="_blank" title="ID discord">ID SERVEUR DISCORD</a></span>
-                        '
+        'items' => [
+            'article'        => [
+                'title' => 'Interface des articles',
+            ],
+            'ip-server'      => [
+                'title'       => 'Interface ip-serveur',
+                'info'        => '<span>Permet d\'afficher votre ip sur le site.</span>',
+                'label'       => [
+                    'ip'     => 'Votre IP de serveur',
+                    'hidden' => 'Ne pas afficher',
+                ],
+                'placeholder' => [
+                    'ip' => '127.0.0.1',
+                ],
 
+            ],
+            'count-register' => [
+                'title' => 'Interface membres inscrits',
+                'info'  => '<span>Permet d\'afficher le nombre de personne inscrite sur le site.</span>',
+                'label' => [
+                    'hidden' => 'Ne pas afficher',
+                ],
+            ],
+            'download'       => [
+                'title'       => 'Interface téléchargement',
+                'info'        => '<span>Permet d\'ajouter un bouton de téléchargement si vous avez un launcher.</span>',
+                'label'       => [
+                    'name'   => 'Nom',
+                    'url'    => 'Lien',
+                    'hidden' => 'Ne pas afficher',
+                ],
+                'placeholder' => [
+                    'name' => 'Nom',
+                    'url'  => 'Lien',
+                ],
+
+            ],
+            'discord'        => [
+                'title'       => 'Interface discord',
+                'info'        => '<span>Permet d\'afficher votre discord.</span>
+                        <span>Comment trouver votre <a href="https://support.discord.com/hc/fr/articles/206346498-O%C3%B9-trouver-l-ID-de-mon-compte-utilisateur-serveur-message- target="_blank" title="ID discord">ID SERVEUR DISCORD</a></span>
+                        ',
+                'label'       => [
+                    'id'     => 'ID du serveur Discord',
+                    'hidden' => 'Ne pas afficher',
+                ],
+                'placeholder' => [
+                    'id' => '684097488164225073',
+                ],
+            ]
         ],
-        'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
-            'article' => [
-                'title' => 'Bannière Article(s)',
-                'hidden' => 'Ne pas afficher la bannière'
+
+        'banner'   => [
+            'article'     => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Article(s)',
+                'hidden' => 'Ne pas afficher'
             ],
             'information' => [
-                'title' => 'Bannière Information(s)',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Information(s)',
+                'hidden' => 'Ne pas afficher'
             ],
-            'login' => [
-                'title' => 'Bannière Connexion',
-                'hidden' => 'Ne pas afficher la bannière'
+            'login'       => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Connexion',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
         'particle' => [
-            'title' => 'Particules',
+            'title'  => 'Particules',
             'hidden' => 'Ne pas afficher les particules',
-            'info' => '<span>Permet d\'afficher des particules.</span>',
+            'info'   => '<span>Permet d\'afficher des particules.</span>',
         ],
-        'slider' => [
+        'slider'   => [
             'title' => 'Slider',
-            'info' => '<span>Permet d\'afficher un slider (défillement d\'une liste de texte + image).</span>',
+            'info'  => '<span>Permet d\'afficher un slider (défillement d\'une liste de texte + image).</span>',
         ]
     ],
-    'pages' => [
-        'title' => 'Page(s)',
+    'pages'       => [
+        'title'  => 'Page(s)',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'page' => [
-                'title' => 'Bannière Pages',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Pages',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'page' => [
+                'title' => 'Interface Pages',
+            ],
+        ]
     ],
-    'sliders' => [
-        'title' => 'Plugin Sliders',
-        'name' => 'Slider',
-        'id' => 'slider',
-        'background' => 'Afficher l\'image en fond'
+    'sliders'     => [
+        'title'      => 'Plugin Sliders',
+        'name'       => 'Slider',
+        'id'         => 'slider',
+        'background' => 'Afficher l\'image en fond',
+        'reverse'    => 'Inverser image - texte'
     ],
-    'liteBans' => [
-        'title' => 'Plugin LiteBans',
+    'liteBans'    => [
+        'title'  => 'Plugin LiteBans',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'litebans' => [
-                'title' => 'Bannière litebans',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière litebans',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'liteBans' => [
+                'title' => 'Interface liteBans',
+            ],
+            'navbar'   => [
+                'title' => 'Interface Navigation',
+            ],
+        ]
     ],
-    'profile' => [
-        'title' => 'Profil',
+    'profile'     => [
+        'title'  => 'Profil',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
-            'buy' => [
-                'title' => 'Bannière Mes achats',
-                'hidden' => 'Ne pas afficher la bannière'
+            'buy'  => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Mes achats',
+                'hidden' => 'Ne pas afficher'
             ],
             'skin' => [
-                'title' => 'Bannière Mon skin',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Mon skin',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'buy'  => [
+                'title' => 'Interface Mes achats',
+            ],
+            'skin' => [
+                'title' => 'Interface Mon skin',
+            ],
+        ]
     ],
-    'project' => [
+    'project'     => [
         'title' => 'Plugin Project',
     ],
-    'shop' => [
-        'title' => 'Plugin Shop',
+    'shop'        => [
+        'title'  => 'Plugin Shop',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
-            'shop' => [
-                'title' => 'Bannière boutique',
-                'hidden' => 'Ne pas afficher la bannière'
+            'shop'       => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière boutique',
+                'hidden' => 'Ne pas afficher'
             ],
-            'filter' => [
-                'title' => 'Bannière filtre',
-                'hidden' => 'Ne pas afficher la bannière'
+            'filter'     => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière filtre',
+                'hidden' => 'Ne pas afficher'
             ],
-            'cart' => [
-                'title' => 'Bannière panier',
-                'hidden' => 'Ne pas afficher la bannière'
+            'cart'       => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière panier',
+                'hidden' => 'Ne pas afficher'
             ],
-            'profile' => [
-                'title' => 'Bannière profil',
-                'hidden' => 'Ne pas afficher la bannière'
+            'profile'    => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière profil',
+                'hidden' => 'Ne pas afficher'
             ],
-            'coupons' => [
-                'title' => 'Bannière coupons',
-                'hidden' => 'Ne pas afficher la bannière'
+            'coupons'    => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière coupons',
+                'hidden' => 'Ne pas afficher'
             ],
             'addCoupons' => [
-                'title' => 'Bannière ajouter un coupon',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière ajouter un coupon',
+                'hidden' => 'Ne pas afficher'
             ],
-            'payment' => [
-                'title' => 'Bannière Paiement',
-                'hidden' => 'Ne pas afficher la bannière'
+            'payment'    => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière Paiement',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'shop'       => [
+                'title' => 'Interface boutique',
+            ],
+            'filter'     => [
+                'title' => 'Interface filtre',
+            ],
+            'cart'       => [
+                'title' => 'Interface panier',
+            ],
+            'profile'    => [
+                'title' => 'Interface profil',
+            ],
+            'coupons'    => [
+                'title' => 'Interface coupons',
+            ],
+            'addCoupons' => [
+                'title' => 'Interface ajouter un coupon',
+            ],
+            'payment'    => [
+                'title' => 'Interface Paiement',
+            ],
+        ]
     ],
-    'skinApi' => [
-        'title' => 'Plugin SkinApi',
+    'skinApi'     => [
+        'title'  => 'Plugin SkinApi',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'skin' => [
-                'title' => 'Bannière skin',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière skin',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
     ],
-    'support' => [
-        'title' => 'Plugin Support',
+    'support'     => [
+        'title'  => 'Plugin Support',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'support' => [
-                'title' => 'Bannière support',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière support',
+                'hidden' => 'Ne pas afficher'
             ],
         ],
+        'items'  => [
+            'support' => [
+                'title' => 'Interface support',
+            ],
+        ]
     ],
-    'vote' => [
-        'title' => 'Plugin Vote',
-        'favicon' => [
-            'title' => 'Ajouter le Favicon du site des votes',
-            'hidden' => 'Ne pas afficher les icones des sites dans les boutons de vote',
-        ],
+    'vote'        => [
+        'title'  => 'Plugin Vote',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'vote' => [
-                'title' => 'Bannière vote',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière vote',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items'  => [
+            'vote'        => [
+                'title' => 'Interface vote',
+                'label' => [
+                    'hidden' => 'Ne pas afficher les icones des sites dans les boutons de vote',
+                ],
+            ],
+            'podium'      => [
+                'title' => 'Interface podium',
+                'label' => [
+                    'hidden' => 'Ne pas afficher le podium',
+                ],
+            ],
+            'classement'  => [
+                'title' => 'Interface classement',
+            ],
+            'recompenses' => [
+                'title' => 'Interface recompenses',
             ],
         ],
     ],
-    'wiki' => [
-        'title' => 'Plugin Wiki',
+    'wiki'        => [
+        'title'  => 'Plugin Wiki',
         'banner' => [
-            'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
             'wiki' => [
-                'title' => 'Bannière wiki',
-                'hidden' => 'Ne pas afficher la bannière'
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière wiki',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items'  => [
+            'wiki' => [
+                'title' => 'Interface wiki',
             ],
         ],
     ],
 
 
     'setting' => [
-        'save' => 'Sauvegarder',
+        'save'  => 'Sauvegarder',
         'color' => [
-            'button' => 'Bouton',
-            'alert' => 'Alerte',
-            'bgText' => 'Fond + Texte',
-            'color' => 'Couleur',
-            'bgColor' => 'Couleur de fond',
+            'button'    => 'Bouton',
+            'alert'     => 'Alerte',
+            'bgText'    => 'Fond + Texte',
+            'color'     => 'Couleur',
+            'bgColor'   => 'Couleur de fond',
             'textColor' => 'Couleur du texte',
         ]
     ],
-    'alert' => [
+    'alert'   => [
         'confirmButtonText' => 'Oui, je réinitialise !',
-        'yes' => 'Oui',
-        'cancel' => 'Fermer',
-        'reset' => [
-            'title' => 'Vous êtes sûr de vouloir réinitialiser les couleurs du thème ?',
-            'text' => 'Vous ne pourrez pas revenir en arrière !',
+        'yes'               => 'Oui',
+        'cancel'            => 'Fermer',
+        'reset'             => [
+            'title'   => 'Vous êtes sûr de vouloir réinitialiser les couleurs du thème ?',
+            'text'    => 'Vous ne pourrez pas revenir en arrière !',
             'confirm' => [
                 'title' => 'Réinitialiser !',
-                'text' => 'Vous avez réinitialisé les couleurs du thème',
+                'text'  => 'Vous avez réinitialisé les couleurs du thème',
             ],
         ],
-        'save' => 'Sauvegarde des couleurs dans la configuration'
+        'save'              => 'Sauvegarde des couleurs dans la configuration'
 
     ]
 ];

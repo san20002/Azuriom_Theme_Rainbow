@@ -28,25 +28,25 @@
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'shop'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'shop'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'filter'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'filter'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'cart'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'cart'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'profile'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'profile'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'coupons'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'coupons'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'addCoupons'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'addCoupons'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'shop', 'valueAos' => 'payment'])
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'payment'])
         </div>
     </div>
 </div>

@@ -11592,6 +11592,117 @@ body {
 #vote h2 {
   border-bottom: 3px solid var(--color-primary);
 }
+#vote .podium {
+  margin: 35px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+}
+#vote .podium .player {
+  text-align: center;
+}
+#vote .podium .player .pseudo {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#vote .podium .player img {
+  height: 190px;
+  width: auto;
+}
+#vote .podium .player .step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  background-color: var(--color-contrast-low);
+  color: var(--color-contrast-higher);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#vote .podium .player .step i {
+  font-size: 25px;
+  margin-right: 8px;
+}
+#vote .podium .first-player span {
+  color: var(--color-success);
+}
+#vote .podium .first-player i {
+  color: var(--color-success);
+}
+#vote .podium .first-player img {
+  height: 190px;
+}
+#vote .podium .first-player .step {
+  font-size: 32px;
+  height: 75px;
+}
+#vote .podium .first-player .step i {
+  font-size: 25px;
+}
+#vote .podium .second-player span {
+  color: var(--color-error);
+}
+#vote .podium .second-player i {
+  color: var(--color-error);
+}
+#vote .podium .second-player img {
+  height: 160px;
+}
+#vote .podium .second-player .step {
+  font-size: 25px;
+  height: 55px;
+}
+#vote .podium .second-player .step i {
+  font-size: 20px;
+}
+#vote .podium .third-player span {
+  color: var(--color-warning);
+}
+#vote .podium .third-player i {
+  color: var(--color-warning);
+}
+#vote .podium .third-player img {
+  height: 140px;
+}
+#vote .podium .third-player .step {
+  font-size: 18px;
+  height: 40px;
+}
+#vote .podium .third-player .step i {
+  font-size: 18px;
+}
+@media (min-width: 992px) {
+  #vote .podium .player {
+    flex-basis: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  #vote .podium .player .pseudo {
+    font-size: 18px;
+  }
+  #vote .podium .player img {
+    height: 150px !important;
+  }
+  #vote .podium .player .step {
+    width: 200px;
+    padding: 6px 40px;
+    font-size: 18px;
+    margin: auto;
+  }
+  #vote .podium .first-player {
+    order: 1;
+  }
+  #vote .podium .second-player {
+    order: 2;
+  }
+  #vote .podium .third-player {
+    order: 3;
+  }
+}
 
 #forum .card {
   border: 0;

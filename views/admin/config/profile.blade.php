@@ -1,3 +1,13 @@
+@php
+    $profileItemsBuy = [
+		                    'keyitems'=> 'profile',
+                            'valueitems' => 'buy',
+                            ];
+    $profileItemsMonSkyn = [
+		                    'keyitems'=> 'profile',
+                            'valueitems' => 'skin',
+                            ];
+@endphp
 <div class="card-header">
     <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.profile.title')}}</h3>
 </div>
@@ -13,10 +23,10 @@
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'profile', 'valueAos' => 'buy'])
+            @include('admin.pattern.items',$profileItemsBuy)
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'profile', 'valueAos' => 'skin'])
+            @include('admin.pattern.items',$profileItemsMonSkyn)
         </div>
     </div>
 </div>

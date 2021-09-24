@@ -53,6 +53,48 @@
 <div class="card-header">
     <h3 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.home.title') }}</h3>
 </div>
+@php
+    $homeItemsIpServer = [
+	                'keyitems'=> 'home',
+                    'valueitems' => 'ip-server',
+                    'filedsBuilder' => [
+                        ['type'=>'input','value' => 'ip'],
+                        ['type'=>'checkbox','value' => 'hidden'],
+                        ]
+                    ];
+
+    $homeItemsDownload = [
+		            'keyitems'=> 'home',
+                    'valueitems' => 'download',
+                    'filedsBuilder' => [
+                        ['type'=>'input','value' => 'name'],
+                        ['type'=>'input','value' => 'url'],
+                        ['type'=>'checkbox','value' => 'hidden'],
+                        ]
+                    ];
+    $homeItemsCountResgister = [
+		                    'keyitems'=> 'home',
+                            'valueitems' => 'count-register',
+                            'filedsBuilder' => [
+                                ['type'=>'checkbox','value' => 'hidden'],
+                                ]
+                            ];
+    $homeItemsDiscord = [
+                            'keyitems'=> 'home',
+                            'valueitems' => 'discord',
+                            'filedsBuilder' => [
+								['type'=>'input','value' => 'id'],
+                                ['type'=>'checkbox','value' => 'hidden'],
+                            ]
+                        ];
+    $homeItemsArticle = [
+                            'keyitems'=> 'home',
+                            'valueitems' => 'article',
+                        ];
+    $homeBannerArticle = ['keyBanner'=>'home', 'valueBanner' => 'article'];
+    $homeBannerInformation = ['keyBanner'=>'home', 'valueBanner' => 'information'];
+    $homeBannerLogin = ['keyBanner'=>'home', 'valueBanner' => 'login'];
+@endphp
 <div class="card-body">
     <fieldset class="form-group">
         <legend>{{trans('theme::lang.home.slider.title')}}</legend>
@@ -76,83 +118,31 @@
     <hr class="my-3 sidebar-divider">
     <div class="row">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'ip-server'])
+            @include('admin.pattern.items' ,$homeItemsIpServer)
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'count-register'])
+            @include('admin.pattern.items',$homeItemsDownload)
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',$homeItemsCountResgister)
         </div>
     </div>
     <hr class="my-3 sidebar-divider">
-    <div class="small font-italic mb-2">{!! trans('theme::lang.home.banner.info')!!}</div>
     <div class="row">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'home', 'valueBanner' => 'article'])
+            @include('admin.pattern.banner',$homeBannerArticle)
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'home', 'valueBanner' => 'information'])
+            @include('admin.pattern.items',$homeItemsArticle)
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'home', 'valueBanner' => 'login'])
+            @include('admin.pattern.banner',$homeBannerInformation)
         </div>
-    </div>
-    <hr class="my-3 sidebar-divider">
-    <fieldset class="form-group">
-        <legend><label for="discord">{{ trans('theme::lang.home.discord.title') }}</label></legend>
-        <div class="pl-3">
-            <div class="small font-italic mb-2">{!! trans('theme::lang.home.discord.info')!!}</div>
-            <input type="text" class="form-control @error('discord[id]') is-invalid @enderror"
-                   id="discord"
-                   name="discord[id]" value="{{ old('discord[id]', theme_config('discord.id')) }}">
-
-            @error('discord[id]')
-            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-            @enderror
-        </div>
-    </fieldset>
-    <div class="row">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'discord'])
+            @include('admin.pattern.banner',$homeBannerLogin)
         </div>
-    </div>
-    <hr class="my-3 sidebar-divider">
-    <fieldset class="mt-4">
-        <legend>{{ trans('theme::lang.home.download.title') }}</legend>
-        <div class="pl-3">
-            <div class="small font-italic mb-2">{!! trans('theme::lang.home.download.info')!!}</div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <input type="text" class="form-control" name="home[download][link][name]"
-                           placeholder="{{ trans('theme::lang.name') }}"
-                           value="{{ old('home[download][link][name]', theme_config('home.download.link.name')) }}">
-                    @error('home[download][link][name]')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
-                <div class="form-group col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control"
-                               name="home[download][link][url]"
-                               placeholder="{{ trans('theme::lang.link') }}"
-                               value="{{ old('home[download][link][url]', theme_config('home.download.link.url')) }}">
-                        @error('home[download][link][url]')
-                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="homeDownloadHidden"
-                       name="home[download][hidden]"
-                       @if(theme_config('home.download.hidden')) checked @endif>
-                <label class="custom-control-label" for="homeDownloadHidden">
-                    {{ trans('theme::lang.home.download.hidden') }}
-                </label>
-            </div>
-        </div>
-    </fieldset>
-    <div class="row mt-3">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'home', 'valueAos' => 'download'])
+            @include('admin.pattern.items',$homeItemsDiscord)
         </div>
     </div>
 

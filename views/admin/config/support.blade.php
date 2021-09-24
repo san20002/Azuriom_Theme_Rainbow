@@ -9,7 +9,7 @@
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'support', 'valueAos' => 'support'])
+            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support'])
         </div>
     </div>
 </div>

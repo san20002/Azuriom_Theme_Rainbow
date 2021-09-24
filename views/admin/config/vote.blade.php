@@ -9,28 +9,24 @@
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'vote', 'valueAos' => 'vote'])
+            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'vote',
+                                'filedsBuilder' => [
+                                    ['type'=>'checkbox','value' => 'hidden'],
+                                ]
+                            ])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'vote', 'valueAos' => 'classement'])
+            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'podium',
+                                'filedsBuilder' => [
+                                    ['type'=>'checkbox','value' => 'hidden'],
+                                ]
+                            ])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items-aos',['keyAos'=>'vote', 'valueAos' => 'recompenses'])
+            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'classement'])
         </div>
-    </div>
-    <div class="form-group">
-        <fieldset class="mt-4">
-            <legend>{{ trans('theme::lang.vote.favicon.title') }}</legend>
-            <div class="pl-3">
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="voteIcon"
-                           name="vote[icon]"
-                           @if(theme_config('vote.icon')) checked @endif>
-                    <label class="custom-control-label" for="voteIcon">
-                        {{ trans('theme::lang.vote.favicon.hidden') }}
-                    </label>
-                </div>
-            </div>
-        </fieldset>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'recompenses'])
+        </div>
     </div>
 </div>

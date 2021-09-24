@@ -1,7 +1,7 @@
 @php($counterPartial++)
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center justify-content-between">
-        <h4 class="card-title" style="flex: 0 1 90%; max-width: 90%;">
+        <h4 class="card-title mb-0" style="flex: 0 1 90%; max-width: 90%;">
             {{trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.title')}}</h4>
         <input
             class="btn btn-link d-none {{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"collapsed":""}}"
@@ -22,6 +22,7 @@
     <div class="collapse {{theme_config($keyBanner.'.banner.'.$valueBanner.'.chevron')?"show":""}}"
          id="collapse-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}">
         <div class="card-body">
+            <div class="small font-italic mb-2">{!! trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.info')!!}</div>
             <label
                 for="selectImage-{{$keyBanner}}-{{$valueBanner}}-{{$counterPartial}}">{{ trans('theme::lang.image') }}</label>
             <div class="input-group mb-3">

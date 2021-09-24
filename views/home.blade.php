@@ -70,9 +70,16 @@
             <div class="col-lg-8 home--post">
                 @include('elements.banner',['banner' => 'news'])
                 <div class="row">
+                    @php($i = 100)
                     @foreach($posts as $post)
                         <div
-                            class="col-md-6" @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article'])>
+                            class="col-md-6"
+                            @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article', 'noDuration'])
+
+                            @if(theme_config('home.items.article.aos.duration'))
+                            data-aos-duration='{{theme_config('home.items.article.aos.duration') * $loop->iteration}}'
+                            @endif
+                        >
                             <div class="post-preview card mb-3 shadow-sm">
                                 @if($post->hasImage())
                                     <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="card-img-top">
@@ -99,10 +106,10 @@
                 </div>
             @endguest
             <div class="col-lg-4 home--info">
-                @if(theme_config('discord.id'))
+                @if(theme_config('home.items.discord.id'))
                     @include('elements.banner', ['banner' => 'info'])
                     <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
-                        <iframe src="https://discordapp.com/widget?id={{theme_config('discord.id')}}&theme=dark"
+                        <iframe src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
                                 width="350"
                                 height="500" allowtransparency="true" frameborder="0"
                                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
