@@ -18,18 +18,13 @@
 
 @section('content')
     <div class="container content" id="shops--select">
-        <div class="banner mt-5">
-            <div class="banner-icon banner-login">
-                <img src="{{theme_asset('image/items/sprite.png')}}"
-                     alt="banner-icon">
-            </div>
-            <div class="banner-title">
-                <h1 class="mb-0">{{ trans('shop::messages.offers.title-select') }}</h1>
-            </div>
-        </div>
+        @include('elements.banner', ['banner' => 'select-payment'])
         <div class="row">
             @forelse($offers as $offer)
-                <div class="col-md-3">
+                <div class="col-md-3" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'select-payment', 'noDuration'])
+                @if(theme_config('shop.items.select-payment.aos.duration'))
+                data-aos-duration='{{theme_config('shop.items.select-payment.aos.duration') * $loop->iteration}}'
+                @endif>
                     <div class="card shadow-sm mb-3">
                         <a href="{{ route('shop.offers.pay', [$offer->id, $gateway->type]) }}" class="payment-method">
                             <div class="card-body text-center">

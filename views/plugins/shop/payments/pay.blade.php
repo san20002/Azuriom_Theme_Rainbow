@@ -20,13 +20,17 @@
     <div class="container content" id="shops">
         @include('elements.banner', ['banner' => 'payment'])
 
-        <div class="row" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'payment'])>
+        <div class="row" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'payment', 'noDuration'])
+            @if(theme_config('shop.items.payment.aos.duration'))
+                data-aos-duration='{{theme_config('shop.items.payment.aos.duration') * $loop->iteration}}'
+            @endif>
             @forelse($gateways as $gateway)
                 <div class="col-md-3">
                     <div class="card shadow-sm mb-3">
                         <a href="{{ route('shop.payments.pay', $gateway->type) }}" class="payment-method">
                             <div class="card-body text-center">
-                                <img src="{{ $gateway->paymentMethod()->image() }}" style="max-height: 45px" class="img-fluid" alt="{{ $gateway->name }}">
+                                <img src="{{ $gateway->paymentMethod()->image() }}" style="max-height: 45px"
+                                     class="img-fluid" alt="{{ $gateway->name }}">
                             </div>
                         </a>
                     </div>

@@ -21,12 +21,9 @@
 
     <div class="mb-4" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'profile'])>
         @if(use_site_money())
-            <p class="text-center font-weight-bold text-lg">
-                {{ auth()->user()->money }}
-            </p>
+            <p class="text-center">{{ trans('messages.fields.money') }}: {{ format_money(auth()->user()->money) }}</p>
 
-            <a href="{{ route('shop.offers.select') }}"
-               class="btn btn-primary btn-block">{{ trans('shop::messages.cart.credit') }}</a>
+            <a href="{{ route('shop.offers.select') }}" class="btn btn-primary btn-block">{{ trans('shop::messages.cart.credit') }}</a>
         @endif
 
         <a href="{{ route('shop.cart.index') }}"

@@ -5,10 +5,10 @@
 @section('content')
     <div class="container content" id="support">
 
-        @include('elements.banner',['banner' => 'support'])
+        @include('elements.banner',['banner' => 'support-show', 'ticket' => $ticket])
 
         <div
-            class="card shadow-sm mb-5" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
+            class="card shadow-sm mb-5" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-show'])>
             <div class="card-body">
              <span class="badge badge-{{ $ticket->isClosed() ? 'danger' : 'success' }}">
                  {{ $ticket->statusMessage() }}
@@ -24,7 +24,7 @@
                     @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
                 </div>
                 <div class="card-body media">
-                    {{--                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}" alt="{{ $comment->author->name }}" height="55">--}}
+                    <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}" alt="{{ $comment->author->name }}" height="55">
                     <div class="media-body">
                         <div class="content-body">
                             {{ $comment->parseContent() }}
@@ -35,7 +35,7 @@
         @endforeach
 
         <div
-            class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
+            class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-show'])>
             <div class="card-body">
                 @if($ticket->isClosed())
                     <p class="text-danger">{{ trans('support::messages.tickets.closed') }}</p>

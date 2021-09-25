@@ -6,10 +6,22 @@
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support'])
         </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-open'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-show'])
+        </div>
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-open'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-show'])
         </div>
     </div>
 </div>

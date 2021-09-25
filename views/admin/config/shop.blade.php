@@ -23,6 +23,12 @@
             @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'addCoupons'])
         </div>
         <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'method-payment'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'select-payment'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'payment'])
         </div>
     </div>
@@ -44,6 +50,12 @@
         </div>
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'addCoupons'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'method-payment'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'select-payment'])
         </div>
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'payment'])

@@ -29,9 +29,13 @@
 
                 @include('elements.banner', ['banner' => 'shop'])
 
-                <div class="row"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'cart'])>
+                <div class="row">
                     @forelse($category->packages as $package)
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-4"
+                             @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'shop', 'noDuration'])
+                             @if(theme_config('shop.items.shop.aos.duration'))
+                             data-aos-duration='{{theme_config('shop.items.shop.aos.duration') * $loop->iteration}}'
+                            @endif>
                             <div class="card h-100">
                                 @if($package->image !== null)
                                     <a href="#" data-package-url="{{ route('shop.packages.show', $package) }}">

@@ -10818,13 +10818,11 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 }
 .banner {
   position: relative;
-  background-color: var(--color-contrast-low);
+  border-bottom: 3px solid var(--color-primary);
   margin: 0 0 1rem 0;
   padding: 9px 0;
   min-height: 66px;
-  border-radius: 0.3rem;
   overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
 }
@@ -11589,6 +11587,9 @@ body {
   margin: 0 auto 0 0;
 }
 
+#vote #vote-spinner {
+  background-color: var(--color-contrast-lower);
+}
 #vote h2 {
   border-bottom: 3px solid var(--color-primary);
 }
@@ -11622,6 +11623,8 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+  border-radius: 0.3rem;
+  margin-top: 0.2rem;
 }
 #vote .podium .player .step i {
   font-size: 25px;
@@ -11639,6 +11642,8 @@ body {
 #vote .podium .first-player .step {
   font-size: 32px;
   height: 75px;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 #vote .podium .first-player .step i {
   font-size: 25px;
@@ -11675,7 +11680,7 @@ body {
 #vote .podium .third-player .step i {
   font-size: 18px;
 }
-@media (min-width: 992px) {
+@media (max-width: 991.98px) {
   #vote .podium .player {
     flex-basis: 100%;
     margin: 0;

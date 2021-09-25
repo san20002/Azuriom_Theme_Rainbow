@@ -87,7 +87,7 @@
         @endif
         <div class="banner-title {{!theme_config('vote.banner.vote.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('vote.banner.vote.title') !== null ? theme_config('vote.banner.vote.title') : trans('vote::messages.title')}}
+                {{theme_config('vote.banner.vote.title') ?? trans('vote::messages.sections.vote')}}
             </h1>
         </div>
     </div>
@@ -109,6 +109,37 @@
     </div>
 @endif
 
+@if($banner === "support-open" && !theme_config('support.banner.open.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'open'])>
+        @if(theme_config('support.banner.open.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('support.banner.open.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('support.banner.open.image') ? 'no-image': ''}}">
+            <h1>
+                {{theme_config('support.banner.open.title') !== null ? theme_config('support.banner.open.title') : trans('support::messages.tickets.title-open')}}
+            </h1>
+        </div>
+    </div>
+@endif
+@if($banner === "support-show" && !theme_config('support.banner.show.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'show'])>
+        @if(theme_config('support.banner.show.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('support.banner.show.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('support.banner.show.image') ? 'no-image': ''}}">
+            <h1>
+                {{theme_config('support.banner.show.title') ?? $ticket->subject}}
+            </h1>
+        </div>
+    </div>
+@endif
+
 @if($banner === "wiki" && !theme_config('wiki.banner.wiki.hidden'))
     <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'wiki', 'valueAos' => 'wiki'])>
         @if(theme_config('wiki.banner.wiki.image'))
@@ -119,7 +150,22 @@
         @endif
         <div class="banner-title {{!theme_config('wiki.banner.wiki.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('wiki.banner.wiki.title') !== null ? theme_config('wiki.banner.wiki.title') : trans('wiki::messages.title')}}
+                {{theme_config('wiki.banner.wiki.title') ?? trans('wiki::messages.title')}}
+            </h1>
+        </div>
+    </div>
+@endif
+@if($banner === "wiki-show" && !theme_config('wiki.banner.wiki-show.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'wiki', 'valueAos' => 'wiki-show'])>
+        @if(theme_config('wiki.banner.wiki-show.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('wiki.banner.wiki-show.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('wiki.banner.wiki-show.image') ? 'no-image': ''}}">
+            <h1>
+                {{theme_config('wiki.banner.wiki-show.title') ?? $category->name}}
             </h1>
         </div>
     </div>
@@ -266,6 +312,32 @@
         @endif
         <div class="banner-title {{!config('theme.shop.banner.payment.image') ? 'no-image': ''}}">
             <h1>{{config('theme.shop.banner.payment.title') !== null ? config('theme.shop.banner.payment.title') : trans('shop::messages.payment.title')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "method-payment" && !config('theme.shop.banner.method-payment.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'method-payment'])>
+        @if(config('theme.shop.banner.method-payment.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(config('theme.shop.banner.method-payment.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!config('theme.shop.banner.method-payment.image') ? 'no-image': ''}}">
+            <h1>{{config('theme.shop.banner.method-payment.title') !== null ? config('theme.shop.banner.method-payment.title') : trans('shop::messages.offers.title-payment')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "select-payment" && !config('theme.shop.banner.select-payment.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'select-payment'])>
+        @if(config('theme.shop.banner.select-payment.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(config('theme.shop.banner.select-payment.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!config('theme.shop.banner.select-payment.image') ? 'no-image': ''}}">
+            <h1>{{config('theme.shop.banner.select-payment.title') !== null ? config('theme.shop.banner.select-payment.title') : trans('shop::messages.offers.title-select')}}</h1>
         </div>
     </div>
 @endif

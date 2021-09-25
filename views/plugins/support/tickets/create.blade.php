@@ -5,9 +5,9 @@
 @section('content')
     <div class="container content" id="support">
 
-        @include('elements.banner',['banner' => 'support'])
+        @include('elements.banner',['banner' => 'support-open'])
 
-        <form action="{{ route('support.tickets.store') }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
+        <form action="{{ route('support.tickets.store') }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-open'])>
             @csrf
 
             <div class="form-group">
@@ -46,7 +46,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">
-                <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
+                <i class="fas fa-paper-plane"></i> {{ trans('messages.actions.send') }}
             </button>
         </form>
     </div>

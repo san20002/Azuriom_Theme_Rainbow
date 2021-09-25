@@ -6,10 +6,16 @@
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'wiki', 'valueBanner' => 'wiki'])
         </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'wiki', 'valueBanner' => 'wiki-show'])
+        </div>
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items',['keyitems'=> 'wiki','valueitems' => 'wiki'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'wiki','valueitems' => 'wiki-show'])
         </div>
     </div>
 </div>
