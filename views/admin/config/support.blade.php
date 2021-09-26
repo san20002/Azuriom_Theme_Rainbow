@@ -3,25 +3,20 @@
 </div>
 <div class="card-body">
     <div class="row">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-create'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-show'])
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-create'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-show'])
-        </div>
+        @include('admin.pattern.builder-items',[
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'support', 'value' => 'support'],
+                                                'arrayItems' => ['key'=>'support', 'value' => 'support']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'support', 'value' => 'support-create'],
+                                                'arrayItems' => ['key'=>'support', 'value' => 'support-create']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'support', 'value' => 'support-show'],
+                                                'arrayItems' => ['key'=>'support', 'value' => 'support-show']
+                                                ])
     </div>
 </div>

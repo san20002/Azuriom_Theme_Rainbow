@@ -55,8 +55,9 @@
 </div>
 @php
     $homeItemsIpServer = [
-	                'keyitems'=> 'home',
-                    'valueitems' => 'ip-server',
+                    'url'=>route('home'),
+	                'key'=> 'home',
+                    'value' => 'ip-server',
                     'filedsBuilder' => [
                         ['type'=>'input','value' => 'ip'],
                         ['type'=>'checkbox','value' => 'hidden'],
@@ -64,8 +65,9 @@
                     ];
 
     $homeItemsDownload = [
-		            'keyitems'=> 'home',
-                    'valueitems' => 'download',
+                    'url'=>route('home'),
+		            'key'=> 'home',
+                    'value' => 'download',
                     'filedsBuilder' => [
                         ['type'=>'input','value' => 'name'],
                         ['type'=>'input','value' => 'url'],
@@ -73,27 +75,26 @@
                         ]
                     ];
     $homeItemsCountResgister = [
-		                    'keyitems'=> 'home',
-                            'valueitems' => 'count-register',
+                    'url'=>route('home'),
+		                    'key'=> 'home',
+                            'value' => 'count-register',
                             'filedsBuilder' => [
                                 ['type'=>'checkbox','value' => 'hidden'],
                                 ]
                             ];
     $homeItemsDiscord = [
-                            'keyitems'=> 'home',
-                            'valueitems' => 'discord',
+                    'url'=>route('home'),
+                            'key'=> 'home',
+                            'value' => 'discord',
                             'filedsBuilder' => [
 								['type'=>'input','value' => 'id'],
                                 ['type'=>'checkbox','value' => 'hidden'],
                             ]
                         ];
-    $homeItemsArticle = [
-                            'keyitems'=> 'home',
-                            'valueitems' => 'article',
-                        ];
-    $homeBannerArticle = ['keyBanner'=>'home', 'valueBanner' => 'article'];
-    $homeBannerInformation = ['keyBanner'=>'home', 'valueBanner' => 'information'];
-    $homeBannerLogin = ['keyBanner'=>'home', 'valueBanner' => 'login'];
+    $homeItemsArticle = ['url'=>route('home'),'key'=> 'home','value' => 'article',];
+    $homeBannerArticle = ['url'=>route('home'),'key'=>'home', 'value' => 'article'];
+    $homeBannerInformation = ['url'=>route('home'),'key'=>'home', 'value' => 'information'];
+    $homeBannerLogin = ['url'=>route('home'),'key'=>'home', 'value' => 'login'];
 @endphp
 <div class="card-body">
     <fieldset class="form-group">

@@ -1,5 +1,5 @@
 @if($banner === "login" && !theme_config('home.banner.login.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'home', 'valueAos' => 'login'])>
+    <div @include('elements.data-config-trigger',['key' => 'home','value'=>'login']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'home', 'value' => 'login'])>
         @if(theme_config('home.banner.login.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('home.banner.login.image'))}}"
@@ -14,7 +14,8 @@
     </div>
 @endif
 @if($banner === "news" && !theme_config('home.banner.article.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'home', 'valueAos' => 'article'])>
+    <div
+        @include('elements.data-config-trigger',['key' => 'home','value'=>'article']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'home', 'value' => 'article'])>
         @if(theme_config('home.banner.article.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('home.banner.article.image'))}}"
@@ -28,9 +29,8 @@
         </div>
     </div>
 @endif
-
-@if($banner === "info" && !theme_config('home.banner.information.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'home', 'valueAos' => 'information'])>
+@if($banner === "information" && !theme_config('home.banner.information.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'home','value'=>'information']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'home', 'value' => 'information'])>
         @if(theme_config('home.banner.information.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('home.banner.information.image'))}}"
@@ -46,7 +46,7 @@
 @endif
 
 @if($banner == "faq" && !theme_config('faq.banner.faq.hidden') )
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'faq', 'valueAos' => 'faq'])>
+    <div @include('elements.data-config-trigger',['key' => 'faq','value'=>'faq']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'faq', 'value' => 'faq'])>
         @if(theme_config('faq.banner.faq.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('faq.banner.faq.image'))}}"
@@ -62,7 +62,7 @@
 @endif
 
 @if($banner === "liteBans" && !theme_config('liteBans.banner.litebans.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'liteBans', 'valueAos' => 'litebans'])>
+    <div @include('elements.data-config-trigger',['key' => 'liteBans','value'=>'liteBans']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'liteBans', 'value' => 'litebans'])>
         @if(theme_config('liteBans.banner.litebans.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('liteBans.banner.litebans.image'))}}"
@@ -78,7 +78,7 @@
 @endif
 
 @if($banner === "vote" && !theme_config('vote.banner.vote.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'vote', 'valueAos' => 'vote'])>
+    <div @include('elements.data-config-trigger',['key' => 'vote','value'=>'vote']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'vote', 'value' => 'vote'])>
         @if(theme_config('vote.banner.vote.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('vote.banner.vote.image'))}}"
@@ -94,7 +94,7 @@
 @endif
 
 @if($banner === "support" && !theme_config('support.banner.support.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'support'])>
+    <div @include('elements.data-config-trigger',['key' => 'support','value'=>'support']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'value' => 'support'])>
         @if(theme_config('support.banner.support.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('support.banner.support.image'))}}"
@@ -109,39 +109,39 @@
     </div>
 @endif
 
-@if($banner === "support-create" && !theme_config('support.banner.create.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'create'])>
-        @if(theme_config('support.banner.create.image'))
+@if($banner === "support-create" && !theme_config('support.banner.support-create.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'support','value'=>'support-create']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'value' => 'support-create'])>
+        @if(theme_config('support.banner.support-create.image'))
             <div class="banner-icon">
-                <img src="{{image_url(theme_config('support.banner.create.image'))}}"
+                <img src="{{image_url(theme_config('support.banner.support-create.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!theme_config('support.banner.create.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('support.banner.support-create.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('support.banner.create.title') ?? trans('support::messages.tickets.title-open')}}
+                {{theme_config('support.banner.support-create.title') ?? trans('support::messages.tickets.title-open')}}
             </h1>
         </div>
     </div>
 @endif
-@if($banner === "support-show" && !theme_config('support.banner.show.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'show'])>
-        @if(theme_config('support.banner.show.image'))
+@if($banner === "support-show" && !theme_config('support.banner.support-show.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'support','value'=>'support-show']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'value' => 'support-show'])>
+        @if(theme_config('support.banner.support-show.image'))
             <div class="banner-icon">
-                <img src="{{image_url(theme_config('support.banner.show.image'))}}"
+                <img src="{{image_url(theme_config('support.banner.support-show.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!theme_config('support.banner.show.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('support.banner.support-show.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('support.banner.show.title') ?? $ticket->subject}}
+                {{theme_config('support.banner.support-show.title') ?? $ticket->subject}}
             </h1>
         </div>
     </div>
 @endif
 
 @if($banner === "wiki" && !theme_config('wiki.banner.wiki.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'wiki', 'valueAos' => 'wiki'])>
+    <div @include('elements.data-config-trigger',['key' => 'wiki','value'=>'wiki']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'wiki', 'value' => 'wiki'])>
         @if(theme_config('wiki.banner.wiki.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('wiki.banner.wiki.image'))}}"
@@ -156,7 +156,7 @@
     </div>
 @endif
 @if($banner === "wiki-show" && !theme_config('wiki.banner.wiki-show.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'wiki', 'valueAos' => 'wiki-show'])>
+    <div @include('elements.data-config-trigger',['key' => 'wiki','value'=>'wiki-show']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'wiki', 'value' => 'wiki-show'])>
         @if(theme_config('wiki.banner.wiki-show.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('wiki.banner.wiki-show.image'))}}"
@@ -172,7 +172,7 @@
 @endif
 
 @if($banner === "changelog" && !theme_config('changelog.banner.changelog.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'changelog', 'valueAos' => 'changelog'])>
+    <div @include('elements.data-config-trigger',['key' => 'changelog','value'=>'changelog']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'changelog', 'value' => 'changelog'])>
         @if(theme_config('changelog.banner.changelog.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('changelog.banner.changelog.image'))}}"
@@ -188,7 +188,7 @@
 @endif
 
 @if($banner === "forum" && !theme_config('forum.banner.forum.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum'])>
+    <div @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum'])>
         @if(theme_config('forum.banner.forum.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum.image'))}}"
@@ -203,7 +203,7 @@
     </div>
 @endif
 @if($banner === "forum-show" && !theme_config('forum.banner.forum-show.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-show'])>
+    <div @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum-show']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum-show'])>
         @if(theme_config('forum.banner.forum-show.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum-show.image'))}}"
@@ -217,7 +217,7 @@
 @endif
 @if($banner === "forum-user-edit" && !theme_config('forum.banner.forum-user-edit.hidden'))
     <div
-        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-user-edit'])>
+        @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum-user-edit']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum-user-edit'])>
         @if(theme_config('forum.banner.forum-user-edit.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum-user-edit.image'))}}"
@@ -231,7 +231,7 @@
 @endif
 @if($banner === "forum-posts-edit" && !theme_config('forum.banner.forum-posts-edit.hidden'))
     <div
-        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-posts-edit'])>
+        @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum-posts-edit']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum-posts-edit'])>
         @if(theme_config('forum.banner.forum-posts-edit.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum-posts-edit.image'))}}"
@@ -245,7 +245,7 @@
 @endif
 @if($banner === "forum-discussions-create" && !theme_config('forum.banner.forum-discussions-create.hidden'))
     <div
-        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-discussions-create'])>
+        @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum-discussions-create']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum-discussions-create'])>
         @if(theme_config('forum.banner.forum-discussions-create.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum-discussions-create.image'))}}"
@@ -259,7 +259,7 @@
 @endif
 @if($banner === "forum-discussions-edit" && !theme_config('forum.banner.forum-discussions-edit.hidden'))
     <div
-        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-discussions-edit'])>
+        @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum-discussions-edit']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum-discussions-edit'])>
         @if(theme_config('forum.banner.forum-discussions-edit.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum-discussions-edit.image'))}}"
@@ -273,7 +273,7 @@
 @endif
 @if($banner === "forum-discussions-show" && !theme_config('forum.banner.forum-discussions-show.hidden'))
     <div
-        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-discussions-show'])>
+        @include('elements.data-config-trigger',['key' => 'forum','value'=>'forum-discussions-show']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'value' => 'forum-discussions-show'])>
         @if(theme_config('forum.banner.forum-discussions-show.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('forum.banner.forum-discussions-show.image'))}}"
@@ -293,7 +293,7 @@
     </div>
 @endif
 @if($banner === "shop" && !theme_config('shop.banner.shop.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'shop'])>
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'shop']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'shop'])>
         @if(theme_config('shop.banner.shop.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('shop.banner.shop.image'))}}"
@@ -308,7 +308,7 @@
     </div>
 @endif
 @if($banner === "cart" && !theme_config('shop.banner.cart.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'cart'])>
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'cart']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'cart'])>
         @if(theme_config('shop.banner.cart.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('shop.banner.cart.image'))}}"
@@ -323,7 +323,7 @@
     </div>
 @endif
 @if($banner === "filter" && !theme_config('shop.banner.filter.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'filter'])>
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'filter']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'filter'])>
         @if(theme_config('shop.banner.filter.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('shop.banner.filter.image'))}}"
@@ -338,7 +338,7 @@
     </div>
 @endif
 @if($banner === "shop_account" && !theme_config('shop.banner.profile.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'profile'])>
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'profile']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'profile'])>
         @if(theme_config('shop.banner.profile.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('shop.banner.profile.image'))}}"
@@ -352,113 +352,127 @@
         </div>
     </div>
 @endif
-@if($banner === "coupons" && !config('theme.shop.banner.coupons.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'coupons'])>
-        @if(config('theme.shop.banner.coupons.image'))
+@if($banner === "coupons" && !theme_config('shop.banner.coupons.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'coupons']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'coupons'])>
+        @if(theme_config('shop.banner.coupons.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.shop.banner.coupons.image'))}}"
+                <img src="{{image_url(theme_config('shop.banner.coupons.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.shop.banner.coupons.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('shop.banner.coupons.image') ? 'no-image': ''}}">
             <h2>
-                {{config('theme.shop.banner.coupons.title') ?? trans('shop::messages.cart.coupons')}}
+                {{theme_config('shop.banner.coupons.title') ?? trans('shop::messages.cart.coupons')}}
             </h2>
         </div>
     </div>
 @endif
-@if($banner === "addCoupons" && !config('theme.shop.banner.addCoupons.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'addCoupons'])>
-        @if(config('theme.shop.banner.addCoupons.image'))
+@if($banner === "addCoupons" && !theme_config('shop.banner.addCoupons.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'addCoupons']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'addCoupons'])>
+        @if(theme_config('shop.banner.addCoupons.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.shop.banner.addCoupons.image'))}}"
+                <img src="{{image_url(theme_config('shop.banner.addCoupons.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.shop.banner.addCoupons.image') ? 'no-image': ''}}">
-            <h2>{{config('theme.shop.banner.addCoupons.title') ?? trans('shop::messages.cart.add-coupon')}}</h2>
+        <div class="banner-title {{!theme_config('shop.banner.addCoupons.image') ? 'no-image': ''}}">
+            <h2>{{theme_config('shop.banner.addCoupons.title') ?? trans('shop::messages.cart.add-coupon')}}</h2>
         </div>
     </div>
 @endif
 
-@if($banner === "payment" && !config('theme.shop.banner.payment.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'payment'])>
-        @if(config('theme.shop.banner.payment.image'))
+@if($banner === "payment" && !theme_config('shop.banner.payment.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'payment']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'payment'])>
+        @if(theme_config('shop.banner.payment.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.shop.banner.payment.image'))}}"
+                <img src="{{image_url(theme_config('shop.banner.payment.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.shop.banner.payment.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.shop.banner.payment.title') ?? trans('shop::messages.payment.title')}}</h1>
+        <div class="banner-title {{!theme_config('shop.banner.payment.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('shop.banner.payment.title') ?? trans('shop::messages.payment.title')}}</h1>
         </div>
     </div>
 @endif
-@if($banner === "method-payment" && !config('theme.shop.banner.method-payment.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'method-payment'])>
-        @if(config('theme.shop.banner.method-payment.image'))
+@if($banner === "method-payment" && !theme_config('shop.banner.method-payment.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'method-payment']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'method-payment'])>
+        @if(theme_config('shop.banner.method-payment.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.shop.banner.method-payment.image'))}}"
+                <img src="{{image_url(theme_config('shop.banner.method-payment.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.shop.banner.method-payment.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.shop.banner.method-payment.title') ?? trans('shop::messages.offers.title-payment')}}</h1>
+        <div class="banner-title {{!theme_config('shop.banner.method-payment.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('shop.banner.method-payment.title') ?? trans('shop::messages.offers.title-payment')}}</h1>
         </div>
     </div>
 @endif
-@if($banner === "select-payment" && !config('theme.shop.banner.select-payment.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'valueAos' => 'select-payment'])>
-        @if(config('theme.shop.banner.select-payment.image'))
+@if($banner === "select-payment" && !theme_config('shop.banner.select-payment.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'select-payment']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'select-payment'])>
+        @if(theme_config('shop.banner.select-payment.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.shop.banner.select-payment.image'))}}"
+                <img src="{{image_url(theme_config('shop.banner.select-payment.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.shop.banner.select-payment.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.shop.banner.select-payment.title') ?? trans('shop::messages.offers.title-select')}}</h1>
+        <div class="banner-title {{!theme_config('shop.banner.select-payment.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('shop.banner.select-payment.title') ?? trans('shop::messages.offers.title-select')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "myAchat" && !theme_config('shop.banner.buy.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'shop','value'=>'buy']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'shop', 'value' => 'buy'])>
+        @if(theme_config('shop.banner.buy.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('shop.banner.buy.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div
+            class="banner-title justify-content-between {{!theme_config('shop.banner.buy.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('shop.banner.buy.title') !== null ? trans('shop::messages.shop.payments') : 'Mes achats'}}</h1>
         </div>
     </div>
 @endif
 
-@if($banner === "pages" && !config('theme.pages.banner.page.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'pages', 'valueAos' => 'page'])>
-        @if(config('theme.pages.banner.page.image'))
+@if($banner === "pages" && !theme_config('pages.banner.page.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'pages','value'=>'page']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'pages', 'value' => 'page'])>
+        @if(theme_config('pages.banner.page.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.pages.banner.page.image'))}}"
+                <img src="{{image_url(theme_config('pages.banner.page.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.pages.banner.page.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('pages.banner.page.image') ? 'no-image': ''}}">
             <h1>{{$page->title}}</h1>
         </div>
     </div>
 @endif
 
-@if($banner === "article" && !config('theme.articles.banner.article.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'articles', 'valueAos' => 'article'])>
-        @if(config('theme.articles.banner.article.image'))
+@if($banner === "article" && !theme_config('articles.banner.article.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'articles','value'=>'article']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'articles', 'value' => 'article'])>
+        @if(theme_config('articles.banner.article.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.articles.banner.article.image'))}}"
+                <img src="{{image_url(theme_config('articles.banner.article.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!config('theme.articles.banner.article.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('articles.banner.article.image') ? 'no-image': ''}}">
             <h1>{{$post->title}}</h1>
         </div>
     </div>
 @endif
-@if($banner === "allArticle" && !config('theme.articles.banner.allArticle.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'articles', 'valueAos' => 'allArticle'])>
-        @if(config('theme.articles.banner.allArticle.image'))
+@if($banner === "allArticle" && !theme_config('articles.banner.allArticle.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'articles','value'=>'allArticle']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'articles', 'value' => 'allArticle'])>
+        @if(theme_config('articles.banner.allArticle.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.articles.banner.allArticle.image'))}}"
+                <img src="{{image_url(theme_config('articles.banner.allArticle.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
         <div
-            class="banner-title justify-content-between {{!config('theme.articles.banner.allArticle.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.articles.banner.allArticle.title') ?? 'Les articles'}}</h1>
+            class="banner-title justify-content-between {{!theme_config('articles.banner.allArticle.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('articles.banner.allArticle.title') ?? 'Les articles'}}</h1>
             <small class="mr-3 text-sm">
                 Nombre d'article(s): {{count($posts)}}
             </small>
@@ -466,49 +480,34 @@
     </div>
 @endif
 
-@if($banner === "myAchat" && !config('theme.profile.banner.buy.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'profile', 'valueAos' => 'buy'])>
-        @if(config('theme.profile.banner.buy.image'))
+@if($banner === "mySkin" && !theme_config('skinApi.banner.skin.hidden'))
+    <div @include('elements.data-config-trigger',['key' => 'skinApi','value'=>'skin']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'skinApi', 'value' => 'skin'])>
+        @if(theme_config('skinApi.banner.skin.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.profile.banner.buy.image'))}}"
+                <img src="{{image_url(theme_config('skinApi.banner.skin.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
         <div
-            class="banner-title justify-content-between {{!config('theme.profile.banner.buy.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.profile.banner.buy.title') !== null ? trans('shop::messages.profile.payments') : 'Mes achats'}}</h1>
+            class="banner-title justify-content-between {{!theme_config('skinApi.banner.skin.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('skinApi.banner.skin.title') !== null ? trans('skin-api::messages.change') : 'Mon skin'}}</h1>
         </div>
     </div>
 @endif
 
-@if($banner === "mySkin" && !config('theme.profile.banner.skin.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'profile', 'valueAos' => 'skin'])>
-        @if(config('theme.profile.banner.skin.image'))
-            <div class="banner-icon">
-                <img src="{{image_url(config('theme.profile.banner.skin.image'))}}"
-                     alt="banner-icon">
-            </div>
-        @endif
-        <div
-            class="banner-title justify-content-between {{!config('theme.profile.banner.skin.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.profile.banner.skin.title') !== null ? trans('skin-api::messages.change') : 'Mon skin'}}</h1>
-        </div>
-    </div>
-@endif
-
-@if($banner === "advancedban" && !config('theme.advancedBan.banner.advancedBan.hidden'))
+@if($banner === "advancedban" && !theme_config('advancedBan.banner.advancedBan.hidden'))
     <div
-        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'advancedBan', 'valueAos' => 'advancedBan'])>
-        @if(config('theme.advancedBan.banner.advancedBan.image'))
+        @include('elements.data-config-trigger',['key' => 'advancedBan','value'=>'advancedBan']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'advancedBan', 'value' => 'advancedBan'])>
+        @if(theme_config('advancedBan.banner.advancedBan.image'))
             <div class="banner-icon">
-                <img src="{{image_url(config('theme.advancedBan.banner.advancedBan.image'))}}"
+                <img src="{{image_url(theme_config('advancedBan.banner.advancedBan.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
         <div
-            class="banner-title justify-content-between {{!config('theme.advancedBan.banner.advancedBan.image') ? 'no-image': ''}}">
+            class="banner-title justify-content-between {{!theme_config('advancedBan.banner.advancedBan.image') ? 'no-image': ''}}">
             <div class="col">
-                <h1>{{config('theme.advancedBan.banner.advancedBan.title') !== null ? trans('advancedban::messages.title') : 'AdvancedBan'}}</h1>
+                <h1>{{theme_config('advancedBan.banner.advancedBan.title') !== null ? trans('advancedban::messages.title') : 'AdvancedBan'}}</h1>
             </div>
             <div class="col">
                 <form class="form-inline mb-0 float-right" action="{{ route('advancedban.index') }}" method="GET">

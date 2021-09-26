@@ -106,13 +106,14 @@
                 </div>
             @endguest
             <div class="col-lg-4 home--info">
+                @include('elements.banner', ['banner' => 'information'])
                 @if(theme_config('home.items.discord.id'))
-                    @include('elements.banner', ['banner' => 'info'])
                     <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
-                        <iframe src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
-                                width="350"
-                                height="500" allowtransparency="true" frameborder="0"
-                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                        <iframe
+                            src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
+                            width="350"
+                            height="500" allowtransparency="true" frameborder="0"
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                     </div>
                 @endif
             </div>

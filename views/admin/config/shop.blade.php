@@ -2,63 +2,66 @@
     <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.shop.title')}}</h3>
 </div>
 <div class="card-body">
-    <div class="small font-italic mb-2">{!! trans('theme::lang.shop.banner.info')!!}</div>
     <div class="row">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'shop'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'filter'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'cart'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'profile'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'coupons'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'addCoupons'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'method-payment'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'select-payment'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'shop', 'valueBanner' => 'payment'])
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'shop'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'filter'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'cart'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'profile'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'coupons'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'addCoupons'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'method-payment'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'select-payment'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'shop','valueitems' => 'payment'])
-        </div>
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.home'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'shop'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'shop']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.home'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'filter'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'filter']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.cart.index'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'cart'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'cart']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.home'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'profile'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'profile']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.cart.index'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'coupons'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'coupons']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.cart.index'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'addCoupons'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'addCoupons']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.payments.payment'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'method-payment'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'method-payment']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.payments.payment'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'select-payment'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'select-payment']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.payments.payment'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'payment'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'payment']
+                                                ])
+        @include('admin.pattern.builder-items',[
+                                                'url' => route('shop.profile'),
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=>['key'=>'shop', 'value' => 'buy'],
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'buy']
+                                                ])
     </div>
 </div>

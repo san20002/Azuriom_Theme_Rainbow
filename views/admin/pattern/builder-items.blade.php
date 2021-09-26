@@ -1,6 +1,6 @@
-<div class="col-xl-4 col-lg-6 js-detect-col js-detect-order" data-builder-order="" data-builder-collg="">
+<div class="{{$col ?? 'col-xl-4 col-lg-6'}} js-detect-col js-detect-order mb-4" data-builder-order="" data-builder-collg="">
     <div class="border border-secondary rounded">
-        <div class="row">
+        <div class="row d-none">
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInputGroup">Ordre</label>
                 <div class="input-group mb-2">
@@ -60,9 +60,18 @@
             </div>
         @endif
         @if(isset($arrayItems) && $arrayItems)
-            <div class="col-auto">
-                @include('admin.pattern.items',$arrayItems)
-            </div>
+            @if(array_key_exists(0,$arrayItems))
+                @foreach($arrayItems as $arrayItem)
+                    <div class="col-auto">
+                        @include('admin.pattern.items',$arrayItem)
+                    </div>
+                @endforeach
+            @else
+                <div class="col-auto">
+                    @include('admin.pattern.items',$arrayItems)
+                </div>
+            @endif
         @endif
+
     </div>
 </div>

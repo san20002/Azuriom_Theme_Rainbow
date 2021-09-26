@@ -3,13 +3,6 @@
 </div>
 <div class="card-body">
     <div class="row">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'advancedBan', 'valueBanner' => 'advancedBan'])
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'advancedBan','valueitems' => 'advancedBan'])
-        </div>
+        @include('admin.pattern.builder-items',['col' => 'col-md-12','arrayBanner'=>['key'=>'advancedBan', 'value' => 'advancedBan'], 'arrayItems' => ['key'=> 'advancedBan','value' => 'advancedBan']])
     </div>
 </div>

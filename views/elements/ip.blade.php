@@ -6,7 +6,7 @@
                     <div class="countConnectServer justify-content-center justify-content-md-end" id="server-ip-copy"
                          @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'ip-server'])
                          data-clipboard-text="{{theme_config('home.items.ip-server.ip')}}">
-                        <div class="text">
+                        <div class="text mx-auto">
                             @if($server && $server->isOnline())
                                 {{ trans_choice('messages.server.online', $server->getOnlinePlayers()) }}
                                 <p>Il y a {{$server->getOnlinePlayers()}} connectés sur {{$server->getMaxPlayers()}}
@@ -45,7 +45,7 @@
                         <div class="icon">
                             <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
-                        <div class="text">
+                        <div class="text mx-auto">
                             <p>
                                 <em class="">{{count(\Azuriom\Models\User::all())}}</em> {{trans('theme::lang.site.register')}}
                             </p>

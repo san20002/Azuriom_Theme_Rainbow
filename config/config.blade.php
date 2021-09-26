@@ -132,14 +132,6 @@
                     {{trans('theme::lang.home.title')}}
                 </button>
                 <button class="list-group-item list-group-item-action list-group-item-light"
-                        title="Profil"
-                        href="#list-profil"
-                        data-toggle="list"
-                        role="tab"
-                        aria-controls="profil">
-                    {{trans('theme::lang.profile.title')}}
-                </button>
-                <button class="list-group-item list-group-item-action list-group-item-light"
                         title="Article"
                         href="#list-article"
                         data-toggle="list"
@@ -163,6 +155,21 @@
                         aria-controls="footer">
                     {{ trans('theme::lang.footer.title') }}
                 </button>
+                @if(!isset(plugins()->plugins()['skin-api']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="skinApi"
+                        href="#list-skinApi"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['skin-api'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="skinApi">
+                    {{trans('theme::lang.skinApi.title')}}
+                </button>
+                @if(!isset(plugins()->plugins()['skin-api']))
+                </span>
+                @endif
                 @if(!isset(plugins()->plugins()['advancedban']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
@@ -394,9 +401,9 @@
                          aria-labelledby="list-page-list">
                         @include('admin.config.page')
                     </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-profil" role="tabpanel"
-                         aria-labelledby="list-profil-list">
-                        @include('admin.config.profile')
+                    <div class="tab-pane fade card shadow mb-4" id="list-skinApi" role="tabpanel"
+                         aria-labelledby="list-skinApi-list">
+                        @include('admin.config.skin')
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary"><i

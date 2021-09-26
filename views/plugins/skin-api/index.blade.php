@@ -33,7 +33,7 @@
 @section('content')
     <div class="container content" id="skin-api">
         @include('elements.banner',['banner' => 'mySkin'])
-        <div class="card shadow mb-4"  @include('elements.string-aos', ['pageAos' => 'profile', 'itemAos'=>'skin'])>
+        <div class="card shadow mb-4"  @include('elements.string-aos', ['pageAos' => 'skinApi', 'itemAos'=>'skin'])>
             <div class="card-body">
                 <form action="{{ route('skin-api.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf

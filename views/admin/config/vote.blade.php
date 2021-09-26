@@ -3,30 +3,16 @@
 </div>
 <div class="card-body">
     <div class="row">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'vote', 'valueBanner' => 'vote'])
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'vote',
-                                'filedsBuilder' => [
-                                    ['type'=>'checkbox','value' => 'hidden'],
-                                ]
-                            ])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'podium',
-                                'filedsBuilder' => [
-                                    ['type'=>'checkbox','value' => 'hidden'],
-                                ]
-                            ])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'classement'])
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'vote','valueitems' => 'recompenses'])
-        </div>
+        @include('admin.pattern.builder-items',[
+                                                'col' => 'col-md-12',
+                                                'arrayBanner'=>['key'=>'vote', 'value' => 'vote'],
+                                                'arrayItems' => [['key'=>'vote', 'value' => 'vote',
+                                                                'filedsBuilder' => [
+                                                                ['type'=>'checkbox','value' => 'hidden'],
+                                                                ]],
+                                                                ['key'=> 'vote','value' => 'classement'],
+                                                                ['key'=> 'vote','value' => 'recompenses'],
+                                                                ]
+                                                ])
     </div>
 </div>
