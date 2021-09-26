@@ -87,7 +87,24 @@
             })
             document.querySelectorAll('.js-select-col').forEach(function (event) {
                 event.addEventListener('change', function (select) {
-                    event.closest('.js-detect-col').className = select.target.value + ' js-detect-col'
+                    let elementData = event.dataset.col;
+                    let element = event.closest('.js-detect-col');
+                    for (let i = 2; i <= 12; i++) {
+                        console.log(elementData)
+                        let col = 'col-' + elementData + '-' + i
+                        element.classList.remove(col)
+                        element.classList.add(select.target.value)
+                    }
+                })
+            })
+            document.querySelectorAll('.js-select-order').forEach(function (event) {
+                event.addEventListener('change', function (select) {
+                    let element = event.closest('.js-detect-order');
+                    for (let i = 2; i <= 12; i++) {
+                        let col = 'order-' + i
+                        element.classList.remove(col)
+                        element.classList.add('order-' + select.target.value)
+                    }
                 })
             })
         </script>
