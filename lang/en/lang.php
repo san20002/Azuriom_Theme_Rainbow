@@ -1,12 +1,10 @@
 <?php
 
 return [
-    'config' => [
+    'config'      => [
         'info' => '<small class="d-block">This theme will offer you a maximum of possible configurations to allow you to to to make your site unique.</small>
-            <small class="d-block mb-2">If you don\'t understand, don\'t hesitate to contact me <a
-                    href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> and to help me improve the theme.</small>
-            <small class="d-block font-weight-bold">Details of each animation: <a
-                    href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>'
+            <small class="d-block mb-2">If you don\'t understand, don\'t hesitate to contact me <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> and to help me improve the theme.</small>
+            <small class="d-block font-weight-bold">Details of each animation: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>'
     ],
     'site'        => [
         'register'       => 'registered on our site',
@@ -129,22 +127,22 @@ return [
     'forum'       => [
         'title'  => 'Plugin Forum',
         'banner' => [
-            'forum' => [
+            'forum'                    => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner forum',
                 'hidden' => 'Do not display'
             ],
-            'forum-show' => [
+            'forum-show'               => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner forum show',
                 'hidden' => 'Do not display'
             ],
-            'forum-user-edit' => [
+            'forum-user-edit'          => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner user edit',
                 'hidden' => 'Do not display'
             ],
-            'forum-posts-edit' => [
+            'forum-posts-edit'         => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner modification du post',
                 'hidden' => 'Do not display'
@@ -154,50 +152,50 @@ return [
                 'title'  => 'Banner posts edit',
                 'hidden' => 'Do not display'
             ],
-            'forum-discussions-edit' => [
+            'forum-discussions-edit'   => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner discussions edit',
                 'hidden' => 'Do not display'
             ],
-            'forum-discussions-show' => [
+            'forum-discussions-show'   => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner discussions show',
                 'hidden' => 'Do not display'
             ],
         ],
         'items'  => [
-            'forum'      => [
+            'forum'                    => [
                 'title' => 'Interface forum',
             ],
-            'breadcrumb' => [
+            'breadcrumb'               => [
                 'title' => 'Interface breadcrumb',
             ],
-            'message'    => [
+            'message'                  => [
                 'title' => 'Interface Derniers messages',
             ],
-            'stati'      => [
+            'stati'                    => [
                 'title' => 'Interface Stats',
             ],
-            'user'       => [
+            'user'                     => [
                 'title' => 'Interface User online',
             ],
-            'forum-show' => [
-                'title'  => 'Banner forum show',
+            'forum-show'               => [
+                'title' => 'Banner forum show',
             ],
-            'forum-user-edit' => [
-                'title'  => 'Banner user edit',
+            'forum-user-edit'          => [
+                'title' => 'Banner user edit',
             ],
-            'forum-posts-edit' => [
-                'title'  => 'Banner modification du post',
+            'forum-posts-edit'         => [
+                'title' => 'Banner modification du post',
             ],
             'forum-discussions-create' => [
-                'title'  => 'Banner posts edit',
+                'title' => 'Banner posts edit',
             ],
-            'forum-discussions-edit' => [
-                'title'  => 'Banner discussions edit',
+            'forum-discussions-edit'   => [
+                'title' => 'Banner discussions edit',
             ],
-            'forum-discussions-show' => [
-                'title'  => 'Banner discussions show',
+            'forum-discussions-show'   => [
+                'title' => 'Banner discussions show',
             ],
         ],
     ],
@@ -371,79 +369,79 @@ return [
     'shop'        => [
         'title'  => 'Plugin Shop',
         'banner' => [
-            'shop'       => [
+            'shop'           => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner shop',
                 'hidden' => 'Do not display'
             ],
-            'filter'     => [
+            'filter'         => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner filter',
                 'hidden' => 'Do not display'
             ],
-            'cart'       => [
+            'cart'           => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner cart',
                 'hidden' => 'Do not display'
             ],
-            'profile'    => [
+            'profile'        => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner profil',
                 'hidden' => 'Do not display'
             ],
-            'coupons'    => [
+            'coupons'        => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner coupons',
                 'hidden' => 'Do not display'
             ],
-            'addCoupons' => [
+            'addCoupons'     => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner add coupon',
                 'hidden' => 'Do not display'
             ],
-            'payment'    => [
+            'payment'        => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner payment',
                 'hidden' => 'Do not display'
             ],
-            'method-payment'    => [
+            'method-payment' => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Bannière method payment',
                 'hidden' => 'Do not display'
             ],
-            'select-payment'    => [
+            'select-payment' => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Bannière select payment',
                 'hidden' => 'Do not display'
             ],
         ],
         'items'  => [
-            'shop'       => [
+            'shop'           => [
                 'title' => 'Interface shop',
             ],
-            'filter'     => [
+            'filter'         => [
                 'title' => 'Interface filter',
             ],
-            'cart'       => [
+            'cart'           => [
                 'title' => 'Interface panier',
             ],
-            'profile'    => [
+            'profile'        => [
                 'title' => 'Interface profil',
             ],
-            'coupons'    => [
+            'coupons'        => [
                 'title' => 'Interface coupons',
             ],
-            'addCoupons' => [
+            'addCoupons'     => [
                 'title' => 'Interface add coupon',
             ],
-            'payment'    => [
+            'payment'        => [
                 'title' => 'Interface payment',
             ],
-            'method-payment'    => [
-                'title'  => 'Interface method payment',
+            'method-payment' => [
+                'title' => 'Interface method payment',
             ],
-            'select-payment'    => [
-                'title'  => 'Interface select payment',
+            'select-payment' => [
+                'title' => 'Interface select payment',
             ],
         ]
     ],
@@ -460,7 +458,7 @@ return [
     'support'     => [
         'title'  => 'Plugin Support',
         'banner' => [
-            'support' => [
+            'support'        => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner support',
                 'hidden' => 'Do not display'
@@ -470,21 +468,21 @@ return [
                 'title'  => 'Bannière create support',
                 'hidden' => 'Do not display'
             ],
-            'support-show' => [
+            'support-show'   => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Bannière support show',
                 'hidden' => 'Do not display'
             ],
         ],
         'items'  => [
-            'support' => [
+            'support'        => [
                 'title' => 'Interface support',
             ],
             'support-create' => [
-                'title'  => 'Interface create support',
+                'title' => 'Interface create support',
             ],
-            'support-show' => [
-                'title'  => 'Interface support show',
+            'support-show'   => [
+                'title' => 'Interface support show',
             ],
         ]
     ],
@@ -521,7 +519,7 @@ return [
     'wiki'        => [
         'title'  => 'Plugin Wiki',
         'banner' => [
-            'wiki' => [
+            'wiki'      => [
                 'info'   => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title'  => 'Banner wiki',
                 'hidden' => 'Do not display'
@@ -533,7 +531,7 @@ return [
             ],
         ],
         'items'  => [
-            'wiki' => [
+            'wiki'      => [
                 'title' => 'Interface wiki',
             ],
             'wiki-show' => [

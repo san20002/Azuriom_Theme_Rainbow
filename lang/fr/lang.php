@@ -1,15 +1,10 @@
 <?php
 
 return [
-    'config' => [
-        'info' => '<small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre
-                de
-                rendre votre site unique.</small>
-            <small class="d-block mb-2">Si vous ne comprenez pas, n\'hésitez pas à me contacter <a
-                    href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m\'aider à améliorer le
-                thème.</small>
-            <small class="d-block font-weight-bold">Détail de chaque animation: <a
-                    href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>'
+    'config'      => [
+        'info' => '<small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre de rendre votre site unique.</small>
+            <small class="d-block mb-2">Si vous ne comprenez pas, n\'hésitez pas à me contacter <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m\'aider à améliorer le thème.</small>
+            <small class="d-block font-weight-bold">Détail de chaque animation: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>'
     ],
     'site'        => [
         'register'       => 'inscrits sur notre site',
@@ -131,22 +126,22 @@ return [
     'forum'       => [
         'title'  => 'Plugin Forum',
         'banner' => [
-            'forum' => [
+            'forum'                    => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière forum',
                 'hidden' => 'Ne pas afficher'
             ],
-            'forum-show' => [
+            'forum-show'               => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière du forum',
                 'hidden' => 'Ne pas afficher'
             ],
-            'forum-user-edit' => [
+            'forum-user-edit'          => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière modification de l\'utilisateur',
                 'hidden' => 'Ne pas afficher'
             ],
-            'forum-posts-edit' => [
+            'forum-posts-edit'         => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière modification du post',
                 'hidden' => 'Ne pas afficher'
@@ -156,50 +151,50 @@ return [
                 'title'  => 'Bannière creattion d\'une discussion',
                 'hidden' => 'Ne pas afficher'
             ],
-            'forum-discussions-edit' => [
+            'forum-discussions-edit'   => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière modification d\'une discussion',
                 'hidden' => 'Ne pas afficher'
             ],
-            'forum-discussions-show' => [
+            'forum-discussions-show'   => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière de la discussion',
                 'hidden' => 'Ne pas afficher'
             ],
         ],
         'items'  => [
-            'forum'      => [
+            'forum'                    => [
                 'title' => 'Interface forum',
             ],
-            'breadcrumb' => [
+            'breadcrumb'               => [
                 'title' => 'Interface fil d\'Ariane',
             ],
-            'message'    => [
+            'message'                  => [
                 'title' => 'Interface Derniers messages',
             ],
-            'stati'      => [
+            'stati'                    => [
                 'title' => 'Interface Stats',
             ],
-            'user'       => [
+            'user'                     => [
                 'title' => 'Interface Utilisateurs en ligne',
             ],
-            'forum-show' => [
-                'title'  => 'Interface du forum',
+            'forum-show'               => [
+                'title' => 'Interface du forum',
             ],
-            'forum-user-edit' => [
-                'title'  => 'Interface modification de l\'utilisateur',
+            'forum-user-edit'          => [
+                'title' => 'Interface modification de l\'utilisateur',
             ],
-            'forum-posts-edit' => [
-                'title'  => 'Interface modification du post',
+            'forum-posts-edit'         => [
+                'title' => 'Interface modification du post',
             ],
             'forum-discussions-create' => [
-                'title'  => 'Interface creation d\'une discussion',
+                'title' => 'Interface creation d\'une discussion',
             ],
-            'forum-discussions-edit' => [
-                'title'  => 'Interface modification d\'une discussion',
+            'forum-discussions-edit'   => [
+                'title' => 'Interface modification d\'une discussion',
             ],
-            'forum-discussions-show' => [
-                'title'  => 'Interface de la discussion',
+            'forum-discussions-show'   => [
+                'title' => 'Interface de la discussion',
             ],
         ],
     ],
@@ -375,79 +370,79 @@ return [
     'shop'        => [
         'title'  => 'Plugin Shop',
         'banner' => [
-            'shop'       => [
+            'shop'           => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière boutique',
                 'hidden' => 'Ne pas afficher'
             ],
-            'filter'     => [
+            'filter'         => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière filtre',
                 'hidden' => 'Ne pas afficher'
             ],
-            'cart'       => [
+            'cart'           => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière panier',
                 'hidden' => 'Ne pas afficher'
             ],
-            'profile'    => [
+            'profile'        => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière profil',
                 'hidden' => 'Ne pas afficher'
             ],
-            'coupons'    => [
+            'coupons'        => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière coupons',
                 'hidden' => 'Ne pas afficher'
             ],
-            'addCoupons' => [
+            'addCoupons'     => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière ajouter un coupon',
                 'hidden' => 'Ne pas afficher'
             ],
-            'payment'    => [
+            'payment'        => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière Paiement',
                 'hidden' => 'Ne pas afficher'
             ],
-            'method-payment'    => [
+            'method-payment' => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière method paiement',
                 'hidden' => 'Ne pas afficher'
             ],
-            'select-payment'    => [
+            'select-payment' => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière selection du paiement',
                 'hidden' => 'Ne pas afficher'
             ],
         ],
         'items'  => [
-            'shop'       => [
+            'shop'           => [
                 'title' => 'Interface boutique',
             ],
-            'filter'     => [
+            'filter'         => [
                 'title' => 'Interface filtre',
             ],
-            'cart'       => [
+            'cart'           => [
                 'title' => 'Interface panier',
             ],
-            'profile'    => [
+            'profile'        => [
                 'title' => 'Interface profil',
             ],
-            'coupons'    => [
+            'coupons'        => [
                 'title' => 'Interface coupons',
             ],
-            'addCoupons' => [
+            'addCoupons'     => [
                 'title' => 'Interface ajouter un coupon',
             ],
-            'payment'    => [
+            'payment'        => [
                 'title' => 'Interface Paiement',
             ],
-            'method-payment'    => [
-                'title'  => 'Interface method paiement',
+            'method-payment' => [
+                'title' => 'Interface method paiement',
             ],
-            'select-payment'    => [
-                'title'  => 'Interface selection du paiement',
+            'select-payment' => [
+                'title' => 'Interface selection du paiement',
             ],
         ]
     ],
@@ -464,7 +459,7 @@ return [
     'support'     => [
         'title'  => 'Plugin Support',
         'banner' => [
-            'support' => [
+            'support'        => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière support',
                 'hidden' => 'Ne pas afficher'
@@ -474,21 +469,21 @@ return [
                 'title'  => 'Bannière création du support',
                 'hidden' => 'Ne pas afficher'
             ],
-            'support-show' => [
+            'support-show'   => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière du support',
                 'hidden' => 'Ne pas afficher'
             ],
         ],
         'items'  => [
-            'support' => [
+            'support'        => [
                 'title' => 'Interface support',
             ],
             'support-create' => [
-                'title'  => 'Interface création du support',
+                'title' => 'Interface création du support',
             ],
-            'support-show' => [
-                'title'  => 'Interface du support',
+            'support-show'   => [
+                'title' => 'Interface du support',
             ],
         ]
     ],
@@ -525,7 +520,7 @@ return [
     'wiki'        => [
         'title'  => 'Plugin Wiki',
         'banner' => [
-            'wiki' => [
+            'wiki'      => [
                 'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title'  => 'Bannière wiki',
                 'hidden' => 'Ne pas afficher'
@@ -537,11 +532,11 @@ return [
             ],
         ],
         'items'  => [
-            'wiki' => [
+            'wiki'      => [
                 'title' => 'Interface wiki',
             ],
             'wiki-show' => [
-                'title'  => 'Interface du wiki',
+                'title' => 'Interface du wiki',
             ],
         ],
     ],
