@@ -128,22 +128,9 @@
         </div>
     </div>
     <hr class="my-3 sidebar-divider">
-    <div class="row">
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',$homeBannerArticle)
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',$homeItemsArticle)
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',$homeBannerInformation)
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',$homeBannerLogin)
-        </div>
-        <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',$homeItemsDiscord)
-        </div>
+    <div class="row js-row-builder">
+        @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerArticle, 'arrayItems' => $homeItemsArticle])
+        @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerInformation, 'arrayItems' => $homeItemsDiscord])
+        @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerLogin])
     </div>
-
 </div>

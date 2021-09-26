@@ -1,5 +1,5 @@
 @php($counterPartial++)
-<div class="card mb-4">
+<div class="card mt-4">
     <div class="card-header d-flex align-items-center justify-content-between">
         <h4 class="card-title mb-0" style="flex: 0 1 90%; max-width: 90%;">
             {{trans('theme::lang.'.$keyBanner.'.banner.'.$valueBanner.'.title')}}</h4>
