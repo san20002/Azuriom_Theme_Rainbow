@@ -8,7 +8,7 @@
         @endif
         <div class="banner-title {{!theme_config('home.banner.login.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('home.banner.login.title') ? theme_config('home.banner.login.title') : trans('auth.login') }}
+                {{theme_config('home.banner.login.title') ?: trans('auth.login') }}
             </h2>
         </div>
     </div>
@@ -23,7 +23,7 @@
         @endif
         <div class="banner-title {{!theme_config('home.banner.article.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('home.banner.article.title') ? theme_config('home.banner.article.title') : 'Dernières actualités'}}
+                {{theme_config('home.banner.article.title') ?: 'Dernier actualités'}}
             </h2>
         </div>
     </div>
@@ -39,7 +39,7 @@
         @endif
         <div class="banner-title {{!theme_config('home.banner.information.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('home.banner.information.title')? theme_config('home.banner.information.title') : 'Informations'}}
+                {{theme_config('home.banner.information.title') ?: 'Informations'}}
             </h2>
         </div>
     </div>
@@ -55,7 +55,7 @@
         @endif
         <div class="banner-title {{!theme_config('faq.banner.faq.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('faq.banner.faq.title')? theme_config('faq.banner.faq.title') : trans('faq::messages.title') }}
+                {{theme_config('faq.banner.faq.title') ?: trans('faq::messages.title') }}
             </h1>
         </div>
     </div>
@@ -71,7 +71,7 @@
         @endif
         <div class="banner-title {{!theme_config('liteBans.banner.litebans.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('liteBans.banner.litebans.title') !== null ? theme_config('liteBans.banner.litebans.title') : trans('litebans::messages.title')}}
+                {{theme_config('liteBans.banner.litebans.title') ?? trans('litebans::messages.title')}}
             </h1>
         </div>
     </div>
@@ -103,23 +103,23 @@
         @endif
         <div class="banner-title {{!theme_config('support.banner.support.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('support.banner.support.title') !== null ? theme_config('support.banner.support.title') : trans('support::messages.title')}}
+                {{theme_config('support.banner.support.title') ?? trans('support::messages.title')}}
             </h1>
         </div>
     </div>
 @endif
 
-@if($banner === "support-open" && !theme_config('support.banner.open.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'open'])>
-        @if(theme_config('support.banner.open.image'))
+@if($banner === "support-create" && !theme_config('support.banner.create.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'support', 'valueAos' => 'create'])>
+        @if(theme_config('support.banner.create.image'))
             <div class="banner-icon">
-                <img src="{{image_url(theme_config('support.banner.open.image'))}}"
+                <img src="{{image_url(theme_config('support.banner.create.image'))}}"
                      alt="banner-icon">
             </div>
         @endif
-        <div class="banner-title {{!theme_config('support.banner.open.image') ? 'no-image': ''}}">
+        <div class="banner-title {{!theme_config('support.banner.create.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('support.banner.open.title') !== null ? theme_config('support.banner.open.title') : trans('support::messages.tickets.title-open')}}
+                {{theme_config('support.banner.create.title') ?? trans('support::messages.tickets.title-open')}}
             </h1>
         </div>
     </div>
@@ -181,7 +181,7 @@
         @endif
         <div class="banner-title {{!theme_config('changelog.banner.changelog.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('changelog.banner.changelog.title') !== null ? theme_config('changelog.banner.changelog.title') : trans('changelog::messages.title')}}
+                {{theme_config('changelog.banner.changelog.title') ?? trans('changelog::messages.title')}}
             </h1>
         </div>
     </div>
@@ -196,20 +196,99 @@
             </div>
         @endif
         <div class="banner-title {{!theme_config('forum.banner.forum.image') ? 'no-image': ''}}">
-            @if(!isset($discussion))
-                <h1>
-                    {{theme_config('forum.banner.forum.title') !== null ? theme_config('forum.banner.forum.title') : trans('forum::messages.title')}}
-                </h1>
-            @else
-                <h1 class="mb-0">
-                    {{ $discussion->title }}
-                </h1>
-                @foreach($discussion->tags as $tag)
-                    <small class="mr-4">
-                        <span class="badge" style="{{ $tag->getBadgeStyle() }}">{{ $tag->name }}</span>
-                    </small>
-                @endforeach
-            @endif
+            <h1>
+                {{theme_config('forum.banner.forum.title') ?? trans('forum::messages.title')}}
+            </h1>
+        </div>
+    </div>
+@endif
+@if($banner === "forum-show" && !theme_config('forum.banner.forum-show.hidden'))
+    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-show'])>
+        @if(theme_config('forum.banner.forum-show.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('forum.banner.forum-show.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('forum.banner.forum-show.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('forum.banner.forum-show.title') ?? $forum->name}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "forum-user-edit" && !theme_config('forum.banner.forum-user-edit.hidden'))
+    <div
+        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-user-edit'])>
+        @if(theme_config('forum.banner.forum-user-edit.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('forum.banner.forum-user-edit.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('forum.banner.forum-user-edit.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('forum.banner.forum-user-edit.title') ?? trans('forum::messages.discussions.title-edit')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "forum-posts-edit" && !theme_config('forum.banner.forum-posts-edit.hidden'))
+    <div
+        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-posts-edit'])>
+        @if(theme_config('forum.banner.forum-posts-edit.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('forum.banner.forum-posts-edit.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('forum.banner.forum-posts-edit.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('forum.banner.forum-posts-edit.title') ?? trans('forum::messages.posts.title-edit')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "forum-discussions-create" && !theme_config('forum.banner.forum-discussions-create.hidden'))
+    <div
+        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-discussions-create'])>
+        @if(theme_config('forum.banner.forum-discussions-create.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('forum.banner.forum-discussions-create.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('forum.banner.forum-discussions-create.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('forum.banner.forum-discussions-create.title') ?? trans('forum::messages.discussions.title-create')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "forum-discussions-edit" && !theme_config('forum.banner.forum-discussions-edit.hidden'))
+    <div
+        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-discussions-edit'])>
+        @if(theme_config('forum.banner.forum-discussions-edit.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('forum.banner.forum-discussions-edit.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('forum.banner.forum-discussions-edit.image') ? 'no-image': ''}}">
+            <h1>{{theme_config('forum.banner.forum-discussions-edit.title') ?? trans('forum::messages.discussions.title-edit')}}</h1>
+        </div>
+    </div>
+@endif
+@if($banner === "forum-discussions-show" && !theme_config('forum.banner.forum-discussions-show.hidden'))
+    <div
+        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'forum', 'valueAos' => 'forum-discussions-show'])>
+        @if(theme_config('forum.banner.forum-discussions-show.image'))
+            <div class="banner-icon">
+                <img src="{{image_url(theme_config('forum.banner.forum-discussions-show.image'))}}"
+                     alt="banner-icon">
+            </div>
+        @endif
+        <div class="banner-title {{!theme_config('forum.banner.forum-discussions-show.image') ? 'no-image': ''}}">
+            <h1 class="mb-0">
+                {{ $discussion->title }}
+            </h1>
+            @foreach($discussion->tags as $tag)
+                <small class="mr-4">
+                    <span class="badge" style="{{ $tag->getBadgeStyle() }}">{{ $tag->name }}</span>
+                </small>
+            @endforeach
         </div>
     </div>
 @endif
@@ -223,7 +302,7 @@
         @endif
         <div class="banner-title {{!theme_config('shop.banner.shop.image') ? 'no-image': ''}}">
             <h1>
-                {{theme_config('shop.banner.shop.title') !== null ? theme_config('shop.banner.shop.title') : trans('shop::messages.title')}}
+                {{theme_config('shop.banner.shop.title') ?? trans('shop::messages.title')}}
             </h1>
         </div>
     </div>
@@ -238,7 +317,7 @@
         @endif
         <div class="banner-title {{!theme_config('shop.banner.cart.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('shop.banner.cart.title') !== null ? theme_config('shop.banner.cart.title') : trans('shop::messages.cart.title')}}
+                {{theme_config('shop.banner.cart.title') ?? trans('shop::messages.cart.title')}}
             </h2>
         </div>
     </div>
@@ -253,7 +332,7 @@
         @endif
         <div class="banner-title {{!theme_config('shop.banner.filter.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('shop.banner.filter.title') !== null ? theme_config('shop.banner.filter.title') : 'Filtre'}}
+                {{theme_config('shop.banner.filter.title') ?? 'Filtre'}}
             </h2>
         </div>
     </div>
@@ -268,7 +347,7 @@
         @endif
         <div class="banner-title {{!theme_config('shop.banner.profile.image') ? 'no-image': ''}}">
             <h2>
-                {{theme_config('shop.banner.profile.title') !== null ? theme_config('shop.banner.profile.title') : 'Compte'}}
+                {{theme_config('shop.banner.profile.title') ?? 'Compte'}}
             </h2>
         </div>
     </div>
@@ -283,7 +362,7 @@
         @endif
         <div class="banner-title {{!config('theme.shop.banner.coupons.image') ? 'no-image': ''}}">
             <h2>
-                {{config('theme.shop.banner.coupons.title') !== null ? config('theme.shop.banner.coupons.title') : trans('shop::messages.cart.coupons')}}
+                {{config('theme.shop.banner.coupons.title') ?? trans('shop::messages.cart.coupons')}}
             </h2>
         </div>
     </div>
@@ -297,7 +376,7 @@
             </div>
         @endif
         <div class="banner-title {{!config('theme.shop.banner.addCoupons.image') ? 'no-image': ''}}">
-            <h2>{{config('theme.shop.banner.addCoupons.title') !== null ? config('theme.shop.banner.addCoupons.title') : trans('shop::messages.cart.add-coupon')}}</h2>
+            <h2>{{config('theme.shop.banner.addCoupons.title') ?? trans('shop::messages.cart.add-coupon')}}</h2>
         </div>
     </div>
 @endif
@@ -311,7 +390,7 @@
             </div>
         @endif
         <div class="banner-title {{!config('theme.shop.banner.payment.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.shop.banner.payment.title') !== null ? config('theme.shop.banner.payment.title') : trans('shop::messages.payment.title')}}</h1>
+            <h1>{{config('theme.shop.banner.payment.title') ?? trans('shop::messages.payment.title')}}</h1>
         </div>
     </div>
 @endif
@@ -324,7 +403,7 @@
             </div>
         @endif
         <div class="banner-title {{!config('theme.shop.banner.method-payment.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.shop.banner.method-payment.title') !== null ? config('theme.shop.banner.method-payment.title') : trans('shop::messages.offers.title-payment')}}</h1>
+            <h1>{{config('theme.shop.banner.method-payment.title') ?? trans('shop::messages.offers.title-payment')}}</h1>
         </div>
     </div>
 @endif
@@ -337,7 +416,7 @@
             </div>
         @endif
         <div class="banner-title {{!config('theme.shop.banner.select-payment.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.shop.banner.select-payment.title') !== null ? config('theme.shop.banner.select-payment.title') : trans('shop::messages.offers.title-select')}}</h1>
+            <h1>{{config('theme.shop.banner.select-payment.title') ?? trans('shop::messages.offers.title-select')}}</h1>
         </div>
     </div>
 @endif
@@ -379,7 +458,7 @@
         @endif
         <div
             class="banner-title justify-content-between {{!config('theme.articles.banner.allArticle.image') ? 'no-image': ''}}">
-            <h1>{{config('theme.articles.banner.allArticle.title') !== null ? config('theme.articles.banner.allArticle.title') : 'Les articles'}}</h1>
+            <h1>{{config('theme.articles.banner.allArticle.title') ?? 'Les articles'}}</h1>
             <small class="mr-3 text-sm">
                 Nombre d'article(s): {{count($posts)}}
             </small>
@@ -418,7 +497,8 @@
 @endif
 
 @if($banner === "advancedban" && !config('theme.advancedBan.banner.advancedBan.hidden'))
-    <div class="banner" @include('elements.string-aos-banner',['bannerAos' => 'advancedBan', 'valueAos' => 'advancedBan'])>
+    <div
+        class="banner" @include('elements.string-aos-banner',['bannerAos' => 'advancedBan', 'valueAos' => 'advancedBan'])>
         @if(config('theme.advancedBan.banner.advancedBan.image'))
             <div class="banner-icon">
                 <img src="{{image_url(config('theme.advancedBan.banner.advancedBan.image'))}}"

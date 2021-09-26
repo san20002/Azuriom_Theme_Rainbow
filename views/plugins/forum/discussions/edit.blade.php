@@ -5,11 +5,11 @@
 @section('content')
     <div class="container content">
 
-        @include('elements.banner', ['banner' => 'forum'])
+        @include('elements.banner', ['banner' => 'forum-discussions-edit'])
 
         @include('forum::elements.nav')
 
-        <form action="{{ route('forum.discussions.update', $discussion) }}" method="POST" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+        <form action="{{ route('forum.discussions.update', $discussion) }}" method="POST" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-discussions-edit'])>
             @method('PUT')
 
             @include('forum::discussions._form')

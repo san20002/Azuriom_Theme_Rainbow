@@ -5,12 +5,12 @@
 @section('content')
     <div class="container content" id="forum">
 
-        @include('elements.banner', ['banner' => 'forum'])
+        @include('elements.banner', ['banner' => 'forum-show', 'forum' => $forum])
 
         @include('forum::elements.nav')
 
         @if(! $forum->forums->isEmpty())
-            <div class="card mb-4"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+            <div class="card mb-4"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-show'])>
                 <div class="list-group list-group-flush">
                     @foreach($forum->forums as $subForum)
                         <div class="list-group-item">
@@ -39,7 +39,7 @@
             </div>
         @endif
 
-        <div class="card mb-3" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+        <div class="card mb-3" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-show'])>
             <div class="card-header">{{ trans('forum::messages.discussions.title') }}</div>
             <div class="list-group list-group-flush">
                 @foreach($forum->discussions as $discussion)

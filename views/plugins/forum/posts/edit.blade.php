@@ -7,11 +7,11 @@
 @section('content')
     <div class="container" id="forum">
 
-        @include('elements.banner', ['banner' => 'forum'])
+        @include('elements.banner', ['banner' => 'forum-posts-edit'])
 
         @include('forum::elements.nav')
 
-        <form action="{{ route('forum.discussions.posts.update', [$post->discussion, $post]) }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+        <form action="{{ route('forum.discussions.posts.update', [$post->discussion, $post]) }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-posts-edit'])>
             @csrf
             @method('PUT')
 

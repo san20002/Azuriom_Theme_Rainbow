@@ -87,21 +87,14 @@
             })
             document.querySelectorAll('.js-select-col').forEach(function (event) {
                 event.addEventListener('change', function (select) {
-                        event.closest('.js-detect-col').className = select.target.value+ ' js-detect-col'
+                    event.closest('.js-detect-col').className = select.target.value + ' js-detect-col'
                 })
             })
         </script>
     @endpush
     <div class="row mb-5">
         <div class="col-12 mb-3">
-            <small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre
-                de
-                rendre votre site unique.</small>
-            <small class="d-block mb-2">Si vous ne comprenez pas, n'hésitez pas à me contacter <a
-                    href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m'aider à améliorer le
-                thème.</small>
-            <small class="d-block font-weight-bold">Détail de chaque animation: <a
-                    href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>
+            {!!  trans('theme::lang.config.info') !!}
         </div>
         <div class="col-lg-2">
             <div class="list-group sticky-top">

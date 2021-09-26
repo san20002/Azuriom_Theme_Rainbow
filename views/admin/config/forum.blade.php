@@ -7,6 +7,24 @@
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum'])
         </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum-show'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum-user-edit'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum-posts-edit'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum-discussions-create'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum-discussions-edit'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.banner',['keyBanner'=>'forum', 'valueBanner' => 'forum-discussions-show'])
+        </div>
     </div>
     <div class="row mt-4">
         <div class="col-xl-4 col-lg-6">
@@ -23,6 +41,24 @@
         </div>
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'user'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum-show'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum-user-edit'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum-posts-edit'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum-discussions-create'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum-discussions-edit'])
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @include('admin.pattern.items',['keyitems'=> 'forum','valueitems' => 'forum-discussions-show'])
         </div>
     </div>
 </div>

@@ -7,7 +7,7 @@
             @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-open'])
+            @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-create'])
         </div>
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.banner',['keyBanner'=>'support', 'valueBanner' => 'support-show'])
@@ -18,7 +18,7 @@
             @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support'])
         </div>
         <div class="col-xl-4 col-lg-6">
-            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-open'])
+            @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-create'])
         </div>
         <div class="col-xl-4 col-lg-6">
             @include('admin.pattern.items',['keyitems'=> 'support','valueitems' => 'support-show'])

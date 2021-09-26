@@ -1,6 +1,16 @@
 <?php
 
 return [
+    'config' => [
+        'info' => '<small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre
+                de
+                rendre votre site unique.</small>
+            <small class="d-block mb-2">Si vous ne comprenez pas, n\'hésitez pas à me contacter <a
+                    href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m\'aider à améliorer le
+                thème.</small>
+            <small class="d-block font-weight-bold">Détail de chaque animation: <a
+                    href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>'
+    ],
     'site'        => [
         'register'       => 'inscrits sur notre site',
         'memberRegister' => 'Membres Inscrits',
@@ -126,6 +136,36 @@ return [
                 'title'  => 'Bannière forum',
                 'hidden' => 'Ne pas afficher'
             ],
+            'forum-show' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière du forum',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'forum-user-edit' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière modification de l\'utilisateur',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'forum-posts-edit' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière modification du post',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'forum-discussions-create' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière creattion d\'une discussion',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'forum-discussions-edit' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière modification d\'une discussion',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'forum-discussions-show' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière de la discussion',
+                'hidden' => 'Ne pas afficher'
+            ],
         ],
         'items'  => [
             'forum'      => [
@@ -142,6 +182,24 @@ return [
             ],
             'user'       => [
                 'title' => 'Interface Utilisateurs en ligne',
+            ],
+            'forum-show' => [
+                'title'  => 'Interface du forum',
+            ],
+            'forum-user-edit' => [
+                'title'  => 'Interface modification de l\'utilisateur',
+            ],
+            'forum-posts-edit' => [
+                'title'  => 'Interface modification du post',
+            ],
+            'forum-discussions-create' => [
+                'title'  => 'Interface creation d\'une discussion',
+            ],
+            'forum-discussions-edit' => [
+                'title'  => 'Interface modification d\'une discussion',
+            ],
+            'forum-discussions-show' => [
+                'title'  => 'Interface de la discussion',
             ],
         ],
     ],
@@ -352,6 +410,16 @@ return [
                 'title'  => 'Bannière Paiement',
                 'hidden' => 'Ne pas afficher'
             ],
+            'method-payment'    => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière method paiement',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'select-payment'    => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière selection du paiement',
+                'hidden' => 'Ne pas afficher'
+            ],
         ],
         'items'  => [
             'shop'       => [
@@ -375,6 +443,12 @@ return [
             'payment'    => [
                 'title' => 'Interface Paiement',
             ],
+            'method-payment'    => [
+                'title'  => 'Interface method paiement',
+            ],
+            'select-payment'    => [
+                'title'  => 'Interface selection du paiement',
+            ],
         ]
     ],
     'skinApi'     => [
@@ -395,10 +469,26 @@ return [
                 'title'  => 'Bannière support',
                 'hidden' => 'Ne pas afficher'
             ],
+            'support-create' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière création du support',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'support-show' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière du support',
+                'hidden' => 'Ne pas afficher'
+            ],
         ],
         'items'  => [
             'support' => [
                 'title' => 'Interface support',
+            ],
+            'support-create' => [
+                'title'  => 'Interface création du support',
+            ],
+            'support-show' => [
+                'title'  => 'Interface du support',
             ],
         ]
     ],
@@ -440,10 +530,18 @@ return [
                 'title'  => 'Bannière wiki',
                 'hidden' => 'Ne pas afficher'
             ],
+            'wiki-show' => [
+                'info'   => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title'  => 'Bannière du wiki',
+                'hidden' => 'Ne pas afficher'
+            ],
         ],
         'items'  => [
             'wiki' => [
                 'title' => 'Interface wiki',
+            ],
+            'wiki-show' => [
+                'title'  => 'Interface du wiki',
             ],
         ],
     ],

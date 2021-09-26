@@ -5,11 +5,11 @@
 @section('content')
     <div class="container content" id="forum">
 
-        @include('elements.banner', ['banner' => 'forum'])
+        @include('elements.banner', ['banner' => 'forum-discussions-create'])
 
         @include('forum::elements.nav')
 
-        <form action="{{ route('forum.forum.discussions.store', $forum->slug) }}" method="POST" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+        <form action="{{ route('forum.forum.discussions.store', $forum->slug) }}" method="POST" @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-discussions-create'])>
             @include('forum::discussions._form')
 
             <button type="submit" class="btn btn-primary">

@@ -13,12 +13,12 @@
 @section('content')
     <div class="container content" id="forum">
 
-        @include('elements.banner', ['banner' => 'forum', 'discussion' => $discussion])
+        @include('elements.banner', ['banner' => 'forum-discussions-show', 'discussion' => $discussion])
 
 
         @include('forum::elements.nav')
 
-        <div class="row mb-2"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+        <div class="row mb-2"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-discussions-show'])>
             <div class="col-md-12 d-flex align-items-center justify-content-center">
                 <div>
                     @can('forum.discussions')
@@ -74,14 +74,14 @@
         </div>
 
         @foreach($discussion->posts as $post)
-            <div class="card mb-3"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum'])>
+            <div class="card mb-3"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'forum-discussions-show'])>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-xl-2 col-md-3 text-center">
                             <div class="row">
-                                {{--                                <div class="col-3 col-md-12">--}}
-                                {{--                                    <img src="{{ $post->author->getAvatar(128) }}" alt="{{ $post->author->name }}" class="img-fluid mb-3 rounded-lg" style="max-width: 80px">--}}
-                                {{--                                </div>--}}
+                                <div class="col-3 col-md-12">
+                                    <img src="{{ $post->author->getAvatar(128) }}" alt="{{ $post->author->name }}" class="img-fluid mb-3 rounded-lg mx-auto" style="max-width: 80px">
+                                </div>
 
                                 <div class="col-9 col-md-12">
                                     <h5>
@@ -185,6 +185,8 @@
                     <div class="card-body">
                         <form action="{{ route('forum.discussions.posts.store', $discussion) }}" method="POST">
                             @csrf
+
+                            @include('forum::elements.markdown-editor', ['editorMinHeight' => 150])
 
                             <div class="form-group">
                                 <label for="content">{{ trans('messages.fields.content') }}</label>

@@ -5,9 +5,9 @@
 @section('content')
     <div class="container content" id="support">
 
-        @include('elements.banner',['banner' => 'support-open'])
+        @include('elements.banner',['banner' => 'support-create'])
 
-        <form action="{{ route('support.tickets.store') }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-open'])>
+        <form action="{{ route('support.tickets.store') }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-create'])>
             @csrf
 
             <div class="form-group">
