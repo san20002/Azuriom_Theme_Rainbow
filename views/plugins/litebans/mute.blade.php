@@ -6,7 +6,7 @@
     <div class="container content" id="litebans">
         @include('litebans::elements.navbar')
 
-        <div class="table-responsive" @include('elements.string-aos', ['pageAos' => 'liteBans', 'itemAos'=>'liteBans'])>
+        <div class="table-responsive" @include('elements.string-aos', ['pageAos' => 'liteBans', 'itemAos'=>'litebans'])>
             <ul class="table--custom mt-5">
                 <li class="table-header">
                     <div class="col col-2">{{ trans('litebans::messages.username') }}</div>

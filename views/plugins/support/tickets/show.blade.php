@@ -19,7 +19,7 @@
 
         @foreach($ticket->comments as $comment)
             <div
-                class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
+                class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-show'])>
                 <div class="card-header @if($ticket->author->is($comment->author)) text-info @else text-primary @endif">
                     @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
                 </div>

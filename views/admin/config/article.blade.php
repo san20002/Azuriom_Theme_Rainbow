@@ -1,5 +1,7 @@
 @php
+
     $articlesItemsArticle = [
+                            'url' => route('posts.show', $articles->first()),
 		                    'key'=> 'articles',
                             'value' => 'article',
                             'filedsBuilder' => [
@@ -8,6 +10,7 @@
                                 ]
                             ];
     $articlesItemsAllArticle = [
+                            'url' => route('posts.index'),
 		                    'key'=> 'articles',
                             'value' => 'allArticle',
                             ];
@@ -17,7 +20,13 @@
 </div>
 <div class="card-body">
     <div class="row">
-        @include('admin.pattern.builder-items',['col' => 'col-md-6','arrayBanner'=> ['key'=>'articles', 'value' => 'article'], 'arrayItems' => $articlesItemsArticle])
-        @include('admin.pattern.builder-items',['col' => 'col-md-6','arrayBanner'=>['key'=>'articles', 'value' => 'allArticle'], 'arrayItems' => $articlesItemsAllArticle])
+        @include('admin.pattern.builder-items',[
+                                                'col' => 'col-md-6',
+                                                'arrayBanner'=> [
+                                                    'url' => route('posts.show', $articles->first()),
+                                                    'key'=>'articles',
+                                                    'value' => 'article'],
+                                                'arrayItems' => $articlesItemsArticle])
+        @include('admin.pattern.builder-items',['url' => route('posts.index'),'col' => 'col-md-6','arrayBanner'=>['key'=>'articles', 'value' => 'allArticle'], 'arrayItems' => $articlesItemsAllArticle])
     </div>
 </div>

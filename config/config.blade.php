@@ -155,21 +155,6 @@
                         aria-controls="footer">
                     {{ trans('theme::lang.footer.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['skin-api']))
-                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
-                @endif
-                <button class="list-group-item list-group-item-action list-group-item-light"
-                        title="skinApi"
-                        href="#list-skinApi"
-                        data-toggle="list"
-                        role="tab"
-                        {{!isset(plugins()->plugins()['skin-api'])? 'aria-disabled="true" disabled': ''}}
-                        aria-controls="skinApi">
-                    {{trans('theme::lang.skinApi.title')}}
-                </button>
-                @if(!isset(plugins()->plugins()['skin-api']))
-                </span>
-                @endif
                 @if(!isset(plugins()->plugins()['advancedban']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
@@ -261,6 +246,21 @@
                 @if(!isset(plugins()->plugins()['shop']))
                 </span>
                 @endif
+                @if(!isset(plugins()->plugins()['skin-api']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="skinApi"
+                        href="#list-skinApi"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['skin-api'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="skinApi">
+                    {{trans('theme::lang.skinApi.title')}}
+                </button>
+                @if(!isset(plugins()->plugins()['skin-api']))
+                </span>
+                @endif
                 @if(!isset(plugins()->plugins()['support']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
@@ -309,6 +309,12 @@
             </div>
         </div>
         @php
+            $articles = \Azuriom\Models\Post::all();
+            $pages = \Azuriom\Models\Page::all();
+            $tickets = \Azuriom\Plugin\Support\Models\Ticket::all();
+            $wikis = \Azuriom\Plugin\Wiki\Models\Category::all();
+            $forums = \Azuriom\Plugin\Forum\Models\Forum::all();
+            $forumsDiscussions = \Azuriom\Plugin\Forum\Models\Discussion::all();
             $animations = [
 	            'No effect'=>['none'],
 	            'Fade' => ['fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],

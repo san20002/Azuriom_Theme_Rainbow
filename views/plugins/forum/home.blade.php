@@ -47,8 +47,8 @@
                 @endforeach
             </div>
 
-            <div class="col-md-3"  @include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'message'])>
-                <div class="card mb-3">
+            <div class="col-md-3" >
+                <div class="card mb-3"@include('elements.string-aos', ['pageAos' => 'forum', 'itemAos'=>'message'])>
                     <div class="card-header">
                         <i class="fas fa-comments fa-fw"></i> {{ trans('forum::messages.latest.title') }}
                     </div>

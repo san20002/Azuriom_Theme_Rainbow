@@ -4,6 +4,7 @@
 <div class="card-body">
     <div class="row">
         @include('admin.pattern.builder-items',[
+                                                'url' => route('vote.home'),
                                                 'col' => 'col-md-12',
                                                 'arrayBanner'=>['key'=>'vote', 'value' => 'vote'],
                                                 'arrayItems' => [['key'=>'vote', 'value' => 'vote',

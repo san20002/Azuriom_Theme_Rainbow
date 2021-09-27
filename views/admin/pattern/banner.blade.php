@@ -10,8 +10,6 @@
         </a>
     @endif
     <div class="card-header d-flex align-items-center justify-content-between">
-        <h4 class="card-title mb-0" style="flex: 0 1 90%; max-width: 90%;">
-            {{trans('theme::lang.'.$key.'.banner.'.$value.'.title')}}</h4>
         <input
             class="btn btn-link d-none {{theme_config($key.'.banner.'.$value.'.chevron')?"collapsed":""}}"
             {{theme_config($key.'.banner.'.$value.'.chevron')?"checked":""}}
@@ -23,8 +21,11 @@
             aria-controls="collapse-{{$key}}-{{$value}}-{{$counterPartial}}"
             id="checkbox-{{$key}}-{{$value}}-{{$counterPartial}}">
         <label for="checkbox-{{$key}}-{{$value}}-{{$counterPartial}}"
-               class="px-2 text-center" style="flex: 0 1 10%; max-width: 10%; cursor: pointer">
-            <i class="fas fa-chevron-down"></i>
+               class="px-2 d-flex align-content-center justify-content-between w-100" style="cursor: pointer">
+            <h4 class="card-title mb-0">
+                {{trans('theme::lang.'.$key.'.banner.'.$value.'.title')}}
+            </h4>
+            <i class="fas fa-chevron-down" style="padding: 6px"></i>
         </label>
     </div>
 

@@ -53,7 +53,7 @@
                 <div class="col-md-8">
                     @include('elements.banner', ['banner' => 'coupons'])
 
-                    <div class="table-responsive">
+                    <div class="table-responsive"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'coupons'])>
                         <ul class="table--custom coupons">
                             <li class="table-header">
                                 <div class="col col-4">{{ trans('messages.fields.name') }}</div>
@@ -84,7 +84,7 @@
                 <div class="col-md-4">
                     @include('elements.banner', ['banner' => 'addCoupons'])
 
-                    <form action="{{ route('shop.cart.coupons.add') }}" method="POST" class="form-inline mb-3">
+                    <form action="{{ route('shop.cart.coupons.add') }}" method="POST" class="form-inline mb-3"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'addCoupons'])>
                         @csrf
 
                         <div class="form-group">
@@ -101,20 +101,20 @@
                 </div>
             </div>
 
-            <p class="font-weight-bold text-right mb-4">
+            <p class="font-weight-bold text-right mb-4" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'addCoupons'])>
                 <span class="border border-dark p-2 rounded">
                     {{ trans('shop::messages.cart.total', ['total' => shop_format_amount($cart->total())]) }}
                 </span>
             </p>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'coupons'])>
                     <a href="{{ route('shop.home') }}" class="btn btn-info">
                         {{ trans('shop::messages.cart.back') }}
                     </a>
                 </div>
 
-                <div class="col-md-6 text-right">
+                <div class="col-md-6 text-right"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'addCoupons'])>
                     <form method="POST" action="{{ route('shop.cart.clear') }}" class="d-inline-block">
                         @csrf
 

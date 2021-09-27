@@ -22,9 +22,9 @@
                 for="items-easing-{{$key}}-{{$value}}-{{$counterPartial}}">{{ trans('theme::lang.easing') }}</label>
             <select name="{{$key}}[items][{{$value}}][aos][easing]"
                     id="items-easing-{{$key}}-{{$value}}-{{$counterPartial}}" class="form-control">
-                @foreach($easingAnimations as $k => $value)
-                    <option value="{{ $value }}"
-                            @if(theme_config($key.'.items.'.$value.'.aos.easing') === $value) selected @endif>{{ $value }}</option>
+                @foreach($easingAnimations as $k => $v)
+                    <option value="{{ $v }}"
+                            @if(theme_config($key.'.items.'.$value.'.aos.easing') === $v) selected @endif>{{ $v }}</option>
                 @endforeach
             </select>
         </div>
@@ -33,9 +33,9 @@
                 for="items-placement-{{$key}}-{{$value}}-{{$counterPartial}}">{{ trans('theme::lang.placement') }}</label>
             <select name="{{$key}}[items][{{$value}}][aos][placement]"
                     id="items-placement-{{$key}}-{{$value}}-{{$counterPartial}}" class="form-control">
-                @foreach($placements as $k => $value)
-                    <option value="{{ $value }}"
-                            @if(theme_config($key.'.items.'.$value.'.aos.placement') === $value) selected @endif>{{ $value }}</option>
+                @foreach($placements as $k => $v)
+                    <option value="{{ $v }}"
+                            @if(theme_config($key.'.items.'.$value.'.aos.placement') === $v) selected @endif>{{ $v }}</option>
                 @endforeach
             </select>
         </div>

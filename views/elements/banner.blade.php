@@ -62,7 +62,7 @@
 @endif
 
 @if($banner === "liteBans" && !theme_config('liteBans.banner.litebans.hidden'))
-    <div @include('elements.data-config-trigger',['key' => 'liteBans','value'=>'liteBans']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'liteBans', 'value' => 'litebans'])>
+    <div @include('elements.data-config-trigger',['key' => 'liteBans','value'=>'litebans']) class="banner" @include('elements.string-aos-banner',['bannerAos' => 'liteBans', 'value' => 'litebans'])>
         @if(theme_config('liteBans.banner.litebans.image'))
             <div class="banner-icon">
                 <img src="{{image_url(theme_config('liteBans.banner.litebans.image'))}}"

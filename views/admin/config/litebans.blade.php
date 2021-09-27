@@ -4,6 +4,7 @@
 <div class="card-body">
     <div class="row">
         @include('admin.pattern.builder-items',[
+                                                'url' => route('litebans.index'),
                                                 'col' => 'col-12',
                                                 'arrayBanner'=>['key'=>'liteBans', 'value' => 'litebans'],
                                                 'arrayItems' => [

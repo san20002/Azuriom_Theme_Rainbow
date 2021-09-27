@@ -4,6 +4,7 @@
 <div class="card-body">
     <div class="row">
         @include('admin.pattern.builder-items',[
+                            'url' => route('pages.show', $pages->first()),
                             'col' => 'col-md-12',
                             'arrayBanner'=>['key'=>'pages', 'value' => 'page'],
                             'arrayItems' => ['key'=> 'pages','value' => 'page']

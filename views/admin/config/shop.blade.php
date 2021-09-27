@@ -40,13 +40,13 @@
                                                 'arrayItems' => ['key'=>'shop', 'value' => 'addCoupons']
                                                 ])
         @include('admin.pattern.builder-items',[
-                                                'url' => route('shop.payments.payment'),
+                                                'url' => route('shop.offers.select'),
                                                 'col' => 'col-md-6',
                                                 'arrayBanner'=>['key'=>'shop', 'value' => 'method-payment'],
                                                 'arrayItems' => ['key'=>'shop', 'value' => 'method-payment']
                                                 ])
         @include('admin.pattern.builder-items',[
-                                                'url' => route('shop.payments.payment'),
+                                                'url' => route('shop.offers.buy','paypal'),
                                                 'col' => 'col-md-6',
                                                 'arrayBanner'=>['key'=>'shop', 'value' => 'select-payment'],
                                                 'arrayItems' => ['key'=>'shop', 'value' => 'select-payment']

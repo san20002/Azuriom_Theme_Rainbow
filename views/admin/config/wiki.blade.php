@@ -4,11 +4,13 @@
 <div class="card-body">
     <div class="row">
         @include('admin.pattern.builder-items',[
+                                                'url' => route('wiki.index'),
                                                 'col' => 'col-md-6',
                                                 'arrayBanner'=>['key'=>'wiki', 'value' => 'wiki'],
                                                 'arrayItems' => ['key'=>'wiki', 'value' => 'wiki']
                                                 ])
         @include('admin.pattern.builder-items',[
+                                                'url' => route('wiki.show', $wikis->first()),
                                                 'col' => 'col-md-6',
                                                 'arrayBanner'=>['key'=>'wiki', 'value' => 'wiki-show'],
                                                 'arrayItems' => ['key'=>'wiki', 'value' => 'wiki-show']

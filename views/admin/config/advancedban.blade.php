@@ -3,6 +3,10 @@
 </div>
 <div class="card-body">
     <div class="row">
-        @include('admin.pattern.builder-items',['col' => 'col-md-12','arrayBanner'=>['key'=>'advancedBan', 'value' => 'advancedBan'], 'arrayItems' => ['key'=> 'advancedBan','value' => 'advancedBan']])
+        @include('admin.pattern.builder-items',[
+                                            'url' => route('advancedban.index'),
+                                            'col' => 'col-md-12',
+                                            'arrayBanner'=>['key'=>'advancedBan', 'value' => 'advancedBan'],
+                                            'arrayItems' => ['key'=> 'advancedBan','value' => 'advancedBan']])
     </div>
 </div>

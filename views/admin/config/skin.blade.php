@@ -4,9 +4,10 @@
 <div class="card-body">
     <div class="row">
         @include('admin.pattern.builder-items',[
-                            'col' => 'col-md-12',
-                            'arrayBanner'=>['key'=>'skinApi', 'value' => 'skin'],
-                            'arrayItems' => ['key'=> 'skinApi','value' => 'skin']
-                            ])
+                                                'url' => route('skin-api.home'),
+                                                'col' => 'col-md-12',
+                                                'arrayBanner'=>['key'=>'skinApi', 'value' => 'skin'],
+                                                'arrayItems' => ['key'=> 'skinApi','value' => 'skin']
+                                                ])
     </div>
 </div>
