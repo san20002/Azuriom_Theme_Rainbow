@@ -1,5 +1,14 @@
 @php($counterPartial++)
 <div class="card mb-4">
+    @if(isset($url) && $url)
+        <a class="badge badge-info"
+           href="{{$url}}#config_trigger={{$key}}-items-{{$value}}"
+           target="_blank"
+           style="font-size: 1.1rem;position: absolute;top: -15px;left: -15px;height: 35px;width: 35px;border-radius: 22.25px;line-height: 37px;padding: 0;"
+        >
+            <i class="fas fa-eye"></i>
+        </a>
+    @endif
     <div class="card-header d-flex align-items-center justify-content-between">
         <h4 class="card-title mb-0" style="flex: 0 1 90%; max-width: 90%;">
             {{ trans('theme::lang.'.$key.'.items.'.$value.'.title') }}

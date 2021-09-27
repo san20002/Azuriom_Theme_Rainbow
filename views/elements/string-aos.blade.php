@@ -15,3 +15,9 @@
         data-aos-offset='{{theme_config($pageAos.'.items.'.$itemAos.'.aos.offset')}}'
     @endif
 @endif
+@auth()
+    @if(auth()->user()->role->name == 'Admin')
+        data-config-trigger="{{$pageAos}}-items-{{$itemAos}}"
+    @endif
+@endauth
+
