@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content" id="support">
 
-        @include('elements.banner',['banner' => 'support'])
+        @include('elements.banner',['banner' => 'support', 'value' => 'support'])
 
         <div class="table-responsive" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support'])>
             <ul class="table--custom">

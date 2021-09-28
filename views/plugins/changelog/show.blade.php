@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content" id="changelog">
 
-        @include('elements.banner', ['banner' => 'changelog'])
+        @include('elements.banner', ['banner' => 'changelog', 'value' => 'changelog'])
 
         <div class="row"  @include('elements.string-aos', ['pageAos' => 'changelog', 'itemAos'=>'changelog'])>
             <div class="col-md-3">

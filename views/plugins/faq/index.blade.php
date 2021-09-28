@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content">
 
-        @include('elements.banner',['banner' => 'faq'])
+        @include('elements.banner',['banner' => 'faq', 'value' => 'faq'])
 
         @if($questions->isEmpty())
             <div class="alert alert-info" role="alert">

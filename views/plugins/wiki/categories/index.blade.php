@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content" id="wiki">
 
-        @include('elements.banner',['banner' => 'wiki'])
+        @include('elements.banner',['banner' => 'wiki', 'value' => 'wiki'])
 
         <div class="row mt-5" @include('elements.string-aos', ['pageAos' => 'wiki', 'itemAos'=>'wiki'])>
             @foreach($categories as $category)

@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="container content" id="page">
-        @include('elements.banner', ['banner' => 'pages','page' => $page])
+        @include('elements.banner', ['banner' => 'pages', 'value' => 'page','page' => $page])
 
         <div class="card shadow-sm" @include('elements.string-aos', ['pageAos' => 'pages', 'itemAos'=>'page'])>
             <div class="card-body">

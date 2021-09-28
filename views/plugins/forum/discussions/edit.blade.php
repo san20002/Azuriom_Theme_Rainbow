@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content">
 
-        @include('elements.banner', ['banner' => 'forum-discussions-edit'])
+        @include('elements.banner', ['banner' => 'forum', 'value'=> 'forum-discussions-edit'])
 
         @include('forum::elements.nav')
 

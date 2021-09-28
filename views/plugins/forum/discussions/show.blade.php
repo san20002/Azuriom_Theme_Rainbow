@@ -13,7 +13,7 @@
 @section('content')
     <div class="container content" id="forum">
 
-        @include('elements.banner', ['banner' => 'forum-discussions-show', 'discussion' => $discussion])
+        @include('elements.banner', ['banner' => 'forum', 'value' => 'forum-discussions-show', 'discussion' => $discussion])
 
 
         @include('forum::elements.nav')

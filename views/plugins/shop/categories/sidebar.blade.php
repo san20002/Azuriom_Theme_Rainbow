@@ -1,4 +1,4 @@
-@include('elements.banner', ['banner' => 'filter'])
+@include('elements.banner', ['banner' => 'shop', 'value' => 'filter'])
 
 <div class="list-group mb-3" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'filter'])>
     @foreach($categories as $subCategory)
@@ -17,7 +17,7 @@
 </div>
 
 @auth
-    @include('elements.banner', ['banner' => 'shop_account'])
+    @include('elements.banner', ['banner' => 'shop', 'value' => 'profile'])
 
     <div class="mb-4" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'profile'])>
         @if(use_site_money())

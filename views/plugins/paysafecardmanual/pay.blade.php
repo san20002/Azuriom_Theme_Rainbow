@@ -4,7 +4,10 @@
 
 @section('content')
     <div class="container content" id="shops">
-        <div class="card shadow mb-4">
+
+        @include('elements.banner',['banner' => 'paysafecardmanual', 'value' => 'paysafecardmanual'])
+
+        <div class="card shadow mb-4" @include('elements.string-aos', ['pageAos' => 'paysafecardmanual', 'itemAos'=>'paysafecardmanual'])>
             <h5 class="card-header">
                 {{ trans('paysafecardmanual::messages.title') }}
             </h5>

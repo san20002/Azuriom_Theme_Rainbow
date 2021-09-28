@@ -4,41 +4,28 @@
 
 @section('content')
     <div class="container content" id="jirai">
-        <div class="card shadow-sm mb-4">
-
-            <div class="card-header d-flex flex-row justify-content-between">
-                <span>{{ trans('jirai::messages.changelog') }}</span>
-                @auth @can('jirai.changelog.post')
-                    <a href="{{ route('jirai.changelogs.create') }}"
-                       class="btn btn-primary">{{ trans('jirai::messages.new') }}</a>
-                @endcan @endauth
-            </div>
-
-            <div class="card-body">
-                @foreach($changelogs as $changelog)
-                    <div class="card m-2 p-2 text-decoration-none d-flex flex-column">
-                        <a class="m-2" href="{{ route('jirai.changelogs.show', $changelog) }}">
-                            <h3>{{ $changelog->description }}</h3>
-                        </a>
-                        <small style="color: grey">
-                            #{{ $changelog->id }} @lang('messages.posts.posted', ['user' => e($changelog->user->name), 'date' => format_date($changelog->created_at, true)])
-                        </small>
-                    </div>
-                @endforeach
-                {{ $changelogs->withQueryString()->links() }}
-            </div>
-        </div>
-
         <div class="row">
-            <div class="col-md-6">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-header d-flex justify-content-between">
-                        <span>{{ trans('jirai::messages.bugs') }}</span>
-                        @auth @can('jirai.issue.post')
-                            <a href="{{ route('jirai.issues.create') }}?type=bugs"
-                               class="btn btn-primary">{{ trans('jirai::messages.new') }}</a>
-                        @endauth @endcan
+            <div class="col-md-12">
+                @include('elements.banner',['banner' => 'jirai', 'value' => 'changelog'])
+                <div class="card shadow-sm mb-4" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'changelog'])>
+                    <div class="card-body">
+                        @foreach($changelogs as $changelog)
+                            <div class="card m-2 p-2 text-decoration-none d-flex flex-column">
+                                <a class="m-2" href="{{ route('jirai.changelogs.show', $changelog) }}">
+                                    <h3>{{ $changelog->description }}</h3>
+                                </a>
+                                <small style="color: grey">
+                                    #{{ $changelog->id }} @lang('messages.posts.posted', ['user' => e($changelog->user->name), 'date' => format_date($changelog->created_at, true)])
+                                </small>
+                            </div>
+                        @endforeach
+                        {{ $changelogs->withQueryString()->links() }}
                     </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                @include('elements.banner',['banner' => 'jirai', 'value' => 'bugs'])
+                <div class="card shadow-sm mb-4" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'bugs'])>
                     <div class="card-body">
                         @foreach($bugs as $bug)
                             <div class="card m-2 p-2 text-decoration-none">
@@ -78,14 +65,8 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-header d-flex justify-content-between">
-                        <span>{{ trans('jirai::messages.suggestions') }}</span>
-                        @auth @can('jirai.issue.post')
-                            <a href="{{ route('jirai.issues.create') }}?type=suggestion"
-                               class="btn btn-primary">{{ trans('jirai::messages.new') }}</a>
-                        @endauth @endcan
-                    </div>
+                @include('elements.banner',['banner' => 'jirai', 'value' => 'suggestions'])
+                <div class="card shadow-sm mb-4" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'suggestions'])>
                     <div class="card-body">
                         @foreach($suggestions as $suggestion)
                             <div class="card m-2 p-2 text-decoration-none">

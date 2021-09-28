@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container content" id="forum">
-        @include('elements.banner', ['banner' => 'forum'])
+        @include('elements.banner', ['banner' => 'forum', 'value' => 'forum'])
 
         @include('forum::elements.nav')
         <div class="row">

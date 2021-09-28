@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content" id="support">
 
-        @include('elements.banner',['banner' => 'support-create'])
+        @include('elements.banner',['banner' => 'support', 'value' => 'support-create'])
 
         <form action="{{ route('support.tickets.store') }}" method="POST"  @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-create'])>
             @csrf

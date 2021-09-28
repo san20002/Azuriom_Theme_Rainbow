@@ -12,7 +12,7 @@
     <div class="container content" id="vote">
         <div id="vote-alert"></div>
 
-        @include('elements.banner',['banner' => 'vote'])
+        @include('elements.banner',['banner' => 'vote', 'value' => 'vote'])
 
         <div class="row">
             <div class="col-12" @include('elements.string-aos', ['pageAos' => 'vote', 'itemAos'=>'vote'])>

@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                @include('elements.banner', ['banner' => 'shop'])
+                @include('elements.banner', ['banner' => 'shop', 'value' => 'shop'])
 
                 <div class="row">
                     @forelse($category->packages as $package)

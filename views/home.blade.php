@@ -68,7 +68,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 home--post">
-                @include('elements.banner',['banner' => 'news'])
+                @include('elements.banner',['banner' => 'home', 'value' => 'article'])
                 <div class="row">
                     @php($i = 100)
                     @foreach($posts as $post)
@@ -106,7 +106,7 @@
                 </div>
             @endguest
             <div class="col-lg-4 home--info">
-                @include('elements.banner', ['banner' => 'information'])
+                @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
                 @if(theme_config('home.items.discord.id'))
                     <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
                         <iframe

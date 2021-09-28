@@ -18,7 +18,7 @@
 
 @section('content')
     <div class="container content" id="shops">
-        @include('elements.banner', ['banner' => 'payment'])
+        @include('elements.banner', ['banner' => 'shop', 'value' => 'payment'])
 
         <div class="row" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'payment', 'noDuration'])
             @if(theme_config('shop.items.payment.aos.duration'))

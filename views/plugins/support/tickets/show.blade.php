@@ -5,7 +5,7 @@
 @section('content')
     <div class="container content" id="support">
 
-        @include('elements.banner',['banner' => 'support-show', 'ticket' => $ticket])
+        @include('elements.banner',['banner' => 'support', 'value' => 'support-show', 'ticket' => $ticket])
 
         <div
             class="card shadow-sm mb-5" @include('elements.string-aos', ['pageAos' => 'support', 'itemAos'=>'support-show'])>

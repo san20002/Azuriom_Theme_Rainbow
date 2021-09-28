@@ -21,7 +21,7 @@
             </div>
         @endif
 
-        @include('elements.banner', ['banner' => 'article', 'post' => $post])
+        @include('elements.banner', ['banner' => 'articles', 'value' => 'article', 'post' => $post])
 
         <div class="card shadow-sm my-4" @include('elements.string-aos', ['pageAos' => 'articles', 'itemAos'=>'article'])>
             <div class="card-body">

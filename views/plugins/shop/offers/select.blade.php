@@ -18,7 +18,7 @@
 
 @section('content')
     <div class="container content" id="shops--select">
-        @include('elements.banner', ['banner' => 'select-payment'])
+        @include('elements.banner', ['banner' => 'shop', 'value' => 'select-payment'])
         <div class="row">
             @forelse($offers as $offer)
                 <div class="col-md-3" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'select-payment', 'noDuration'])

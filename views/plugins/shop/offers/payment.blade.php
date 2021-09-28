@@ -6,7 +6,7 @@
     <div class="container content" id="shops--select">
 
 
-        @include('elements.banner', ['banner' => 'method-payment'])
+        @include('elements.banner', ['banner' => 'shop', 'value' => 'method-payment'])
         <div class="row">
             @forelse($gateways as $gateway)
                 <div class="col-md-3" @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'method-payment', 'noDuration'])

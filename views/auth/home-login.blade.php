@@ -1,4 +1,4 @@
-@include('elements.banner',['banner' => 'login'])
+@include('elements.banner',['banner' => 'home', 'value' => 'login'])
 <div class="card-body" @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'login'])>
     <form method="POST" action="{{ route('login') }}">
         @csrf

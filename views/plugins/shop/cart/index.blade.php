@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container content">
-        @include('elements.banner', ['banner' => 'cart'])
+        @include('elements.banner', ['banner' => 'shop', 'value' => 'cart'])
 
         @if(! $cart->isEmpty())
 
@@ -51,7 +51,7 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    @include('elements.banner', ['banner' => 'coupons'])
+                    @include('elements.banner', ['banner' => 'shop', 'value' => 'coupons'])
 
                     <div class="table-responsive"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'coupons'])>
                         <ul class="table--custom coupons">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    @include('elements.banner', ['banner' => 'addCoupons'])
+                    @include('elements.banner', ['banner' => 'shop', 'value' => 'addCoupons'])
 
                     <form action="{{ route('shop.cart.coupons.add') }}" method="POST" class="form-inline mb-3"  @include('elements.string-aos', ['pageAos' => 'shop', 'itemAos'=>'addCoupons'])>
                         @csrf

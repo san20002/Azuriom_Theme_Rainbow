@@ -185,6 +185,21 @@
                 @if(!isset(plugins()->plugins()['changelog']))
                 </span>
                 @endif
+                @if(!isset(plugins()->plugins()['cps']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="CPS"
+                        href="#list-cps"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['cps'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="cps">
+                    {{ trans('theme::lang.cps.title') }}
+                </button>
+                @if(!isset(plugins()->plugins()['cps']))
+                </span>
+                @endif
                 @if(!isset(plugins()->plugins()['faq']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
@@ -215,11 +230,41 @@
                 @if(!isset(plugins()->plugins()['forum']))
                 </span>
                 @endif
+                @if(!isset(plugins()->plugins()['invoicepro']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Invoicepro"
+                        href="#list-invoicepro"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['invoicepro'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="invoicepro">
+                    {{ trans('theme::lang.invoicepro.title') }}
+                </button>
+                @if(!isset(plugins()->plugins()['invoicepro']))
+                </span>
+                @endif
+                @if(!isset(plugins()->plugins()['jirai']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Jirai"
+                        href="#list-jirai"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['jirai'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="jirai">
+                    {{ trans('theme::lang.jirai.title') }}
+                </button>
+                @if(!isset(plugins()->plugins()['jirai']))
+                </span>
+                @endif
                 @if(!isset(plugins()->plugins()['litebans']))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
-                        title="FAQ"
+                        title="Litebans"
                         href="#list-litebans"
                         data-toggle="list"
                         role="tab"
@@ -228,6 +273,21 @@
                     {{ trans('theme::lang.liteBans.title') }}
                 </button>
                 @if(!isset(plugins()->plugins()['litebans']))
+                </span>
+                @endif
+                @if(!isset(plugins()->plugins()['paysafecardmanual']))
+                    <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
+                @endif
+                <button class="list-group-item list-group-item-action list-group-item-light"
+                        title="Paysafecardmanual"
+                        href="#list-paysafecardmanual"
+                        data-toggle="list"
+                        role="tab"
+                        {{!isset(plugins()->plugins()['paysafecardmanual'])? 'aria-disabled="true" disabled': ''}}
+                        aria-controls="paysafecardmanual">
+                    {{ trans('theme::lang.paysafecardmanual.title') }}
+                </button>
+                @if(!isset(plugins()->plugins()['paysafecardmanual']))
                 </span>
                 @endif
                 @if(!isset(plugins()->plugins()['shop']))
@@ -315,6 +375,9 @@
             $wikis = \Azuriom\Plugin\Wiki\Models\Category::all();
             $forums = \Azuriom\Plugin\Forum\Models\Forum::all();
             $forumsDiscussions = \Azuriom\Plugin\Forum\Models\Discussion::all();
+            $jirai = \Azuriom\Plugin\Jirai\Models\JiraiChangelog::all();
+            $jiraiIssue = \Azuriom\Plugin\Jirai\Models\JiraiIssue::all();
+            $jiraiMessages = \Azuriom\Plugin\Jirai\Models\JiraiMessage::all();
             $animations = [
 	            'No effect'=>['none'],
 	            'Fade' => ['fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
@@ -379,9 +442,21 @@
                          aria-labelledby="list-faq-list">
                         @include('admin.config.faq')
                     </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-invoicepro" role="tabpanel"
+                         aria-labelledby="list-invoicepro-list">
+                        @include('admin.config.invoicepro')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-jirai" role="tabpanel"
+                         aria-labelledby="list-jirai-list">
+                        @include('admin.config.jirai')
+                    </div>
                     <div class="tab-pane fade card shadow mb-4" id="list-litebans" role="tabpanel"
                          aria-labelledby="list-litebans-list">
                         @include('admin.config.litebans')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-paysafecardmanual" role="tabpanel"
+                         aria-labelledby="list-paysafecardmanual-list">
+                        @include('admin.config.paysafecardmanual')
                     </div>
                     <div class="tab-pane fade card shadow mb-4" id="list-wiki" role="tabpanel"
                          aria-labelledby="list-wiki-list">
@@ -394,6 +469,10 @@
                     <div class="tab-pane fade card shadow mb-4" id="list-changelog" role="tabpanel"
                          aria-labelledby="list-changelog-list">
                         @include('admin.config.changelog')
+                    </div>
+                    <div class="tab-pane fade card shadow mb-4" id="list-cps" role="tabpanel"
+                         aria-labelledby="list-cps-list">
+                        @include('admin.config.cps')
                     </div>
                     <div class="tab-pane fade card shadow mb-4" id="list-shop" role="tabpanel"
                          aria-labelledby="list-shop-list">
