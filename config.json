@@ -1,32 +1,125 @@
 {
+    "advancedBan": {
+        "banner": {
+            "advancedBan": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "advancedBan": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        }
+    },
     "articles": {
         "banner": {
-            "articles": {
-                "image": "background-2.jpg",
-                "title": "Article TOTO"
+            "article": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
             "allArticle": {
-                "image": "background-2.jpg",
-                "title": "Article All TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "article": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "allArticle": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "changelog": {
         "banner": {
             "changelog": {
-                "image": "background-1.jpg",
-                "title": "Changelog TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "changelog": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
-    },
-    "discord": {
-        "id": "684097488164225073"
     },
     "faq": {
         "banner": {
             "faq": {
-                "image": "background-3.jpg",
-                "title": "FAQ TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "faq": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
@@ -34,34 +127,38 @@
         "social": {
             "links": [
                 {
-                    "icon": "<i class=\"fab fa-500px\"></i>",
-                    "name": "yoan latchere",
-                    "url": "qdqd"
+                    "icon": "<i class=\"fab fa-discord\"></i>",
+                    "name": "Latshow",
+                    "url": "https://discord.gg/kdQ2Mn2Kcv"
                 }
             ]
         },
         "title": "\u00c0 propos de nous",
         "description": "Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.\r\n\r\nCurabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
         "liens": {
-            "title": null,
+            "title": "Liens",
             "links": [
                 {
-                    "name": "yoan latchere",
-                    "url": "sefsefe"
+                    "name": "Demo",
+                    "url": "demo"
                 }
             ]
         },
         "download": {
             "link": {
-                "name": "doawnload",
-                "url": "fsefsf"
+                "name": "Demo",
+                "url": "Demo"
             }
         },
         "conditions": {
             "links": [
                 {
-                    "name": "yoan latchere",
-                    "url": "fdfsf"
+                    "name": "CGV",
+                    "url": "Demo"
+                },
+                {
+                    "name": "CGU",
+                    "url": "Demo"
                 }
             ]
         }
@@ -69,142 +166,759 @@
     "forum": {
         "banner": {
             "forum": {
-                "image": "background-1.jpg",
-                "title": "Forum TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-show": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-user-edit": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-posts-edit": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-discussions-create": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-discussions-edit": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-discussions-show": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "forum": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "breadcrumb": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "message": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "stati": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "user": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-show": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-user-edit": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-posts-edit": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-discussions-create": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-discussions-edit": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "forum-discussions-show": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "header": {
-        "server": {
-            "ip": "play.azuriom.fr"
-        },
         "iconmenus": [
             {
-                "url": "background-3.jpg",
-                "name": "Wiki"
+                "url": null,
+                "name": null
             }
         ]
     },
     "home": {
-        "banner": {
-            "news": {
-                "image": "background-2.jpg",
-                "title": "Articles TOTO"
+        "items": {
+            "ip-server": {
+                "ip": "play.azuriom.com",
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
-            "info": {
-                "image": "background-1.jpg",
-                "title": "Info TOTO"
+            "download": {
+                "name": "Demo",
+                "url": "Demo",
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
-            "login": {
-                "image": "background-1.jpg",
-                "title": "Info TOTO"
+            "count-register": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "article": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": "200",
+                    "offset": null
+                }
+            },
+            "discord": {
+                "id": "684097488164225073",
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         },
-        "download": {
-            "link": {
-                "name": "yoan latchere",
-                "url": "qzdqzddqz"
+        "article": {
+            "order": "1",
+            "col-xl": "col-xl-2",
+            "col-lg": "col-lg-2",
+            "col-md": "col-md-2"
+        },
+        "banner": {
+            "article": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
-            "hidden": "on"
+            "information": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "login": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
         }
     },
     "pages": {
         "banner": {
-            "pages": {
-                "image": "logo.svg"
+            "page": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "page": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "liteBans": {
         "banner": {
-            "liteban": {
-                "image": "background-1.jpg",
-                "title": "LiteBan TOTO"
+            "litebans": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
-        }
-    },
-    "profile": {
-        "banner": {
-            "achat": {
-                "image": "background-2.jpg",
-                "title": "Mes achats TOTO"
+        },
+        "items": {
+            "navbar": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
-            "skin": {
-                "image": "background-3.jpg",
-                "title": "Mon skin TOTO"
+            "liteBans": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "project": {
-        "color_themes": "--text-base-size:1.25em; --text-scale-ratio:1.25; --space-unit:1.25em; --color-primary-lighter:hsl(316, 71%, 74%); --color-primary-lighter-h:316; --color-primary-lighter-s:71%; --color-primary-lighter-l:74%; --color-primary-light:hsl(316, 71%, 64%); --color-primary-light-h:316; --color-primary-light-s:71%; --color-primary-light-l:64%; --color-primary:hsl(316, 71%, 54%); --color-primary-h:316; --color-primary-s:71%; --color-primary-l:54%; --color-primary-dark:hsl(316, 71%, 44%); --color-primary-dark-h:316; --color-primary-dark-s:71%; --color-primary-dark-l:44%; --color-primary-darker:hsl(316, 71%, 34%); --color-primary-darker-h:316; --color-primary-darker-s:71%; --color-primary-darker-l:34%; --color-accent-lighter:hsl(282, 44%, 27%); --color-accent-lighter-h:282; --color-accent-lighter-s:44%; --color-accent-lighter-l:27%; --color-accent-light:hsl(282, 44%, 37%); --color-accent-light-h:282; --color-accent-light-s:44%; --color-accent-light-l:37%; --color-accent:hsl(282, 44%, 47%); --color-accent-h:282; --color-accent-s:44%; --color-accent-l:47%; --color-accent-dark:hsl(282, 44%, 57%); --color-accent-dark-h:282; --color-accent-dark-s:44%; --color-accent-dark-l:57%; --color-accent-darker:hsl(282, 44%, 67%); --color-accent-darker-h:282; --color-accent-darker-s:44%; --color-accent-darker-l:67%; --color-download-lighter:hsl(29, 70%, 65%); --color-download-lighter-h:29; --color-download-lighter-s:70%; --color-download-lighter-l:65%; --color-download-light:hsl(29, 70%, 55%); --color-download-light-h:29; --color-download-light-s:70%; --color-download-light-l:55%; --color-download:hsl(29, 70%, 45%); --color-download-h:29; --color-download-s:70%; --color-download-l:45%; --color-download-dark:hsl(29, 70%, 35%); --color-download-dark-h:29; --color-download-dark-s:70%; --color-download-dark-l:35%; --color-download-darker:hsl(29, 70%, 25%); --color-download-darker-h:29; --color-download-darker-s:70%; --color-download-darker-l:25%; --color-success-lighter:hsl(94, 54%, 48%); --color-success-lighter-h:94; --color-success-lighter-s:54%; --color-success-lighter-l:48%; --color-success-light:hsl(94, 54%, 38%); --color-success-light-h:94; --color-success-light-s:54%; --color-success-light-l:38%; --color-success:hsl(94, 54%, 28%); --color-success-h:94; --color-success-s:54%; --color-success-l:28%; --color-success-dark:hsl(94, 54%, 18%); --color-success-dark-h:94; --color-success-dark-s:54%; --color-success-dark-l:18%; --color-success-darker:hsl(94, 54%, 8%); --color-success-darker-h:94; --color-success-darker-s:54%; --color-success-darker-l:8%; --color-error-lighter:hsl(349, 75%, 67%); --color-error-lighter-h:349; --color-error-lighter-s:75%; --color-error-lighter-l:67%; --color-error-light:hsl(349, 75%, 59%); --color-error-light-h:349; --color-error-light-s:75%; --color-error-light-l:59%; --color-error:hsl(349, 75%, 51%); --color-error-h:349; --color-error-s:75%; --color-error-l:51%; --color-error-dark:hsl(349, 75%, 44%); --color-error-dark-h:349; --color-error-dark-s:75%; --color-error-dark-l:44%; --color-error-darker:hsl(349, 75%, 36%); --color-error-darker-h:349; --color-error-darker-s:75%; --color-error-darker-l:36%; --color-info-lighter:hsl(204, 62%, 27%); --color-info-lighter-h:204; --color-info-lighter-s:62%; --color-info-lighter-l:27%; --color-info-light:hsl(204, 62%, 37%); --color-info-light-h:204; --color-info-light-s:62%; --color-info-light-l:37%; --color-info:hsl(204, 62%, 47%); --color-info-h:204; --color-info-s:62%; --color-info-l:47%; --color-info-dark:hsl(204, 62%, 57%); --color-info-dark-h:204; --color-info-dark-s:62%; --color-info-dark-l:57%; --color-info-darker:hsl(204, 62%, 67%); --color-info-darker-h:204; --color-info-darker-s:62%; --color-info-darker-l:67%; --color-warning-lighter:hsl(67, 55%, 53%); --color-warning-lighter-h:67; --color-warning-lighter-s:55%; --color-warning-lighter-l:53%; --color-warning-light:hsl(67, 55%, 43%); --color-warning-light-h:67; --color-warning-light-s:55%; --color-warning-light-l:43%; --color-warning:hsl(67, 55%, 33%); --color-warning-h:67; --color-warning-s:55%; --color-warning-l:33%; --color-warning-dark:hsl(67, 55%, 23%); --color-warning-dark-h:67; --color-warning-dark-s:55%; --color-warning-dark-l:23%; --color-warning-darker:hsl(67, 55%, 13%); --color-warning-darker-h:67; --color-warning-darker-s:55%; --color-warning-darker-l:13%; --color-black:hsl(240, 8%, 12%); --color-black-h:240; --color-black-s:8%; --color-black-l:12%; --color-white:hsl(0, 0%, 100%); --color-white-h:0; --color-white-s:0%; --color-white-l:100%; --color-bg:hsl(220, 92%, 10%); --color-bg-h:220; --color-bg-s:92%; --color-bg-l:10%; --color-contrast-lower:hsl(222, 59%, 14%); --color-contrast-lower-h:222; --color-contrast-lower-s:59%; --color-contrast-lower-l:14%; --color-contrast-low:hsl(228, 29%, 24%); --color-contrast-low-h:228; --color-contrast-low-s:29%; --color-contrast-low-l:24%; --color-contrast-medium:hsl(231, 10%, 57%); --color-contrast-medium-h:231; --color-contrast-medium-s:10%; --color-contrast-medium-l:57%; --color-contrast-high:hsl(240, 9%, 89%); --color-contrast-high-h:240; --color-contrast-high-s:9%; --color-contrast-high-l:89%; --color-contrast-higher:hsl(0, 0%, 100%); --color-contrast-higher-h:0; --color-contrast-higher-s:0%; --color-contrast-higher-l:100%;",
-        "color_themes_data": "{\"primary\":{\"0\":{\"0\":{\"0\":316,\"1\":0.71,\"2\":0.74},\"1\":{\"0\":316,\"1\":0.71,\"2\":0.64},\"2\":{\"0\":316,\"1\":0.71,\"2\":0.54,\"3\":1},\"3\":{\"0\":316,\"1\":0.71,\"2\":0.44},\"4\":{\"0\":316,\"1\":0.71,\"2\":0.34}}},\"accent\":{\"0\":{\"0\":{\"0\":282,\"1\":0.44,\"2\":0.27},\"1\":{\"0\":282,\"1\":0.44,\"2\":0.37},\"2\":{\"0\":282,\"1\":0.44,\"2\":0.47},\"3\":{\"0\":282,\"1\":0.44,\"2\":0.57},\"4\":{\"0\":282,\"1\":0.44,\"2\":0.67}}},\"download\":{\"0\":{\"0\":{\"0\":29,\"1\":0.7,\"2\":0.65},\"1\":{\"0\":29,\"1\":0.7,\"2\":0.55},\"2\":{\"0\":29,\"1\":0.7,\"2\":0.45,\"3\":1},\"3\":{\"0\":29,\"1\":0.7,\"2\":0.35},\"4\":{\"0\":29,\"1\":0.7,\"2\":0.25}}},\"info\":{\"0\":{\"0\":{\"0\":204,\"1\":0.62,\"2\":0.27},\"1\":{\"0\":204,\"1\":0.62,\"2\":0.37},\"2\":{\"0\":204,\"1\":0.62,\"2\":0.47},\"3\":{\"0\":204,\"1\":0.62,\"2\":0.57},\"4\":{\"0\":204,\"1\":0.62,\"2\":0.67}}},\"warning\":{\"0\":{\"0\":{\"0\":67,\"1\":0.55,\"2\":0.53},\"1\":{\"0\":67,\"1\":0.55,\"2\":0.43},\"2\":{\"0\":67,\"1\":0.55,\"2\":0.33,\"3\":1},\"3\":{\"0\":67,\"1\":0.55,\"2\":0.23},\"4\":{\"0\":67,\"1\":0.55,\"2\":0.13}}},\"success\":{\"0\":{\"0\":{\"0\":94,\"1\":0.54,\"2\":0.48},\"1\":{\"0\":94,\"1\":0.54,\"2\":0.38},\"2\":{\"0\":94,\"1\":0.54,\"2\":0.28,\"3\":1},\"3\":{\"0\":94,\"1\":0.54,\"2\":0.18},\"4\":{\"0\":94,\"1\":0.54,\"2\":0.08}}},\"error\":{\"0\":{\"0\":{\"0\":349,\"1\":0.75,\"2\":0.67},\"1\":{\"0\":349,\"1\":0.75,\"2\":0.59},\"2\":{\"0\":349,\"1\":0.75,\"2\":0.51},\"3\":{\"0\":349,\"1\":0.75,\"2\":0.44},\"4\":{\"0\":349,\"1\":0.75,\"2\":0.36}}},\"mainColorLabels\":{\"0\":\"primary\",\"1\":\"accent\",\"2\":\"download\",\"3\":\"info\",\"4\":\"warning\",\"5\":\"success\",\"6\":\"error\"},\"blackColors\":{\"0\":{\"0\":{\"0\":240,\"1\":0.08,\"2\":0.12,\"3\":1}}},\"whiteColors\":{\"0\":{\"0\":{\"0\":0,\"1\":0,\"2\":1,\"3\":1}}},\"contrastPecentageColors\":{\"0\":{\"0\":0,\"1\":5,\"2\":17,\"3\":55,\"4\":89,\"5\":100}},\"contrastColors\":{\"0\":{\"0\":{\"0\":220,\"1\":0.92,\"2\":0.1},\"1\":{\"0\":222,\"1\":0.59,\"2\":0.14},\"2\":{\"0\":228,\"1\":0.29,\"2\":0.24},\"3\":{\"0\":231,\"1\":0.1,\"2\":0.57},\"4\":{\"0\":240,\"1\":0.09,\"2\":0.89},\"5\":{\"0\":0,\"1\":0,\"2\":1}}},\"fontRendering\":{\"0\":false},\"themes\":{\"0\":\"Default\"},\"colorLinks\":{}}"
+        "color_themes": "--color-primary-lighter:hsl(206, 82%, 82%); --color-primary-lighter-h:206; --color-primary-lighter-s:82%; --color-primary-lighter-l:82%; --color-primary-light:hsl(206, 82%, 72%); --color-primary-light-h:206; --color-primary-light-s:82%; --color-primary-light-l:72%; --color-primary:hsl(206, 82%, 62%); --color-primary-h:206; --color-primary-s:82%; --color-primary-l:62%; --color-primary-dark:hsl(206, 82%, 52%); --color-primary-dark-h:206; --color-primary-dark-s:82%; --color-primary-dark-l:52%; --color-primary-darker:hsl(206, 82%, 42%); --color-primary-darker-h:206; --color-primary-darker-s:82%; --color-primary-darker-l:42%; --color-accent-lighter:hsl(282, 44%, 27%); --color-accent-lighter-h:282; --color-accent-lighter-s:44%; --color-accent-lighter-l:27%; --color-accent-light:hsl(282, 44%, 37%); --color-accent-light-h:282; --color-accent-light-s:44%; --color-accent-light-l:37%; --color-accent:hsl(282, 44%, 47%); --color-accent-h:282; --color-accent-s:44%; --color-accent-l:47%; --color-accent-dark:hsl(282, 44%, 57%); --color-accent-dark-h:282; --color-accent-dark-s:44%; --color-accent-dark-l:57%; --color-accent-darker:hsl(282, 44%, 67%); --color-accent-darker-h:282; --color-accent-darker-s:44%; --color-accent-darker-l:67%; --color-download-lighter:hsl(29, 70%, 65%); --color-download-lighter-h:29; --color-download-lighter-s:70%; --color-download-lighter-l:65%; --color-download-light:hsl(29, 70%, 55%); --color-download-light-h:29; --color-download-light-s:70%; --color-download-light-l:55%; --color-download:hsl(29, 70%, 45%); --color-download-h:29; --color-download-s:70%; --color-download-l:45%; --color-download-dark:hsl(29, 70%, 35%); --color-download-dark-h:29; --color-download-dark-s:70%; --color-download-dark-l:35%; --color-download-darker:hsl(29, 70%, 25%); --color-download-darker-h:29; --color-download-darker-s:70%; --color-download-darker-l:25%; --color-info-lighter:hsl(204, 62%, 27%); --color-info-lighter-h:204; --color-info-lighter-s:62%; --color-info-lighter-l:27%; --color-info-light:hsl(204, 62%, 37%); --color-info-light-h:204; --color-info-light-s:62%; --color-info-light-l:37%; --color-info:hsl(204, 62%, 47%); --color-info-h:204; --color-info-s:62%; --color-info-l:47%; --color-info-dark:hsl(204, 62%, 57%); --color-info-dark-h:204; --color-info-dark-s:62%; --color-info-dark-l:57%; --color-info-darker:hsl(204, 62%, 67%); --color-info-darker-h:204; --color-info-darker-s:62%; --color-info-darker-l:67%; --color-warning-lighter:hsl(67, 55%, 53%); --color-warning-lighter-h:67; --color-warning-lighter-s:55%; --color-warning-lighter-l:53%; --color-warning-light:hsl(67, 55%, 43%); --color-warning-light-h:67; --color-warning-light-s:55%; --color-warning-light-l:43%; --color-warning:hsl(67, 55%, 33%); --color-warning-h:67; --color-warning-s:55%; --color-warning-l:33%; --color-warning-dark:hsl(67, 55%, 23%); --color-warning-dark-h:67; --color-warning-dark-s:55%; --color-warning-dark-l:23%; --color-warning-darker:hsl(67, 55%, 13%); --color-warning-darker-h:67; --color-warning-darker-s:55%; --color-warning-darker-l:13%; --color-black:hsl(240, 8%, 12%); --color-black-h:240; --color-black-s:8%; --color-black-l:12%; --color-white:hsl(0, 0%, 100%); --color-white-h:0; --color-white-s:0%; --color-white-l:100%; --color-bg:hsl(220, 92%, 10%); --color-bg-h:220; --color-bg-s:92%; --color-bg-l:10%; --color-contrast-lower:hsl(222, 59%, 14%); --color-contrast-lower-h:222; --color-contrast-lower-s:59%; --color-contrast-lower-l:14%; --color-contrast-low:hsl(228, 29%, 24%); --color-contrast-low-h:228; --color-contrast-low-s:29%; --color-contrast-low-l:24%; --color-contrast-medium:hsl(231, 10%, 57%); --color-contrast-medium-h:231; --color-contrast-medium-s:10%; --color-contrast-medium-l:57%; --color-contrast-high:hsl(240, 9%, 89%); --color-contrast-high-h:240; --color-contrast-high-s:9%; --color-contrast-high-l:89%; --color-contrast-higher:hsl(0, 0%, 100%); --color-contrast-higher-h:0; --color-contrast-higher-s:0%; --color-contrast-higher-l:100%; --text-base-size:1em; --text-scale-ratio:1.2; --space-unit:1em; --color-success-lighter:hsl(94, 54%, 48%); --color-success-lighter-h:94; --color-success-lighter-s:54%; --color-success-lighter-l:48%; --color-success-light:hsl(94, 54%, 38%); --color-success-light-h:94; --color-success-light-s:54%; --color-success-light-l:38%; --color-success:hsl(94, 54%, 28%); --color-success-h:94; --color-success-s:54%; --color-success-l:28%; --color-success-dark:hsl(94, 54%, 18%); --color-success-dark-h:94; --color-success-dark-s:54%; --color-success-dark-l:18%; --color-success-darker:hsl(94, 54%, 8%); --color-success-darker-h:94; --color-success-darker-s:54%; --color-success-darker-l:8%; --color-error-lighter:hsl(349, 75%, 67%); --color-error-lighter-h:349; --color-error-lighter-s:75%; --color-error-lighter-l:67%; --color-error-light:hsl(349, 75%, 59%); --color-error-light-h:349; --color-error-light-s:75%; --color-error-light-l:59%; --color-error:hsl(349, 75%, 51%); --color-error-h:349; --color-error-s:75%; --color-error-l:51%; --color-error-dark:hsl(349, 75%, 44%); --color-error-dark-h:349; --color-error-dark-s:75%; --color-error-dark-l:44%; --color-error-darker:hsl(349, 75%, 36%); --color-error-darker-h:349; --color-error-darker-s:75%; --color-error-darker-l:36%;",
+        "color_themes_data": "{\"primary\":{\"0\":{\"0\":{\"0\":206,\"1\":0.82,\"2\":0.82},\"1\":{\"0\":206,\"1\":0.82,\"2\":0.72},\"2\":{\"0\":206,\"1\":0.82,\"2\":0.62,\"3\":1},\"3\":{\"0\":206,\"1\":0.82,\"2\":0.52},\"4\":{\"0\":206,\"1\":0.82,\"2\":0.42}}},\"accent\":{\"0\":{\"0\":{\"0\":282,\"1\":0.44,\"2\":0.27},\"1\":{\"0\":282,\"1\":0.44,\"2\":0.37},\"2\":{\"0\":282,\"1\":0.44,\"2\":0.47},\"3\":{\"0\":282,\"1\":0.44,\"2\":0.57},\"4\":{\"0\":282,\"1\":0.44,\"2\":0.67}}},\"download\":{\"0\":{\"0\":{\"0\":29,\"1\":0.7,\"2\":0.65},\"1\":{\"0\":29,\"1\":0.7,\"2\":0.55},\"2\":{\"0\":29,\"1\":0.7,\"2\":0.45,\"3\":1},\"3\":{\"0\":29,\"1\":0.7,\"2\":0.35},\"4\":{\"0\":29,\"1\":0.7,\"2\":0.25}}},\"info\":{\"0\":{\"0\":{\"0\":204,\"1\":0.62,\"2\":0.27},\"1\":{\"0\":204,\"1\":0.62,\"2\":0.37},\"2\":{\"0\":204,\"1\":0.62,\"2\":0.47},\"3\":{\"0\":204,\"1\":0.62,\"2\":0.57},\"4\":{\"0\":204,\"1\":0.62,\"2\":0.67}}},\"warning\":{\"0\":{\"0\":{\"0\":67,\"1\":0.55,\"2\":0.53},\"1\":{\"0\":67,\"1\":0.55,\"2\":0.43},\"2\":{\"0\":67,\"1\":0.55,\"2\":0.33,\"3\":1},\"3\":{\"0\":67,\"1\":0.55,\"2\":0.23},\"4\":{\"0\":67,\"1\":0.55,\"2\":0.13}}},\"success\":{\"0\":{\"0\":{\"0\":94,\"1\":0.54,\"2\":0.48},\"1\":{\"0\":94,\"1\":0.54,\"2\":0.38},\"2\":{\"0\":94,\"1\":0.54,\"2\":0.28,\"3\":1},\"3\":{\"0\":94,\"1\":0.54,\"2\":0.18},\"4\":{\"0\":94,\"1\":0.54,\"2\":0.08}}},\"error\":{\"0\":{\"0\":{\"0\":349,\"1\":0.75,\"2\":0.67},\"1\":{\"0\":349,\"1\":0.75,\"2\":0.59},\"2\":{\"0\":349,\"1\":0.75,\"2\":0.51},\"3\":{\"0\":349,\"1\":0.75,\"2\":0.44},\"4\":{\"0\":349,\"1\":0.75,\"2\":0.36}}},\"mainColorLabels\":{\"0\":\"primary\",\"1\":\"accent\",\"2\":\"download\",\"3\":\"info\",\"4\":\"warning\",\"5\":\"success\",\"6\":\"error\"},\"blackColors\":{\"0\":{\"0\":{\"0\":240,\"1\":0.08,\"2\":0.12,\"3\":1}}},\"whiteColors\":{\"0\":{\"0\":{\"0\":0,\"1\":0,\"2\":1,\"3\":1}}},\"contrastPecentageColors\":{\"0\":{\"0\":0,\"1\":5,\"2\":17,\"3\":55,\"4\":89,\"5\":100}},\"contrastColors\":{\"0\":{\"0\":{\"0\":220,\"1\":0.92,\"2\":0.1},\"1\":{\"0\":222,\"1\":0.59,\"2\":0.14},\"2\":{\"0\":228,\"1\":0.29,\"2\":0.24},\"3\":{\"0\":231,\"1\":0.1,\"2\":0.57},\"4\":{\"0\":240,\"1\":0.09,\"2\":0.89},\"5\":{\"0\":0,\"1\":0,\"2\":1}}},\"fontRendering\":{\"0\":false},\"themes\":{\"0\":\"Default\"},\"colorLinks\":{}}"
     },
     "shop": {
         "banner": {
             "shop": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
             "filter": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
             "cart": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
-            "user": {
+            "profile": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
             "coupons": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
             "addCoupons": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             },
-            "paiement": {
+            "method-payment": {
                 "image": null,
-                "title": null
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "select-payment": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "payment": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "buy": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "shop": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "filter": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "cart": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "profile": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "coupons": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "addCoupons": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "method-payment": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "select-payment": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "payment": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "buy": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        }
+    },
+    "skinApi": {
+        "banner": {
+            "skin": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "skin": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "support": {
         "banner": {
             "support": {
-                "image": "background-2.jpg",
-                "title": "Support TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "support-create": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "support-show": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "support": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "support-create": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "support-show": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "sliders": [
         {
-            "url": "background-3.jpg",
-            "title": "dqzdqd",
-            "description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.",
-            "background": "on"
+            "url": null,
+            "title": "Slider 1",
+            "description": null
         },
         {
-            "url": "background-1.jpg",
-            "title": null,
-            "description": null
+            "url": null,
+            "title": "Slider 2",
+            "description": null,
+            "reverse": "on"
         }
     ],
     "vote": {
         "banner": {
             "vote": {
-                "image": "background-2.jpg",
-                "title": "Vote TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "vote": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "podium": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "classement": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "recompenses": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     },
     "wiki": {
         "banner": {
             "wiki": {
-                "image": "background-2.jpg",
-                "title": "Wiki TOTO"
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "wiki-show": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "wiki": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            },
+            "wiki-show": {
+                "aos": {
+                    "animation": "fade",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
             }
         }
     }
