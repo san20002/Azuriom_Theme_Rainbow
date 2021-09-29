@@ -53,6 +53,7 @@
 <div class="card-header">
     <h3 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.home.title') }}</h3>
 </div>
+{!! trans('theme::lang.config.info-eye') !!}
 @php
     $homeItemsIpServer = [
                     'url'=>route('home'),

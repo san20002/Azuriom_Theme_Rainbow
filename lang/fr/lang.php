@@ -4,7 +4,11 @@ return [
     'config' => [
         'info' => '<small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre de rendre votre site unique.</small>
             <small class="d-block mb-2">Si vous ne comprenez pas, n\'hésitez pas à me contacter <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m\'aider à améliorer le thème.</small>
-            <small class="d-block font-weight-bold">Détail de chaque animation: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>'
+            <small class="d-block font-weight-bold">Détail de chaque animation: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>',
+        'info-eye'=> '
+    <div class="small my-2">
+        <span class="mr-2"><i class="fas fa-exclamation color-primary"></i></span><span>Si vous cliquez sur l\'eye et ça vous redirige sur une page 404, c\'est que votre contenue n\'existe pas pour le moment il vous reste juste à le créer pour faire la configuration puis le supprimer.</span>
+    </div>'
     ],
     'site' => [
         'register' => 'inscrits sur notre site',

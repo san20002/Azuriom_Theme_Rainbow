@@ -2,6 +2,7 @@
     <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.forum.title')}}</h3>
 </div>
 <div class="card-body">
+    {!! trans('theme::lang.config.info-eye') !!}
     <div class="row">
         @include('admin.pattern.builder-items',[
     'url' => route('forum.home'),
@@ -16,7 +17,7 @@
         ]])
 
         @include('admin.pattern.builder-items',[
-    'url' => route('forum.show', $forums->first()),
+    'url' => route('forum.show', $forums->first() ?? 0),
     'col' => 'col-md-6',
     'arrayBanner'=>['key'=>'forum', 'value' => 'forum-show'],
     'arrayItems' => ['key'=>'forum', 'value' => 'forum-show']])
@@ -28,25 +29,25 @@
     'arrayItems' => ['key'=>'forum', 'value' => 'forum-user-edit']])
 
         @include('admin.pattern.builder-items',[
-    'url' => route('forum.discussions.posts.edit', [$forumsDiscussions->first()->id ,1]),
+    'url' => route('forum.discussions.posts.edit', [$forumsDiscussions->first()->id ?? 0 ,1 ?? 0]),
     'col' => 'col-md-6',
     'arrayBanner'=>['key'=>'forum', 'value' => 'forum-posts-edit'],
     'arrayItems' => ['key'=>'forum', 'value' => 'forum-posts-edit']])
 
         @include('admin.pattern.builder-items',[
-    'url' => route('forum.forum.discussions.create', $forums->first()),
+    'url' => route('forum.forum.discussions.create', $forums->first() ?? 0),
     'col' => 'col-md-6',
     'arrayBanner'=>['key'=>'forum', 'value' => 'forum-discussions-create'],
     'arrayItems' => ['key'=>'forum', 'value' => 'forum-discussions-create']])
 
         @include('admin.pattern.builder-items',[
-    'url' => route('forum.discussions.edit', $forumsDiscussions->first()),
+    'url' => route('forum.discussions.edit', $forumsDiscussions->first() ?? 0),
     'col' => 'col-md-6',
     'arrayBanner'=>['key'=>'forum', 'value' => 'forum-discussions-edit'],
     'arrayItems' => ['key'=>'forum', 'value' => 'forum-discussions-edit']])
 
         @include('admin.pattern.builder-items',[
-    'url' => route('forum.discussions.show', $forumsDiscussions->first()),
+    'url' => route('forum.discussions.show', $forumsDiscussions->first() ?? 0),
     'col' => 'col-md-6',
     'arrayBanner'=>['key'=>'forum', 'value' => 'forum-discussions-show'],
     'arrayItems' => ['key'=>'forum', 'value' => 'forum-discussions-show']])

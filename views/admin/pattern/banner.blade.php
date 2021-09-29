@@ -1,6 +1,6 @@
 @php($counterPartial++)
-<div class="card my-4">
-    @if(isset($url) && $url)
+<div class="card my-4  {{isset($url) && !empty($url) ?? 'disabled' }}">
+    @if(isset($url) && !empty($url))
         <a class="badge badge-info"
            href="{{$url}}#config_trigger={{$key}}-banner-{{$value}}"
            target="_blank"

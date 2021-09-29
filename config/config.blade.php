@@ -109,6 +109,38 @@
             })
         </script>
     @endpush
+    @php
+        $articles = \Azuriom\Models\Post::all();
+        $pages = \Azuriom\Models\Page::all();
+        $tickets = \Azuriom\Plugin\Support\Models\Ticket::all();
+        $wikis = \Azuriom\Plugin\Wiki\Models\Category::all();
+        $forums = \Azuriom\Plugin\Forum\Models\Forum::all();
+        $forumsDiscussions = \Azuriom\Plugin\Forum\Models\Discussion::all();
+        $jirai = \Azuriom\Plugin\Jirai\Models\JiraiChangelog::all();
+        $jiraiIssue = \Azuriom\Plugin\Jirai\Models\JiraiIssue::all();
+        $jiraiMessages = \Azuriom\Plugin\Jirai\Models\JiraiMessage::all();
+        $animations = [
+            'No effect'=>['none'],
+            'Fade' => ['fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
+            'Flip' => ['flip-up', 'flip-down', 'flip-left', 'flip-right'],
+            'Slide' => ['slide-up', 'slide-down', 'slide-left', 'slide-right'],
+            'Zoom' => ['zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-left', 'zoom-in-right', 'zoom-out', 'zoom-out-up', 'zoom-out-down', 'zoom-out-left', 'zoom-out-right']
+        ];
+        $easingAnimations = [
+            'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'ease-in-back', 'ease-out-back', 'ease-in-out-back', 'ease-in-sine',
+            'ease-out-sine', 'ease-in-out-sine', 'ease-in-quad', 'ease-out-quad', 'ease-in-out-quad', 'ease-in-cubic', 'ease-out-cubic',
+            'ease-in-out-cubic', 'ease-in-quart', 'ease-out-quart', 'ease-in-out-quart'
+        ];
+        $placements = [
+            'top-bottom','center-bottom','bottom-bottom','top-center','center-center'
+        ];
+        $colLgs = [
+            'col-lg-2','col-lg-3','col-lg-4','col-lg-5','col-lg-6','col-lg-7','col-lg-8','col-lg-9','col-lg-10','col-lg-11','col-lg-12',
+        ];
+        $counterPartial = 1;
+        $allImagesStokage = \Azuriom\Models\Image::all();
+        $navbars = \Azuriom\Models\NavbarElement::all();
+    @endphp
     <div class="row mb-5">
         <div class="col-12 mb-3">
             {!!  trans('theme::lang.config.info') !!}
@@ -368,38 +400,6 @@
                 @endif
             </div>
         </div>
-        @php
-            $articles = \Azuriom\Models\Post::all();
-            $pages = \Azuriom\Models\Page::all();
-            $tickets = \Azuriom\Plugin\Support\Models\Ticket::all();
-            $wikis = \Azuriom\Plugin\Wiki\Models\Category::all();
-            $forums = \Azuriom\Plugin\Forum\Models\Forum::all();
-            $forumsDiscussions = \Azuriom\Plugin\Forum\Models\Discussion::all();
-            $jirai = \Azuriom\Plugin\Jirai\Models\JiraiChangelog::all();
-            $jiraiIssue = \Azuriom\Plugin\Jirai\Models\JiraiIssue::all();
-            $jiraiMessages = \Azuriom\Plugin\Jirai\Models\JiraiMessage::all();
-            $animations = [
-	            'No effect'=>['none'],
-	            'Fade' => ['fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
-                'Flip' => ['flip-up', 'flip-down', 'flip-left', 'flip-right'],
-                'Slide' => ['slide-up', 'slide-down', 'slide-left', 'slide-right'],
-                'Zoom' => ['zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-left', 'zoom-in-right', 'zoom-out', 'zoom-out-up', 'zoom-out-down', 'zoom-out-left', 'zoom-out-right']
-            ];
-            $easingAnimations = [
-                'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'ease-in-back', 'ease-out-back', 'ease-in-out-back', 'ease-in-sine',
-                'ease-out-sine', 'ease-in-out-sine', 'ease-in-quad', 'ease-out-quad', 'ease-in-out-quad', 'ease-in-cubic', 'ease-out-cubic',
-                'ease-in-out-cubic', 'ease-in-quart', 'ease-out-quart', 'ease-in-out-quart'
-            ];
-            $placements = [
-                'top-bottom','center-bottom','bottom-bottom','top-center','center-center'
-            ];
-			$colLgs = [
-				'col-lg-2','col-lg-3','col-lg-4','col-lg-5','col-lg-6','col-lg-7','col-lg-8','col-lg-9','col-lg-10','col-lg-11','col-lg-12',
-            ];
-			$counterPartial = 1;
-            $allImagesStokage = \Azuriom\Models\Image::all();
-            $navbars = \Azuriom\Models\NavbarElement::all();
-        @endphp
         <div class="col-lg-10  mt-lg-0 mt-5 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
@@ -415,81 +415,114 @@
                          role="tabpanel" aria-labelledby="list-entete-list">
                         @include('admin.config.header')
                     </div>
+
                     <div class="tab-pane fade card shadow mb-4"
                          id="list-home"
                          role="tabpanel" aria-labelledby="list-home-list">
                         @include('admin.config.home')
                     </div>
-                    <div class="tab-pane fade card shadow mb-4"
-                         id="list-article"
-                         role="tabpanel" aria-labelledby="list-article-list">
-                        @include('admin.config.article')
-                    </div>
+{{--                    @if(count($articles) >= 1 )--}}
+                        <div class="tab-pane fade card shadow mb-4"
+                             id="list-article"
+                             role="tabpanel" aria-labelledby="list-article-list">
+                            @include('admin.config.article')
+                        </div>
+{{--                    @endif--}}
 
                     <div class="tab-pane fade card shadow mb-4" id="list-footer"
                          role="tabpanel" aria-labelledby="list-footer-list">
                         @include('admin.config.footer')
                     </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-advancedBan" role="tabpanel"
-                         aria-labelledby="list-advancedBan-list">
-                        @include('admin.config.advancedBan')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
-                         aria-labelledby="list-vote-list">
-                        @include('admin.config.vote')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-faq" role="tabpanel"
-                         aria-labelledby="list-faq-list">
-                        @include('admin.config.faq')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-invoicepro" role="tabpanel"
-                         aria-labelledby="list-invoicepro-list">
-                        @include('admin.config.invoicepro')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-jirai" role="tabpanel"
-                         aria-labelledby="list-jirai-list">
-                        @include('admin.config.jirai')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-litebans" role="tabpanel"
-                         aria-labelledby="list-litebans-list">
-                        @include('admin.config.litebans')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-paysafecardmanual" role="tabpanel"
-                         aria-labelledby="list-paysafecardmanual-list">
-                        @include('admin.config.paysafecardmanual')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-wiki" role="tabpanel"
-                         aria-labelledby="list-wiki-list">
-                        @include('admin.config.wiki')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-support" role="tabpanel"
-                         aria-labelledby="list-support-list">
-                        @include('admin.config.support')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-changelog" role="tabpanel"
-                         aria-labelledby="list-changelog-list">
-                        @include('admin.config.changelog')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-cps" role="tabpanel"
-                         aria-labelledby="list-cps-list">
-                        @include('admin.config.cps')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-shop" role="tabpanel"
-                         aria-labelledby="list-shop-list">
-                        @include('admin.config.shop')
-                    </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-forum" role="tabpanel"
-                         aria-labelledby="list-forum-list">
-                        @include('admin.config.forum')
-                    </div>
+
                     <div class="tab-pane fade card shadow mb-4" id="list-page" role="tabpanel"
                          aria-labelledby="list-page-list">
                         @include('admin.config.page')
                     </div>
-                    <div class="tab-pane fade card shadow mb-4" id="list-skinApi" role="tabpanel"
-                         aria-labelledby="list-skinApi-list">
-                        @include('admin.config.skin')
-                    </div>
+
+                    @if(isset(plugins()->plugins()['advancedban']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-advancedBan" role="tabpanel"
+                             aria-labelledby="list-advancedBan-list">
+                            @include('admin.config.advancedban')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['vote']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
+                             aria-labelledby="list-vote-list">
+                            @include('admin.config.vote')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['faq']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-faq" role="tabpanel"
+                             aria-labelledby="list-faq-list">
+                            @include('admin.config.faq')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['invoicepro']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-invoicepro" role="tabpanel"
+                             aria-labelledby="list-invoicepro-list">
+                            @include('admin.config.invoicepro')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['jirai']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-jirai" role="tabpanel"
+                             aria-labelledby="list-jirai-list">
+                            @include('admin.config.jirai')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['litebans']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-litebans" role="tabpanel"
+                             aria-labelledby="list-litebans-list">
+                            @include('admin.config.litebans')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['paysafecardmanual']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-paysafecardmanual" role="tabpanel"
+                             aria-labelledby="list-paysafecardmanual-list">
+                            @include('admin.config.paysafecardmanual')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['wiki']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-wiki" role="tabpanel"
+                             aria-labelledby="list-wiki-list">
+                            @include('admin.config.wiki')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['support']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-support" role="tabpanel"
+                             aria-labelledby="list-support-list">
+                            @include('admin.config.support')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['changelog']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-changelog" role="tabpanel"
+                             aria-labelledby="list-changelog-list">
+                            @include('admin.config.changelog')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['cps']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-cps" role="tabpanel"
+                             aria-labelledby="list-cps-list">
+                            @include('admin.config.cps')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['shop']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-shop" role="tabpanel"
+                             aria-labelledby="list-shop-list">
+                            @include('admin.config.shop')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['forum']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-forum" role="tabpanel"
+                             aria-labelledby="list-forum-list">
+                            @include('admin.config.forum')
+                        </div>
+                    @endif
+                    @if(isset(plugins()->plugins()['skin-api']))
+                        <div class="tab-pane fade card shadow mb-4" id="list-skinApi" role="tabpanel"
+                             aria-labelledby="list-skinApi-list">
+                            @include('admin.config.skin')
+                        </div>
+                    @endif
                 </div>
                 <button type="submit" class="btn btn-primary"><i
                         class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
