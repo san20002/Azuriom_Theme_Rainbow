@@ -6,10 +6,13 @@
 
 @push('footer-scripts')
     @if($editor !== 'markdown')
+        @include('layouts.change-color')
         <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
         <script>
             tinymce.init({
                 selector: 'textarea',
+                content_css: '{{ theme_asset('css/tinymce.css') }}',
+                content_style:'@include('layouts.change-color')',
                 height: {{ ($editorMinHeight ?? 300) * 1.5 }},
                 min_height: 200,
                 entity_encoding: 'raw',

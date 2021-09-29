@@ -10,7 +10,11 @@
                                                 'arrayItems' => [['key'=>'vote', 'value' => 'vote',
                                                                 'filedsBuilder' => [
                                                                 ['type'=>'checkbox','value' => 'hidden'],
-                                                                ]],
+                                                               ]],
+                                                                ['key'=>'vote', 'value' => 'podium',
+                                                                'filedsBuilder' => [
+                                                                ['type'=>'checkbox','value' => 'hidden'],
+                                                               ]],
                                                                 ['key'=> 'vote','value' => 'classement'],
                                                                 ['key'=> 'vote','value' => 'recompenses'],
                                                                 ]

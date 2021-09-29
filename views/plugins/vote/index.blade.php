@@ -55,45 +55,50 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 podium">
-                @if(!theme_config('vote.items.podium.hidden') && game()->name() == "Minecraft")
-                    <div class="podium">
-                        @foreach($votes as $id => $vote)
-                            @if($id == 2)
-                                <div class="player second-player">
-                                    <h1 class="pseudo">{{ $vote['user']->name }}<br><span>{{ $vote['votes'] }}</span>
-                                        votes</h1>
-                                    <img src="https://minotar.net/armor/body/{{ $vote['user']->name }}/200.png"
-                                         alt="{{ $vote['user']->name }} Skin">
-                                    <p class="step"><i class="fas fa-trophy"></i> #2</p>
-                                </div>
-                            @endif
-                        @endforeach
-                        @foreach($votes as $id => $vote)
-                            @if($id == 1)
-                                <div class="player first-player">
-                                    <h1 class="pseudo">{{ $vote['user']->name }}<br><span>{{ $vote['votes'] }}</span>
-                                        votes</h1>
-                                    <img src="https://minotar.net/armor/body/{{ $vote['user']->name }}/200.png"
-                                         alt="{{ $vote['user']->name }} Skin">
-                                    <p class="step"><i class="fas fa-trophy"></i> #1</p>
-                                </div>
-                            @endif
-                        @endforeach
-                        @foreach($votes as $id => $vote)
-                            @if($id == 3)
-                                <div class="player third-player">
-                                    <h1 class="pseudo">{{ $vote['user']->name }}<br><span>{{ $vote['votes'] }}</span>
-                                        votes</h1>
-                                    <img src="https://minotar.net/armor/body/{{ $vote['user']->name }}/200.png"
-                                         alt="{{ $vote['user']->name }} Skin">
-                                    <p class="step"><i class="fas fa-trophy"></i> #3</p>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                @endif
-            </div>
+            @if(count($votes) >= 1)
+                <div class="col-12 podium">
+                    @if(!theme_config('vote.items.podium.hidden') && game()->name() == "Minecraft")
+                        <div class="podium">
+                            @foreach($votes as $id => $vote)
+                                @if($id == 2)
+                                    <div class="player second-player">
+                                        <h1 class="pseudo">{{ $vote['user']->name }}
+                                            <br><span>{{ $vote['votes'] }}</span>
+                                            votes</h1>
+                                        <img src="https://minotar.net/armor/body/{{ $vote['user']->name }}/200.png"
+                                             alt="{{ $vote['user']->name }} Skin">
+                                        <p class="step"><i class="fas fa-trophy"></i> #2</p>
+                                    </div>
+                                @endif
+                            @endforeach
+                            @foreach($votes as $id => $vote)
+                                @if($id == 1)
+                                    <div class="player first-player">
+                                        <h1 class="pseudo">{{ $vote['user']->name }}
+                                            <br><span>{{ $vote['votes'] }}</span>
+                                            votes</h1>
+                                        <img src="https://minotar.net/armor/body/{{ $vote['user']->name }}/200.png"
+                                             alt="{{ $vote['user']->name }} Skin">
+                                        <p class="step"><i class="fas fa-trophy"></i> #1</p>
+                                    </div>
+                                @endif
+                            @endforeach
+                            @foreach($votes as $id => $vote)
+                                @if($id == 3)
+                                    <div class="player third-player">
+                                        <h1 class="pseudo">{{ $vote['user']->name }}
+                                            <br><span>{{ $vote['votes'] }}</span>
+                                            votes</h1>
+                                        <img src="https://minotar.net/armor/body/{{ $vote['user']->name }}/200.png"
+                                             alt="{{ $vote['user']->name }} Skin">
+                                        <p class="step"><i class="fas fa-trophy"></i> #3</p>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            @endif
             <div class="col-md-6" @include('elements.string-aos', ['pageAos' => 'vote', 'itemAos'=>'classement'])>
                 <h2 class="mt-5 pb-2">{{ trans('vote::messages.sections.top') }}</h2>
                 <div class="table-responsive">

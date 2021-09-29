@@ -12,9 +12,9 @@
 
                 <p>{{ trans('cps::messages.description') }}</p>
                 <div class="clicBox hide" id="clicBox" onclick="nbclics++; updateClick()">
-                    <p>{{ trans('cps::messages.click') }}</p>
+                    <p class="btn btn-primary py-2 px-4">{{ trans('cps::messages.click') }}</p>
                 </div>
-                <div class="clicBox" id="clicStart" onclick="start()">
+                <div class="clicBox " id="clicStart" onclick="start()">
                     <p>{{ trans('cps::messages.clickToStart') }}</p>
                 </div>
 

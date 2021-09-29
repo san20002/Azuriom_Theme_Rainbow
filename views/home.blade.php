@@ -3,7 +3,7 @@
 @section('title', trans('messages.home'))
 
 @section('content')
-    @if(!empty(theme_config('sliders')[0]['url']))
+    @if(!empty(theme_config('sliders')[0]))
         <div class="container-fluid px-0">
             <div class="row no-gutters">
                 <div class="col-12">
@@ -13,7 +13,7 @@
                                 <img src="{{ image_url(setting('background')) }}" alt="">
                             </div>
                         @endif
-                        @if(!empty(theme_config('sliders')[0]['url']))
+                        @if(!empty(theme_config('sliders')[0]))
                             <div class="home--glide glide mt-lg-0 mt-5 d-sm-block d-none" data-component="hero">
                                 <div data-glide-el="track" class="glide__track">
                                     <ul class="glide__slides">
@@ -28,7 +28,7 @@
                                                             <h3 class="text">{{ !empty($slider['description']) ? $slider['description'] :''}}</h3>
                                                         @endif
                                                     </div>
-                                                    @if(!isset($slider['background']))
+                                                    @if(isset($slider['url']) && !isset($slider['background']))
                                                         <div
                                                             class="col-lg-5 text-center px-lg-0 px-5 d-lg-block d-none">
                                                             <img

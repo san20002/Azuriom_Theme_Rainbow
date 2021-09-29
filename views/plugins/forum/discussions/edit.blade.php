@@ -3,7 +3,7 @@
 @section('title', trans('forum::messages.discussions.title-edit'))
 
 @section('content')
-    <div class="container content">
+    <div class="container content" id="forum">
 
         @include('elements.banner', ['banner' => 'forum', 'value'=> 'forum-discussions-edit'])
 

@@ -1,4 +1,4 @@
-@include('elements.banner',['banner' => 'liteBans', 'value' => 'navbar'])
+@include('elements.banner',['banner' => 'liteBans', 'value' => 'litebans'])
 
 <nav class="navbar navbar-expand-lg"  @include('elements.string-aos', ['pageAos' => 'liteBans', 'itemAos'=>'navbar'])>
     <div class="container-fluid">

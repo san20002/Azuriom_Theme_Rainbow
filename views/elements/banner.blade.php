@@ -84,7 +84,7 @@
             @if($banner === "forum" &&  $value === "forum-discussions-show")
                 <h1 class="mb-0">{{ $discussion->title }}</h1>
                 @foreach($discussion->tags as $tag)
-                    <small class="mr-4">
+                    <small class="mx-4">
                         <span class="badge" style="{{ $tag->getBadgeStyle() }}">{{ $tag->name }}</span>
                     </small>
                 @endforeach
@@ -187,7 +187,7 @@
                     {{theme_config($banner.'.banner.'.$value.'.title') ?? trans('jirai::messages.changelog')}}
                     @auth @can('jirai.changelog.post')
                         <a href="{{ route('jirai.changelogs.create') }}"
-                           class="btn btn-primary">{{ trans('jirai::messages.new') }}</a>
+                           class="btn btn-primary mr-3">{{ trans('jirai::messages.new') }}</a>
                     @endcan @endauth
                 </h2>
             @endif
@@ -197,7 +197,7 @@
                     {{theme_config($banner.'.banner.'.$value.'.title') ?? trans('jirai::messages.bugs')}}
                     @auth @can('jirai.issue.post')
                         <a href="{{ route('jirai.issues.create') }}?type=bugs"
-                           class="btn btn-primary">{{ trans('jirai::messages.new') }}</a>
+                           class="btn btn-primary mr-3">{{ trans('jirai::messages.new') }}</a>
                     @endauth @endcan
                 </h2>
             @endif
@@ -207,7 +207,7 @@
                     {{theme_config($banner.'.banner.'.$value.'.title') ?? trans('jirai::messages.suggestions')}}
                     @auth @can('jirai.issue.post')
                         <a href="{{ route('jirai.issues.create') }}?type=suggestion"
-                           class="btn btn-primary">{{ trans('jirai::messages.new') }}</a>
+                           class="btn btn-primary mr-3">{{ trans('jirai::messages.new') }}</a>
                     @endauth @endcan
                 </h2>
             @endif

@@ -10453,6 +10453,40 @@ h3 {
   background-color: var(--color-bg);
 }
 
+.tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type) {
+  background-color: var(--color-contrast-low);
+  border-color: var(--color-contrast-medium);
+}
+.tox.tox-tinymce {
+  border-color: var(--color-contrast-medium);
+}
+.tox.tox-tinymce .tox-editor-header .tox-toolbar__primary,
+.tox.tox-tinymce .tox-editor-header .tox-toolbar-overlord {
+  background-color: var(--color-contrast-low);
+}
+.tox.tox-tinymce .tox-statusbar,
+.tox.tox-tinymce .tox-edit-area__iframe {
+  background-color: var(--color-contrast-low);
+  color: var(--color-contrast-higher);
+}
+.tox.tox-tinymce .tox-statusbar p,
+.tox.tox-tinymce .tox-statusbar a,
+.tox.tox-tinymce .tox-edit-area__iframe p,
+.tox.tox-tinymce .tox-edit-area__iframe a {
+  color: var(--color-contrast-higher);
+}
+.tox .tox-toolbar__group {
+  border-bottom: 1px solid var(--color-contrast-medium);
+}
+.tox .tox-tbtn,
+.tox .tox-tbtn .tox-tbtn__select-label {
+  color: var(--color-contrast-higher);
+}
+.tox svg,
+.tox svg path {
+  fill: var(--color-contrast-higher);
+}
+
 h1,
 h1 a,
 h2,
@@ -10600,6 +10634,8 @@ form textarea,
 form .CodeMirror,
 form .editor-toolbar,
 form .custom-select,
+form .custom-file-input,
+form .custom-file-label,
 form .form-control {
   color: var(--color-contrast-higher);
   background-color: var(--color-contrast-low);
@@ -10618,6 +10654,14 @@ form .custom-select:-webkit-autofill,
 form .custom-select:visited,
 form .custom-select:active,
 form .custom-select:focus,
+form .custom-file-input:-webkit-autofill,
+form .custom-file-input:visited,
+form .custom-file-input:active,
+form .custom-file-input:focus,
+form .custom-file-label:-webkit-autofill,
+form .custom-file-label:visited,
+form .custom-file-label:active,
+form .custom-file-label:focus,
 form .form-control:-webkit-autofill,
 form .form-control:visited,
 form .form-control:active,
@@ -10770,7 +10814,6 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   margin: 0 15px;
   text-transform: uppercase;
   font-weight: 700;
-  box-shadow: 0px 0px 9px 2px var(--color-download);
 }
 .btn-download img {
   display: block;
@@ -10785,12 +10828,10 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 .btn-download:hover {
   background-color: var(--color-download-dark);
   border-color: var(--color-download-dark);
-  box-shadow: 0px 0px 9px 2px var(--color-download);
 }
 .btn-download:focus {
   background-color: var(--color-download-darker);
   border-color: var(--color-download-darker);
-  box-shadow: 0px 0px 9px 2px var(--color-download);
 }
 
 .btn-wrapper-home {
@@ -10910,8 +10951,8 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
 .modal .modal-header {
   border-bottom: 4px solid var(--color-primary);
   background-color: var(--color-contrast-low);
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 .modal .modal-header h3 {
   margin-bottom: 0;
@@ -10927,8 +10968,8 @@ form .editor-toolbar button:hover, form .editor-toolbar button:focus {
   background-color: var(--color-contrast-lower);
 }
 .modal .modal-footer {
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
   background-color: var(--color-contrast-low);
   border-top: 1px dashed var(--color-primary);
 }
@@ -11392,9 +11433,13 @@ body {
 }
 #shops .card {
   text-align: center;
+  border: 1px solid var(--color-primary);
 }
-#shops .card:hover {
+#shops .card:hover, #shops .card:focus {
   transform: scale(1.02);
+}
+#shops .card .card-body {
+  background-color: var(--color-contrast-low);
 }
 #shops--select .card {
   border: 0;
@@ -11778,6 +11823,9 @@ body {
 }
 #forum .breadcrumb .breadcrumb-item a:hover, #forum .breadcrumb .breadcrumb-item a:focus {
   color: var(--color-primary-dark);
+}
+#forum .card .list-unstyled {
+  list-style: none;
 }
 
 #wiki .card {
