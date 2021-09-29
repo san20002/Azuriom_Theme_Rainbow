@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container content" id="jirai">
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-4"  @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'messages-edit'])>
             <div class="card-body">
                 <form action="{{ route('jirai.messages.update', $message) }}" method="POST" >
 

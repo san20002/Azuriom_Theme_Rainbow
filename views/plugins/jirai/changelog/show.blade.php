@@ -6,7 +6,7 @@
 
 <div class="container" id="jirai">
 
-    <div class="card mt-5">
+    <div class="card mt-5" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'changelogs-show'])>
         <div class="card-header">
             <img class="rounded float-left mr-4" src="{{ $changelog->user->getAvatar() }}" alt="{{ $changelog->user->name }}" height="55">
             <h1 class="card-title">{{ $changelog->description }}</h1>

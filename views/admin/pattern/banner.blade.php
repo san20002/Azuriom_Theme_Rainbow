@@ -1,5 +1,5 @@
 @php($counterPartial++)
-<div class="card mt-4 mb-4">
+<div class="card my-4">
     @if(isset($url) && $url)
         <a class="badge badge-info"
            href="{{$url}}#config_trigger={{$key}}-banner-{{$value}}"

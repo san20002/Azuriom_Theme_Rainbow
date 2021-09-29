@@ -6,7 +6,7 @@
 
 <div class="container" id="jirai">
 
-    <div class="card mt-5 mb-5">
+    <div class="card mt-5 mb-5" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'issues-show'])>
         <div class="card-header">
             <img class="rounded float-left mr-4" src="{{ $issue->user->getAvatar() }}" alt="{{ $issue->user->name }}" height="55">
             <h1 class="card-title">{{ $issue->title }}</h1>
@@ -42,7 +42,7 @@
     @foreach($issue->messages as $message)
 
         @if($message->referenced_jirai_changelog_id != null)
-            <div class="card shadow-sm mb-3">
+            <div class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'messages-show'])>
                 <div class="card-header d-flex justify-content-between">
                     <small style="color: grey">
                         @lang('messages.posts.posted', ['user' => '<span class="btn btn-warning btn-sm mr-3 rounded-pill">Auto</span>', 'date' => format_date($message->created_at, true)])
@@ -53,7 +53,7 @@
                 </div>
             </div>
         @else
-            <div class="card shadow-sm mb-3">
+            <div class="card shadow-sm mb-3" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'messages-show'])>
                 <div class="card-header d-flex justify-content-between">
                     <div class="d-flex ">
                         <img class="d-flex mr-2 rounded" src="{{ $message->user->getAvatar() }}" alt="{{ $message->user->name }}" height="35">
@@ -81,7 +81,7 @@
     @endforeach
 
     @can('jirai.message.post')
-    <form action="{{ route('jirai.messages.store') }}" method="POST">
+    <form action="{{ route('jirai.messages.store') }}" method="POST" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'messages-create'])>
         @csrf
         <div class="card shadow-sm mb-3">
             <div class="card-header">

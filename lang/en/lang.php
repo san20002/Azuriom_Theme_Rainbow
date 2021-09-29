@@ -82,6 +82,21 @@ return [
             ],
         ]
     ],
+    'cps' => [
+        'title' => 'Plugin FAQ',
+        'banner' => [
+            'cps' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner CPS',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'cps' => [
+                'title' => 'Interface CPS',
+            ],
+        ]
+    ],
     'faq' => [
         'title' => 'Plugin FAQ',
         'banner' => [
@@ -144,7 +159,7 @@ return [
             ],
             'forum-posts-edit' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-                'title' => 'Banner modification du post',
+                'title' => 'Banner edit du post',
                 'hidden' => 'Do not display'
             ],
             'forum-discussions-create' => [
@@ -186,7 +201,7 @@ return [
                 'title' => 'Banner user edit',
             ],
             'forum-posts-edit' => [
-                'title' => 'Banner modification du post',
+                'title' => 'Banner edit du post',
             ],
             'forum-discussions-create' => [
                 'title' => 'Banner posts edit',
@@ -315,6 +330,131 @@ return [
             ],
         ]
     ],
+    'paysafecardmanual' => [
+        'title' => 'Plugin PaysafeCardm Manual',
+        'banner' => [
+            'paysafecardmanual' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner PaysafeCardm Manual',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'paysafecardmanual' => [
+                'title' => 'Interface PaysafeCardm Manual',
+            ],
+        ]
+    ],
+    'jirai' => [
+        'title' => 'Plugin JIRAI',
+        'banner' => [
+            'changelog' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner Changelog',
+                'hidden' => 'Do not display'
+            ],'bugs' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner bugs',
+                'hidden' => 'Do not display'
+            ],
+            'suggestions' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner suggestions',
+                'hidden' => 'Do not display'
+            ],
+            'changelogs-create' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner create changelogs',
+                'hidden' => 'Do not display'
+            ],
+            'changelogs-edit' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner edit changelog',
+                'hidden' => 'Do not display'
+            ],
+            'changelogs-show' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner the changelog',
+                'hidden' => 'Do not display'
+            ],
+            'issues-create' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner create (bugs, suggestions)',
+                'hidden' => 'Do not display'
+            ],
+            'issues-edit' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner edit (bugs, suggestions)',
+                'hidden' => 'Do not display'
+            ],
+            'issues-show' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner the (bugs, suggestions)',
+                'hidden' => 'Do not display'
+            ],
+            'messages-show' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner the message(s)',
+                'hidden' => 'Do not display'
+            ],
+            'messages-create' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner create message',
+                'hidden' => 'Do not display'
+            ],
+            'messages-edit' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner edit message',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'changelog' => [
+                'title' => 'Interface changelog',
+            ],
+            'bugs' => [
+                'title' => 'Interface bugs',
+            ],
+            'suggestions' => [
+                'title' => 'Interface suggestions',
+            ],
+            'changelogs-create' => [
+                'title' => 'Interface create changelogs',
+            ],
+            'changelogs-edit' => [
+                'title' => 'Interface edit changelog',
+            ],
+            'changelogs-show' => [
+                'title' => 'Interface the changelog',
+            ],
+            'issues-create' => [
+                'title' => 'Interface create (bugs, suggestions)',
+            ],
+            'issues-edit' => [
+                'title' => 'Interface edit (bugs, suggestions)',
+            ],
+            'issues-show' => [
+                'title' => 'Interface the (bugs, suggestions)',
+            ],
+            'messages-show' => [
+                'title' => 'Interface the message(s)',
+            ],
+            'messages-create' => [
+                'title' => 'Interface create message',
+            ],
+            'messages-edit' => [
+                'title' => 'Interface edit message',
+            ],
+        ]
+    ],
+    'invoicepro' => [
+        'title' => 'Plugin Invoicepro',
+        'items' => [
+            'invoicepro' => [
+                'title' => 'Interface invoicepro',
+            ],
+        ]
+    ],
     'sliders' => [
         'title' => 'Plugin Sliders',
         'name' => 'Slider',
@@ -383,12 +523,12 @@ return [
             ],
             'method-payment' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-                'title' => 'Bannière method payment',
+                'title' => 'Banner method payment',
                 'hidden' => 'Do not display'
             ],
             'select-payment' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-                'title' => 'Bannière select payment',
+                'title' => 'Banner select payment',
                 'hidden' => 'Do not display'
             ],
             'buy' => [
@@ -455,12 +595,12 @@ return [
             ],
             'support-create' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-                'title' => 'Bannière create support',
+                'title' => 'Banner create support',
                 'hidden' => 'Do not display'
             ],
             'support-show' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-                'title' => 'Bannière support show',
+                'title' => 'Banner support show',
                 'hidden' => 'Do not display'
             ],
         ],

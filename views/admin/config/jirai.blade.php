@@ -22,48 +22,31 @@
                             'arrayItems' => ['key'=> 'jirai','value' => 'suggestions']])
 
         @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.changelogs.create'),
                             'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'changelogs-create']])
+                            'arrayItems' => [
+                                            ['url' => route('jirai.changelogs.create'),'key'=> 'jirai','value' => 'changelogs-create'],
+                                            ['url' => route('jirai.changelogs.edit', $jirai->first()),'key'=> 'jirai','value' => 'changelogs-edit'],
+                                            ['url' => route('jirai.changelogs.show', $jirai->first()),'key'=> 'jirai','value' => 'changelogs-show']
+                                            ]
+                            ])
 
         @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.changelogs.edit', $jirai->first()),
                             'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'changelogs-edit']])
+                            'arrayItems' => [
+                                            ['url' => route('jirai.issues.create','?type=bugs'),'key'=> 'jirai','value' => 'issues-create'],
+                                            ['url' => route('jirai.issues.edit', $jiraiIssue->first()),'key'=> 'jirai','value' => 'issues-edit'],
+                                            ['url' => route('jirai.issues.show', $jiraiIssue->first()),'key'=> 'jirai','value' => 'issues-show']
+                                            ]])
+
 
         @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.changelogs.show', $jirai->first()),
-                            'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'changelogs-show']])
 
-        @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.issues.create','?type=bugs'),
                             'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'issues-create']])
-
-        @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.issues.edit', $jiraiIssue->first()),
-                            'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'issues-edit']])
-
-        @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.issues.show', $jiraiIssue->first()),
-                            'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'issues-show']])
-
-        @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.issues.show', $jiraiIssue->first()),
-                            'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'messages-show']])
-
-        @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.issues.create', $jiraiIssue->first()),
-                            'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'messages-create']])
-
-        @include('admin.pattern.builder-items',[
-                            'url' => route('jirai.messages.edit', $jiraiMessages->first()),
-                            'col' => 'col-md-4',
-                            'arrayItems' => ['key'=> 'jirai','value' => 'messages-edit']])
+                            'arrayItems' => [
+                                            ['url' => route('jirai.issues.show', $jiraiIssue->first()),'key'=> 'jirai','value' => 'messages-create'],
+                                            ['url' => route('jirai.messages.edit', $jiraiMessages->first()),'key'=> 'jirai','value' => 'messages-edit'],
+                                            ['url' => route('jirai.issues.show', $jiraiIssue->first()),'key'=> 'jirai','value' => 'messages-show']
+                                            ]
+                            ])
     </div>
 </div>

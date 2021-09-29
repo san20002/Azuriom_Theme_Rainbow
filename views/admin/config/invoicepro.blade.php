@@ -1,5 +1,5 @@
 <div class="card-header">
-    <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.paysafecardmanual.title')}}</h3>
+    <h3 class="m-0 font-weight-bold text-primary">{{trans('theme::lang.invoicepro.title')}}</h3>
 </div>
 <div class="card-body">
     <div class="row">

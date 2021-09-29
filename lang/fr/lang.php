@@ -81,6 +81,21 @@ return [
             ],
         ]
     ],
+    'cps' => [
+        'title' => 'Plugin CPS',
+        'banner' => [
+            'cps' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière CPS',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'cps' => [
+                'title' => 'Interface CPS',
+            ],
+        ]
+    ],
     'faq' => [
         'title' => 'Plugin FAQ',
         'banner' => [
@@ -313,6 +328,131 @@ return [
         'items' => [
             'page' => [
                 'title' => 'Interface Pages',
+            ],
+        ]
+    ],
+    'paysafecardmanual' => [
+        'title' => 'Plugin PaysafeCardm Manual',
+        'banner' => [
+            'paysafecardmanual' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière PaysafeCardm Manual',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'paysafecardmanual' => [
+                'title' => 'Interface PaysafeCardm Manual',
+            ],
+        ]
+    ],
+    'jirai' => [
+        'title' => 'Plugin JIRAI',
+        'banner' => [
+            'changelog' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière Changelog',
+                'hidden' => 'Ne pas afficher'
+            ],'bugs' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière bugs',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'suggestions' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière suggestions',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'changelogs-create' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière creation changelogs',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'changelogs-edit' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière modification changelog',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'changelogs-show' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière le changelog',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'issues-create' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière creation (bugs, suggestions)',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'issues-edit' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière modification (bugs, suggestions)',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'issues-show' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière de (bugs, suggestions)',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'messages-show' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière de(s) message(s)',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'messages-create' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière creation message',
+                'hidden' => 'Ne pas afficher'
+            ],
+            'messages-edit' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière modification message',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'changelog' => [
+                'title' => 'Interface changelog',
+            ],
+            'bugs' => [
+                'title' => 'Interface bugs',
+            ],
+            'suggestions' => [
+                'title' => 'Interface suggestions',
+            ],
+            'changelogs-create' => [
+                'title' => 'Interface creation changelogs',
+            ],
+            'changelogs-edit' => [
+                'title' => 'Interface modification changelog',
+            ],
+            'changelogs-show' => [
+                'title' => 'Interface le changelog',
+            ],
+            'issues-create' => [
+                'title' => 'Interface creation (bugs, suggestions)',
+            ],
+            'issues-edit' => [
+                'title' => 'Interface modification (bugs, suggestions)',
+            ],
+            'issues-show' => [
+                'title' => 'Interface de (bugs, suggestions)',
+            ],
+            'messages-show' => [
+                'title' => 'Interface de(s) message(s)',
+            ],
+            'messages-create' => [
+                'title' => 'Interface creation message',
+            ],
+            'messages-edit' => [
+                'title' => 'Interface modification message',
+            ],
+        ]
+    ],
+    'invoicepro' => [
+        'title' => 'Plugin Invoicepro',
+        'items' => [
+            'invoicepro' => [
+                'title' => 'Interface invoicepro',
             ],
         ]
     ],
