@@ -1,3 +1,7 @@
+<div class="js-loader-color-theme">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+</div>
+
 <button class="btn-picto-color">
     <img src="{{theme_asset('image/color-spectrum.png')}}" alt="">
 </button>
@@ -18,7 +22,7 @@
                             <li class="app-content-item js-app-content-item" data-section="#color-primary">
                                 <span class="app-content-item__text">--color-primary</span>
                             </li>
-                            <li class="app-content-item js-app-content-item" data-section="#color-accent">
+                            <li class="app-content-item js-app-content-item d-none" data-section="#color-accent">
                                 <span class="app-content-item__text">--color-accent</span>
                             </li>
                             <li class="app-content-item js-app-content-item" data-section="#color-download">
