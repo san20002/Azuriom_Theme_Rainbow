@@ -85,7 +85,7 @@
                         {{ Auth::user()->name }}
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="{{ route('profile.index') }}">
                             {{ trans('messages.nav.profile') }}
                         </a>
