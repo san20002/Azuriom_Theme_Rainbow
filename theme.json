@@ -8,6 +8,6 @@
         "Latshow#4681 - linedev.fr"
     ],
     "dependencies": {
-        "azuriom": "^0.4.2",
+        "azuriom": "^0.4.2"
     }
 }
