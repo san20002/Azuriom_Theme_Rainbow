@@ -7,6 +7,7 @@
     "/css/styles.css": "/css/styles.css",
     "/css/tinymce.css": "/css/tinymce.css",
     "/css/admin.css": "/css/admin.css",
+    "/image/.gitkeep": "/image/.gitkeep",
     "/image/color-spectrum.png": "/image/color-spectrum.png",
     "/js/glide.min.js": "/js/glide.min.js",
     "/css/glide.core.min.css": "/css/glide.core.min.css",
