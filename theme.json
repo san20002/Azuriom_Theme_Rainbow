@@ -2,12 +2,9 @@
     "id": "rainbow",
     "name": "Rainbow",
     "description": "Theme for Azuriom By Latshow",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "url": "https://discord.gg/kdQ2Mn2Kcv",
     "authors": [
         "Latshow#4681 - linedev.fr"
-    ],
-    "dependencies": {
-        "azuriom": "^0.4.2"
-    }
+    ]
 }
