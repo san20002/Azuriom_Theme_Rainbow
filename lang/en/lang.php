@@ -336,17 +336,17 @@ return [
         ]
     ],
     'paysafecardmanual' => [
-        'title' => 'Plugin PaysafeCardm Manual',
+        'title' => 'Plugin Paysafecard Manual',
         'banner' => [
             'paysafecardmanual' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
-                'title' => 'Banner PaysafeCardm Manual',
+                'title' => 'Banner Paysafecard Manual',
                 'hidden' => 'Do not display'
             ],
         ],
         'items' => [
             'paysafecardmanual' => [
-                'title' => 'Interface PaysafeCardm Manual',
+                'title' => 'Interface Paysafecard Manual',
             ],
         ]
     ],
