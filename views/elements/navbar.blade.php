@@ -4,14 +4,17 @@
              alt="{{ site_name() }}" title="{{ site_name() }}">
         <h1 class="sr-only">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
     </a>
-    <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-x" aria-controls="navbar"
+    <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-x"
+            aria-controls="navbar"
             aria-expanded="false" aria-label="{{ trans('messages.nav.toggle') }}">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
 
-    <div class="navbar-collapse collapsed d-xl-block d-flex flex-xl-row flex-column-reverse justify-content-end align-items-start" id="navbar-collapse-x">
+    <div
+        class="navbar-collapse collapsed d-xl-block d-flex flex-xl-row flex-column-reverse justify-content-end align-items-start"
+        id="navbar-collapse-x">
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mx-xl-auto ml-0">
             @foreach($navbar as $element)
@@ -21,7 +24,8 @@
                            rel="noopener noreferrer" @endif>
                             @if(!theme_config('header.icons'))
                                 @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-                                    @if($element->name === $icon['name'])
+{{--                                        @php(dump($icon['name']))--}}
+                                    @if($element->value === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif
@@ -81,7 +85,8 @@
                 @include('elements.notifications')
 
                 <li class="nav-item dropdown dropdown-user">
-                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
 
@@ -102,7 +107,8 @@
                             </a>
                         @endif
 
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ trans('auth.logout') }}
                         </a>
 

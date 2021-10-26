@@ -16,7 +16,7 @@
     @endif
 @endif
 @auth()
-    @if(auth()->user()->role->name == 'Admin')
+    @if(auth()->user()->isAdmin())
         data-config-trigger="{{$pageAos}}-items-{{$itemAos}}"
     @endif
 @endauth

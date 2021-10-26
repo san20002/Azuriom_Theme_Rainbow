@@ -1,5 +1,5 @@
 @auth()
-    @if(auth()->user()->role->name == 'Admin')
+    @if(auth()->user()->isAdmin())
         data-config-trigger="{{$key}}-banner-{{$value}}"
     @endif
 @endauth

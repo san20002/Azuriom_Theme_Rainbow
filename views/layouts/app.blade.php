@@ -24,7 +24,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ favicon() }}">
     @auth()
-        @if(auth()->user()->role->name == 'Admin')
+        @if(auth()->user()->isAdmin())
             @php
                 $theme = themes()->currentTheme();
                 $theme_lang = trans('theme::lang');
@@ -69,7 +69,7 @@
     @include('layouts.root')
     <link href="{{ theme_asset('css/styles.css') }}" rel="stylesheet">
     @auth()
-        @if(auth()->user()->role->name == 'Admin')
+        @if(auth()->user()->isAdmin())
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
             <link href="{{ theme_asset('css/sweetalert2.min.css') }}" rel="stylesheet">
         @endif
@@ -86,10 +86,10 @@
     @if(url()->route('home') != url()->current())
         @include('elements.background-top')
     @endif
-    <div class="container">
+    <div class="container container--rainbow">
         @include('elements.session-alerts')
+        @yield('content')
     </div>
-    @yield('content')
 </main>
 <footer class="footer">
     @if(!empty(!theme_config('footer.logo.hidden') && !theme_config('footer.liens.hidden') && !theme_config('footer.download.hidden') && isset(theme_config('footer.social.links')[0])))
@@ -192,7 +192,7 @@
     </div>
 @endif
 @auth()
-    @if(auth()->user()->role->name == 'Admin')
+    @if(auth()->user()->isAdmin())
         <script defer>
             window.addEventListener("DOMContentLoaded", (event) => {
                 if ($('.btn-picto-color').length > 0) {
@@ -220,12 +220,12 @@
     @endif
 @endauth
 @stack('footer-scripts')
-@if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false))
+@if(preg_match('~MSIE|Internet Explorer~i', request()->userAgent()) || (strpos(request()->userAgent(), 'Trident/7.0; rv:11.0') !== false))
     <div id="outdated">
         <span><span><i class="fas fa-ghost"></i></span></span>
         <h6>Error: Your browser is out-of-date!</h6>
         <p>Update your browser to view this website correctly.</p>
-        <a id="btnUpdateBrowser" href="https://bestvpn.org/outdatedbrowser/"> Outdated Browser </a>
+        <a id="btnUpdateBrowser" href="https://www.mozilla.org/fr/firefox/new/"> Outdated Browser </a>
     </div>
 @endif
 </body>
