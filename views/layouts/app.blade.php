@@ -88,6 +88,8 @@
     @endif
     <div class="container container--rainbow">
         @include('elements.session-alerts')
+    </div>
+    <div class="container--rainbow">
         @yield('content')
     </div>
 </main>
