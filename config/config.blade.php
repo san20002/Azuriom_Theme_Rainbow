@@ -112,13 +112,21 @@
     @php
         $articles = \Azuriom\Models\Post::all();
         $pages = \Azuriom\Models\Page::all();
+        if (plugins()->isEnabled('support')){
         $tickets = \Azuriom\Plugin\Support\Models\Ticket::all();
+        }
+        if (plugins()->isEnabled('wiki')){
         $wikis = \Azuriom\Plugin\Wiki\Models\Category::all();
+        }
+        if (plugins()->isEnabled('forum')){
         $forums = \Azuriom\Plugin\Forum\Models\Forum::all();
         $forumsDiscussions = \Azuriom\Plugin\Forum\Models\Discussion::all();
+        }
+        if (plugins()->isEnabled('jirai')){
         $jirai = \Azuriom\Plugin\Jirai\Models\JiraiChangelog::all();
         $jiraiIssue = \Azuriom\Plugin\Jirai\Models\JiraiIssue::all();
         $jiraiMessages = \Azuriom\Plugin\Jirai\Models\JiraiMessage::all();
+        }
         $animations = [
             'No effect'=>['none'],
             'Fade' => ['fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left'],
@@ -188,7 +196,7 @@
                         aria-controls="footer">
                     {{ trans('theme::lang.footer.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['advancedban']))
+                @if(!plugins()->isEnabled('advancedban'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -196,14 +204,14 @@
                         href="#list-advancedBan"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['advancedban'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('advancedban')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="advancedBan">
                     {{ trans('theme::lang.advancedBan.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['advancedban']))
+                @if(!plugins()->isEnabled('advancedban'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['changelog']))
+                @if(!plugins()->isEnabled('changelog'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -211,14 +219,14 @@
                         href="#list-changelog"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['changelog'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('changelog')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="changelog">
                     {{ trans('theme::lang.changelog.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['changelog']))
+                @if(!plugins()->isEnabled('changelog'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['cps']))
+                @if(!plugins()->isEnabled('cps'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -226,14 +234,14 @@
                         href="#list-cps"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['cps'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('cps')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="cps">
                     {{ trans('theme::lang.cps.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['cps']))
+                @if(!plugins()->isEnabled('cps'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['faq']))
+                @if(!plugins()->isEnabled('faq'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -241,14 +249,14 @@
                         href="#list-faq"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['faq'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('faq')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="faq">
                     {{ trans('theme::lang.faq.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['faq']))
+                @if(!plugins()->isEnabled('faq'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['forum']))
+                @if(!plugins()->isEnabled('forum'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -256,14 +264,14 @@
                         href="#list-forum"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['forum'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('forum')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="forum">
                     {{ trans('theme::lang.forum.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['forum']))
+                @if(!plugins()->isEnabled('forum'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['invoicepro']))
+                @if(!plugins()->isEnabled('invoicepro'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -271,14 +279,14 @@
                         href="#list-invoicepro"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['invoicepro'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('invoicepro')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="invoicepro">
                     {{ trans('theme::lang.invoicepro.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['invoicepro']))
+                @if(!plugins()->isEnabled('invoicepro'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['jirai']))
+                @if(!plugins()->isEnabled('jirai'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -286,14 +294,14 @@
                         href="#list-jirai"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['jirai'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('jirai')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="jirai">
                     {{ trans('theme::lang.jirai.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['jirai']))
+                @if(!plugins()->isEnabled('jirai'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['litebans']))
+                @if(!plugins()->isEnabled('litebans'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -301,14 +309,14 @@
                         href="#list-litebans"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['litebans'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('litebans')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="litebans">
                     {{ trans('theme::lang.liteBans.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['litebans']))
+                @if(!plugins()->isEnabled('litebans'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['paysafecardmanual']))
+                @if(!plugins()->isEnabled('paysafecardmanual'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -316,14 +324,14 @@
                         href="#list-paysafecardmanual"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['paysafecardmanual'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('paysafecardmanual')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="paysafecardmanual">
                     {{ trans('theme::lang.paysafecardmanual.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['paysafecardmanual']))
+                @if(!plugins()->isEnabled('paysafecardmanual'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['shop']))
+                @if(!plugins()->isEnabled('shop'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button
@@ -332,14 +340,14 @@
                     href="#list-shop"
                     data-toggle="list"
                     role="tab"
-                    {{!isset(plugins()->plugins()['shop'])? 'aria-disabled="true" disabled': ''}}
+                    {{!plugins()->isEnabled('shop')? 'aria-disabled="true" disabled': ''}}
                     aria-controls="shop">
                     {{ trans('theme::lang.shop.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['shop']))
+                @if(!plugins()->isEnabled('shop'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['skin-api']))
+                @if(!plugins()->isEnabled('skin-api'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -347,14 +355,14 @@
                         href="#list-skinApi"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['skin-api'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('skin-api')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="skinApi">
                     {{trans('theme::lang.skinApi.title')}}
                 </button>
-                @if(!isset(plugins()->plugins()['skin-api']))
+                @if(!plugins()->isEnabled('skin-api'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['support']))
+                @if(!plugins()->isEnabled('support'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -362,14 +370,14 @@
                         href="#list-support"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['support'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('support')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="support">
                     {{ trans('theme::lang.support.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['support']))
+                @if(!plugins()->isEnabled('support'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['vote']))
+                @if(!plugins()->isEnabled('vote'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -377,14 +385,14 @@
                         href="#list-vote"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['vote'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('vote')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="vote">
                     {{ trans('theme::lang.vote.title') }}
                 </button>
-                @if(!isset(plugins()->plugins()['vote']))
+                @if(!plugins()->isEnabled('vote'))
                 </span>
                 @endif
-                @if(!isset(plugins()->plugins()['wiki']))
+                @if(!plugins()->isEnabled('wiki'))
                     <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                 @endif
                 <button class="list-group-item list-group-item-action list-group-item-light"
@@ -392,11 +400,11 @@
                         href="#list-wiki"
                         data-toggle="list"
                         role="tab"
-                        {{!isset(plugins()->plugins()['wiki'])? 'aria-disabled="true" disabled': ''}}
+                        {{!plugins()->isEnabled('wiki')? 'aria-disabled="true" disabled': ''}}
                         aria-controls="wiki">
                     {{ trans('theme::lang.wiki.title') }}
                 </button>
-                    @if(!isset(plugins()->plugins()['wiki']))
+                    @if(!plugins()->isEnabled('wiki'))
                     </span>
                 @endif
             </div>
@@ -440,85 +448,85 @@
                         @include('admin.config.page')
                     </div>
 
-                    @if(isset(plugins()->plugins()['advancedban']))
+                    @if(plugins()->isEnabled('advancedban'))
                         <div class="tab-pane fade card shadow mb-4" id="list-advancedBan" role="tabpanel"
                              aria-labelledby="list-advancedBan-list">
                             @include('admin.config.advancedban')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['vote']))
+                    @if(plugins()->isEnabled('vote'))
                         <div class="tab-pane fade card shadow mb-4" id="list-vote" role="tabpanel"
                              aria-labelledby="list-vote-list">
                             @include('admin.config.vote')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['faq']))
+                    @if(plugins()->isEnabled('faq'))
                         <div class="tab-pane fade card shadow mb-4" id="list-faq" role="tabpanel"
                              aria-labelledby="list-faq-list">
                             @include('admin.config.faq')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['invoicepro']))
+                    @if(plugins()->isEnabled('invoicepro'))
                         <div class="tab-pane fade card shadow mb-4" id="list-invoicepro" role="tabpanel"
                              aria-labelledby="list-invoicepro-list">
                             @include('admin.config.invoicepro')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['jirai']))
+                    @if(plugins()->isEnabled('jirai'))
                         <div class="tab-pane fade card shadow mb-4" id="list-jirai" role="tabpanel"
                              aria-labelledby="list-jirai-list">
                             @include('admin.config.jirai')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['litebans']))
+                    @if(plugins()->isEnabled('litebans'))
                         <div class="tab-pane fade card shadow mb-4" id="list-litebans" role="tabpanel"
                              aria-labelledby="list-litebans-list">
                             @include('admin.config.litebans')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['paysafecardmanual']))
+                    @if(plugins()->isEnabled('paysafecardmanual'))
                         <div class="tab-pane fade card shadow mb-4" id="list-paysafecardmanual" role="tabpanel"
                              aria-labelledby="list-paysafecardmanual-list">
                             @include('admin.config.paysafecardmanual')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['wiki']))
+                    @if(plugins()->isEnabled('wiki'))
                         <div class="tab-pane fade card shadow mb-4" id="list-wiki" role="tabpanel"
                              aria-labelledby="list-wiki-list">
                             @include('admin.config.wiki')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['support']))
+                    @if(plugins()->isEnabled('support'))
                         <div class="tab-pane fade card shadow mb-4" id="list-support" role="tabpanel"
                              aria-labelledby="list-support-list">
                             @include('admin.config.support')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['changelog']))
+                    @if(plugins()->isEnabled('changelog'))
                         <div class="tab-pane fade card shadow mb-4" id="list-changelog" role="tabpanel"
                              aria-labelledby="list-changelog-list">
                             @include('admin.config.changelog')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['cps']))
+                    @if(plugins()->isEnabled('cps'))
                         <div class="tab-pane fade card shadow mb-4" id="list-cps" role="tabpanel"
                              aria-labelledby="list-cps-list">
                             @include('admin.config.cps')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['shop']))
+                    @if(plugins()->isEnabled('shop'))
                         <div class="tab-pane fade card shadow mb-4" id="list-shop" role="tabpanel"
                              aria-labelledby="list-shop-list">
                             @include('admin.config.shop')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['forum']))
+                    @if(plugins()->isEnabled('forum'))
                         <div class="tab-pane fade card shadow mb-4" id="list-forum" role="tabpanel"
                              aria-labelledby="list-forum-list">
                             @include('admin.config.forum')
                         </div>
                     @endif
-                    @if(isset(plugins()->plugins()['skin-api']))
+                    @if(plugins()->isEnabled('skin-api'))
                         <div class="tab-pane fade card shadow mb-4" id="list-skinApi" role="tabpanel"
                              aria-labelledby="list-skinApi-list">
                             @include('admin.config.skin')
