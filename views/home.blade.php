@@ -100,12 +100,10 @@
                     @endforeach
                 </div>
             </div>
-            @guest
-                <div class="col-lg-4 home--info">
-                    @include('auth/home-login')
-                </div>
-            @endguest
             <div class="col-lg-4 home--info">
+                @guest
+                    @include('auth/home-login')
+                @endguest
                 @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
                 @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
                     <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
