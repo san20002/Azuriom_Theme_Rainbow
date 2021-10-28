@@ -164,7 +164,7 @@
                             <div class="footer--copyright">
                                 <div class="container">
                                     {{ setting('copyright') }} | @lang('messages.copyright') | Thème réalisé par
-                                    <a href="https://discord.gg/kdQ2Mn2Kcv" target="_blank"
+                                    <a href="https://discord.gg/QF2AtgHJXY" target="_blank"
                                        rel="noopener noreferrer">Linedev</a>
                                 </div>
                             </div>
