@@ -44,7 +44,7 @@
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @if(!theme_config('header.icons'))
                                 @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-                                    @if($element->name === $icon['name'])
+                                    @if($element->value === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif

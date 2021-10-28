@@ -107,7 +107,7 @@
             @endguest
             <div class="col-lg-4 home--info">
                 @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
-                @if(theme_config('home.items.discord.id'))
+                @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
                     <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
                         <iframe
                             src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"

@@ -9,8 +9,6 @@
                         <div class="text mx-auto">
                             @if($server && $server->isOnline())
                                 {{ trans_choice('messages.server.online', $server->getOnlinePlayers()) }}
-                                <p>Il y a {{$server->getOnlinePlayers()}} connectés sur {{$server->getMaxPlayers()}}
-                                    .</p>
                             @else
                                 {{ trans('messages.server.offline') }}
                             @endif

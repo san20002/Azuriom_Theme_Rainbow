@@ -94,7 +94,7 @@
     </div>
 </main>
 <footer class="footer">
-    @if(!empty(!theme_config('footer.logo.hidden') && !theme_config('footer.liens.hidden') && !theme_config('footer.download.hidden') && isset(theme_config('footer.social.links')[0])))
+    @if(theme_config('footer.logo.hidden') !== 'on' || theme_config('footer.liens.hidden') !== 'on' || theme_config('footer.download.hidden') !== 'on' || isset(theme_config('footer.social.links')[0]))
         <div class="footer--top">
             <div class="container-fluid">
                 <div class="row justify-content-around">
