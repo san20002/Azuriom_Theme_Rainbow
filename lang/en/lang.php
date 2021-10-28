@@ -88,7 +88,7 @@ return [
         ]
     ],
     'cps' => [
-        'title' => 'Plugin FAQ',
+        'title' => 'Plugin CPS',
         'banner' => [
             'cps' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
