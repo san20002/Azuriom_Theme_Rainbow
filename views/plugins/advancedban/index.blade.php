@@ -19,13 +19,14 @@
                 </li>
                 @forelse($allPunishments as $punishment)
                     <li class="table-row">
-                        <div class="col col-0" scope="row">{{ $punishment->punishmentType }}</div>
-                        <div class="col col-5"><img
-                                src="https://crafthead.net/avatar/{{ $punishment->uuid }}/30"> {{ $punishment->name }}
+                        <div class="col col-1" scope="row">{{ $punishment->punishmentType }}</div>
+                        <div class="col col-2">
+                            <img src="https://crafthead.net/avatar/{{ $punishment->uuid }}/30"> {{ $punishment->name }}
                         </div>
-                        <div class="col col-2">{{ $punishment->reason }}</div>
-                        <div class="col col-2"><img data-name="{{ $punishment->operator }}"
-                                                    src="https://crafthead.net/avatar/8667ba71-b85a-4004-af54-457a9734eed7/30"> {{ $punishment->operator }}
+                        <div class="col col-2" title="{{ $punishment->reason }}">{{ Str::limit($punishment->reason, 20) }}</div>
+                        <div class="col col-2">
+                            <img data-name="{{ $punishment->operator }}"
+                                 src="https://crafthead.net/avatar/8667ba71-b85a-4004-af54-457a9734eed7/30"> {{ $punishment->operator }}
                         </div>
                         <div
                             class="col col-2">{{ format_date(Carbon\Carbon::createFromTimestampMs($punishment->start)) }}
@@ -39,7 +40,7 @@
                                 N/A
                             @endif
                         </div>
-                        <div class="col col-2">
+                        <div class="col col-1">
                             @if(in_array($punishment, $punishments) && time() < $punishment->end)
                                 {{ trans('advancedban::messages.active') }}
                             @else
