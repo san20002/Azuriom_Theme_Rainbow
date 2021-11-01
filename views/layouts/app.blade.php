@@ -34,10 +34,15 @@
                 window.THEMES_LANG = @php echo json_encode($theme_lang)  @endphp
             </script>
             <script src="{{ theme_asset('js/sweetalert2.all.min.js') }}" defer></script>
+            <!-- HTML5 drag&drop (68k) -->
+            <script src="{{theme_asset('js/gridstack-h5.js')}}" defer></script>
+            <!-- OR jquery-ui drag&drop (193k) -->
+            <script src="{{theme_asset('js/gridstack-jq.js')}}" defer></script>
+            <!-- OR static grid (38k) -->
+            <script src="{{theme_asset('js/gridstack-static.js')}}" defer></script>
         @endif
     @endauth
 <!-- Scripts -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
@@ -71,6 +76,7 @@
     @auth()
         @if(auth()->user()->isAdmin())
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
+            <link href="{{ theme_asset('css/gridstack.min.css')}}" rel="stylesheet"/>
             <link href="{{ theme_asset('css/sweetalert2.min.css') }}" rel="stylesheet">
         @endif
     @endauth
@@ -91,144 +97,183 @@
     </div>
     <div class="container--rainbow">
         @yield('content')
-    </div>
-</main>
-<footer class="footer">
-    @if(theme_config('footer.logo.hidden') !== 'on' || theme_config('footer.liens.hidden') !== 'on' || theme_config('footer.download.hidden') !== 'on' || isset(theme_config('footer.social.links')[0]))
-        <div class="footer--top">
-            <div class="container-fluid">
-                <div class="row justify-content-around">
-                    @if(!theme_config('footer.logo.hidden'))
-                        <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
-                            <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
-                        </div>
-                    @endif
+        <div class="container-fluid">
+            <h1>Two grids demo</h1>
 
-                    @if(theme_config('footer.title') || theme_config('footer.description'))
-                        <div class="col-xl-4 col-md-6 mt-3">
-                            <div class="footer--propos">
-                                <h3>{{theme_config('footer.title')}}</h3>
-                                <p>{{ theme_config('footer.description') }}</p>
-                            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="sidebar">
+                        <!-- will size to match content -->
+                        <div class="grid-stack-item ui-draggable" gs-x="2" gs-y="0" gs-w="1" gs-h="1">
+                            <div class="grid-stack-item-content" draggable="true">Drag me</div>
                         </div>
-                    @endif
-                    <div class="col-xl-3 col-md-6 mt-3">
-                        @if(!theme_config('footer.liens.hidden'))
-                            <div class="footer--liens">
-                                <h3>{{ theme_config('footer.liens.title') }}</h3>
-                                <ul class="navbar-nav">
-                                    @foreach(theme_config('footer.liens.links') ?? [] as $link )
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ $link['url'] }}" title="{{$link['name']}}">
-                                                {{ $link['name'] }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        @if(!empty(theme_config('footer.download.link.url')) && !theme_config('footer.download.hidden'))
-                            <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
-                                <a class="btn btn-download" href="/{{theme_config('footer.download.link.url')}}"
-                                   title="{{theme_config('footer.download.link.name')}}">
-                                    {{theme_config('footer.download.link.name')}}
-                                </a>
-                            </div>
-                        @endif
+                        <!-- manually force a drop size of 2x1 -->
+                        <div class="grid-stack-item ui-draggable" gs-w="2" gs-h="1" gs-max-w="3">
+                            <div class="grid-stack-item-content" draggable="true">2x1, max=3</div>
+                        </div>
                     </div>
                 </div>
-                @if(theme_config('footer.social.links') && isset(theme_config('footer.social.links')[0]))
-                    <div class="container footer--links mt-3">
-                        <div class="row">
-                            <div class="col-md-12 justify-content-center align-items-center d-flex">
-                                @foreach(theme_config('footer.social.links') ?? [] as $link )
-                                    <div class="footer--links-item">
-                                        <a target="_blank" href="{{$link['url']}}" title="{{ $link['name'] }}">
-                                            {!! $link['icon'] !!}
+                <div class="col-md-9">
+                    <div class="trash ui-droppable">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px">
+                <div class="col-md-6">
+                    <a onclick="toggleFloat(this, 0)" class="btn btn-primary" href="#">float: false</a>
+                    <a onclick="compact(0)" class="btn btn-primary" href="#">Compact</a>
+                    <div class="grid-stack grid-stack-6 grid-stack-animate ui-droppable"
+                         gs-current-row="4" style="height: 280px;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a onclick="toggleFloat(this, 1)" class="btn btn-primary" href="#">float: true</a>
+                    <a onclick="compact(1)" class="btn btn-primary" href="#">Compact</a>
+                    <div class="grid-stack grid-stack-6 grid-stack-animate ui-droppable"
+                         gs-current-row="6" style="height: 420px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            @if(theme_config('footer.logo.hidden') !== 'on' || theme_config('footer.liens.hidden') !== 'on' || theme_config('footer.download.hidden') !== 'on' || isset(theme_config('footer.social.links')[0]))
+                <div class="footer--top">
+                    <div class="container-fluid">
+                        <div class="row justify-content-around">
+                            @if(!theme_config('footer.logo.hidden'))
+                                <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
+                                    <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
+                                </div>
+                            @endif
+
+                            @if(theme_config('footer.title') || theme_config('footer.description'))
+                                <div class="col-xl-4 col-md-6 mt-3">
+                                    <div class="footer--propos">
+                                        <h3>{{theme_config('footer.title')}}</h3>
+                                        <p>{{ theme_config('footer.description') }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                            <div class="col-xl-3 col-md-6 mt-3">
+                                @if(!theme_config('footer.liens.hidden'))
+                                    <div class="footer--liens">
+                                        <h3>{{ theme_config('footer.liens.title') }}</h3>
+                                        <ul class="navbar-nav">
+                                            @foreach(theme_config('footer.liens.links') ?? [] as $link )
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ $link['url'] }}"
+                                                       title="{{$link['name']}}">
+                                                        {{ $link['name'] }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if(!empty(theme_config('footer.download.link.url')) && !theme_config('footer.download.hidden'))
+                                    <div class="btn-wrapper-footer d-flex align-items-center justify-content-center">
+                                        <a class="btn btn-download" href="/{{theme_config('footer.download.link.url')}}"
+                                           title="{{theme_config('footer.download.link.name')}}">
+                                            {{theme_config('footer.download.link.name')}}
                                         </a>
                                     </div>
-                                @endforeach
+                                @endif
                             </div>
                         </div>
-                    </div>
-                @endif
-            </div>
-        </div>
-    @endif
-    <div class="container-fluid px-0 footer--bottom">
-        <div class="row no-gutters">
-            <div class="col-md-12">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <div class="footer--copyright">
-                                <div class="container">
-                                    {{ setting('copyright') }} | @lang('messages.copyright') | Thème réalisé par
-                                    <a href="https://discord.gg/QF2AtgHJXY" target="_blank"
-                                       rel="noopener noreferrer">Linedev</a>
+                        @if(theme_config('footer.social.links') && isset(theme_config('footer.social.links')[0]))
+                            <div class="container footer--links mt-3">
+                                <div class="row">
+                                    <div class="col-md-12 justify-content-center align-items-center d-flex">
+                                        @foreach(theme_config('footer.social.links') ?? [] as $link )
+                                            <div class="footer--links-item">
+                                                <a target="_blank" href="{{$link['url']}}" title="{{ $link['name'] }}">
+                                                    {!! $link['icon'] !!}
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        @if(theme_config('footer.conditions.links') && isset(theme_config('footer.conditions.links')[0]))
-                            <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
-                                @foreach(theme_config('footer.conditions.links') ?? [] as $link )
-                                    <a href="/{{$link['url']}}" target="_blank"
-                                       title="{{$link['name']}}">
-                                        {{$link['name']}}
-                                    </a>
-                                @endforeach
                             </div>
                         @endif
                     </div>
                 </div>
+            @endif
+            <div class="container-fluid px-0 footer--bottom">
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="footer--copyright">
+                                        <div class="container">
+                                            {{ setting('copyright') }} | @lang('messages.copyright') | Thème réalisé par
+                                            <a href="https://discord.gg/QF2AtgHJXY" target="_blank"
+                                               rel="noopener noreferrer">Linedev</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @if(theme_config('footer.conditions.links') && isset(theme_config('footer.conditions.links')[0]))
+                                    <div class="col-md-2 mt-md-0 mt-3 text-md-right text-center footer--legal">
+                                        @foreach(theme_config('footer.conditions.links') ?? [] as $link )
+                                            <a href="/{{$link['url']}}" target="_blank"
+                                               title="{{$link['name']}}">
+                                                {{$link['name']}}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</footer>
-@if(!theme_config('header.preloader.hidden'))
-    <div id="preloader">
-        <img src="{{ site_logo() }}" alt="{{ route('home') }}">
-        <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-@endif
-@auth()
-    @if(auth()->user()->isAdmin())
-        <script defer>
-            window.addEventListener("DOMContentLoaded", (event) => {
-                if ($('.btn-picto-color').length > 0) {
-                    $('.btn-picto-color').on('click', function () {
-                        $(this).toggleClass('active')
-                        $('#change--color').toggleClass('active')
-                        $('.box--alert').removeClass('active')
+        </footer>
+        @if(!theme_config('header.preloader.hidden'))
+            <div id="preloader">
+                <img src="{{ site_logo() }}" alt="{{ route('home') }}">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        @endif
+        @auth()
+            @if(auth()->user()->isAdmin())
+                <script defer>
+                    window.addEventListener("DOMContentLoaded", (event) => {
+                        if ($('.btn-picto-color').length > 0) {
+                            $('.btn-picto-color').on('click', function () {
+                                $(this).toggleClass('active')
+                                $('#change--color').toggleClass('active')
+                                $('.box--alert').removeClass('active')
+                            })
+                            $('#change--color #close').on('click', function () {
+                                $('.btn-picto-color').toggleClass('active')
+                                $('#change--color').toggleClass('active')
+                                $('.box--alert').removeClass('active')
+                            })
+                            $('#setting-alert').on('click', function () {
+                                $('.box--alert').toggleClass('active')
+                            })
+                        }
                     })
-                    $('#change--color #close').on('click', function () {
-                        $('.btn-picto-color').toggleClass('active')
-                        $('#change--color').toggleClass('active')
-                        $('.box--alert').removeClass('active')
-                    })
-                    $('#setting-alert').on('click', function () {
-                        $('.box--alert').toggleClass('active')
-                    })
-                }
-            })
-        </script>
-        <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
-        <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
-        <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
-        @include('layouts.change-color')
-
-    @endif
-@endauth
-@stack('footer-scripts')
-@if(preg_match('~MSIE|Internet Explorer~i', request()->userAgent()) || (strpos(request()->userAgent(), 'Trident/7.0; rv:11.0') !== false))
-    <div id="outdated">
-        <span><span><i class="fas fa-ghost"></i></span></span>
-        <h6>Error: Your browser is out-of-date!</h6>
-        <p>Update your browser to view this website correctly.</p>
-        <a id="btnUpdateBrowser" href="https://www.mozilla.org/fr/firefox/new/"> Outdated Browser </a>
-    </div>
+                </script>
+                <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
+                <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
+                <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
+                @include('layouts.change-color')
+                <script src="{{theme_asset('js/gridstack.js')}}" defer></script>
+                <script src="{{theme_asset('js/config.js')}}" defer></script>
+            @endif
+        @endauth
+        @stack('footer-scripts')
+        @if(preg_match('~MSIE|Internet Explorer~i', request()->userAgent()) || (strpos(request()->userAgent(), 'Trident/7.0; rv:11.0') !== false))
+            <div id="outdated">
+                <span><span><i class="fas fa-ghost"></i></span></span>
+                <h6>Error: Your browser is out-of-date!</h6>
+                <p>Update your browser to view this website correctly.</p>
+                <a id="btnUpdateBrowser" href="https://www.mozilla.org/fr/firefox/new/"> Outdated Browser </a>
+            </div>
 @endif
 </body>
 </html>

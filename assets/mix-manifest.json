@@ -4,6 +4,8 @@
     "/js/change-color.js": "/js/change-color.js",
     "/js/colors.js": "/js/colors.js",
     "/js/page.js": "/js/page.js",
+    "/js/gridstack.js": "/js/gridstack.js",
+    "/js/config.js": "/js/config.js",
     "/css/styles.css": "/css/styles.css",
     "/css/tinymce.css": "/css/tinymce.css",
     "/css/admin.css": "/css/admin.css",
@@ -17,5 +19,9 @@
     "/js/clipboard.min.js": "/js/clipboard.min.js",
     "/js/sweetalert2.all.min.js": "/js/sweetalert2.all.min.js",
     "/css/sweetalert2.min.css": "/css/sweetalert2.min.css",
-    "/js/particles.js": "/js/particles.js"
+    "/js/particles.js": "/js/particles.js",
+    "/css/gridstack.min.css": "/css/gridstack.min.css",
+    "/js/gridstack-h5.js": "/js/gridstack-h5.js",
+    "/js/gridstack-jq.js": "/js/gridstack-jq.js",
+    "/js/gridstack-static.js": "/js/gridstack-static.js"
 }

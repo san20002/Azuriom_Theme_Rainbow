@@ -346,6 +346,9 @@
         }
     },
     "header": {
+        "preloader": {
+            "hidden": "on"
+        },
         "iconmenus": [
             {
                 "url": null,
