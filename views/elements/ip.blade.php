@@ -1,6 +1,6 @@
 <div id="serveur--ip">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-3">
             <div class="col-lg-4 col-md-6 mb-3">
                 @if(!theme_config('home.items.ip-server.hidden'))
                     <div class="countConnectServer justify-content-center justify-content-md-end" id="server-ip-copy"
