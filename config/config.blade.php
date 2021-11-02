@@ -180,6 +180,8 @@
 
 		    $menus =  $baseMenu + $pluginMenu;
 
+            $themes = ['general','smoke'];
+
 
             $articles = \Azuriom\Models\Post::all();
             $pages = \Azuriom\Models\Page::all();

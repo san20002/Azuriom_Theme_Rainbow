@@ -57,6 +57,16 @@
 </div>
 <div class="card-body">
     <fieldset class="mt-4">
+        <legend>{{ trans('theme::lang.general.style.title') }}</legend>
+        <select name="header[style]" id="select-style" class="form-control">
+            @foreach($themes as $key => $value)
+                <option value="{{ $value }}"
+                        @if(theme_config('header.style') === $value) selected @endif>{{ $value }}</option>
+            @endforeach
+        </select>
+    </fieldset>
+    <hr class="my-3 sidebar-divider">
+    <fieldset class="mt-4">
         <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
         <div class="pl-3">
             <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
