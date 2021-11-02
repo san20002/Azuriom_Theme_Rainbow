@@ -53,7 +53,6 @@
 <div class="card-header">
     <h3 class="m-0 font-weight-bold text-primary">{{ trans('theme::lang.home.title') }}</h3>
 </div>
-{!! trans('theme::lang.config.info-eye') !!}
 @php
     $homeItemsIpServer = [
                     'url'=>route('home'),
@@ -98,6 +97,7 @@
     $homeBannerLogin = ['url'=>route('home'),'key'=>'home', 'value' => 'login'];
 @endphp
 <div class="card-body">
+    {!! trans('theme::lang.config.info-eye') !!}
     <fieldset class="form-group">
         <legend>{{trans('theme::lang.home.slider.title')}}</legend>
         <div class="small font-italic mb-2">{!! trans('theme::lang.home.slider.info')!!}</div>

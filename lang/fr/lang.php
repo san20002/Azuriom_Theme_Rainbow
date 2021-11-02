@@ -621,6 +621,22 @@ return [
             ],
         ]
     ],
+
+    'staff' => [
+        'title' => 'Plugin Staff',
+        'banner' => [
+            'staff' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière Staff',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'staff' => [
+                'title' => 'Interface Staff',
+            ],
+        ]
+    ],
     'vote' => [
         'title' => 'Plugin Vote',
         'banner' => [

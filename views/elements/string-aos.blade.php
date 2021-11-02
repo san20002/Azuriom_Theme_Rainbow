@@ -5,7 +5,7 @@
     @if(theme_config($pageAos.'.items.'.$itemAos.'.aos.easing'))
         data-aos-easing='{{theme_config($pageAos.'.items.'.$itemAos.'.aos.easing')}}'
     @endif
-    @if(theme_config($pageAos.'.items.'.$itemAos.'.aos.duration') && isset($noDuration))
+    @if(theme_config($pageAos.'.items.'.$itemAos.'.aos.duration') || isset($noDuration))
         data-aos-duration='{{theme_config($pageAos.'.items.'.$itemAos.'.aos.duration')}}'
     @endif
     @if(theme_config($pageAos.'.items.'.$itemAos.'.aos.placement'))

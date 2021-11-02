@@ -87,6 +87,10 @@
                 <li class="nav-item dropdown dropdown-user">
                     <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false" v-pre>
+                        @if(game()->name() === 'Minecraft')
+                            <img src="{{ Auth::user()->getAvatar(32) }}" class="rounded img-fluid"
+                                 alt="{{ Auth::user()->name }}">
+                        @endif
                         {{ Auth::user()->name }}
                     </a>
 

@@ -149,6 +149,10 @@
                 <h1>{{theme_config($banner.'.banner.'.$value.'.title') ?? trans('skin-api::messages.change')}}</h1>
             @endif
 
+            @if($banner === "staff" && $value === "staff")
+                <h1>{{theme_config($banner.'.banner.'.$value.'.title') ?? trans('staff::messages.title')}}</h1>
+            @endif
+
             @if($banner === "advancedBan" && $value === "advancedBan")
                 <div class="col">
                     <h1>{{theme_config($banner.'.banner.'.$value.'.title') ?? trans('advancedban::messages.title')}}</h1>

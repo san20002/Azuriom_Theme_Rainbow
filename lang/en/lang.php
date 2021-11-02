@@ -621,6 +621,22 @@ return [
             ],
         ]
     ],
+
+    'staff' => [
+        'title' => 'Plugin Staff',
+        'banner' => [
+            'staff' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner Staff',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'staff' => [
+                'title' => 'Interface Staff',
+            ],
+        ]
+    ],
     'vote' => [
         'title' => 'Plugin Vote',
         'banner' => [
