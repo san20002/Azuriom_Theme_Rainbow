@@ -8,7 +8,15 @@
                                                 'url' => route('shop.home'),
                                                 'col' => 'col-md-6',
                                                 'arrayBanner'=>['key'=>'shop', 'value' => 'shop'],
-                                                'arrayItems' => ['key'=>'shop', 'value' => 'shop']
+                                                'arrayItems' => ['key'=>'shop', 'value' => 'shop',
+                                                'filedsBuilder' => [
+                                                        ['type'=>'select','value' => 'style','option' => [
+                                                            0 => 'Style N°1',
+                                                            1 => 'Style N°2',
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ]
                                                 ])
         @include('admin.pattern.builder-items',[
                                                 'url' => route('shop.home'),

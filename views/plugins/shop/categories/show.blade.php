@@ -24,11 +24,14 @@
 
 @section('content')
     <div class="container content" id="shops">
-        <div class="row">
+        <div class="row
+        @if(theme_config('shop.items.shop.style') == 0 || !theme_config('shop.items.shop.style'))
+            @elseif(theme_config('shop.items.shop.style') == 1)
+            flex-row-reverse
+            @endif
+            ">
             <div class="col-lg-9">
-
                 @include('elements.banner', ['banner' => 'shop', 'value' => 'shop'])
-
                 <div class="row">
                     @forelse($category->packages as $package)
                         <div class="col-md-4 mb-4"

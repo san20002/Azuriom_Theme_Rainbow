@@ -67,7 +67,7 @@
     <link href="{{ theme_asset('css/glide.core.min.css') }}" rel="stylesheet">
     <link href="{{ theme_asset('css/aos.css') }}" rel="stylesheet">
     @include('layouts.root')
-    <link href="{{ theme_asset('css/style-'.(theme_config('header.style') ?? 'general').'.css') }}" rel="stylesheet">
+    <link href="{{ theme_asset('css/style-'.(theme_config('header.style') ?? 'style-1').'.css') }}" rel="stylesheet">
     @auth()
         @if(auth()->user()->isAdmin())
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">

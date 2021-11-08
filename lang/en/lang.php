@@ -26,6 +26,7 @@ return [
     'offset' => 'Offset',
     'placement' => 'Placement',
     'link' => 'Link',
+    'styles' => 'Styles',
     'fontawesome' => 'To get the icons please use the',
     'plugin' => [
         'requires' => 'Requires this plugin'

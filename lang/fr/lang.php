@@ -25,6 +25,7 @@ return [
     'offset' => 'Décalage',
     'placement' => 'Placement',
     'fontawesome' => 'Pour obtenir les icones veuillez utiliser les classes de',
+    'styles' => 'Styles',
     'plugin' => [
         'requires' => 'Nécessite ce plugin'
     ],

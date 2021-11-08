@@ -64,6 +64,19 @@
                             </label>
                         </div>
                     @endif
+                    @if($field['type'] === 'select')
+                            <div class="my-2">
+                                <label class="mb-1  mt-2"
+                                       for="select-{{$key}}-{{$value}}-{{$field['value']}}">{{ trans('theme::lang.styles') }}</label>
+                                <select name="{{$key}}[items][{{$value}}][{{$field['value']}}]"
+                                        id="select-{{$key}}-{{$value}}-{{$field['value']}}" class="form-control">
+                                    @foreach($field['option'] as $k => $v)
+                                        <option value="{{ $k }}"
+                                                @if(theme_config($key.'.items.'.$value.'.'.$field['value']) == $k) selected @endif>{{ $v }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    @endif
                 @endforeach
             @endif
             @include('admin.pattern.items-aos',['key'=> $key, 'value' => $value])

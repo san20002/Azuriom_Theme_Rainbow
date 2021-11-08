@@ -9,7 +9,7 @@
 
         <div class="row mt-5" @include('elements.string-aos', ['pageAos' => 'wiki', 'itemAos'=>'wiki'])>
             @foreach($categories as $category)
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <a href="{{ route('wiki.show', $category) }}">
                         <div class="card text-center">
                             <div class="card-body">

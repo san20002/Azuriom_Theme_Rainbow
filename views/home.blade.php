@@ -106,19 +106,28 @@
                 @endguest
                 @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
                 @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
-                    <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
-                       <div class="rainbow-widget rainbow-block" data-widget="rainbow_discord_widget">
-
-                            <div class="rainbow-content">
-                                <div class="rainbow-usersDiscord"></div>
-                                <div class="rainbow-discordInfo">
-                                    <span class="rainbow-js--discordCount"></span>
-                                    <a href="https://discord.gg/nscTYTQsdJ" target="_blank"
-                                       class="btn btn-joinDiscord">Rejoindre</a>
+                    @if(theme_config('home.items.discord.style') == 0 || !theme_config('home.items.discord.style'))
+                    <iframe
+                        src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
+                        width="350"
+                        height="500" allowtransparency="true" frameborder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    @endif
+                    @if(theme_config('home.items.discord.style') == 1)
+                        <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
+                            <div class="rainbow-widget rainbow-block" data-widget="rainbow_discord_widget">
+                                <div class="rainbow-content">
+                                    <div class="rainbow-usersDiscord"></div>
+                                    <div class="rainbow-discordInfo">
+                                        <span class="rainbow-js--discordCount"></span>
+                                        <a href="https://discord.gg/nscTYTQsdJ" target="_blank"
+                                           class="btn btn-joinDiscord">Rejoindre</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+
                 @endif
             </div>
         </div>

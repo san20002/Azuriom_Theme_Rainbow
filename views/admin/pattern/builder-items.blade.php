@@ -1,5 +1,5 @@
-<div class="{{$col ?? 'col-xl-4 col-lg-6'}} js-detect-col js-detect-order mb-4" data-builder-order="" data-builder-collg="">
-    <div class="border border-secondary rounded">
+<div class="{{$col ?? 'col-xl-4 col-lg-6'}} js-detect-col js-detect-order h-auto mb-4" data-builder-order="" data-builder-collg="">
+    <div class="border border-secondary rounded h-100">
         <div class="row d-none">
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInputGroup">Ordre</label>
