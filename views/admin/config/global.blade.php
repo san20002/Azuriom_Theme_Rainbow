@@ -57,7 +57,7 @@
 </div>
 <div class="card-body">
     <fieldset class="mt-4">
-        <legend>{{ trans('theme::lang.general.style.title') }}</legend>
+        <legend>{{ trans('theme::lang.general.style') }}</legend>
         <select name="header[style]" id="select-style" class="form-control">
             @foreach($themes as $key => $value)
                 <option value="{{ $key }}"

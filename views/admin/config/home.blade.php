@@ -88,12 +88,13 @@
                             'value' => 'discord',
                             'filedsBuilder' => [
 								['type'=>'input','value' => 'id'],
-                                ['type'=>'checkbox','value' => 'hidden'],
+								['type'=>'input','value' => 'url'],
                                 ['type'=>'select','value' => 'style','option' => [
                                     0 => 'Style N°1',
                                     1 => 'Style N°2',
                                     ]
                                 ],
+                                ['type'=>'checkbox','value' => 'hidden'],
                             ]
                         ];
     $homeItemsArticle = ['url'=>route('home'),'key'=> 'home','value' => 'article',];

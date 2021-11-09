@@ -212,48 +212,48 @@
                         $('.box--alert').toggleClass('active')
                     })
                 }
-
-                // COMPTEUR DISCORD
-                var discord_key = "{{theme_config('home.items.discord.id')}}";
-                if($('.rainbow--js-discordCount').length && discord_key.length) {
-                    // Si erreur
-                    window.onerror = function(msg, url, ln) {
-                        return (msg==="Impossible de trouver la classe du compteur discord.");
-                    };
-
-                    // Affiche du compte
-                    $.get('https://discordapp.com/api/guilds/'+discord_key+'/embed.json', function(d){
-                        $('.rainbow--js-discordCount').html(d.presence_count + " en ligne");
-                    });
-                }
-
-                // WIDGET DISCORD
-                if ($('.rainbow-js--discordCount').length && discord_key.length) {
-                    window.onerror = function(msg, url, ln) {
-                        return (msg==="Impossible de trouver la classe.");
-                    };
-                    $.get('https://discordapp.com/api/guilds/'+discord_key+'/embed.json', function(d){
-                        $('.rainbow-js--discordCount').html(d.presence_count + " en ligne");
-                        d.members.forEach(function(mem) {
-                            $('.rainbow-widget[data-widget="rainbow_discord_widget"] .rainbow-content .rainbow-usersDiscord').append(`
-                        <div class="rainbow-discordUser">
-                            <div class="rainbow-userImg" style="background-image:url(${mem.avatar_url})">
-                                <div class="rainbow-userStatus rainbow-status-${mem.status}"></div>
-                            </div>
-                            <div class="rainbow-username">${mem.username}</div>
-                        </div>`);
-                        });
-                    });
-                }
             })
         </script>
         <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
         @include('layouts.change-color')
-
     @endif
 @endauth
+<script defer>
+    // COMPTEUR DISCORD
+    var discord_key = "{{theme_config('home.items.discord.id')}}";
+    if ($('.rainbow--js-discordCount').length && discord_key.length) {
+        // Si erreur
+        window.onerror = function (msg, url, ln) {
+            return (msg === "Impossible de trouver la classe du compteur discord.");
+        };
+
+        // Affiche du compte
+        $.get('https://discordapp.com/api/guilds/' + discord_key + '/embed.json', function (d) {
+            $('.rainbow--js-discordCount').html(d.presence_count + " en ligne");
+        });
+    }
+
+    // WIDGET DISCORD
+    if ($('.rainbow-js--discordCount').length && discord_key.length) {
+        window.onerror = function (msg, url, ln) {
+            return (msg === "Impossible de trouver la classe.");
+        };
+        $.get('https://discordapp.com/api/guilds/' + discord_key + '/embed.json', function (d) {
+            $('.rainbow-js--discordCount').html(d.presence_count + " en ligne");
+            d.members.forEach(function (mem) {
+                $('.rainbow-widget[data-widget="rainbow_discord_widget"] .rainbow-content .rainbow-usersDiscord').append(`
+                        <div class="rainbow-discordUser">
+                            <div class="rainbow-userImg" style="background-image:url(${mem.avatar_url})">
+                                <div class="rainbow-userStatus rainbow-status-${mem.status}"></div>
+                            </div>
+                            <div class="rainbow-username">${mem.username}</div>
+                        </div>`);
+            });
+        });
+    }
+</script>
 @stack('footer-scripts')
 @if(preg_match('~MSIE|Internet Explorer~i', request()->userAgent()) || (strpos(request()->userAgent(), 'Trident/7.0; rv:11.0') !== false))
     <div id="outdated">

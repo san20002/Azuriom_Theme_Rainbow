@@ -29,6 +29,9 @@ return [
     'plugin' => [
         'requires' => 'Nécessite ce plugin'
     ],
+    'general' => [
+        'style' => 'Style global du thème'
+    ],
     'advancedBan' => [
         'title' => 'Plugin AdvancedBan',
         'banner' => [
@@ -286,10 +289,12 @@ return [
                         ',
                 'label' => [
                     'id' => 'ID du serveur Discord',
+                    'url' => 'Lien d\'invitation',
                     'hidden' => 'Ne pas afficher',
                 ],
                 'placeholder' => [
                     'id' => '684097488164225073',
+                    'url' => 'https://discord.com/invite/wmYrG2c',
                 ],
             ]
         ],

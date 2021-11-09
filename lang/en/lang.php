@@ -31,6 +31,9 @@ return [
     'plugin' => [
         'requires' => 'Requires this plugin'
     ],
+    'general' => [
+        'style' => 'Overall style of the theme'
+    ],
     'advancedBan' => [
         'title' => 'Plugin AdvancedBan',
         'banner' => [
@@ -286,10 +289,12 @@ return [
                         <span>How to find your <a href="https://support.discord.com/hc/fr/articles/206346498-O%C3%B9-trouver-l-ID-de-mon-compte-utilisateur-serveur-message-" target="_blank" title="ID discord">ID SERVEUR DISCORD</a></span>',
                 'label' => [
                     'id' => 'Discord server ID',
+                    'url' => 'Invitation link',
                     'hidden' => 'Do not display',
                 ],
                 'placeholder' => [
                     'id' => '684097488164225073',
+                    'url' => 'https://discord.com/invite/wmYrG2c',
                 ],
 
             ]
