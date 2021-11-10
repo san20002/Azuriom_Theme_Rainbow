@@ -16,7 +16,7 @@
         class="navbar-collapse collapsed d-xl-block d-flex flex-xl-row flex-column-reverse justify-content-end align-items-start"
         id="navbar-collapse-x">
         <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav mx-xl-auto ml-0 overflow-auto w-100">
+        <ul class="navbar-nav navbar-menu mx-xl-auto ml-0 w-100">
             @foreach($navbar as $element)
                 @if(!$element->isDropdown())
                     <li class="nav-item @if($element->isCurrent()) active @endif">
@@ -94,7 +94,7 @@
                         {{ Auth::user()->name }}
                     </a>
 
-                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="{{ route('profile.index') }}">
                             {{ trans('messages.nav.profile') }}
                         </a>
