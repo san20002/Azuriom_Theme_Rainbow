@@ -16,7 +16,7 @@
         class="navbar-collapse collapsed d-xl-block d-flex flex-xl-row flex-column-reverse justify-content-end align-items-start"
         id="navbar-collapse-x">
         <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav mx-xl-auto ml-0">
+        <ul class="navbar-nav mx-xl-auto ml-0 overflow-auto w-100">
             @foreach($navbar as $element)
                 @if(!$element->isDropdown())
                     <li class="nav-item @if($element->isCurrent()) active @endif">
@@ -67,7 +67,7 @@
         </ul>
 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-xl-auto ml-0 flex-row-reverse">
+        <ul class="navbar-nav ml-xl-auto ml-0 flex-row">
 
             <!-- Authentication Links -->
             <!-- Authentication Links -->

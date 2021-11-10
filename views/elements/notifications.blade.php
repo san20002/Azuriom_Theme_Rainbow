@@ -14,7 +14,7 @@
         @if(! $notifications->isEmpty())
             <div id="notifications">
                 @foreach($notifications as $notification)
-                    <a href="#" class="dropdown-item media align-items-center">
+                    <a href="#" class="dropdown-item d-flex media align-items-center">
                         <div class="mr-3">
                             <div class="rounded-circle text-white p-1 bg-{{ $notification->level }}">
                                 <i class="fas fa-{{ $notification->icon() }} fa-fw m-2"></i>
