@@ -140,5 +140,6 @@
         @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerArticle, 'arrayItems' => $homeItemsArticle])
         @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerInformation, 'arrayItems' => $homeItemsDiscord])
         @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerLogin])
+
     </div>
 </div>

@@ -73,5 +73,16 @@
             @endif
         @endif
 
+        @if(isset($arrayWidgetBanner) && $arrayWidgetBanner)
+            <div class="col-auto">
+                @include('admin.pattern.banner',$arrayWidgetBanner)
+            </div>
+        @endif
+        @if(isset($arrayWidget) && $arrayWidget)
+            <div class="col-auto">
+                @include('admin.pattern.widget',$arrayWidget)
+            </div>
+        @endif
+
     </div>
 </div>

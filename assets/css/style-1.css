@@ -10303,6 +10303,9 @@ h3 {
   left: 0;
   transition: left 300ms ease-in-out;
 }
+.header .notifications-dropdown .dropdown-header {
+  color: var(--color-contrast-higher);
+}
 .header .navbar-toggler {
   color: var(--color-contrast-higher);
   border: none;
@@ -10497,12 +10500,6 @@ h3 {
 .footer {
   margin-top: 8rem;
 }
-.footer a {
-  color: var(--color-contrast-high);
-}
-.footer a:focus, .footer a:hover {
-  color: var(--color-contrast-higher);
-}
 .footer--logo {
   max-width: 300px;
   max-height: 170px;
@@ -10597,7 +10594,7 @@ a {
   transition: color 0.3s linear;
 }
 a:hover {
-  color: var(--color-contrast-high);
+  color: var(--color-primary);
 }
 
 table,
@@ -11634,6 +11631,7 @@ body {
 [data-widget=rainbow_discord_widget] .btn-joinDiscord {
   padding: 3px 10px;
   font-size: 13px;
+  color: var(--color-contrast-higher);
   background-color: var(--color-primary);
 }
 
