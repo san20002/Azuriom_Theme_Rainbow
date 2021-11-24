@@ -15,6 +15,7 @@ return [
     'profile' => ['nullable', 'array'],
     'project' => ['nullable', 'array'],
     'shop' => ['nullable', 'array'],
+    'staff' => ['nullable', 'array'],
     'skinApi' => ['nullable', 'array'],
     'support' => ['nullable', 'array'],
     'sliders' => ['nullable', 'array'],
