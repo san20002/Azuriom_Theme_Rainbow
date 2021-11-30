@@ -11,30 +11,30 @@
     @endif
     <div class="card-header d-flex align-items-center justify-content-between">
         <input
-            class="btn btn-link d-none {{theme_config($key.'.banner.'.$value.'.chevron')?"collapsed":""}}"
-            {{theme_config($key.'.banner.'.$value.'.chevron')?"checked":""}}
+            class="btn btn-link d-none {{theme_config('widget.'.$key.'.banner.'.$value.'.chevron')?"collapsed":""}}"
+            {{theme_config('widget.'.$key.'.banner.'.$value.'.chevron')?"checked":""}}
             type="checkbox"
-            name="{{$key}}[banner][{{$value}}][chevron]"
+            name="widget[{{$key}}][banner][{{$value}}][chevron]"
             data-toggle="collapse"
-            data-target="#collapse-{{$key}}-{{$value}}-{{$counterPartial}}"
-            aria-expanded="{{theme_config($key.'.banner.'.$value.'.chevron')?"true":"false"}}"
-            aria-controls="collapse-{{$key}}-{{$value}}-{{$counterPartial}}"
-            id="checkbox-{{$key}}-{{$value}}-{{$counterPartial}}">
-        <label for="checkbox-{{$key}}-{{$value}}-{{$counterPartial}}"
+            data-target="#collapse-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
+            aria-expanded="{{theme_config('widget.'.$key.'.banner.'.$value.'.chevron')?"true":"false"}}"
+            aria-controls="collapse-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
+            id="checkbox-widget-{{$key}}-{{$value}}-{{$counterPartial}}">
+        <label for="checkbox-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
                class="px-2 d-flex align-content-center justify-content-between w-100" style="cursor: pointer">
             <h4 class="card-title mb-0">
-                {{trans('theme::lang.'.$key.'.banner.'.$value.'.title')}}
+                {{trans('theme::lang.widget.'.$key.'.banner.'.$value.'.title')}}
             </h4>
             <i class="fas fa-chevron-down" style="padding: 6px"></i>
         </label>
     </div>
 
-    <div class="collapse {{theme_config($key.'.banner.'.$value.'.chevron')?"show":""}}"
-         id="collapse-{{$key}}-{{$value}}-{{$counterPartial}}">
+    <div class="collapse {{theme_config('widget.'.$key.'.banner.'.$value.'.chevron')?"show":""}}"
+         id="collapse-widget-{{$key}}-{{$value}}-{{$counterPartial}}">
         <div class="card-body">
-            <div class="small font-italic mb-2">{!! trans('theme::lang.'.$key.'.banner.'.$value.'.info')!!}</div>
+            <div class="small font-italic mb-2">{!! trans('theme::lang.widget.'.$key.'.banner.'.$value.'.info')!!}</div>
             <label
-                for="selectImage-{{$key}}-{{$value}}-{{$counterPartial}}">{{ trans('theme::lang.image') }}</label>
+                for="selectImage-widget-{{$key}}-{{$value}}-{{$counterPartial}}">{{ trans('theme::lang.image') }}</label>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <a class="btn btn-outline-success"
@@ -43,31 +43,31 @@
                             class="fas fa-upload"></i></a>
                 </div>
                 <select class="custom-select"
-                        id="selectImage-{{$key}}-{{$value}}-{{$counterPartial}}"
-                        name="{{$key}}[banner][{{$value}}][image]"
-                        data-image-preview-select="filePreview-{{$key}}-{{$value}}-{{$counterPartial}}">
+                        id="selectImage-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
+                        name="widget[{{$key}}][banner][{{$value}}][image]"
+                        data-image-preview-select="filePreview-widget-{{$key}}-{{$value}}-{{$counterPartial}}">
                     <option value="">none</option>
                     @foreach($allImagesStokage as $image)
                         <option value="{{ $image->file }}"
-                                @if(theme_config($key.'.banner.'.$value.'.image') === $image->file) selected @endif>{{ $image->name }}</option>
+                                @if(theme_config('widget.'.$key.'.banner.'.$value.'.image') === $image->file) selected @endif>{{ $image->name }}</option>
                     @endforeach
                 </select>
                 <div class="mt-3 w-100">
                     <img
-                        src="{{ theme_config($key.'.banner.'.$value.'.image') ? image_url( old($key.'[banner]['.$value.'][image]', theme_config($key.'.banner.'.$value.'.image')) ): ''}}"
-                        alt="{{ old($key.'[banner]['.$value.'][image]', theme_config($key.'.banner.'.$value.'.image')) }}"
-                        class="card-img rounded img-preview-sm @if(!theme_config($key.'.banner.'.$value.'.image'))d-none @endif"
-                        id="filePreview-{{$key}}-{{$value}}-{{$counterPartial}}"
+                        src="{{ theme_config('widget.'.$key.'.banner.'.$value.'.image') ? image_url( old('widget['.$key.'][banner]['.$value.'][image]', theme_config('widget.'.$key.'.banner.'.$value.'.image')) ): ''}}"
+                        alt="{{ old('widget['.$key.'][banner]['.$value.'][image]', theme_config('widget.'.$key.'.banner.'.$value.'.image')) }}"
+                        class="card-img rounded img-preview-sm @if(!theme_config('widget.'.$key.'.banner.'.$value.'.image'))d-none @endif"
+                        id="filePreview-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
                         style="object-fit: contain;max-height: 90px">
                 </div>
             </div>
             <label
-                for="title-{{$key}}-{{$value}}-{{$counterPartial}}">{{ trans('theme::lang.title') }}</label>
+                for="title-widget-{{$key}}-{{$value}}-{{$counterPartial}}">{{ trans('theme::lang.title') }}</label>
             <input type="text"
                    class="form-control @error($key.'[banner]['.$value.'][title]') is-invalid @enderror"
-                   id="title-{{$key}}-{{$value}}-{{$counterPartial}}"
-                   name="{{$key}}[banner][{{$value}}][title]"
-                   value="{{ old($key.'[banner]['.$value.'][title]', theme_config($key.'.banner.'.$value.'.title')) }}">
+                   id="title-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
+                   name="widget[{{$key}}][banner][{{$value}}][title]"
+                   value="{{ old('widget['.$key.'][banner]['.$value.'][title]', theme_config('widget.'.$key.'.banner.'.$value.'.title')) }}">
 
             @error($key.'[banner]['.$value.'][title]')
             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -77,11 +77,11 @@
 
             <div class="custom-control custom-switch mt-2">
                 <input type="checkbox" class="custom-control-input"
-                       id="hidden-{{$key}}-{{$value}}-{{$counterPartial}}"
-                       name="{{$key}}[banner][{{$value}}][hidden]"
-                       @if(theme_config($key.'.banner.'.$value.'.hidden')) checked @endif>
-                <label class="custom-control-label" for="hidden-{{$key}}-{{$value}}-{{$counterPartial}}">
-                    {{trans('theme::lang.'.$key.'.banner.'.$value.'.hidden')}}
+                       id="hidden-widget-{{$key}}-{{$value}}-{{$counterPartial}}"
+                       name="widget[{{$key}}][banner][{{$value}}][hidden]"
+                       @if(theme_config('widget.'.$key.'.banner.'.$value.'.hidden')) checked @endif>
+                <label class="custom-control-label" for="hidden-widget-{{$key}}-{{$value}}-{{$counterPartial}}">
+                    {{trans('theme::lang.widget.'.$key.'.banner.'.$value.'.hidden')}}
                 </label>
             </div>
         </div>

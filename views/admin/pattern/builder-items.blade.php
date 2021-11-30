@@ -75,13 +75,21 @@
 
         @if(isset($arrayWidgetBanner) && $arrayWidgetBanner)
             <div class="col-auto">
-                @include('admin.pattern.banner',$arrayWidgetBanner)
+                @include('admin.pattern.widget-banner',$arrayWidgetBanner)
             </div>
         @endif
-        @if(isset($arrayWidget) && $arrayWidget)
-            <div class="col-auto">
-                @include('admin.pattern.widget',$arrayWidget)
-            </div>
+        @if(isset($arrayWidgets) && $arrayWidgets)
+            @if(array_key_exists(0,$arrayWidgets))
+                @foreach($arrayWidgets as $arrayWidget)
+                    <div class="col-auto">
+                        @include('admin.pattern.items',$arrayWidget)
+                    </div>
+                @endforeach
+            @else
+                <div class="col-auto">
+                    @include('admin.pattern.widget',$arrayWidgets)
+                </div>
+            @endif
         @endif
 
     </div>

@@ -42,12 +42,12 @@
                         <label class="mb-1  mt-2"
                                for="input-widget-{{$key}}-{{$value}}-{{$field['value']}}-{{$counterPartial}}">{{ trans('theme::lang.widget.'.$key.'.items.'.$value.'.label.'.$field['value']) }}</label>
                         <input type="text"
-                               class="form-control @error($widget.'['.$key.'][items]['.$value.']['.$field['value'].']') is-invalid @enderror"
+                               class="form-control @error('widget['.$key.'][items]['.$value.']['.$field['value'].']') is-invalid @enderror"
                                placeholder="{{ trans('theme::lang.widget.'.$key.'.items.'.$value.'.placeholder.'.$field['value']) }}"
                                id="input-widget-{{$key}}-{{$value}}-{{$field['value']}}-{{$counterPartial}}"
                                name="widget[{{$key}}][items][{{$value}}][{{$field['value']}}]"
-                               value="{{ old($widget.'['.$key.'][items]['.$value.']['.$field['value'].']', theme_config('widget.'.$key.'.items.'.$value.'.'.$field['value'])) }}">
-                        @error($widget.'['.$key.'][items]['.$value.']['.$field['value'].']')
+                               value="{{ old('widget['.$key.'][items]['.$value.']['.$field['value'].']', theme_config('widget.'.$key.'.items.'.$value.'.'.$field['value'])) }}">
+                        @error('widget['.$key.'][items]['.$value.']['.$field['value'].']')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                         @enderror
 
@@ -79,7 +79,7 @@
                     @endif
                 @endforeach
             @endif
-            @include('admin.pattern.items-aos',['key'=> $key, 'value' => $value])
+            @include('admin.pattern.widget-aos',['key'=> $key, 'value' => $value])
         </div>
     </div>
 </div>
