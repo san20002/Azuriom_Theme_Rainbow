@@ -719,6 +719,32 @@
             }
         }
     },
+    "staff": {
+        "banner": {
+            "staff": {
+                "image": null,
+                "title": null,
+                "aos": {
+                    "animation": "none",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        },
+        "items": {
+            "staff": {
+                "aos": {
+                    "animation": "none",
+                    "easing": "linear",
+                    "placement": "top-bottom",
+                    "duration": null,
+                    "offset": null
+                }
+            }
+        }
+    },
     "skinApi": {
         "banner": {
             "skin": {
