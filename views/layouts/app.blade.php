@@ -222,6 +222,22 @@
 @endauth
 <script defer>
     window.addEventListener("DOMContentLoaded", (event) => {
+
+{{--        @php--}}
+{{--            if(theme_config('header.iconparticul')){--}}
+{{--                $iconParticule = [];--}}
+{{--                foreach(theme_config('header.iconparticul') ?? [] as $k => $v ){--}}
+{{--                    foreach($v as $key=>$value){--}}
+{{--                        if(!in_array($value, $iconParticule)){--}}
+{{--                            $iconParticule[] = $value;--}}
+{{--                        }--}}
+{{--                    }--}}
+{{--                }--}}
+{{--                debug($iconParticule);--}}
+{{--            }--}}
+{{--        @endphp--}}
+{{--            window.img_src = @php($iconParticule)--}}
+
         // COMPTEUR DISCORD
         var discord_key = "{{theme_config('home.items.discord.id')}}";
         if ($('.rainbow--js-discordCount').length && discord_key.length) {

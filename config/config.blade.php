@@ -48,6 +48,7 @@
 
             document.getElementById('configForm').addEventListener('submit', function () {
                 let i = 0;
+                configFormIconParticul(i)
                 configFormIconMenus(i)
                 configFormLink(i)
                 configFormLiens(i)

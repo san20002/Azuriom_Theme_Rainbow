@@ -12,8 +12,20 @@
             });
         }
 
+        function addCommandListenerParticul(el) {
+            let i = 1;
+            el.addEventListener('click', function () {
+                const element = el.closest('.iconParticul');
+                element.parentNode.removeChild(element);
+                document.getElementById('iconParticuls').querySelectorAll('.iconParticul').forEach(function (el) {
+                    let count = i++
+                    el.querySelector('.card-title').innerHTML = 'Icon ' + count;
+                })
+            });
+        }
         document.querySelectorAll('.command-remove').forEach(function (el) {
             addCommandListener(el);
+            addCommandListenerParticul(el)
         });
 
         document.getElementById('addIconMenu').addEventListener('click', function () {
@@ -36,6 +48,39 @@
 
         });
 
+
+        document.getElementById('addIconParticuls').addEventListener('click', function () {
+            let i = 1;
+            let input = `@include('admin.pattern.iconParticul')`;
+
+            const newElement = document.createElement('div');
+            newElement.classList.add('iconParticul', 'col-xl-4', 'col-lg-6', 'my-3')
+            newElement.innerHTML = input
+            addCommandListenerParticul(newElement.querySelector('.command-remove'));
+
+            document.getElementById('iconParticuls').appendChild(newElement);
+            document.getElementById('iconParticuls').querySelectorAll('.iconParticul').forEach(function (el) {
+                let count = i++
+                el.querySelector('.card-title').innerHTML = 'Icon ' + count;
+                el.querySelector('select').setAttribute('data-image-preview-select', 'filePreview-' + count)
+                el.querySelector('img').setAttribute('id', 'filePreview-' + count)
+                imagePreviewSelect(el.querySelector('select'))
+            })
+
+        });
+
+        function configFormIconParticul(i) {
+            document.getElementById('iconParticuls').querySelectorAll('.form-row').forEach(function (el) {
+                el.querySelectorAll('input').forEach(function (input) {
+                    input.name = input.name.replace('{index}', i.toString());
+                });
+                el.querySelectorAll('select').forEach(function (select) {
+                    select.name = select.name.replace('{index}', i.toString());
+                });
+
+                i++;
+            });
+        }
         function configFormIconMenus(i) {
             document.getElementById('iconMenus').querySelectorAll('.form-row').forEach(function (el) {
                 el.querySelectorAll('input').forEach(function (input) {
@@ -78,6 +123,20 @@
                     {{ trans('theme::lang.home.particle.hidden') }}
                 </label>
             </div>
+        </div>
+        <button type="button" id="addIconParticuls" class="btn btn-sm btn-success">
+            <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
+        </button>
+        <div id="iconParticuls" class="row">
+            @forelse( theme_config('header.iconparticul') ?? [] as $icon )
+                <div class="iconParticul col-xl-4 col-lg-6 my-3">
+                    @include('admin.pattern.iconParticul')
+                </div>
+            @empty
+                <div class="iconMenu col-xl-4  col-lg-6 my-3">
+                    @include('admin.pattern.iconParticul')
+                </div>
+            @endforelse
         </div>
     </fieldset>
     <hr class="my-3 sidebar-divider">
