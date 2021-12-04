@@ -140,7 +140,7 @@
 
             @if($banner === "articles" && $value === "allArticle")
                 <h1>{{theme_config($banner.'.banner.'.$value.'.title') ?? trans('messages.posts.posts')}}</h1>
-                <small class="mr-3 text-sm">
+                <small class="mx-3 text-sm">
                     Nombre d'article(s): {{count($posts)}}
                 </small>
             @endif
