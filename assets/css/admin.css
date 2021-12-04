@@ -25,10 +25,8 @@
 .js-loader-color-theme img,
 .btn-picto-color img {
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   width: 65px;
   height: 65px;
 }

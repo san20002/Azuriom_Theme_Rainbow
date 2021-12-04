@@ -175,5 +175,6 @@
 
 .mce-content-body,
 .mce-content-body p {
+  color: hsl(0, 0%, 100%);
   color: var(--color-contrast-higher);
 }
