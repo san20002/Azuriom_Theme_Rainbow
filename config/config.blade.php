@@ -185,7 +185,9 @@
                 1 => 'Style N°1',
                 2 => 'Style N°2',
                 ];
-
+			$particleContent = [
+				'header','main','full'
+            ];
 
             $articles = \Azuriom\Models\Post::all();
             $pages = \Azuriom\Models\Page::all();

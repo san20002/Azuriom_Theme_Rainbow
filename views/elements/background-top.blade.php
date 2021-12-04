@@ -3,9 +3,8 @@
         <img src="{{ image_url(setting('background')) }}" alt="">
     @endif
 
-    @if(!theme_config('home.particle.hidden'))
-        <div id="particles-js"></div>
-    @endif
+        @includeIf('elements.particles-js', ['content' => 'header'])
+
     <div class="server--ip-top">
         @include('elements.ip')
     </div>

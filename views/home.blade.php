@@ -55,9 +55,7 @@
                             </div>
                         @endif
                         @include('elements.ip')
-                        @if(!theme_config('home.particle.hidden'))
-                            <div id="particles-js"></div>
-                        @endif
+                        @includeIf('elements.particles-js', ['content' => 'header'])
                     </div>
                 </div>
             </div>

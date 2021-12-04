@@ -83,6 +83,8 @@
     @include('elements.navbar')
 </header>
 <main>
+
+
     @if(url()->route('home') != url()->current())
         @include('elements.background-top')
     @endif
@@ -90,6 +92,7 @@
         @include('elements.session-alerts')
     </div>
     <div class="container--rainbow">
+        @includeIf('elements.particles-js', ['content' => 'main'])
         @yield('content')
     </div>
 </main>
@@ -217,26 +220,27 @@
         <script src="{{ theme_asset('js/chroma.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
-        @include('layouts.change-color')
+
+        @includeIf('layouts.change-color')
     @endif
 @endauth
+@php
+    if(theme_config('header.iconparticul')){
+    $iconParticule = [];
+        foreach(theme_config('header.iconparticul') ?? [] as $k => $v ){
+            foreach($v as $key=>$value){
+                if(!in_array($value, $iconParticule)){
+                    $iconParticule[] = image_url($value);
+                }
+            }
+        }
+        debug($iconParticule);
+    }
+@endphp
 <script defer>
     window.addEventListener("DOMContentLoaded", (event) => {
 
-{{--        @php--}}
-{{--            if(theme_config('header.iconparticul')){--}}
-{{--                $iconParticule = [];--}}
-{{--                foreach(theme_config('header.iconparticul') ?? [] as $k => $v ){--}}
-{{--                    foreach($v as $key=>$value){--}}
-{{--                        if(!in_array($value, $iconParticule)){--}}
-{{--                            $iconParticule[] = $value;--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                }--}}
-{{--                debug($iconParticule);--}}
-{{--            }--}}
-{{--        @endphp--}}
-{{--            window.img_src = @php($iconParticule)--}}
+        window.img_src = @php echo json_encode($iconParticule)  @endphp;
 
         // COMPTEUR DISCORD
         var discord_key = "{{theme_config('home.items.discord.id')}}";

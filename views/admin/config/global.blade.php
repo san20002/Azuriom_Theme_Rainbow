@@ -113,17 +113,13 @@
     <hr class="my-3 sidebar-divider">
     <fieldset class="mt-4">
         <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
-        <div class="pl-3">
-            <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
-                       name="home[particle][hidden]"
-                       @if(theme_config('home.particle.hidden')) checked @endif>
-                <label class="custom-control-label" for="homeParticleHidden">
-                    {{ trans('theme::lang.home.particle.hidden') }}
-                </label>
-            </div>
-        </div>
+        <legend>{{ trans('theme::lang.general.style') }}</legend>
+        <select name="home[particle][content]" id="select-style" class="form-control mb-3">
+            @foreach($particleContent as $key => $value)
+                <option value="{{ $value }}"
+                        @if(theme_config('header.particle.content') == $value) selected @endif>{{ $value }}</option>
+            @endforeach
+        </select>
         <button type="button" id="addIconParticuls" class="btn btn-sm btn-success">
             <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
         </button>
@@ -137,6 +133,17 @@
                     @include('admin.pattern.iconParticul')
                 </div>
             @endforelse
+        </div>
+        <div class="pl-3 mb-3">
+            <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
+                       name="home[particle][hidden]"
+                       @if(theme_config('home.particle.hidden')) checked @endif>
+                <label class="custom-control-label" for="homeParticleHidden">
+                    {{ trans('theme::lang.home.particle.hidden') }}
+                </label>
+            </div>
         </div>
     </fieldset>
     <hr class="my-3 sidebar-divider">
