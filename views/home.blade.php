@@ -63,70 +63,73 @@
     @else
         @include('elements.background-top')
     @endif
-    <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-lg-8 home--post">
-                @include('elements.banner',['banner' => 'home', 'value' => 'article'])
-                <div class="row">
-                    @php($i = 100)
-                    @foreach($posts as $post)
-                        <div
-                            class="col-md-6"
-                            @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article', 'noDuration'])
+    <div id="home" class="position-relative">
+        <div class="container content">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 home--post">
+                    @include('elements.banner',['banner' => 'home', 'value' => 'article'])
+                    <div class="row">
+                        @php($i = 100)
+                        @foreach($posts as $post)
+                            <div
+                                class="col-md-6"
+                                @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article', 'noDuration'])
 
-                            @if(theme_config('home.items.article.aos.duration'))
-                            data-aos-duration='{{theme_config('home.items.article.aos.duration') * $loop->iteration}}'
-                            @endif
-                        >
-                            <div class="post-preview card mb-3 shadow-sm">
-                                @if($post->hasImage())
-                                    <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="card-img-top">
+                                @if(theme_config('home.items.article.aos.duration'))
+                                data-aos-duration='{{theme_config('home.items.article.aos.duration') * $loop->iteration}}'
                                 @endif
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
-                                    </h3>
-                                    <small>{{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}</small>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text">{{ Str::limit(strip_tags($post->content), 100) }}</p>
-                                    <a class="btn btn-primary"
-                                       href="{{ route('posts.show', $post) }}">{{ trans('messages.posts.read') }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="col-lg-4 home--info">
-                @guest
-                    @include('auth/home-login')
-                @endguest
-                @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
-                @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
-                    @if(theme_config('home.items.discord.style') == 0 || !theme_config('home.items.discord.style'))
-                        <iframe
-                            src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
-                            width="350"
-                            height="500" allowtransparency="true" frameborder="0"
-                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                    @endif
-                    @if(theme_config('home.items.discord.style') == 1)
-                        <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
-                            <div class="rainbow-widget rainbow-block" data-widget="rainbow_discord_widget">
-                                <div class="rainbow-content">
-                                    <div class="rainbow-usersDiscord"></div>
-                                    <div class="rainbow-discordInfo">
-                                        <span class="rainbow-js--discordCount"></span>
-                                        <a href="{{theme_config('home.items.discord.url') ?? '#'}}" target="_blank"
-                                           class="btn btn-joinDiscord">Rejoindre</a>
+                            >
+                                <div class="post-preview card mb-3 shadow-sm">
+                                    @if($post->hasImage())
+                                        <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}"
+                                             class="card-img-top">
+                                    @endif
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
+                                        </h3>
+                                        <small>{{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{{ Str::limit(strip_tags($post->content), 100) }}</p>
+                                        <a class="btn btn-primary"
+                                           href="{{ route('posts.show', $post) }}">{{ trans('messages.posts.read') }}</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-lg-4 home--info">
+                    @guest
+                        @include('auth/home-login')
+                    @endguest
+                    @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
+                    @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
+                        @if(theme_config('home.items.discord.style') == 0 || !theme_config('home.items.discord.style'))
+                            <iframe
+                                src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
+                                width="350"
+                                height="500" allowtransparency="true" frameborder="0"
+                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                        @endif
+                        @if(theme_config('home.items.discord.style') == 1)
+                            <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
+                                <div class="rainbow-widget rainbow-block" data-widget="rainbow_discord_widget">
+                                    <div class="rainbow-content">
+                                        <div class="rainbow-usersDiscord"></div>
+                                        <div class="rainbow-discordInfo">
+                                            <span class="rainbow-js--discordCount"></span>
+                                            <a href="{{theme_config('home.items.discord.url') ?? '#'}}" target="_blank"
+                                               class="btn btn-joinDiscord">Rejoindre</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
 
-                @endif
+                    @endif
+                </div>
             </div>
         </div>
     </div>

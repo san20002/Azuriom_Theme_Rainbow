@@ -83,15 +83,14 @@
     @include('elements.navbar')
 </header>
 <main>
-
-
+    @includeIf('elements.particles-js', ['content' => 'full'])
     @if(url()->route('home') != url()->current())
         @include('elements.background-top')
     @endif
     <div class="container container--rainbow">
         @include('elements.session-alerts')
     </div>
-    <div class="container--rainbow">
+    <div class="container--rainbow js-particles-trigger position-relative">
         @includeIf('elements.particles-js', ['content' => 'main'])
         @yield('content')
     </div>

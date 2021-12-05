@@ -1,10 +1,9 @@
 @if(!theme_config('home.particle.hidden'))
-    {{--    {{dump($content)}}--}}
-    @if($content === theme_config('home.particle.content'))
-        <div id="particles-js" {{theme_config('home.particle.fullScreen') ? 'class=particule-full': ''}}></div>
-    @else
-        @if($content === 'header')
-            <div id="particles-js"></div>
-        @endif
+    @if(theme_config('home.particle.content') != NULL && $content === theme_config('home.particle.content'))
+        {{theme_config('home.particle.content')}}
+        <div id="particles-js" class="particule-{{theme_config('home.particle.content')}}
+            {{url()->route('home') === url()->current()? 'page-home':''}}
+            "
+        ></div>
     @endif
 @endif

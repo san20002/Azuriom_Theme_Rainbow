@@ -10443,9 +10443,6 @@ h3 {
   border-radius: 0.3rem;
 }
 
-.footer {
-  margin-top: 8rem;
-}
 .footer--logo {
   max-width: 300px;
   max-height: 170px;
@@ -11029,6 +11026,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.js-particles-trigger {
+  z-index: 10;
+  padding-bottom: 8rem;
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -11039,6 +11041,7 @@ body {
   right: 0;
 }
 #particles-js.particule-full {
+  z-index: 1;
   position: fixed;
   height: 100vh;
 }

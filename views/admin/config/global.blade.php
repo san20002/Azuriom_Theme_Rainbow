@@ -113,11 +113,11 @@
     <hr class="my-3 sidebar-divider">
     <fieldset class="mt-4">
         <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
-        <legend>{{ trans('theme::lang.general.style') }}</legend>
+        <legend>{{ trans('theme::lang.home.particle.style') }}</legend>
         <select name="home[particle][content]" id="select-style" class="form-control mb-3">
             @foreach($particleContent as $key => $value)
                 <option value="{{ $value }}"
-                        @if(theme_config('header.particle.content') == $value) selected @endif>{{ $value }}</option>
+                        @if(theme_config('home.particle.content') == $value) selected @endif>{{ $value }}</option>
             @endforeach
         </select>
         <button type="button" id="addIconParticuls" class="btn btn-sm btn-success">
