@@ -189,6 +189,10 @@
 				'header','main','full'
             ];
 
+			$particleStyle = [
+				'default','line','nasa','bubble','snow','nyan-cat','custom'
+            ];
+
             $articles = \Azuriom\Models\Post::all();
             $pages = \Azuriom\Models\Page::all();
             if (plugins()->isEnabled('support')){

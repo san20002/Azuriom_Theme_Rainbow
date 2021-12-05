@@ -23,6 +23,7 @@
                 })
             });
         }
+
         document.querySelectorAll('.command-remove').forEach(function (el) {
             addCommandListener(el);
             addCommandListenerParticul(el)
@@ -81,6 +82,7 @@
                 i++;
             });
         }
+
         function configFormIconMenus(i) {
             document.getElementById('iconMenus').querySelectorAll('.form-row').forEach(function (el) {
                 el.querySelectorAll('input').forEach(function (input) {
@@ -113,18 +115,32 @@
     <hr class="my-3 sidebar-divider">
     <fieldset class="mt-4">
         <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
-        <legend>{{ trans('theme::lang.home.particle.style') }}</legend>
-        <select name="home[particle][content]" id="select-style" class="form-control mb-3">
-            @foreach($particleContent as $key => $value)
-                <option value="{{ $value }}"
-                        @if(theme_config('home.particle.content') == $value) selected @endif>{{ $value }}</option>
-            @endforeach
-        </select>
-        <button type="button" id="addIconParticuls" class="btn btn-sm btn-success">
-            <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
-        </button>
+        <div class="form-group">
+            <label for="select-content">{{ trans('theme::lang.home.particle.content') }}</label>
+            <select name="home[particle][content]" id="select-content" class="form-control mb-3">
+                @foreach($particleContent as $key => $value)
+                    <option value="{{ $value }}"
+                            @if(theme_config('home.particle.content') == $value) selected @endif>{{ $value }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="select-style">{{ trans('theme::lang.home.particle.style') }}</label>
+            <select name="home[particle][style]" id="select-style" class="form-control mb-3">
+                @foreach($particleStyle as $key => $value)
+                    <option value="{{ $value }}"
+                            @if(theme_config('home.particle.style') == $value) selected @endif>{{ $value }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            @includeIf('admin.pattern.particlesjs')
+        </div>
+        {{--        <button type="button" id="addIconParticuls" class="btn btn-sm btn-success">--}}
+        {{--            <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}--}}
+        {{--        </button>--}}
         <div id="iconParticuls" class="row">
-            @forelse( theme_config('header.iconparticul') ?? [] as $icon )
+            @forelse( theme_config('home.particle.icons') ?? [] as $icon )
                 <div class="iconParticul col-xl-4 col-lg-6 my-3">
                     @include('admin.pattern.iconParticul')
                 </div>

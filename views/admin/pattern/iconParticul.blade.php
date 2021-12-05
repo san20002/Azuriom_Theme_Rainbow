@@ -19,7 +19,7 @@
                 </div>
                 <select class="custom-select"
                         id="imageSelect-iconparticul-@if(isset($icon)) {{ $loop->iteration }} @else 1 @endif"
-                        name="header[iconparticul][{index}][url]"
+                        name="home[particle][icons][{index}][url]"
                         data-image-preview-select="filePreview-iconparticul-@if(isset($icon)) {{ $loop->iteration }} @else 1 @endif">
                     <option value="">none</option>
                     @foreach($allImagesStokage as $image)

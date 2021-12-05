@@ -224,12 +224,14 @@
     @endif
 @endauth
 @php
-    if(theme_config('header.iconparticul')){
+    if(theme_config('home.particle.icons')){
     $iconParticule = [];
-        foreach(theme_config('header.iconparticul') ?? [] as $k => $v ){
+        foreach(theme_config('home.particle.icons') ?? [] as $k => $v ){
             foreach($v as $key=>$value){
                 if(!in_array($value, $iconParticule)){
+                    if ($value){
                     $iconParticule[] = image_url($value);
+                    }
                 }
             }
         }
@@ -238,7 +240,7 @@
 @endphp
 <script defer>
     window.addEventListener("DOMContentLoaded", (event) => {
-
+        window.style = '@php echo theme_config('home.particle.style') ?? 'default' @endphp';
         window.img_src = @php echo json_encode($iconParticule)  @endphp;
 
         // COMPTEUR DISCORD
