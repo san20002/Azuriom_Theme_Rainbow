@@ -21,12 +21,12 @@
                     <li class="table-row">
                         <div class="col col-1" scope="row">{{ $punishment->punishmentType }}</div>
                         <div class="col col-2">
-                            <img src="https://crafthead.net/avatar/{{ $punishment->uuid }}/30"> {{ $punishment->name }}
+                            <img src="https://mc-heads.net/avatar/{{ $punishment->uuid }}/30"> {{ $punishment->name }}
                         </div>
                         <div class="col col-2" title="{{ $punishment->reason }}">{{ Str::limit($punishment->reason, 20) }}</div>
                         <div class="col col-2">
                             <img data-name="{{ $punishment->operator }}"
-                                 src="https://crafthead.net/avatar/8667ba71-b85a-4004-af54-457a9734eed7/30"> {{ $punishment->operator }}
+                                 src="https://mc-heads.net/avatar/console/30"> {{ $punishment->operator }}
                         </div>
                         <div
                             class="col col-2">{{ format_date(Carbon\Carbon::createFromTimestampMs($punishment->start)) }}
@@ -71,7 +71,7 @@
                 let name = element.getAttribute('data-name');
                 if (name === null) return;
 
-                element.setAttribute('src', 'https://crafthead.net/avatar/' + name + '/30');
+                element.setAttribute('src', 'https://mc-heads.net/avatar/' + name + '/30');
             });
         })
     </script>
