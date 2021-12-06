@@ -237,6 +237,8 @@ return [
             'title' => 'Navigation bar',
             'hiddenIcon' => 'Do not display the icons in the top of the page',
             'hiddenText' => 'Do not display the text of the navigation',
+            'position' => 'Location',
+            'style' => 'Style',
             'info' => '<span>Allows to display text & image or just image or text.</span>'
         ],
         'icon' => [
@@ -325,7 +327,7 @@ return [
         'particle' => [
             'title' => 'Particles',
             'hidden' => 'Do not display the particles',
-            'info' => '<span>Allows to display particles.<br>Site to test your particles: <a href="https://vincentgarreau.com/particles.js/">particles.js</a></span>',
+            'info' => '<span>Allows to display particles.<br><span class="text-warning">Site to test your particles: <a href="https://vincentgarreau.com/particles.js/">particles.js</a>, the titles of the fields are identical to the article site to make the simulation.</span></span>',
             'content' => 'Location',
             'style' => 'Style',
         ],

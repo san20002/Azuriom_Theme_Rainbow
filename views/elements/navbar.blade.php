@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-xl navbar-light">
+<nav class="navbar navbar-expand-xl navbar-light
+         {{theme_config('header.navbar.style') == 2 ? 'flex-row-reverse' : ''}}">
     <a class="navbar-brand" href="{{ route('home') }}">
         <img src="{{site_logo() }}"
              alt="{{ site_name() }}" title="{{ site_name() }}">
@@ -13,10 +14,15 @@
     </button>
 
     <div
-        class="navbar-collapse collapsed d-xl-block d-flex flex-xl-row flex-column-reverse justify-content-end align-items-start"
+        class="navbar-collapse collapsed d-xl-block d-flex flex-column-reverse justify-content-end align-items-start
+         {{theme_config('header.navbar.style') == 2 ? 'flex-xl-row-reverse' : 'flex-xl-row'}}"
         id="navbar-collapse-x">
         <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav navbar-menu mx-xl-auto ml-0 w-100">
+        <ul class="navbar-nav navbar-menu
+         {{theme_config('header.navbar.position') == 'center' || !theme_config('header.navbar.position') ? 'mx-xl-auto' : ''}}
+        {{theme_config('header.navbar.position') == 'left'? 'ml-xl-0 mr-xl-auto  ' : ''}}
+        {{theme_config('header.navbar.position') == 'right'? 'ml-xl-auto mr-xl-0  ' : ''}}
+            ml-0">
             @foreach($navbar as $element)
                 @if(!$element->isDropdown())
                     <li class="nav-item @if($element->isCurrent()) active @endif">
@@ -24,7 +30,7 @@
                            rel="noopener noreferrer" @endif>
                             @if(!theme_config('header.icons'))
                                 @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-{{--                                        @php(dump($icon['name']))--}}
+                                    {{--                                        @php(dump($icon['name']))--}}
                                     @if($element->value.'-'.$element->type === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
@@ -67,7 +73,7 @@
         </ul>
 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-xl-auto ml-0 flex-row">
+        <ul class="navbar-nav navbar-user flex-row">
 
             <!-- Authentication Links -->
             <!-- Authentication Links -->

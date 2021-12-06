@@ -183,6 +183,29 @@
         <legend>{{trans('theme::lang.header.navbar.title')}}</legend>
         <div class="pl-3">
             <div class="small font-italic mb-2">{!! trans('theme::lang.header.navbar.info')!!}</div>
+
+            <div class="form-group">
+                <label for="select-style-navbar-style">{{ trans('theme::lang.header.navbar.style') }}</label>
+                <select name="header[navbar][style]" id="select-style-navbar-style"
+                        class="form-control mb-3">
+                    @foreach($navbarStyle as $key => $value)
+                        <option value="{{ $key }}"
+                                @if(theme_config('header.navbar.style') == $key) selected @endif>{{ $value }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-style-navbar-position">{{ trans('theme::lang.header.navbar.position') }}</label>
+                <select name="header[navbar][position]" id="select-style-navbar-position"
+                        class="form-control mb-3">
+                    @foreach($navbarPosition as $key => $value)
+                        <option value="{{ $key }}"
+                                @if(theme_config('header.navbar.position') == $key) selected @endif>{{ $value }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="headerIcon"
                        name="header[icons]"
@@ -202,7 +225,6 @@
         </div>
     </fieldset>
     <hr class="my-3 sidebar-divider">
-
     <fieldset class="mt-4">
         <legend>{{trans('theme::lang.header.icon.title')}}</legend>
         <div class="pl-3">

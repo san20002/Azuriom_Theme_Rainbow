@@ -76,11 +76,11 @@
                         event.closest('.js-aos').querySelector('.js-aos-active').classList.add('d-none')
                     }
                 })
-                document.querySelector('.js-select-trigger-particlejs').addEventListener('change', function (event){
+                document.querySelector('.js-select-trigger-particlejs').addEventListener('change', function (event) {
                     let element = document.querySelector('.js-select-trigger-particlejs-target');
-                    if(event.target.value === 'custom'){
+                    if (event.target.value === 'custom') {
                         element.classList.remove('d-none')
-                    }else{
+                    } else {
                         element.classList.add('d-none')
                     }
 
@@ -198,6 +198,15 @@
 				'header','main','full'
             ];
 
+            $navbarStyle = [
+                1 => 'Style N°1',
+                2 => 'Style N°2',
+                ];
+            $navbarPosition = [
+                'center' => 'Center',
+                'left' => 'Left',
+                'right' => 'Right',
+                ];
 			$particleStyle = [
 				'default','line','nasa','bubble','snow','nyan-cat','custom'
             ];

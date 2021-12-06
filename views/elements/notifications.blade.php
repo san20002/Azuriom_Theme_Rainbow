@@ -8,7 +8,8 @@
     </a>
 
     <!-- Dropdown - Notifications -->
-    <div class="dropdown-list dropdown-menu dropdown-menu-right" aria-labelledby="notificationsDropdown">
+    <div class="dropdown-list dropdown-menu
+        {{theme_config('header.navbar.style') == 1 ? 'dropdown-menu-right' : ''}}" aria-labelledby="notificationsDropdown">
         <h6 class="dropdown-header">{{ trans('messages.notifications.notifications') }}</h6>
 
         @if(! $notifications->isEmpty())

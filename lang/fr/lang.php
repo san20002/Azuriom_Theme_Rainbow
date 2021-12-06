@@ -235,7 +235,9 @@ return [
             'title' => 'Barre de navigation',
             'hiddenIcon' => 'Ne pas afficher les icones dans la haut de page',
             'hiddenText' => 'Ne pas afficher le texte de la navigation',
-            'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>'
+            'position' => 'Emplacement',
+            'style' => 'Style',
+            'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>',
         ],
         'icon' => [
             'title' => 'Icone de navigation',
@@ -325,7 +327,7 @@ return [
         'particle' => [
             'title' => 'Particules',
             'hidden' => 'Ne pas afficher les particules',
-            'info' => '<span>Permet d\'afficher des particules.<br>Site pour tester vos particule: <a href="https://vincentgarreau.com/particles.js/">particles.js</a></span>',
+            'info' => '<span>Permet d\'afficher des particules.<br><span class="text-warning">Site pour tester vos particules: <a href="https://vincentgarreau.com/particles.js/">particles.js</a>, les titres des champs sont identique au site de particles pour faire la simulation.</span> </span>',
             'content' => 'Emplacement',
             'style' => 'Style',
         ],
