@@ -223,26 +223,15 @@
         @includeIf('layouts.change-color')
     @endif
 @endauth
-@php
-    if(theme_config('home.particle.icons')){
-    $iconParticule = [];
-        foreach(theme_config('home.particle.icons') ?? [] as $k => $v ){
-            foreach($v as $key=>$value){
-                if(!in_array($value, $iconParticule)){
-                    if ($value){
-                    $iconParticule[] = image_url($value);
-                    }
-                }
-            }
-        }
-        debug($iconParticule);
-    }
-@endphp
+
 <script defer>
     window.addEventListener("DOMContentLoaded", (event) => {
-        window.style = '@php echo theme_config('home.particle.style') ?? 'default' @endphp';
-        window.img_src = @php echo json_encode($iconParticule)  @endphp;
-
+        window.particleJs = {}
+        let particleJs = window.particleJs;
+        particleJs.style = '@php echo theme_config('home.particle.style') ?? 'default' @endphp';
+        particleJs.config = @php echo json_encode(theme_config('home.particle.config'))  @endphp;
+        particleJs.pathImage = '@php echo image_url()  @endphp/';
+        console.log(particleJs)
         // COMPTEUR DISCORD
         var discord_key = "{{theme_config('home.items.discord.id')}}";
         if ($('.rainbow--js-discordCount').length && discord_key.length) {

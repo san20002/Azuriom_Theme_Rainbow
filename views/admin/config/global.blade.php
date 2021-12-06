@@ -126,20 +126,22 @@
         </div>
         <div class="form-group">
             <label for="select-style">{{ trans('theme::lang.home.particle.style') }}</label>
-            <select name="home[particle][style]" id="select-style" class="form-control mb-3">
+            <select name="home[particle][style]" id="select-style"
+                    class="form-control mb-3 js-select-trigger-particlejs">
                 @foreach($particleStyle as $key => $value)
                     <option value="{{ $value }}"
                             @if(theme_config('home.particle.style') == $value) selected @endif>{{ $value }}</option>
                 @endforeach
             </select>
         </div>
-        <div class="form-group">
+        <div
+            class="form-group js-select-trigger-particlejs-target {{theme_config('home.particle.style') === 'custom' ? '':'d-none' }}">
             @includeIf('admin.pattern.particlesjs')
         </div>
-        {{--        <button type="button" id="addIconParticuls" class="btn btn-sm btn-success">--}}
-        {{--            <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}--}}
-        {{--        </button>--}}
-        <div id="iconParticuls" class="row">
+        <button type="button" id="addIconParticuls" class="btn btn-sm btn-success d-none">
+            <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
+        </button>
+        <div id="iconParticuls" class="row d-none">
             @forelse( theme_config('home.particle.icons') ?? [] as $icon )
                 <div class="iconParticul col-xl-4 col-lg-6 my-3">
                     @include('admin.pattern.iconParticul')

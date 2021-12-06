@@ -76,6 +76,15 @@
                         event.closest('.js-aos').querySelector('.js-aos-active').classList.add('d-none')
                     }
                 })
+                document.querySelector('.js-select-trigger-particlejs').addEventListener('change', function (event){
+                    let element = document.querySelector('.js-select-trigger-particlejs-target');
+                    if(event.target.value === 'custom'){
+                        element.classList.remove('d-none')
+                    }else{
+                        element.classList.add('d-none')
+                    }
+
+                })
             })
             document.querySelectorAll('.js-select-aos').forEach(function (event) {
                 event.addEventListener('change', function (select) {
