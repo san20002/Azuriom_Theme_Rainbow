@@ -3,7 +3,7 @@
 @section('title', trans('auth.verify'))
 
 @section('content')
-<div class="container content" id="auth--verify">
+<div class="container content main-page" id="auth--verify">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

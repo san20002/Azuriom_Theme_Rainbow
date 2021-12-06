@@ -8,7 +8,7 @@
             font-size: 12px;
         }
     </style>
-    <div class="container content" id="litebans">
+    <div class="container content main-page" id="litebans">
 
         @include('litebans::elements.navbar')
 

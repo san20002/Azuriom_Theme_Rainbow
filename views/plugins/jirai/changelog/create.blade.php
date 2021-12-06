@@ -3,7 +3,7 @@
 @section('title', trans('jirai::messages.title'))
 
 @section('content')
-<div class="container content" id="jirai">
+<div class="container content main-page" id="jirai">
     <div class="card shadow mb-4" @include('elements.string-aos', ['pageAos' => 'jirai', 'itemAos'=>'changelogs-create'])>
         <div class="card-body">
             <form action="{{ route('jirai.changelogs.store') }}" method="POST">

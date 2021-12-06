@@ -3,7 +3,7 @@
 @section('title', $displayAll ? trans('changelog::messages.title') : $category->name)
 
 @section('content')
-    <div class="container content" id="changelog">
+    <div class="container content main-page" id="changelog">
 
         @include('elements.banner', ['banner' => 'changelog', 'value' => 'changelog'])
 

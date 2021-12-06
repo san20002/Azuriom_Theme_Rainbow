@@ -3,7 +3,7 @@
 @section('title', trans('advancedban::messages.title'))
 
 @section('content')
-    <div class="container content">
+    <div class="container content main-page">
         @include('elements.banner',['banner' => 'advancedBan', 'value' => 'advancedBan'])
 
         <div class="table-responsive"  @include('elements.string-aos', ['pageAos' => 'advancedBan', 'itemAos'=>'advancedBan'])>

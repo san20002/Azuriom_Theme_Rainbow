@@ -3,7 +3,7 @@
 @section('title', trans('forum::messages.profile.edit'))
 
 @section('content')
-    <div class="container content" id="forum">
+    <div class="container content main-page" id="forum">
 
         @include('elements.banner', ['banner' => 'forum', 'value' => 'forum-user-edit'])
 

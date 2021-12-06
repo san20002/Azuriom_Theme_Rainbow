@@ -7,7 +7,7 @@
     @php
         $notRequired = setting('invoicepro_force_required', 0) == 0
     @endphp
-    <div class="container content" id="invoicepro">
+    <div class="container content main-page" id="invoicepro">
         <form action="{{route('invoicepro.store')}}" method="POST"  @include('elements.string-aos', ['pageAos' => 'invoicepro', 'itemAos'=>'invoicepro'])>
             @csrf
             <div class="form-group">

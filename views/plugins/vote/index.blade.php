@@ -9,7 +9,7 @@
 @endif
 
 @section('content')
-    <div class="container content" id="vote">
+    <div class="container content main-page" id="vote">
         <div id="vote-alert"></div>
 
         @include('elements.banner',['banner' => 'vote', 'value' => 'vote'])

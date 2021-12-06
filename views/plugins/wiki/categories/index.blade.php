@@ -3,7 +3,7 @@
 @section('title', trans('wiki::messages.title'))
 
 @section('content')
-    <div class="container content" id="wiki">
+    <div class="container content main-page" id="wiki">
 
         @include('elements.banner',['banner' => 'wiki', 'value' => 'wiki'])
 

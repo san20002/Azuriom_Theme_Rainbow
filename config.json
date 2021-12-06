@@ -52,6 +52,7 @@
         },
         "items": {
             "article": {
+                "chevron": "on",
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -61,6 +62,7 @@
                 }
             },
             "allArticle": {
+                "chevron": "on",
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -346,6 +348,10 @@
         }
     },
     "header": {
+        "style": "2",
+        "preloader": {
+            "hidden": "on"
+        },
         "iconmenus": [
             {
                 "url": null,
@@ -354,6 +360,60 @@
         ]
     },
     "home": {
+        "particle": {
+            "content": "header",
+            "style": "default",
+            "config": {
+                "number": {
+                    "value": "80",
+                    "densityEnable": "on",
+                    "DensityValue": "789"
+                },
+                "color": {
+                    "value": "#8f8f8f"
+                },
+                "shape": {
+                    "strokeWidth": "1",
+                    "strokeColor": "#000000",
+                    "polygonNbSides": "5",
+                    "imageSrc": "smow.png",
+                    "imageWidth": null,
+                    "imageHeight": null,
+                    "type": "image"
+                },
+                "size": {
+                    "animSpeed": "40",
+                    "animSizeMin": "1",
+                    "value": "20",
+                    "random": "on"
+                },
+                "opacity": {
+                    "animSpeed": "10",
+                    "animOpacityMin": "9",
+                    "value": "0.5",
+                    "random": "on"
+                },
+                "line_linked": {
+                    "distance": "211",
+                    "color": "#ffffff",
+                    "opacity": "0.4",
+                    "width": "1"
+                },
+                "move": {
+                    "enable": "on",
+                    "direction": "bottom",
+                    "speed": "2",
+                    "outMode": "out",
+                    "attractRotateX": "453",
+                    "attractRotateY": "509"
+                }
+            },
+            "icons": [
+                {
+                    "url": null
+                }
+            ]
+        },
         "items": {
             "ip-server": {
                 "chevron": "on",
@@ -362,7 +422,7 @@
                     "animation": "fade",
                     "easing": "linear",
                     "placement": "top-bottom",
-                    "duration": null,
+                    "duration": "1000",
                     "offset": null
                 }
             },
@@ -396,7 +456,10 @@
                 }
             },
             "discord": {
+                "chevron": "on",
                 "id": "684097488164225073",
+                "url": "https://discord.com/invite/wmYrG2c",
+                "style": "1",
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -628,6 +691,7 @@
         },
         "items": {
             "shop": {
+                "style": "0",
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -719,32 +783,6 @@
             }
         }
     },
-    "staff": {
-        "banner": {
-            "staff": {
-                "image": null,
-                "title": null,
-                "aos": {
-                    "animation": "none",
-                    "easing": "linear",
-                    "placement": "top-bottom",
-                    "duration": null,
-                    "offset": null
-                }
-            }
-        },
-        "items": {
-            "staff": {
-                "aos": {
-                    "animation": "none",
-                    "easing": "linear",
-                    "placement": "top-bottom",
-                    "duration": null,
-                    "offset": null
-                }
-            }
-        }
-    },
     "skinApi": {
         "banner": {
             "skin": {
@@ -777,7 +815,7 @@
                 "image": null,
                 "title": null,
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -788,7 +826,7 @@
                 "image": null,
                 "title": null,
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -799,7 +837,7 @@
                 "image": null,
                 "title": null,
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -810,7 +848,7 @@
         "items": {
             "support": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -819,7 +857,7 @@
             },
             "support-create": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -828,7 +866,7 @@
             },
             "support-show": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -856,7 +894,7 @@
                 "image": null,
                 "title": null,
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -867,7 +905,7 @@
         "items": {
             "vote": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -876,7 +914,7 @@
             },
             "podium": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -885,7 +923,7 @@
             },
             "classement": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -894,7 +932,7 @@
             },
             "recompenses": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -909,7 +947,7 @@
                 "image": null,
                 "title": null,
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -920,7 +958,7 @@
                 "image": null,
                 "title": null,
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -931,7 +969,7 @@
         "items": {
             "wiki": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,
@@ -940,7 +978,7 @@
             },
             "wiki-show": {
                 "aos": {
-                    "animation": "fade",
+                    "animation": "none",
                     "easing": "linear",
                     "placement": "top-bottom",
                     "duration": null,

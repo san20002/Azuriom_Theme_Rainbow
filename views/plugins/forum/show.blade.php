@@ -3,7 +3,7 @@
 @section('title', $forum->name)
 
 @section('content')
-    <div class="container content" id="forum">
+    <div class="container content main-page" id="forum">
 
         @include('elements.banner', ['banner' => 'forum', 'value' => 'forum-show', 'forum' => $forum])
 

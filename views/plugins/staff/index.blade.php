@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-    <div class="container content mt-5" id="staff">
+    <div class="container content main-page mt-5" id="staff">
         @include('elements.banner',['banner' => 'staff', 'value' => 'staff'])
         @if($staffs->count() >= 1)
             <div class="glide_staff" @include('elements.string-aos', ['pageAos' => 'staff', 'itemAos'=>'staff'])>

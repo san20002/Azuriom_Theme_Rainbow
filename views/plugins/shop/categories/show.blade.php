@@ -23,7 +23,7 @@
 @endpush
 
 @section('content')
-    <div class="container content" id="shops">
+    <div class="container content main-page" id="shops">
         <div class="row
         @if(theme_config('shop.items.shop.style') == 0 || !theme_config('shop.items.shop.style'))
             @elseif(theme_config('shop.items.shop.style') == 1)

@@ -115,6 +115,7 @@
     <hr class="my-3 sidebar-divider">
     <fieldset class="mt-4">
         <legend>{{ trans('theme::lang.home.particle.title') }}</legend>
+        <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
         <div class="form-group">
             <label for="select-content">{{ trans('theme::lang.home.particle.content') }}</label>
             <select name="home[particle][content]" id="select-content" class="form-control mb-3">
@@ -153,7 +154,6 @@
             @endforelse
         </div>
         <div class="pl-3 mb-3">
-            <div class="small font-italic mb-2">{!! trans('theme::lang.home.particle.info')!!}</div>
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="homeParticleHidden"
                        name="home[particle][hidden]"

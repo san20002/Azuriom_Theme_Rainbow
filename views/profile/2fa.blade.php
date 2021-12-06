@@ -3,7 +3,7 @@
 @section('title', trans('messages.profile.2fa.title'))
 
 @section('content')
-    <div class="container content" id="profile">
+    <div class="container content main-page" id="profile">
         <div class="card mb-4">
             <div class="card-header">{{ trans('messages.profile.2fa.title') }}</div>
 

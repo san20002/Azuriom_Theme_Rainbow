@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-    <div class="container content" id="shops">
+    <div class="container content main-page" id="shops">
         <h1>Dedipass</h1>
 
         <div data-dedipass="{{ $dedipassPublicKey }}" data-dedipass-custom="{{ $dedipassCustom }}"></div>

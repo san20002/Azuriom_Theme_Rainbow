@@ -24,7 +24,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ favicon() }}">
     @auth()
-        @if(auth()->user()->isAdmin())
+        @if(auth()->user()->isAdmin() || Auth::user()->hasPermission("admin.themes"))
             @php
                 $theme = themes()->currentTheme();
                 $theme_lang = trans('theme::lang');
@@ -69,7 +69,7 @@
     @include('layouts.root')
     <link href="{{ theme_asset('css/style-'.(theme_config('header.style') ?? '1').'.css') }}" rel="stylesheet">
     @auth()
-        @if(auth()->user()->isAdmin())
+        @if(auth()->user()->isAdmin() || Auth::user()->hasPermission("admin.themes"))
             <link href="{{ theme_asset('css/admin.css') }}" rel="stylesheet">
             <link href="{{ theme_asset('css/sweetalert2.min.css') }}" rel="stylesheet">
         @endif
@@ -196,7 +196,7 @@
     </div>
 @endif
 @auth()
-    @if(auth()->user()->isAdmin())
+    @if(auth()->user()->isAdmin() || Auth::user()->hasPermission("admin.themes"))
         <script defer>
             window.addEventListener("DOMContentLoaded", (event) => {
                 if ($('.btn-picto-color').length > 0) {
@@ -231,7 +231,7 @@
         particleJs.style = '@php echo theme_config('home.particle.style') ?? 'default' @endphp';
         particleJs.config = @php echo json_encode(theme_config('home.particle.config'))  @endphp;
         particleJs.pathImage = '@php echo image_url()  @endphp/';
-        console.log(particleJs)
+
         // COMPTEUR DISCORD
         var discord_key = "{{theme_config('home.items.discord.id')}}";
         if ($('.rainbow--js-discordCount').length && discord_key.length) {

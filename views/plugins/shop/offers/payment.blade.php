@@ -3,7 +3,7 @@
 @section('title', trans('shop::messages.offers.title-payment'))
 
 @section('content')
-    <div class="container content" id="shops--select">
+    <div class="container content main-page" id="shops--select">
 
 
         @include('elements.banner', ['banner' => 'shop', 'value' => 'method-payment'])

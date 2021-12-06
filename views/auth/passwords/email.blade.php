@@ -3,7 +3,7 @@
 @section('title', trans('auth.passwords.reset'))
 
 @section('content')
-<div class="container content" id="auth--password-email">
+<div class="container content main-page" id="auth--password-email">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

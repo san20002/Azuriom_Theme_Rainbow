@@ -319,7 +319,9 @@ return [
         'particle' => [
             'title' => 'Particles',
             'hidden' => 'Do not display the particles',
-            'info' => '<span>Allows to display particles.</span>',
+            'info' => '<span>Allows to display particles.<br>Site to test your particles: <a href="https://vincentgarreau.com/particles.js/">particles.js</a></span>',
+            'content'=>'Location',
+            'style'=>'Style',
         ],
         'slider' => [
             'title' => 'Slider',

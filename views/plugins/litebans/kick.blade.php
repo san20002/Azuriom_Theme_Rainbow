@@ -3,7 +3,7 @@
 @section('title', trans('litebans::messages.navigation.kicks'))
 
 @section('content')
-    <div class="container content" id="litebans">
+    <div class="container content main-page" id="litebans">
         @include('litebans::elements.navbar')
         <div class="table-responsive" @include('elements.string-aos', ['pageAos' => 'liteBans', 'itemAos'=>'litebans'])>
             <ul class="table--custom mt-5">

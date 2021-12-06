@@ -11,7 +11,7 @@
 @endpush
 
 @section('content')
-    <div class="container content post" id="post">
+    <div class="container content main-page post" id="post">
         @if(!$post->isPublished())
             <div class="alert alert-info alert-dismissible fade show" role="alert">
                 {{ trans('messages.posts.not-published') }}
@@ -36,7 +36,7 @@
                 <hr>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    @if(config('articles.follow.hidden'))
+                    @if(!theme_config('articles.items.article.follow-hidden'))
                         <button type="button" class="btn btn-primary ml-0 mr-auto @if($post->isLiked()) active @endif"
                                 @guest disabled
                                 @endguest data-like-url="{{ route('posts.like', $post) }}">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        @if(config('articles.comment.hidden'))
+        @if(!theme_config('articles.items.article.comment-hidden'))
 
             @foreach($post->comments as $comment)
                 <div class="card shadow-sm mb-3">

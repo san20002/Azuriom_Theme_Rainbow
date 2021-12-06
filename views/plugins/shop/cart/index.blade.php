@@ -3,7 +3,7 @@
 @section('title', trans('shop::messages.cart.title'))
 
 @section('content')
-    <div class="container content">
+    <div class="container content main-page">
         @include('elements.banner', ['banner' => 'shop', 'value' => 'cart'])
 
         @if(! $cart->isEmpty())

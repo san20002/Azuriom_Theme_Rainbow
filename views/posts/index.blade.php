@@ -3,7 +3,7 @@
 @section('title', trans('messages.posts.posts'))
 
 @section('content')
-    <div class="container content" id="posts-all">
+    <div class="container content main-page" id="posts-all">
 
         @include('elements.banner', ['banner' => 'articles', 'value' => 'allArticle', 'posts' => $posts])
 

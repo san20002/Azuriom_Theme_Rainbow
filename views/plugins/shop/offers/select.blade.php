@@ -17,7 +17,7 @@
 @endpush
 
 @section('content')
-    <div class="container content" id="shops--select">
+    <div class="container content main-page" id="shops--select">
         @include('elements.banner', ['banner' => 'shop', 'value' => 'select-payment'])
         <div class="row">
             @forelse($offers as $offer)

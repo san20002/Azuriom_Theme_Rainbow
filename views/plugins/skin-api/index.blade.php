@@ -31,7 +31,7 @@
 @endpush
 
 @section('content')
-    <div class="container content" id="skin-api">
+    <div class="container content main-page" id="skin-api">
         @include('elements.banner',['banner' => 'skinApi', 'value' => 'skin'])
         <div class="card shadow mb-4" @include('elements.string-aos', ['pageAos' => 'skinApi', 'itemAos'=>'skin'])>
             <div class="card-body">

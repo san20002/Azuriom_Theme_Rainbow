@@ -15,7 +15,7 @@
 @endpush
 
 @section('content')
-    <div class="container content"id="shops">
+    <div class="container content main-page"id="shops">
         <h1>{{ trans('shop::messages.payment.title') }}</h1>
 
         <p>{{ trans('shop::messages.payment.redirect-info') }}</p>

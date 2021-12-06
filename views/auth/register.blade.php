@@ -3,7 +3,7 @@
 @section('title', trans('auth.register'))
 
 @section('content')
-<div class="container content" id="auth--register">
+<div class="container content main-page" id="auth--register">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

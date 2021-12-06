@@ -3,7 +3,7 @@
 @section('title', trans('jirai::messages.title'))
 
 @section('content')
-    <div class="container content" id="jirai">
+    <div class="container content main-page" id="jirai">
         <div class="row">
             <div class="col-md-12">
                 @include('elements.banner',['banner' => 'jirai', 'value' => 'changelog'])

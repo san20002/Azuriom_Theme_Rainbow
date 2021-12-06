@@ -3,7 +3,7 @@
 @section('title', $ticket->subject)
 
 @section('content')
-    <div class="container content" id="support">
+    <div class="container content main-page" id="support">
 
         @include('elements.banner',['banner' => 'support', 'value' => 'support-show', 'ticket' => $ticket])
 

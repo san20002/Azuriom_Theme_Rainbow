@@ -11,7 +11,7 @@
 @include('forum::elements.markdown-editor', ['editorMinHeight' => 150])
 
 @section('content')
-    <div class="container content" id="forum">
+    <div class="container content main-page" id="forum">
 
         @include('elements.banner', ['banner' => 'forum', 'value' => 'forum-discussions-show', 'discussion' => $discussion])
 

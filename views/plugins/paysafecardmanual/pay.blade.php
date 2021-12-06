@@ -3,7 +3,7 @@
 @section('title', trans('paysafecardmanual::messages.title'))
 
 @section('content')
-    <div class="container content" id="shops">
+    <div class="container content main-page" id="shops">
 
         @include('elements.banner',['banner' => 'paysafecardmanual', 'value' => 'paysafecardmanual'])
 

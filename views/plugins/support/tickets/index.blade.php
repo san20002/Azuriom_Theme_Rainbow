@@ -3,7 +3,7 @@
 @section('title', trans('support::messages.title'))
 
 @section('content')
-    <div class="container content" id="support">
+    <div class="container content main-page" id="support">
 
         @include('elements.banner',['banner' => 'support', 'value' => 'support'])
 

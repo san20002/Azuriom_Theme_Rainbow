@@ -64,7 +64,7 @@
         @include('elements.background-top')
     @endif
     <div id="home" class="position-relative">
-        <div class="container content">
+        <div class="container content main-page">
             <div class="row justify-content-end">
                 <div class="col-lg-8 home--post">
                     @include('elements.banner',['banner' => 'home', 'value' => 'article'])
