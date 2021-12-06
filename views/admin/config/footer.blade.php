@@ -96,6 +96,20 @@
 <div class="card-body">
     <fieldset class="mt-4">
         <legend>{{trans('theme::lang.footer.logo.title')}}</legend>
+        <div class="pl-4 pb-2 row">
+                <label for="input-range-footer-logo-opacity" class="col-12">Opacity</label>
+                <input id="input-range-footer-logo-opacity"
+                       class="form-control-range col-7"
+                       value="{{old('footer[logo][opacity]',theme_config('footer.logo.opacity'))}}"
+                       name="footer[logo][opacity]"
+                       type="range"
+                       min="0.1"
+                       max="1"
+                       step="0.1"
+                       oninput="this.nextElementSibling.value = this.value">
+                <output
+                    class="col-2">{{old('footer[logo][opacity]',theme_config('footer.logo.opacity'))}}</output>
+        </div>
         <div class="pl-4">
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="footerLogo"

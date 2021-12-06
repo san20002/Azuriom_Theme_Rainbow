@@ -5,7 +5,7 @@ return [
         'info' => '<small class="d-block">Ce thème va vous proposer un maximum de configurations possibles pour vous permettre de rendre votre site unique.</small>
             <small class="d-block mb-2">Si vous ne comprenez pas, n\'hésitez pas à me contacter <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> et à m\'aider à améliorer le thème.</small>
             <small class="d-block font-weight-bold">Détail de chaque animation: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>',
-        'info-eye'=> '
+        'info-eye' => '
     <div class="small my-2">
         <span class="mr-2"><i class="fas fa-exclamation color-primary"></i></span><span>Si vous cliquez sur l\'eye et ça vous redirige sur une page 404, c\'est que votre contenue n\'existe pas pour le moment il vous reste juste à le créer pour faire la configuration puis le supprimer.</span>
     </div>'
@@ -248,6 +248,12 @@ return [
         'items' => [
             'article' => [
                 'title' => 'Interface des articles',
+                'label' => [
+                    'numberMax' => 'Nombre d\'article max sur la page'
+                ],
+                'placeholder' => [
+                    'numberMax' => '3'
+                ],
             ],
             'ip-server' => [
                 'title' => 'Interface ip-serveur',
@@ -320,8 +326,8 @@ return [
             'title' => 'Particules',
             'hidden' => 'Ne pas afficher les particules',
             'info' => '<span>Permet d\'afficher des particules.<br>Site pour tester vos particule: <a href="https://vincentgarreau.com/particles.js/">particles.js</a></span>',
-            'content'=>'Emplacement',
-            'style'=>'Style',
+            'content' => 'Emplacement',
+            'style' => 'Style',
         ],
         'slider' => [
             'title' => 'Slider',
@@ -365,7 +371,7 @@ return [
                 'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title' => 'Bannière Changelog',
                 'hidden' => 'Ne pas afficher'
-            ],'bugs' => [
+            ], 'bugs' => [
                 'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
                 'title' => 'Bannière bugs',
                 'hidden' => 'Ne pas afficher'

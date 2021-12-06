@@ -12,7 +12,7 @@
             tinymce.init({
                 selector: 'textarea',
                 content_css: '{{ theme_asset('css/tinymce.css') }}',
-                content_style:'@include('layouts.change-color')',
+                content_style:'@include('layouts.root')',
                 height: {{ ($editorMinHeight ?? 300) * 1.5 }},
                 min_height: 200,
                 entity_encoding: 'raw',

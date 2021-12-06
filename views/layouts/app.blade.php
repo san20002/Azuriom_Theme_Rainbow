@@ -102,7 +102,7 @@
                 <div class="row justify-content-around">
                     @if(!theme_config('footer.logo.hidden'))
                         <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
-                            <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}">
+                            <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}"  {{theme_config('footer.logo.opacity') ? 'style=opacity:'.theme_config('footer.logo.opacity'): ''}}>
                         </div>
                     @endif
 

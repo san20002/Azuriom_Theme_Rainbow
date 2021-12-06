@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-xl-2 col-md-3 text-center">
-                        <img src="{{ $user->getAvatar(150) }}" class="rounded mb-3 img-fluid" alt="{{ $user->name }}">
+                        <img src="https://mc-heads.net/body/{{ $user->name }}/right" class="rounded mb-3 img-fluid" alt="{{ $user->name }}">
 
                         <h2 class="h4 mb-0">
                             <span class="badge" style="{{ $user->role->getBadgeStyle() }}; vertical-align: middle">{{ $user->role->name }}</span>

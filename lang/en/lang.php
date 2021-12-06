@@ -5,7 +5,7 @@ return [
         'info' => '<small class="d-block">This theme will offer you a maximum of possible configurations to allow you to to to make your site unique.</small>
             <small class="d-block mb-2">If you don\'t understand, don\'t hesitate to contact me <a href="https://discord.gg/wmYrG2c" target="_blank">Latshow#4681</a> and to help me improve the theme.</small>
             <small class="d-block font-weight-bold">Details of each animation: <a href="https://michalsnik.github.io/aos/" target="_blank">AOS</a></small>',
-        'info-eye'=> '
+        'info-eye' => '
     <div class="small my-2">
         <span class="mr-2"><i class="fas fa-exclamation color-primary"></i></span><span>If you click on the eye and it redirects you on a 404 page, it is that your content does not exist for the moment you just have to create it to make the configuration then delete it.</span>
     </div>',
@@ -250,6 +250,12 @@ return [
         'items' => [
             'article' => [
                 'title' => 'Interface all articles',
+                'label' => [
+                    'numberMax' => 'Number article max page'
+                ],
+                'placeholder' => [
+                    'numberMax' => '3'
+                ],
             ],
             'ip-server' => [
                 'title' => 'Interface ip-server',
@@ -320,8 +326,8 @@ return [
             'title' => 'Particles',
             'hidden' => 'Do not display the particles',
             'info' => '<span>Allows to display particles.<br>Site to test your particles: <a href="https://vincentgarreau.com/particles.js/">particles.js</a></span>',
-            'content'=>'Location',
-            'style'=>'Style',
+            'content' => 'Location',
+            'style' => 'Style',
         ],
         'slider' => [
             'title' => 'Slider',
@@ -365,7 +371,7 @@ return [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title' => 'Banner Changelog',
                 'hidden' => 'Do not display'
-            ],'bugs' => [
+            ], 'bugs' => [
                 'info' => '<span>Allows you to adjust the banner to your liking.</span>',
                 'title' => 'Banner bugs',
                 'hidden' => 'Do not display'

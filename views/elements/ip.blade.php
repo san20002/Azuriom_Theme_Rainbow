@@ -45,7 +45,7 @@
                         </div>
                         <div class="text mx-auto">
                             <p>
-                                <em class="">{{count(\Azuriom\Models\User::all())}}</em> {{trans('theme::lang.site.register')}}
+                                <em class="">{{\Azuriom\Models\User::whereNull('deleted_at')->count()}}</em> {{trans('theme::lang.site.register')}}
                             </p>
                             <h2>{{trans('theme::lang.site.memberRegister')}}</h2>
                         </div>

@@ -69,11 +69,22 @@
                 <div class="col-lg-8 home--post">
                     @include('elements.banner',['banner' => 'home', 'value' => 'article'])
                     <div class="row">
+                        @php
+                            $posts = \Azuriom\Models\Post::published()
+                                        ->with('author')
+                                        ->orderByDesc('is_pinned')
+                                        ->latest('published_at')
+                                        ->paginate(theme_config('home.items.article.numberMax') ?? 6);
+                                $i= 0
+                        @endphp
                         @php($i = 100)
                         @foreach($posts as $post)
-                            <div
-                                class="col-md-6"
-                                @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article', 'noDuration'])
+                            <div class="
+                            {{theme_config('home.items.article.style') == 0 || !theme_config('home.items.article.style') ? 'col-md-6':''}}
+                            {{theme_config('home.items.article.style') == 1 ? ($loop->index == 0 ?'col-md-12':'col-md-6'):''}}
+                            {{theme_config('home.items.article.style') == 2 ? 'col-md-12':''}}
+                                "
+                                 @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article', 'noDuration'])
 
                                 @if(theme_config('home.items.article.aos.duration'))
                                 data-aos-duration='{{theme_config('home.items.article.aos.duration') * $loop->iteration}}'

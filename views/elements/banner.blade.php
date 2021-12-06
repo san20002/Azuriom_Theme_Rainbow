@@ -50,7 +50,7 @@
             @endif
 
             @if($banner === "wiki" &&  $value === "wiki-show")
-                <h1>{{theme_config($banner.'.banner.'.$value.'.title') ?? $category->name}}</h1>
+                <h1>{{theme_config($banner.'.banner.'.$value.'.title') ? theme_config($banner.'.banner.'.$value.'.title').' '.$category->name: $category->name}}</h1>
             @endif
 
             @if($banner === "changelog" &&  $value === "changelog")

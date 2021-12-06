@@ -97,7 +97,16 @@
                                 ['type'=>'checkbox','value' => 'hidden'],
                             ]
                         ];
-    $homeItemsArticle = ['url'=>route('home'),'key'=> 'home','value' => 'article',];
+    $homeItemsArticle = ['url'=>route('home'),'key'=> 'home','value' => 'article',
+                            'filedsBuilder' => [
+                                ['type'=>'select','value' => 'style','option' => [
+                                    0 => 'Style N°1',
+                                    1 => 'Style N°2',
+                                    2 => 'Style N°3',
+                                    ]
+                                ],
+                                ['type'=>'input','value' => 'numberMax'],
+                            ]];
     $homeBannerArticle = ['url'=>route('home'),'key'=>'home', 'value' => 'article'];
     $homeBannerInformation = ['url'=>route('home'),'key'=>'home', 'value' => 'information'];
     $homeBannerLogin = ['url'=>route('home'),'key'=>'home', 'value' => 'login'];
