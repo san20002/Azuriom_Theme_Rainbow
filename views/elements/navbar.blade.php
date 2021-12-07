@@ -30,7 +30,6 @@
                            rel="noopener noreferrer" @endif>
                             @if(!theme_config('header.icons'))
                                 @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-                                                                            @php(debug($element->value.'-'.$element->type.'-'.$element->id))
                                     @if($element->value.'-'.$element->type.'-'.$element->id === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
