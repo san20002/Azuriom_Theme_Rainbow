@@ -4,6 +4,7 @@ return [
     'advancedBan' => ['nullable', 'array'],
     'articles' => ['nullable', 'array'],
     'changelog' => ['nullable', 'array'],
+    'cps' => ['nullable', 'array'],
     'discord' => ['nullable', 'array'],
     'faq' => ['nullable', 'array'],
     'footer' => ['nullable', 'array'],

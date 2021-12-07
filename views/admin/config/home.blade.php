@@ -107,6 +107,11 @@
                                 ],
                                 ['type'=>'input','value' => 'numberMax'],
                             ]];
+
+    $homeItemsLogin = ['url'=>route('home'),'key'=> 'home','value' => 'login',
+                            'filedsBuilder' => [
+                                ['type'=>'checkbox','value' => 'hidden'],
+                            ]];
     $homeBannerArticle = ['url'=>route('home'),'key'=>'home', 'value' => 'article'];
     $homeBannerInformation = ['url'=>route('home'),'key'=>'home', 'value' => 'information'];
     $homeBannerLogin = ['url'=>route('home'),'key'=>'home', 'value' => 'login'];
@@ -148,7 +153,7 @@
     <div class="row js-row-builder">
         @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerArticle, 'arrayItems' => $homeItemsArticle])
         @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerInformation, 'arrayItems' => $homeItemsDiscord])
-        @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerLogin])
+        @include('admin.pattern.builder-items',['arrayBanner'=>$homeBannerLogin, 'arrayItems' => $homeItemsLogin])
 
     </div>
 </div>

@@ -118,7 +118,7 @@
                     @include('elements.banner', ['banner' => 'home', 'value' => 'information'])
                     @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
                         @if(theme_config('home.items.discord.style') == 0 || !theme_config('home.items.discord.style'))
-                            <iframe
+                            <iframe @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])
                                 src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
                                 width="350"
                                 height="500" allowtransparency="true" frameborder="0"

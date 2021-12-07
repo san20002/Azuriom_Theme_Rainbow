@@ -41,8 +41,8 @@
             <select name="header[iconmenus][{index}][name]" id="name" class="w-100 form-control">
                 <option value="">none</option>
                 @foreach($navbars as $navbar)
-                        <option value="{{$navbar->value.'-'.$navbar->type}}"
-                                @if(isset($icon['name']) && $icon['name'] === $navbar->value.'-'.$navbar->type) selected @endif>{{ $navbar->name }}</option>
+                        <option value="{{$navbar->value.'-'.$navbar->type.'-'.$navbar->id}}"
+                                @if(isset($icon['name']) && $icon['name'] === $navbar->value.'-'.$navbar->type.'-'.$navbar->id) selected @endif>{{ $navbar->name }}</option>
                 @endforeach
             </select>
         </div>

@@ -248,7 +248,7 @@
             ];
             $counterPartial = 1;
             $allImagesStokage = \Azuriom\Models\Image::all();
-            $navbars = \Azuriom\Models\NavbarElement::where('parent_id', null)->orderBy('position')
+            $navbars = \Azuriom\Models\NavbarElement::orderBy('position')
                 ->get();
     @endphp
     <div class="row mb-5">

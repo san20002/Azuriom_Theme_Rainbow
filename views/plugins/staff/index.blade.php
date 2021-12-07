@@ -41,9 +41,9 @@
                                             <h1>{{$staff->name}}</h1>
                                         </div>
                                         @if($settings->settings()->settings->description)
-                                        <div class="mt-3">
-                                            {!! $staff->description !!}
-                                        </div>
+                                            <div class="mt-3">
+                                                {!! $staff->description !!}
+                                            </div>
                                         @endif
                                         <div class="mb-1 d-flex flex-wrap justify-content-center">
                                             @if($staff->tags->count() >= 1)
@@ -60,7 +60,8 @@
                                                     @if($staff->links->count() >= 1)
                                                         @foreach($staff->links as $link)
                                                             <li class="list-inline-item">
-                                                                <a href="{{$link->url}}" title="{{$link->name}}" target="_blank">
+                                                                <a href="{{$link->url}}" title="{{$link->name}}"
+                                                                   target="_blank">
                                                                     {!! $link->icon !!}
                                                                 </a>
                                                             </li>
@@ -75,9 +76,9 @@
                         @endforeach
                     </ul>
                     <div class="glide__bullets" data-glide-el="controls[nav]">
-                        <button class="glide__bullet" data-glide-dir="=0"></button>
-                        <button class="glide__bullet" data-glide-dir="=1"></button>
-                        <button class="glide__bullet" data-glide-dir="=2"></button>
+                        @foreach($staffs as $staff)
+                            <button class="glide__bullet" data-glide-dir="={{$loop->index}}"></button>
+                        @endforeach
                     </div>
                     <div class="glide__arrows" data-glide-el="controls">
                         <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i

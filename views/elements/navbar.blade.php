@@ -30,8 +30,8 @@
                            rel="noopener noreferrer" @endif>
                             @if(!theme_config('header.icons'))
                                 @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-                                    {{--                                        @php(dump($icon['name']))--}}
-                                    @if($element->value.'-'.$element->type === $icon['name'])
+                                                                            @php(debug($element->value.'-'.$element->type.'-'.$element->id))
+                                    @if($element->value.'-'.$element->type.'-'.$element->id === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif
@@ -50,7 +50,7 @@
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @if(!theme_config('header.icons'))
                                 @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-                                    @if($element->value.'-'.$element->type === $icon['name'])
+                                    @if($element->value.'-'.$element->type.'-'.$element->id === $icon['name'])
                                         <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
                                              alt="{{ $element->name }}" title="{{ $element->name }}">
                                     @endif
@@ -64,7 +64,17 @@
                             @foreach($element->elements as $childElement)
                                 <a class="dropdown-item @if($childElement->isCurrent()) active @endif"
                                    href="{{ $childElement->getLink() }}" @if($childElement->new_tab) target="_blank"
-                                   rel="noopener noreferrer" @endif>{{ $childElement->name }}</a>
+                                   rel="noopener noreferrer" @endif>
+                                @if(!theme_config('header.icons'))
+                                    @foreach(theme_config('header.iconmenus') ?? [] as $icon )
+                                        @if($childElement->value.'-'.$childElement->type.'-'.$childElement->id === $icon['name'])
+                                            <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
+                                                 alt="{{ $childElement->name }}" title="{{ $childElement->name }}">
+                                        @endif
+                                    @endforeach
+                                @endif
+                                    {{ $childElement->name }}
+                                </a>
                             @endforeach
                         </div>
                     </li>

@@ -158,8 +158,7 @@
         <div data-display="editColors"
              class="cd-demo-container cd-demo-max-width-md js-cd-demo-container js-cd-demo-container--colors app-section--is-hidden">
             <div class="cd-demo-color">
-                <div class="cd-demo-color__list cd-demo-color__list--selected js-cd-demo-color__list"
-                     data-section="#color-primary"></div>
+                <div class="cd-demo-color__list cd-demo-color__list--selected js-cd-demo-color__list" data-section="#color-primary"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-accent"></div>
                 <div class="cd-demo-color__list js-cd-demo-color__list" data-section="#color-download"></div>
                 <div class="cd-demo-color__list-auto js-cd-demo-color__list js-cd-demo-color__list--black"

@@ -304,7 +304,12 @@ return [
                     'id' => '684097488164225073',
                     'url' => 'https://discord.com/invite/wmYrG2c',
                 ],
-
+            ],
+            'login' => [
+                'title' => 'Interface login',
+                'label' => [
+                    'hidden' => 'Do not display',
+                ],
             ]
         ],
         'banner' => [
