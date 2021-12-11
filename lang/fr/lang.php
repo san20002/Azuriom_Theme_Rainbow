@@ -235,6 +235,7 @@ return [
             'title' => 'Barre de navigation',
             'hiddenIcon' => 'Ne pas afficher les icones dans la haut de page',
             'hiddenText' => 'Ne pas afficher le texte de la navigation',
+            'hiddenLogo' => 'Ne pas afficher le logo',
             'position' => 'Emplacement',
             'style' => 'Style',
             'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>',

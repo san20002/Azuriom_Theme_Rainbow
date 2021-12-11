@@ -102,7 +102,8 @@
                 <div class="row justify-content-around">
                     @if(!theme_config('footer.logo.hidden'))
                         <div class="col-xl-3 mt-3 d-flex align-items-center justify-content-center">
-                            <img class="footer--logo" src="{{ site_logo() }}" alt="{{ route('home') }}"  {{theme_config('footer.logo.opacity') ? 'style=opacity:'.theme_config('footer.logo.opacity'): ''}}>
+                            <img class="footer--logo" src="{{ site_logo() }}"
+                                 alt="{{ route('home') }}" {{theme_config('footer.logo.opacity') ? 'style=opacity:'.theme_config('footer.logo.opacity'): ''}}>
                         </div>
                     @endif
 
@@ -197,9 +198,11 @@
 @endif
 @auth()
     @if(auth()->user()->isAdmin() || Auth::user()->hasPermission("admin.themes"))
+        @include('layouts.change-color')
         <script defer>
             window.addEventListener("DOMContentLoaded", (event) => {
                 if ($('.btn-picto-color').length > 0) {
+                    $('.js-change-color').removeClass('d-none')
                     $('.btn-picto-color').on('click', function () {
                         $(this).toggleClass('active')
                         $('#change--color').toggleClass('active')
@@ -220,7 +223,6 @@
         <script src="{{ theme_asset('js/clipboard.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/change-color.js') }}" defer></script>
 
-        @includeIf('layouts.change-color')
     @endif
 @endauth
 

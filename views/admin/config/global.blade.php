@@ -205,6 +205,14 @@
                     @endforeach
                 </select>
             </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="headerLogoHidden"
+                       name="header[logo][hidden]"
+                       @if(theme_config('header.logo.hidden')) checked @endif>
+                <label class="custom-control-label" for="headerLogoHidden">
+                    {{ trans('theme::lang.header.navbar.hiddenLogo') }}
+                </label>
+            </div>
 
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="headerIcon"

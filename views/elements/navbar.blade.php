@@ -1,10 +1,14 @@
 <nav class="navbar navbar-expand-xl navbar-light
          {{theme_config('header.navbar.style') == 2 ? 'flex-row-reverse' : ''}}">
-    <a class="navbar-brand" href="{{ route('home') }}">
-        <img src="{{site_logo() }}"
-             alt="{{ site_name() }}" title="{{ site_name() }}">
+    @if(!theme_config('header.logo.hidden'))
+        <a class="navbar-brand" href="{{ route('home') }}" title="{{ site_name() }}" aria-labelledby="{{site_name()}}">
+            <img src="{{site_logo() }}"
+                 alt="{{ site_name() }}">
+            <h1 class="sr-only">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
+        </a>
+    @else
         <h1 class="sr-only">{{ trans('messages.welcome', ['name' => site_name()]) }}</h1>
-    </a>
+    @endif
     <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-x"
             aria-controls="navbar"
             aria-expanded="false" aria-label="{{ trans('messages.nav.toggle') }}">
@@ -64,14 +68,14 @@
                                 <a class="dropdown-item @if($childElement->isCurrent()) active @endif"
                                    href="{{ $childElement->getLink() }}" @if($childElement->new_tab) target="_blank"
                                    rel="noopener noreferrer" @endif>
-                                @if(!theme_config('header.icons'))
-                                    @foreach(theme_config('header.iconmenus') ?? [] as $icon )
-                                        @if($childElement->value.'-'.$childElement->type.'-'.$childElement->id === $icon['name'])
-                                            <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
-                                                 alt="{{ $childElement->name }}" title="{{ $childElement->name }}">
-                                        @endif
-                                    @endforeach
-                                @endif
+                                    @if(!theme_config('header.icons'))
+                                        @foreach(theme_config('header.iconmenus') ?? [] as $icon )
+                                            @if($childElement->value.'-'.$childElement->type.'-'.$childElement->id === $icon['name'])
+                                                <img src="{{ !empty($icon['url']) ? image_url($icon['url']) :''}}"
+                                                     alt="{{ $childElement->name }}" title="{{ $childElement->name }}">
+                                            @endif
+                                        @endforeach
+                                    @endif
                                     {{ $childElement->name }}
                                 </a>
                             @endforeach
@@ -95,6 +99,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">{{ trans('auth.register') }}</a>
                     </li>
+                @endif
+                @if(plugins()->isEnabled('discord-auth'))
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('discord-auth.login') }}"
+                               title="{{ trans('discord-auth::messages.login_via_discord') }}"
+                               aria-labelledby="{{ trans('discord-auth::messages.login_via_discord') }}"><i
+                                    class="fab fa-discord"></i></a>
+                        </li>
+                    @endguest
                 @endif
             @else
                 @include('elements.notifications')

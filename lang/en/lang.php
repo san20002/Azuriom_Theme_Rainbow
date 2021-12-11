@@ -237,6 +237,7 @@ return [
             'title' => 'Navigation bar',
             'hiddenIcon' => 'Do not display the icons in the top of the page',
             'hiddenText' => 'Do not display the text of the navigation',
+            'hiddenLogo' => 'Do not display the logo',
             'position' => 'Location',
             'style' => 'Style',
             'info' => '<span>Allows to display text & image or just image or text.</span>'
