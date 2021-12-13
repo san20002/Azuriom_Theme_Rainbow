@@ -24,9 +24,9 @@
                 </div>
             </div>
 
-            <div class="col-md-9 tab-content">
+            <div class="col-md-9 tab-content px-0 card">
                 @foreach($category->pages as $count => $page)
-                    <div class="tab-pane fade @if($count === 0) show active @endif" id="page{{ $page->id }}"
+                    <div class="tab-pane card-body fade @if($count === 0) show active @endif" id="page{{ $page->id }}"
                          role="tabpanel" aria-labelledby="nav-home-tab">
                         <h2>{{ $page->title }}</h2>
 

@@ -266,6 +266,9 @@ return [
                 'info' => '<span>Allows to display your ip on the site.</span>',
                 'label' => [
                     'ip' => 'Your server IP',
+                    'media' => 'Image the left',
+                    'mediaServeOn' => 'Image server Online',
+                    'mediaServeOff' => 'Image server Offline',
                     'hidden' => 'Do not display',
                 ],
                 'placeholder' => [

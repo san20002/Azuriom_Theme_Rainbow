@@ -18,13 +18,25 @@
                             @endif
                             <h2 class="copy">{{theme_config('home.items.ip-server.ip')}}</h2>
                         </div>
-                        <div class="icon">
-                            @if($server && $server->isOnline())
-                                <i class="fas fa-signal" aria-hidden="true"></i>
+                        @if($server && $server->isOnline())
+                            @if(theme_config('home.items.ip-server.mediaServeOn'))
+                                <img class="ml-2" src="{{ image_url(theme_config('home.items.ip-server.mediaServeOn')) }}"
+                                     alt="{{theme_config('home.items.ip-server.ip')}}">
                             @else
-                                <i class="fas fa-times"></i>
+                                <div class="icon">
+                                    <i class="fas fa-signal" aria-hidden="true"></i>
+                                </div>
                             @endif
-                        </div>
+                        @else
+                            @if(theme_config('home.items.ip-server.mediaServeOff'))
+                                <img class="ml-2" src="{{ image_url(theme_config('home.items.ip-server.mediaServeOff')) }}"
+                                     alt="{{theme_config('home.items.ip-server.ip')}}">
+                            @else
+                                <div class="icon">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            @endif
+                        @endif
                     </div>
                 @endif
             </div>

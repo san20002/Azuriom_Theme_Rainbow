@@ -60,7 +60,9 @@
                     'value' => 'ip-server',
                     'filedsBuilder' => [
                         ['type'=>'input','value' => 'ip'],
-                        ['type'=>'image','value' => 'media'],
+                        ['type'=>'image','value' => 'media','label' =>1],
+                        ['type'=>'image','value' => 'mediaServeOn','label' =>1],
+                        ['type'=>'image','value' => 'mediaServeOff','label' =>1],
                         ['type'=>'checkbox','value' => 'hidden'],
                         ]
                     ];

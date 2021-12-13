@@ -166,7 +166,7 @@
                         <div class="col-md-10">
                             <div class="footer--copyright">
                                 <div class="container">
-                                    {{ setting('copyright') }} | @lang('messages.copyright') | Thème réalisé par
+                                    {{ setting('copyright') }} | @lang('messages.copyright') | <a href="https://market.azuriom.com/resources/71" target="_blank" title="Version V1.1.4">Thème</a> réalisé par
                                     <a href="https://discord.gg/wmYrG2c" target="_blank"
                                        rel="noopener noreferrer">Linedev</a>
                                 </div>

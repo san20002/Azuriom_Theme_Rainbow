@@ -264,6 +264,9 @@ return [
                 'info' => '<span>Permet d\'afficher votre ip sur le site.</span>',
                 'label' => [
                     'ip' => 'Votre IP de serveur',
+                    'media' => 'Image à gauche',
+                    'mediaServeOn' => 'Image serveur allumer',
+                    'mediaServeOff' => 'Image serveur eteint',
                     'hidden' => 'Ne pas afficher',
                 ],
                 'placeholder' => [

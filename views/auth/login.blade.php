@@ -6,10 +6,15 @@
     <div class="container content main-page" id="auth--login">
         <div class="row justify-content-center flex-column align-items-center">
             <div class="col-lg-8 col-md-10">
-                @if(theme_config('login.items.login.media'))
-                    @if(!theme_config('login.items.login.hidden'))
-                        <div class="mb-5 text-center">
+                @if(!theme_config('login.items.login.hidden'))
+                    @if(theme_config('login.items.login.media'))
+                        <div class="mb-5 text-center w-75 mx-auto">
                             <img class="img-fluid" src="{{image_url(theme_config('login.items.login.media'))}}"
+                                 alt="{{trans('auth.login')}}">
+                        </div>
+                    @else
+                        <div class="mb-5 text-center w-75 mx-auto">
+                            <img class="img-fluid" src="{{site_logo()}}"
                                  alt="{{trans('auth.login')}}">
                         </div>
                     @endif
