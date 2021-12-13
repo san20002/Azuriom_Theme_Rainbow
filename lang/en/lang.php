@@ -238,6 +238,7 @@ return [
             'hiddenIcon' => 'Do not display the icons in the top of the page',
             'hiddenText' => 'Do not display the text of the navigation',
             'hiddenLogo' => 'Do not display the logo',
+            'hiddenDiscord' => 'Do not display button login discord (Plugin <a href="https://market.azuriom.com/resources/62">Discord-auth</a> active)',
             'position' => 'Location',
             'style' => 'Style',
             'info' => '<span>Allows to display text & image or just image or text.</span>'
@@ -333,7 +334,7 @@ return [
         'particle' => [
             'title' => 'Particles',
             'hidden' => 'Do not display the particles',
-            'info' => '<span>Allows to display particles.<br><span class="text-warning">Site to test your particles: <a href="https://vincentgarreau.com/particles.js/">particles.js</a>, the titles of the fields are identical to the article site to make the simulation.</span></span>',
+            'info' => '<span>Allows to display particles.<br><span class="text-warning">Site to test your particles: <a href="https://vincentgarreau.com/particles.js/" target="_blank">particles.js</a>, the titles of the fields are identical to the article site to make the simulation.</span></span>',
             'content' => 'Location',
             'style' => 'Style',
         ],
@@ -709,6 +710,71 @@ return [
             ],
             'wiki-show' => [
                 'title' => 'Interface wiki show',
+            ],
+        ],
+    ],
+
+    'login' => [
+        'title' => 'Login',
+        'banner' => [
+            'login' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner Login',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'login' => [
+                'title' => 'Interface Login',
+                'label' => [
+                    'hidden' => 'Do not display media',
+                ],
+            ],
+            'discord' => [
+                'title' => 'Interface du discord',
+                'label' => [
+                    'text' => 'Text',
+                    'hidden' => 'Do not display',
+                ],
+                'placeholder' => [
+                    'text' => 'My discord'
+                ],
+            ],
+        ],
+    ],
+    'register' => [
+        'title' => 'Register',
+        'banner' => [
+            'register' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner register',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'register' => [
+                'title' => 'Interface register',
+                'label' => [
+                    'hidden' => 'Do not display media',
+                ],
+            ],
+        ],
+    ],
+    'passwordReset' => [
+        'title' => 'Reste password',
+        'banner' => [
+            'passwordReset' => [
+                'info' => '<span>Allows you to adjust the banner to your liking.</span>',
+                'title' => 'Banner reste password',
+                'hidden' => 'Do not display'
+            ],
+        ],
+        'items' => [
+            'passwordReset' => [
+                'title' => 'Interface reste password',
+                'label' => [
+                    'hidden' => 'Do not display media',
+                ],
             ],
         ],
     ],

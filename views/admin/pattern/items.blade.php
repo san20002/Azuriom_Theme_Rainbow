@@ -65,17 +65,55 @@
                         </div>
                     @endif
                     @if($field['type'] === 'select')
-                            <div class="my-2">
-                                <label class="mb-1  mt-2"
-                                       for="select-{{$key}}-{{$value}}-{{$field['value']}}">{{ trans('theme::lang.styles') }}</label>
-                                <select name="{{$key}}[items][{{$value}}][{{$field['value']}}]"
-                                        id="select-{{$key}}-{{$value}}-{{$field['value']}}" class="form-control">
-                                    @foreach($field['option'] as $k => $v)
-                                        <option value="{{ $k }}"
-                                                @if(theme_config($key.'.items.'.$value.'.'.$field['value']) == $k) selected @endif>{{ $v }}</option>
+                        <div class="my-2">
+                            <label class="mb-1  mt-2"
+                                   for="select-{{$key}}-{{$value}}-{{$field['value']}}">{{ trans('theme::lang.styles') }}</label>
+                            <select name="{{$key}}[items][{{$value}}][{{$field['value']}}]"
+                                    id="select-{{$key}}-{{$value}}-{{$field['value']}}" class="form-control">
+                                @foreach($field['option'] as $k => $v)
+                                    <option value="{{ $k }}"
+                                            @if(theme_config($key.'.items.'.$value.'.'.$field['value']) == $k) selected @endif>{{ $v }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    @endif
+                    @if($field['type'] === 'image')
+                        <div class="my-2">
+                            <label
+                                for="selectImage-{{$key}}-{{$value}}-{{$field['value']}}-{{$counterPartial}}">
+                                @if(isset($field['label']) && $field['label'])
+                                    {{ trans('theme::lang.'.$key.'.items.'.$value.'.label.'.$field['value']) }}
+                                @else
+                                    {{ trans('theme::lang.image') }}
+                                @endif
+                            </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <a class="btn btn-outline-success"
+                                       href="{{ route('admin.images.create') }}"
+                                       target="_blank" rel="noopener noreferrer"><i
+                                            class="fas fa-upload"></i></a>
+                                </div>
+                                <select class="custom-select"
+                                        id="selectImage-{{$key}}-{{$value}}-{{$field['value']}}-{{$counterPartial}}"
+                                        name="{{$key}}[items][{{$value}}][{{$field['value']}}]"
+                                        data-image-preview-select="filePreview-{{$key}}-{{$value}}-{{$field['value']}}-{{$counterPartial}}">
+                                    <option value="">none</option>
+                                    @foreach($allImagesStokage as $image)
+                                        <option value="{{ $image->file }}"
+                                                @if(theme_config($key.'.items.'.$value.'.'.$field['value']) === $image->file) selected @endif>{{ $image->name }}</option>
                                     @endforeach
                                 </select>
+                                <div class="mt-3 w-100">
+                                    <img
+                                        src="{{ theme_config($key.'.items.'.$value.'.'.$field['value']) ? image_url( old($key.'.items.'.$value.'.'.$field['value'], theme_config($key.'.items.'.$value.'.'.$field['value'])) ): ''}}"
+                                        alt="{{ old($key.'.items.'.$value.'.'.$field['value'], theme_config($key.'.items.'.$value.'.'.$field['value'])) }}"
+                                        class="card-img rounded img-preview-sm @if(!theme_config($key.'.items.'.$value.'.'.$field['value']))d-none @endif"
+                                        id="filePreview-{{$key}}-{{$value}}-{{$field['value']}}-{{$counterPartial}}"
+                                        style="object-fit: contain;max-height: 90px">
+                                </div>
                             </div>
+                        </div>
                     @endif
                 @endforeach
             @endif

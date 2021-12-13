@@ -133,6 +133,15 @@
                 'pages' => [
                     'is_enabled' => true,
                 ],
+                'login' => [
+                    'is_enabled' => true,
+                ],
+                'register' => [
+                    'is_enabled' => true,
+                ],
+                'passwordReset' => [
+                    'is_enabled' => true,
+                ],
                 'footer' => [
                     'is_enabled' => true,
                 ],

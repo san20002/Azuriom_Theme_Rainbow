@@ -5,10 +5,19 @@
 @section('content')
 <div class="container content main-page" id="auth--password-reset">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ trans('auth.passwords.reset') }}</div>
+        <div class="col-lg-8 col-md-10">
+            @if(theme_config('passwordReset.items.passwordReset.media'))
+                @if(!theme_config('passwordReset.items.passwordReset.hidden'))
+                    <div class="mb-5 text-center">
+                        <img class="img-fluid" src="{{image_url(theme_config('passwordReset.items.passwordReset.media'))}}"
+                             alt="{{trans('auth.passwords.reset')}}">
+                    </div>
+                @endif
+            @endif
 
+            @include('elements.banner', ['banner' => 'passwordReset', 'value' => 'passwordReset'])
+
+            <div class="card" @include('elements.string-aos', ['pageAos' => 'passwordReset', 'itemAos'=>'passwordReset'])>
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf

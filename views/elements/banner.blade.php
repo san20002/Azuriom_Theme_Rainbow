@@ -22,6 +22,18 @@
                     <h2>{{theme_config($banner.'.banner.'.$value.'.title') ?: 'Informations'}}</h2>
                 @endif
 
+                @if($banner === "login" &&  $value === "login")
+                    <h2>{{theme_config($banner.'.banner.'.$value.'.title') ?: trans('auth.login')}}</h2>
+                @endif
+
+                @if($banner === "register" &&  $value === "register")
+                    <h2>{{theme_config($banner.'.banner.'.$value.'.title') ?: trans('auth.register')}}</h2>
+                @endif
+
+                @if($banner === "passwordReset" &&  $value === "passwordReset")
+                    <h2>{{theme_config($banner.'.banner.'.$value.'.title') ?: trans('auth.passwords.reset')}}</h2>
+                @endif
+
                 @if($banner === "faq" &&  $value === "faq")
                     <h1>{{theme_config($banner.'.banner.'.$value.'.title') ?: trans('faq::messages.title') }}</h1>
                 @endif

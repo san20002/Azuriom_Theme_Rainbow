@@ -215,6 +215,15 @@
             </div>
 
             <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="headerDiscord'Hidden"
+                       name="header[discord][hidden]"
+                       @if(theme_config('header.discord.hidden')) checked @endif>
+                <label class="custom-control-label" for="headerDiscord'Hidden">
+                    {!! trans('theme::lang.header.navbar.hiddenDiscord')  !!}
+                </label>
+            </div>
+
+            <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="headerIcon"
                        name="header[icons]"
                        @if(theme_config('header.icons')) checked @endif>

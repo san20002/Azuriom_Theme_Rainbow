@@ -60,6 +60,7 @@
                     'value' => 'ip-server',
                     'filedsBuilder' => [
                         ['type'=>'input','value' => 'ip'],
+                        ['type'=>'image','value' => 'media'],
                         ['type'=>'checkbox','value' => 'hidden'],
                         ]
                     ];
@@ -79,6 +80,7 @@
 		                    'key'=> 'home',
                             'value' => 'count-register',
                             'filedsBuilder' => [
+                                ['type'=>'image','value' => 'media'],
                                 ['type'=>'checkbox','value' => 'hidden'],
                                 ]
                             ];

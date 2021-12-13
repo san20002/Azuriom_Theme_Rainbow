@@ -236,6 +236,7 @@ return [
             'hiddenIcon' => 'Ne pas afficher les icones dans la haut de page',
             'hiddenText' => 'Ne pas afficher le texte de la navigation',
             'hiddenLogo' => 'Ne pas afficher le logo',
+            'hiddenDiscord' => 'Ne pas afficher le bouton de connexion discord (Plugin <a href="https://market.azuriom.com/resources/62" title="Discord-auth" target="_blank">Discord-auth</a> activé)',
             'position' => 'Emplacement',
             'style' => 'Style',
             'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>',
@@ -334,7 +335,7 @@ return [
         'particle' => [
             'title' => 'Particules',
             'hidden' => 'Ne pas afficher les particules',
-            'info' => '<span>Permet d\'afficher des particules.<br><span class="text-warning">Site pour tester vos particules: <a href="https://vincentgarreau.com/particles.js/">particles.js</a>, les titres des champs sont identique au site de particles pour faire la simulation.</span> </span>',
+            'info' => '<span>Permet d\'afficher des particules.<br><span class="text-warning">Site pour tester vos particules: <a href="https://vincentgarreau.com/particles.js/" target="_blank">particles.js</a>, les titres des champs sont identique au site de particles pour faire la simulation.</span> </span>',
             'content' => 'Emplacement',
             'style' => 'Style',
         ],
@@ -713,7 +714,70 @@ return [
             ],
         ],
     ],
-
+    'login' => [
+        'title' => 'Connexion',
+        'banner' => [
+            'login' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière connexion',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'login' => [
+                'title' => 'Interface connexion',
+                'label' => [
+                    'hidden' => 'Ne pas afficher l\'image',
+                ],
+            ],
+            'discord' => [
+                'title' => 'Interface du discord',
+                'label' => [
+                    'text' => 'Texte',
+                    'hidden' => 'Ne pas afficher',
+                ],
+                'placeholder' => [
+                    'text' => 'Mon discord'
+                ],
+            ],
+        ],
+    ],
+    'register' => [
+        'title' => 'Inscription',
+        'banner' => [
+            'register' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière d\'inscription',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'register' => [
+                'title' => 'Interface d\'inscription',
+                'label' => [
+                    'hidden' => 'Ne pas afficher l\'image',
+                ],
+            ],
+        ],
+    ],
+    'passwordReset' => [
+        'title' => 'Réinitialiser le mot de passe',
+        'banner' => [
+            'passwordReset' => [
+                'info' => '<span>Permet d\'ajuster la bannière à votre guise.</span>',
+                'title' => 'Bannière de réinitialiser le mot de passe',
+                'hidden' => 'Ne pas afficher'
+            ],
+        ],
+        'items' => [
+            'passwordReset' => [
+                'title' => 'Interface de Réinitialiser le mot de passe',
+                'label' => [
+                    'hidden' => 'Ne pas afficher l\'image',
+                ],
+            ],
+        ],
+    ],
 
     'setting' => [
         'save' => 'Sauvegarder',

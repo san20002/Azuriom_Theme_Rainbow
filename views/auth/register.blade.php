@@ -5,9 +5,19 @@
 @section('content')
 <div class="container content main-page" id="auth--register">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ trans('auth.register') }}</div>
+        <div class="col-lg-8 col-md-10">
+            @if(theme_config('register.items.register.media'))
+                @if(!theme_config('register.items.register.hidden'))
+                    <div class="mb-5 text-center">
+                        <img class="img-fluid" src="{{image_url(theme_config('register.items.register.media'))}}"
+                             alt="{{trans('auth.register')}}">
+                    </div>
+                @endif
+            @endif
+
+            @include('elements.banner', ['banner' => 'register', 'value' => 'register'])
+
+            <div class="card" @include('elements.string-aos', ['pageAos' => 'register', 'itemAos'=>'register'])>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" id="captcha-form">

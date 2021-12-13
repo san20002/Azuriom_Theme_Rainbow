@@ -101,14 +101,16 @@
                     </li>
                 @endif
                 @if(plugins()->isEnabled('discord-auth'))
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('discord-auth.login') }}"
-                               title="{{ trans('discord-auth::messages.login_via_discord') }}"
-                               aria-labelledby="{{ trans('discord-auth::messages.login_via_discord') }}"><i
-                                    class="fab fa-discord"></i></a>
-                        </li>
-                    @endguest
+                    @if(!theme_config('header.discord.hidden'))
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('discord-auth.login') }}"
+                                   title="{{ trans('discord-auth::messages.login_via_discord') }}"
+                                   aria-labelledby="{{ trans('discord-auth::messages.login_via_discord') }}"><i
+                                        class="fab fa-discord"></i></a>
+                            </li>
+                        @endguest
+                    @endif
                 @endif
             @else
                 @include('elements.notifications')

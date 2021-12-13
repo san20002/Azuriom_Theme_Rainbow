@@ -4,10 +4,19 @@
 
 @section('content')
     <div class="container content main-page" id="auth--login">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ trans('auth.login') }}</div>
+        <div class="row justify-content-center flex-column align-items-center">
+            <div class="col-lg-8 col-md-10">
+                @if(theme_config('login.items.login.media'))
+                    @if(!theme_config('login.items.login.hidden'))
+                        <div class="mb-5 text-center">
+                            <img class="img-fluid" src="{{image_url(theme_config('login.items.login.media'))}}"
+                                 alt="{{trans('auth.login')}}">
+                        </div>
+                    @endif
+                @endif
+
+                @include('elements.banner', ['banner' => 'login', 'value' => 'login'])
+                <div class="card" @include('elements.string-aos', ['pageAos' => 'login', 'itemAos'=>'login'])>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -75,19 +84,32 @@
                         </form>
                     </div>
                 </div>
-
-                @if(plugins()->isEnabled('discord-auth'))
+            </div>
+            @if(plugins()->isEnabled('discord-auth'))
+                @if(!theme_config('login.items.discord.hidden'))
                     @guest
-                        <div class="my-3 text-center">
-                            <a class="btn btn-primary py-0 px-5" style="font-size: 2rem"
+                        <div class="col-lg-4 col-md-6">
+                            <a class="btn btn-primary d-inline-flex w-100 justify-content-center my-3"
+                               style="font-size: 2rem"
+                               @include('elements.string-aos', ['pageAos' => 'login', 'itemAos'=>'discord'])
                                href="{{ route('discord-auth.login') }}"
                                title="{{ trans('discord-auth::messages.login_via_discord') }}"
-                               aria-labelledby="{{ trans('discord-auth::messages.login_via_discord') }}"><i
-                                    class="fab fa-discord text-xl"></i></a>
+                               aria-labelledby="{{ trans('discord-auth::messages.login_via_discord') }}">
+                                @if(theme_config('login.items.discord.media'))
+                                    <img style="max-width: 65px"
+                                         src="{{image_url(theme_config('login.items.discord.media'))}}"
+                                         alt="{{trans('auth.login')}}">
+                                @else
+                                    <i class="fab fa-discord text-xl"></i>
+                                @endif
+                                <span class="pl-2" style="font-size: 1rem">
+                                {{theme_config('login.items.discord.text') ?? ''}}
+                                </span>
+                            </a>
                         </div>
                     @endguest
                 @endif
-            </div>
+            @endif
         </div>
     </div>
 @endsection
