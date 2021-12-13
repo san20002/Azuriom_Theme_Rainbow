@@ -79,7 +79,7 @@
 </head>
 
 <body id="app">
-<header class="header">
+<header class="header {{theme_config('header.navbar.fixed') ? 'header-sticky': ''}}" id="header">
     @include('elements.navbar')
 </header>
 <main>
@@ -166,7 +166,9 @@
                         <div class="col-md-10">
                             <div class="footer--copyright">
                                 <div class="container">
-                                    {{ setting('copyright') }} | @lang('messages.copyright') | <a href="https://market.azuriom.com/resources/71" target="_blank" title="Version V1.1.4">Thème</a> réalisé par
+                                    {{ setting('copyright') }} | @lang('messages.copyright') | <a
+                                        href="https://market.azuriom.com/resources/71" target="_blank"
+                                        title="Version V1.1.5">Thème</a> réalisé par
                                     <a href="https://discord.gg/wmYrG2c" target="_blank"
                                        rel="noopener noreferrer">Linedev</a>
                                 </div>
@@ -234,6 +236,20 @@
         particleJs.config = @php echo json_encode(theme_config('home.particle.config'))  @endphp;
         particleJs.pathImage = '@php echo image_url()  @endphp/';
 
+        @if(theme_config('header.navbar.fixed'))
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("header").classList.remove('active');
+            } else {
+                document.getElementById("header").classList.add('active');
+            }
+            prevScrollpos = currentScrollPos;
+        }
+        @endif
+
+        @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
         // COMPTEUR DISCORD
         var discord_key = "{{theme_config('home.items.discord.id')}}";
         if ($('.rainbow--js-discordCount').length && discord_key.length) {
@@ -266,6 +282,7 @@
                 });
             });
         }
+        @endif
     })
 </script>
 @stack('footer-scripts')

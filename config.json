@@ -151,7 +151,7 @@
     },
     "footer": {
         "logo": {
-            "opacity": "1"
+            "opacity": "0.5"
         },
         "social": {
             "links": [
@@ -376,9 +376,6 @@
     },
     "header": {
         "style": "2",
-        "preloader": {
-            "hidden": "on"
-        },
         "navbar": {
             "style": "1",
             "position": "center"
@@ -1101,9 +1098,8 @@
     "wiki": {
         "banner": {
             "wiki": {
-                "chevron": "on",
                 "image": null,
-                "title": "Wiki TOTO",
+                "title": null,
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -1113,9 +1109,8 @@
                 }
             },
             "wiki-show": {
-                "chevron": "on",
                 "image": null,
-                "title": "Doc:",
+                "title": null,
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",

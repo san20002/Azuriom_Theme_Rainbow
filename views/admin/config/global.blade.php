@@ -206,6 +206,14 @@
                 </select>
             </div>
             <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="headerNavbarFixed"
+                       name="header[navbar][fixed]"
+                       @if(theme_config('header.navbar.fixed')) checked @endif>
+                <label class="custom-control-label" for="headerNavbarFixed">
+                    {{ trans('theme::lang.header.navbar.fixed') }}
+                </label>
+            </div>
+            <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="headerLogoHidden"
                        name="header[logo][hidden]"
                        @if(theme_config('header.logo.hidden')) checked @endif>

@@ -238,6 +238,7 @@ return [
             'hiddenLogo' => 'Ne pas afficher le logo',
             'hiddenDiscord' => 'Ne pas afficher le bouton de connexion discord (Plugin <a href="https://market.azuriom.com/resources/62" title="Discord-auth" target="_blank">Discord-auth</a> activé)',
             'position' => 'Emplacement',
+            'fixed' => 'Ne plus afficher la navigation en fix',
             'style' => 'Style',
             'info' => '<span>Permet d\'afficher texte & image ou juste image ou texte.</span>',
         ],

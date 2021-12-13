@@ -240,6 +240,7 @@ return [
             'hiddenLogo' => 'Do not display the logo',
             'hiddenDiscord' => 'Do not display button login discord (Plugin <a href="https://market.azuriom.com/resources/62">Discord-auth</a> active)',
             'position' => 'Location',
+            'fixed' => 'Do not display header in fix',
             'style' => 'Style',
             'info' => '<span>Allows to display text & image or just image or text.</span>'
         ],
