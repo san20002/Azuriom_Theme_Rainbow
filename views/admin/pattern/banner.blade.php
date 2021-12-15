@@ -1,11 +1,10 @@
 @php($counterPartial++)
-<div class="card my-4  {{isset($url) && !empty($url) ?? 'disabled' }}">
+<div class="card card-custom {{isset($url) && !empty($url) ?? 'disabled' }}">
     @if(isset($url) && !empty($url))
-        <a class="badge badge-info"
+        <a class="
+        badge badge-info"
            href="{{$url}}#config_trigger={{$key}}-banner-{{$value}}"
-           target="_blank"
-           style="font-size: 1.1rem;position: absolute;top: -15px;left: -15px;height: 35px;width: 35px;border-radius: 22.25px;line-height: 37px;padding: 0;"
-        >
+           target="_blank">
             <i class="fas fa-eye"></i>
         </a>
     @endif

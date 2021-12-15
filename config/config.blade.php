@@ -17,6 +17,53 @@
             a {
                 scroll-behavior: smooth;
             }
+
+            a.badge.badge-info {
+                font-size: 1.1rem;
+                position: absolute;
+                top: 8px;
+                left: -15px;
+                height: 35px;
+                width: 35px;
+                border-radius: 22.25px;
+                line-height: 37px;
+                padding: 0;
+            }
+
+            .card-custom {
+                margin: 1rem 0;
+            }
+
+            .dropdown-item[data-toggle="collapse"][aria-expanded="true"] {
+                pointer-events: none;
+            }
+
+            .dropdown-menu {
+                z-index: 100;
+            }
+
+            .list-group-item {
+                z-index: 0;
+            }
+
+            .list-group-item.multiple_page[aria-expanded="true"] {
+                z-index: 10;
+            }
+
+            .dropdown-item {
+                position: relative;
+            }
+
+            .dropdown-item[data-toggle="collapse"][aria-expanded="true"] span:after {
+                content: '';
+                display: inline-block;
+                background-color: #23a474;
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                float: right;
+                margin: 4px 0px;
+            }
         </style>
     @endpush
     @push('footer-scripts')
@@ -127,8 +174,14 @@
                 'home' => [
                     'is_enabled' => true,
                 ],
+                'footer' => [
+                    'is_enabled' => true,
+                ],
                 'articles' => [
                     'is_enabled' => true,
+                    'multiple_page' => ['index' =>['name'=> 'Index'],
+                                        'show' =>['name'=> 'Show'],
+                                        ]
                 ],
                 'pages' => [
                     'is_enabled' => true,
@@ -141,10 +194,7 @@
                 ],
                 'passwordReset' => [
                     'is_enabled' => true,
-                ],
-                'footer' => [
-                    'is_enabled' => true,
-                ],
+                ]
             ];
         $pluginMenu  = [
                 'advancedBan' => [
@@ -161,12 +211,25 @@
                 ],
                 'forum' => [
                     'is_enabled' => plugins()->isEnabled('forum'),
+                    'multiple_page' => ['index' =>['name'=> 'Index'],
+                                        'show' =>['name'=> 'show'],
+                                        'profileEdit' =>['name'=> 'profileEdit'],
+                                        'discussionsPostsEdit' =>['name'=> 'discussionsPostsEdit'],
+                                        'discussionsPostsCreate' =>['name'=> 'discussionsPostsCreate'],
+                                        'discussionsEdit' =>['name'=> 'discussionsEdit'],
+                                        'discussionsShow' =>['name'=> 'discussionsShow'],
+                                        ]
                 ],
                 'invoicepro' => [
                     'is_enabled' => plugins()->isEnabled('invoicepro'),
                 ],
                 'jirai' => [
                     'is_enabled' => plugins()->isEnabled('jirai'),
+                    'multiple_page' => ['index' =>['name'=> 'Index'],
+                                        'changelogs' =>['name'=> 'changelogs'],
+                                        'issues' =>['name'=> 'issues'],
+                                        'messages' =>['name'=> 'messages'],
+                                        ]
                 ],
                 'liteBans' => [
                     'is_enabled' => plugins()->isEnabled('litebans'),
@@ -176,12 +239,23 @@
                 ],
                 'shop' => [
                     'is_enabled' => plugins()->isEnabled('shop'),
+                    'multiple_page' => ['index' =>['name'=> 'Index'],
+                                        'cart' =>['name'=> 'Cart'],
+                                        'offersSelect' =>['name'=> 'Offre select'],
+                                        'offersBuy' =>['name'=> 'Offre Buy'],
+                                        'payments' =>['name'=> 'Payments'],
+                                        'profile' =>['name'=> 'Mes achats'],
+                                        ]
                 ],
                 'skinApi' => [
                     'is_enabled' => plugins()->isEnabled('skin-api'),
                 ],
                 'support' => [
                     'is_enabled' => plugins()->isEnabled('support'),
+                    'multiple_page' => ['index' =>['name'=> 'Index'],
+                                        'show' =>['name'=> 'Show'],
+                                        'create' =>['name'=> 'create'],
+                                        ]
                 ],
                 'staff' => [
                     'is_enabled' => plugins()->isEnabled('staff'),
@@ -191,6 +265,9 @@
                 ],
                 'wiki' => [
                     'is_enabled' => plugins()->isEnabled('wiki'),
+                    'multiple_page' => ['index' =>['name'=> 'Index'],
+                                        'show' =>['name'=> 'Show'],
+                                        ]
                 ],
             ];
             uasort($pluginMenu, function ($a, $b) {
@@ -260,7 +337,7 @@
             $navbars = \Azuriom\Models\NavbarElement::orderBy('position')
                 ->get();
     @endphp
-    <div class="row mb-5">
+    <div class="row mb-5" id="accordion-theme">
         <div class="col-12 mb-3">
             {!!  trans('theme::lang.config.info') !!}
         </div>
@@ -271,7 +348,7 @@
                         <span data-toggle="tooltip" title="{{trans('theme::lang.plugin.requires')}}">
                       @endif
                      <button
-                         class="list-group-item list-group-item-action list-group-item-light @if($loop->index == 0) active @endif"
+                         class="list-group-item list-group-item-action list-group-item-light {{isset($values['multiple_page']) && $values['multiple_page'] ? 'multiple_page':''}} @if($loop->index == 0) active @endif"
                          title="{{$key}}"
                          href="#list-{{$key}}"
                          data-toggle="list"
@@ -281,8 +358,24 @@
                          @endif
                          aria-controls="{{$key}}">
                       {{trans('theme::lang.'.$key.'.title')}}
+                         @if(isset($values['multiple_page']) && $values['multiple_page'])
+                             <a
+                                 class="px-3 float-right dropdown-toggle"
+                                 type="button" id="dropdownMenu{{$key}}"
+                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                             <div class="dropdown-menu" aria-labelledby="dropdownMenu{{$key}}">
+                                    @foreach($values['multiple_page'] as $k => $v)
+                                     <a class="dropdown-item {{$loop->index != 0 ? 'collapsed':''}}"
+                                        data-toggle="collapse"
+                                        data-target="#collapse-{{$key}}-{{$k}}"
+                                        @if($loop->index == 0) aria-expanded="true" @endif
+                                        aria-controls="collapse{{$key}}-{{$k}}"><span>{{$v['name']}}</span></a>
+                                 @endforeach
+                                </div>
+                         @endif
                      </button>
-                    @if(!$values['is_enabled'])
+
+                            @if(!$values['is_enabled'])
                       </span>
                     @endif
                 @endforeach
@@ -291,7 +384,6 @@
         <div class="col-lg-10  mt-lg-0 mt-5 sidebar-dark">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
-
                 <input type="hidden" name="project[color_themes]"
                        value="{{ old('project[color_themes]', config('theme.project.color_themes')) }}">
                 <input type="hidden" name="project[color_themes_data]"
@@ -303,7 +395,7 @@
                             <div class="tab-pane fade card shadow mb-4 @if($loop->index == 0) active show @endif"
                                  id="list-{{$key}}" role="tabpanel"
                                  aria-labelledby="list-{{$key}}-list">
-                                @includeIf("admin.config.$key")
+                                @includeIf("admin.config.$key", ['page_current' => $key, 'multiple_page'=> $values['multiple_page'] ?? ''])
                             </div>
                         @endif
                     @endforeach
