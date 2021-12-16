@@ -10,7 +10,7 @@
                     <div class="home--top">
                         @if(setting('background'))
                             <div class="background--top-header">
-                                <img src="{{ image_url(setting('background')) }}" alt="">
+                                <img class="img-fluid w-100" src="{{ image_url(setting('background')) }}" alt="">
                             </div>
                         @endif
                         @if(!empty(theme_config('sliders')[0]))
@@ -86,8 +86,8 @@
                                 "
                                  @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'article', 'noDuration'])
 
-                                @if(theme_config('home.items.article.aos.duration'))
-                                data-aos-duration='{{theme_config('home.items.article.aos.duration') * $loop->iteration}}'
+                                 @if(theme_config('home.items.article.aos.duration'))
+                                 data-aos-duration='{{theme_config('home.items.article.aos.duration') * $loop->iteration}}'
                                 @endif
                             >
                                 <div class="post-preview card mb-3 shadow-sm">
@@ -119,10 +119,10 @@
                     @if(theme_config('home.items.discord.id') && !theme_config('home.items.discord.hidden'))
                         @if(theme_config('home.items.discord.style') == 0 || !theme_config('home.items.discord.style'))
                             <iframe @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])
-                                src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
-                                width="350"
-                                height="500" allowtransparency="true" frameborder="0"
-                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                                    src="https://discordapp.com/widget?id={{theme_config('home.items.discord.id')}}&theme=dark"
+                                    width="350"
+                                    height="500" allowtransparency="true" frameborder="0"
+                                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                         @endif
                         @if(theme_config('home.items.discord.style') == 1)
                             <div @include('elements.string-aos', ['pageAos' => 'home', 'itemAos'=>'discord'])>
