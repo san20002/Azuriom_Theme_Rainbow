@@ -729,7 +729,7 @@
                     "offset": null
                 }
             },
-            "cart": {
+            "profile": {
                 "image": null,
                 "title": null,
                 "aos": {
@@ -740,7 +740,7 @@
                     "offset": null
                 }
             },
-            "profile": {
+            "cart": {
                 "image": null,
                 "title": null,
                 "aos": {
@@ -838,7 +838,7 @@
                     "offset": null
                 }
             },
-            "cart": {
+            "profile": {
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -847,7 +847,7 @@
                     "offset": null
                 }
             },
-            "profile": {
+            "cart": {
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -977,7 +977,7 @@
                     "offset": null
                 }
             },
-            "support-create": {
+            "support-show": {
                 "image": null,
                 "title": null,
                 "aos": {
@@ -988,7 +988,7 @@
                     "offset": null
                 }
             },
-            "support-show": {
+            "support-create": {
                 "image": null,
                 "title": null,
                 "aos": {
@@ -1010,7 +1010,7 @@
                     "offset": null
                 }
             },
-            "support-create": {
+            "support-show": {
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -1019,7 +1019,7 @@
                     "offset": null
                 }
             },
-            "support-show": {
+            "support-create": {
                 "aos": {
                     "animation": "fade",
                     "easing": "linear",
@@ -1030,18 +1030,6 @@
             }
         }
     },
-    "sliders": [
-        {
-            "url": null,
-            "title": "Slider 1",
-            "description": null
-        },
-        {
-            "url": null,
-            "title": "Slider 2",
-            "description": null
-        }
-    ],
     "vote": {
         "banner": {
             "vote": {
